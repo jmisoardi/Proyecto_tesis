@@ -1,3 +1,20 @@
 {
-    "files.autoSave": "afterDelay"
+    "files.autoSave": "afterDelay",
+    "cSpell.words": [
+        "barra",
+        "Cerrar",
+        "conexion",
+        "Contiene",
+        "Corresponde",
+        "Datos",
+        "ejemplo",
+        "incluye",
+        "navegacion",
+        "navegación",
+        "servidor",
+        "Sesión",
+        "Texto",
+        "usuario",
+        "Usuarios"
+    ]
 }

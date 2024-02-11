@@ -3,10 +3,10 @@
     $servidor = "localhost";
     $baseDeDatos = "app";
     $usuario = "root";
-    $contrasenia = "";
+    $password = "";
 
     try{
-        $conexion = new PDO("mysql:host=$servidor;dbname=$baseDeDatos",$usuario,$contrasenia);
+        $conexion = new PDO("mysql:host=$servidor;dbname=$baseDeDatos",$usuario,$password);
     }catch (Exception $ex){
         echo $ex->getMessage();
     }

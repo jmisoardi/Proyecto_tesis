@@ -1,5 +1,5 @@
 
-<!--Contiene Menu y parte del Conteiner -->
+<!--Contiene Menu y parte del Container -->
 
 <!doctype html>
 <html lang="en">
@@ -26,7 +26,7 @@
             <!-- place navbar here -->
         </header>
         
-            <!--Esto es la barra de navegacion que incluye Sistema, Personal, Rol, Usuario, Cerrar Sesion-->
+            <!--Corresponde a la barra de navegación que incluye Sistema, Personal, Rol, Usuario, Cerrar Sesión-->
             <nav class="navbar navbar-expand navbar-light bg-light">
                 <ul class="nav navbar-nav">
                     <li class="nav-item">
