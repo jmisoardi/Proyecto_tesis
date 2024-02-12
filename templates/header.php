@@ -1,6 +1,10 @@
 
-<!--Contiene Menu y parte del Container -->
+<?php 
+    $url_base= "http://localhost/Proyecto_tesis/";
 
+?>
+
+<!--Contiene Menu y parte del Container -->
 <!doctype html>
 <html lang="en">
     <head>
@@ -33,17 +37,18 @@
                         <a class="nav-link active" href="#" aria-current="page">Sistema<span class="visually-hidden">(current)</span></a
                         >
                     </li>
+                    <!--Ingresamos en "href php con la dirección base"-->
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Personal</a>
+                        <a class="nav-link" href="<?php echo $url_base;?>secciones/personal/">Personal</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Rol</a>
+                        <a class="nav-link" href="<?php echo $url_base;?>secciones/rol/">Rol</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Usuarios</a>
+                        <a class="nav-link" href="<?php echo $url_base;?>secciones/usuario/">Usuarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cerrar Sesión</a>
+                        <a class="nav-link" href="cerrar.php">Cerrar Sesión</a>
                     </li>
                 </ul>
             </nav>
