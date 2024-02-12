@@ -5,10 +5,10 @@
 <br/>
 <br/>
 <div class="card">
-    <div class="card-header">
+    <div class="card-header" style="background-color:bisque">
         Personal
     </div>
-    <div class="card-body">
+    <div class="card-body" style="background-color:azure">
         
         <div
             class="table-responsive-md">
@@ -16,13 +16,13 @@
                 class="table">
                 <thead>
                     <tr>
-                        <th scope="col"><u>Nombre</u></th>
-                        <th scope="col"><u>Apellido</u></th>
-                        <th scope="col"><u>Dni</u></th>
-                        <th scope="col"><u>Email</u></th>
-                        <th scope="col"><u>Telefono</u></th>
-                        <th scope="col"><u>Fecha/Nacimiento</u></th>
-                        <th scope="col"><u>Acciones</u></th>
+                        <th scope="col" style="background-color:azure"><u>Nombre</u></th>
+                        <th scope="col" style="background-color:azure"><u>Apellido</u></th>
+                        <th scope="col" style="background-color:azure"><u>Dni</u></th>
+                        <th scope="col" style="background-color:azure"><u>Email</u></th>
+                        <th scope="col" style="background-color:azure"><u>Telefono</u></th>
+                        <th scope="col" style="background-color:azure"><u>Fecha/Nacimiento</u></th>
+                        <th scope="col" style="background-color:azure"><u>Acciones</u></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,7 +44,7 @@
         <h4 class="card-title">Title</h4>
         <p class="card-text">Text</p>
     </div>
-    <div class="card-footer text-muted">
+    <div class="card-footer text-muted" style="background-color:bisque">
         Footer</div>
 </div>
 

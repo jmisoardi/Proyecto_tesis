@@ -1,4 +1,4 @@
-
+<!-- Dirección base del proyecto-->
 <?php 
     $url_base= "http://localhost/Proyecto_tesis/";
 
@@ -26,8 +26,8 @@
     </head>
 
     <body>
-        <header>
-            <!-- place navbar here -->
+        <header style="background-color:#63cdda;  text-align:center; font-family: Georgia, sans-serif;" >
+            <h1><u>Gestión de datos Personales</u></h1>
         </header>
         
             <!--Corresponde a la barra de navegación que incluye Sistema, Personal, Rol, Usuario, Cerrar Sesión-->
