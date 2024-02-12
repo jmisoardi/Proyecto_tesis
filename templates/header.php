@@ -27,14 +27,14 @@
 
     <body>
         <header style="background-color:#63cdda;  text-align:center; font-family: Georgia, sans-serif;" >
-            <h1><u>Gestión de datos Personales</u></h1>
+            <h1><u>Gestión de Datos</u></h1>
         </header>
         
             <!--Corresponde a la barra de navegación que incluye Sistema, Personal, Rol, Usuario, Cerrar Sesión-->
             <nav class="navbar navbar-expand navbar-light bg-light">
                 <ul class="nav navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#" aria-current="page">Sistema<span class="visually-hidden">(current)</span></a
+                        <a class="nav-link active" href="<?php echo $url_base;?>" aria-current="page">Sistema<span class="visually-hidden">(current)</span></a
                         >
                     </li>
                     <!--Ingresamos en "href php con la dirección base"-->
