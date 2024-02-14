@@ -53,31 +53,27 @@
             <select
                 class="form-select form-select-ms" name="idrol" id="idrol">
                 
-                <option selected>Selecciones un rol</option>
+                <option selected>Seleccione un rol</option>
                 <option value="">Docente</option>
                 <option value="">Alumno</option>
                 
             </select>
         </div>
-        
+
         <div class="mb-3">
             <label for="fechaingreso" class="form-label"><u>Fecha/Ingreso:</u></label>
             <input type="date" class="form-control" name="fechaingreso" id="fechaingreso" aria-describedby="helpId" placeholder="Ingrese Fecha"/>
             
         </div>
+    
         <!--Button bs5-button-default y bs5-button-a (sirve para direccionar) -->
-        <button type="submit" class="btn btn-success">Agregar</button>
-        
-        <a name="" id="" class="btn btn-primary" href="index.php" role="button" >Cancelar</a>
-        
-        
+    <button type="submit" class="btn btn-success">Agregar</button>
+    <a name="" id="" class="btn btn-primary" href="index.php" role="button" >Cancelar</a>
 
     </form>
- 
-
-    </div>
+    
     <div class="card-footer text-muted" style="background-color:bisque">Footer</div>
-</div>
+    
 
 
 

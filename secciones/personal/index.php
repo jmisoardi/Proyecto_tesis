@@ -12,18 +12,11 @@
 
 
 <div class="card">
-    <div class="card-header" style="background-color:bisque">
-        
-        <a
-            name=""
-            id=""
-            class="btn btn-primary"
-            href="crear.php"
-            role="button"
-            >Agregar Registro
-        </a>
-        
+    <!--Header y bottun primary-->
+    <div class="card-header" style="background-color:bisque">   
+        <a name="" id="" class="btn btn-primary" href="crear.php" role="button" >Agregar Registro</a>
     </div> 
+    
     <div class="card-body" style="background-color:azure">
         
         <div
