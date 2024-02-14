@@ -37,7 +37,7 @@
                         <th scope="col" style="background-color:azure"><u>Dni</u></th>
                         <th scope="col" style="background-color:azure"><u>Email</u></th>
                         <th scope="col" style="background-color:azure"><u>Teléfono</u></th>
-                        <th scope="col" style="background-color:azure"><u>Fecha/Nacimiento</u></th>
+                        <th scope="col" style="background-color:azure"><u>Fecha/Ingreso</u></th>
                         <th scope="col" style="background-color:azure"><u>Acciones</u></th>
                     </tr>
                 </thead>
@@ -48,7 +48,7 @@
                         <td>32578143</td>
                         <td>jmisoardi@hotmail.com</td>
                         <td>2954443014</td>
-                        <td>27/10/1986</td>
+                        <td>13/02/2024</td>
 <!--Etiqueta de botones Editar y Eliminar-->
                         <td><a name="" id="" class="btn btn-info" href="#" role="button">Editar</a> |
                             <a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a>
