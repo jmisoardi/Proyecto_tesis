@@ -8,8 +8,6 @@
 </style>
     <h1>Asignación de Roles</h1> 
 
-
-
 <div class="card">
     <div class="card-header" style="background-color:bisque" >Ingrese los datos para el registro</div>
     
@@ -17,7 +15,7 @@
         
         <form action="" method="post" enctype="multipart/form-data" style="background-color:azure">
             <div class="mb-3">
-                <label for="" class="form-label"><u>Nombre del Rol:</u></label>
+                <label for="nombredelrol" class="form-label"><u>Nombre del Rol:</u></label>
                 <input
                     type="text" class="form-control" name="nombredelrol" id="nombredelrol" aria-describedby="helpId" placeholder=""/>                    
             </div>
