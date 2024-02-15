@@ -11,7 +11,7 @@
 
 
 <div class="card">
-    <div class="card-header" style="background-color:bisque">Datos Personales</div>
+    <div class="card-header" style="background-color:bisque">Ingrese los datos para el registro</div>
     
     <div class="card-body">
 <!--Formulario para cargar los datos, con style de color-->   
@@ -65,16 +65,14 @@
             <input type="date" class="form-control" name="fechaingreso" id="fechaingreso" aria-describedby="helpId" placeholder="Ingrese Fecha"/>
             
         </div>
-    
+        
         <!--Button bs5-button-default y bs5-button-a (sirve para direccionar) -->
-    <button type="submit" class="btn btn-success">Agregar</button>
-    <a name="" id="" class="btn btn-primary" href="index.php" role="button" >Cancelar</a>
+        <button type="submit" class="btn btn-success">Agregar</button>
+        <a name="" id="" class="btn btn-primary" href="index.php" role="button" >Cancelar</a>
 
     </form>
     
-    <div class="card-footer text-muted" style="background-color:bisque">Footer</div>
+    <br>
+    <div class="card-footer text-muted" style="background-color:bisque"></div>
     
-
-
-
 <?php include("../../templates/footer.php");?>

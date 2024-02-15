@@ -12,7 +12,7 @@
 
 
 <div class="card">
-    <!--Header y bottun primary-->
+    <!--Header y button primary-->
     <div class="card-header" style="background-color:bisque">   
         <a name="" id="" class="btn btn-primary" href="crear.php" role="button" >Agregar Registro</a>
     </div> 
@@ -52,12 +52,8 @@
             </table>
         </div>
         
-
-        <h4 class="card-title">Title</h4>
-        <p class="card-text">Text</p>
     </div>
-    <div class="card-footer text-muted" style="background-color:bisque">
-        Footer</div>
+    <div class="card-footer text-muted" style="background-color:bisque"></div>
 </div>
 
 
