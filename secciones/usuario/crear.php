@@ -32,7 +32,6 @@
             </div>
             
 
-
             <button type="Submit" class="btn btn-success">Agregar</button>
             <a name="" id="" class="btn btn-primary" href="index.php" role="button">Cancelar</a >
         </form>
