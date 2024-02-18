@@ -1,3 +1,24 @@
+<?php 
+    include("../../bd.php");
+    
+    if ($_POST) {
+        print_r($_POST);
+        //Verificamos si existe una peticion $_POST, validamos si ese if isset sucedio, lo vamos igualar a ese valor, de lo contrario no sucedio
+        //Lo verificamos este valor $_POST["nombredelrol"] lo comparamos con la llave de pregunta (?) $_POST["nombredelrol"] si sucedio, por lo contrario va a quedar en blanco.
+        $nombredelrol=(isset($_POST["nombredelrol"])?$_POST["nombredelrol"]: "");
+        //Preparamos la insercción de los datos.
+        $sentencia = $conexion->prepare("INSERT INTO `tbl_rol`(id, nombredelrol) VALUES (null, :nombredelrol)");
+        
+        //Asignando los valores que vienen del método POST (Los que vienen del formulario)
+        $sentencia->bindParam(":nombredelrol",$nombredelrol);
+        $sentencia->execute();
+    }
+    
+     //$lista_tbl_rol = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+    //print_r("$lista_tbl_rol");
+
+?>
 <?php include("../../templates/header.php");?>
 <br>
 <br>
