@@ -1,7 +1,19 @@
 <?php 
-// Incluimos la base de datos
+// Incluimos la base de datos.
     include("../../bd.php");
-//Preparamos la sentencia de $conexion y ejecutamos, seguido creamos una lista_tbl_rol, que las dilas se devuelvan como un array asociativo.
+
+//Verificamos si se envío txtID.    
+    if (isset($_GET['txtID'])) {
+//Verificamos si está presente en la URL txtID, asignamos el valor en  $_GET['txtID'] de lo contrario no se asigna ningún valor con :"" .
+        $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
+//Preparamos la conexion de Borrado.
+        $sentencia = $conexion->prepare ( "DELETE FROM tbl_rol WHERE id=:id" );
+        $sentencia->bindParam( ":id" ,$txtID );
+        $sentencia->execute();
+        header("Location:index.php");
+    }
+
+//Preparamos la sentencia de $conexion y ejecutamos, seguido creamos una lista_tbl_rol, que las filas se devuelvan como un array asociativo.
     $sentencia = $conexion->prepare("SELECT * FROM `tbl_rol`");
     $sentencia->execute();
     $lista_tbl_rol = $sentencia->fetchAll(PDO::FETCH_ASSOC);
@@ -56,14 +68,14 @@
                             <?php foreach ($lista_tbl_rol as $registro) {?>     
                                 <tr class="">
                             <!--Utilizamos php echo $registro['id'] para mostrar el dato de la base de datos-->
-                                    <td scope="row"><?php echo $registro['id']?></td>
-                                    <td><?php echo $registro['nombredelrol']?></td>
+                                    <td scope="row"> <?php echo $registro['id']; ?></td>
+                                    <td> <?php echo $registro['nombredelrol'];   ?></td>
                                     
                                     <td>
-                                        <input name="btneditar" id="btneditar" class="btn btn-info" type="button" value="Editar"/> |
-                                        
-                                        <input name="btnborrar" id="btnborrar" class="btn btn-danger" type="button" value="Eliminar"/>
-                                        
+                                        <!--Utilizamos bs5-button-a seguido de la línea de código para editar el ID de la fila. -->
+                                        <a class="btn btn-info" href="editar.php?txtID=<?php echo $registro['id']; ?>" role="button" >Editar</a >
+                                        <!--Utilizamos bs5-button-a seguido de la línea de código para obtener el ID y que nos elimine la fila. -->
+                                        <a class="btn btn-danger" href="index.php?txtID=<?php echo $registro['id']; ?>" role="button" >Eliminar</a >
                                     </td>
                                     
                                 </tr>

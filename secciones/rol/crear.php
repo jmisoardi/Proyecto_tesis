@@ -9,9 +9,10 @@
         //Preparamos la insercción de los datos.
         $sentencia = $conexion->prepare("INSERT INTO `tbl_rol`(id, nombredelrol) VALUES (null, :nombredelrol)");
         
-        //Asignando los valores que vienen del método POST (Los que vienen del formulario)
+        //Asignando los valores que vienen del   POST (Los que vienen del formulario)
         $sentencia->bindParam(":nombredelrol",$nombredelrol);
         $sentencia->execute();
+        header("Location:index.php");
     }
     
      //$lista_tbl_rol = $sentencia->fetchAll(PDO::FETCH_ASSOC);
