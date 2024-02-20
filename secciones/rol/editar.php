@@ -22,7 +22,7 @@
             $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : "" ;
             $nombredelrol=(isset($_POST["nombredelrol"])) ? $_POST["nombredelrol"] : "";
             //Actualizamos los datos.
-            $sentencia = $conexion->prepare("UPDATE tbl_rol  SET  nombredelrol=:nombredelrol WHERE id=:id ");
+            $sentencia = $conexion->prepare (" UPDATE tbl_rol  SET  nombredelrol=:nombredelrol WHERE id=:id ");
             
             //Asignando los valores que vienen del   POST (Los que vienen del formulario)
             $sentencia->bindParam(":nombredelrol",$nombredelrol);
@@ -33,7 +33,6 @@
     
 ?>
 <?php include("../../templates/header.php");?>
-
 <br>
 <br>
 <style> 
@@ -52,6 +51,7 @@
             
             <div class="mb-3">
                 <label for="txtID" class="form-label">ID:</label>
+                <!--En este input se encuentra el readonly es que un atributo de lectura solamente, el usuario no puede modificar el valor-->
                 <input type="text" 
                     value= "<?php echo $txtID; ?>"
                     class="form-control" readonly name="txtID" id="txtID" aria-describedby="helpId" placeholder="ID" />    

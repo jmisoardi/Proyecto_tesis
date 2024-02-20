@@ -2,7 +2,7 @@
 // Incluimos la base de datos.
     include("../../bd.php");
 
-//Verificamos si se envío txtID.    
+//Verificamos si se envío txtID por el metodo GET (enviar).    
     if (isset($_GET['txtID'])) {
 //Verificamos si está presente en la URL txtID, asignamos el valor en  $_GET['txtID'] de lo contrario no se asigna ningún valor con :"" .
         $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
@@ -75,6 +75,7 @@
                                         <!--Utilizamos bs5-button-a seguido de la línea de código para editar el ID de la fila. -->
                                         <a class="btn btn-info" href="editar.php?txtID=<?php echo $registro['id']; ?>" role="button" >Editar</a >
                                         <!--Utilizamos bs5-button-a seguido de la línea de código para obtener el ID y que nos elimine la fila. -->
+                                        <!--El signo sirve para pasar parametros por URL.-->
                                         <a class="btn btn-danger" href="index.php?txtID=<?php echo $registro['id']; ?>" role="button" >Eliminar</a >
                                     </td>
                                     
