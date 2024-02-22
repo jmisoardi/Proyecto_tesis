@@ -6,15 +6,19 @@
         
         //Verificamos si existe una peticion $_POST, validamos si ese if isset sucedio, lo vamos igualar a ese valor, de lo contrario no sucedio
         //Lo verificamos este valor $_POST["nombredelrol"] lo comparamos con la llave de pregunta (?) $_POST["nombredelrol"] si sucedio, de lo contrario va a quedar vacío.
-        $nombredelrol=(isset($_POST["nombredelrol"])?$_POST["nombredelrol"]: "");
+        $nombredelrol = (isset($_POST["nombredelrol"])) ? $_POST["nombredelrol"]: "";
         
-        //Preparamos la insercción de los datos.
-        $sentencia = $conexion->prepare("INSERT INTO `tbl_rol`(id, nombredelrol) VALUES (null, :nombredelrol)");
-        
-        //Asignando los valores que vienen del  método POST (Los que vienen del formulario).
-        $sentencia->bindParam(":nombredelrol",$nombredelrol);
-        $sentencia->execute();
-        header("Location:index.php");
+        if(!empty($nombredelrol)){
+
+            
+            //Preparamos la insercción de los datos.
+            $sentencia = $conexion->prepare("INSERT INTO `tbl_rol`(id, nombredelrol) VALUES (null, :nombredelrol)");
+            
+            //Asignando los valores que vienen del  método POST (Los que vienen del formulario).
+            $sentencia->bindParam(":nombredelrol",$nombredelrol);
+            $sentencia->execute();
+            header("Location:index.php");
+        }
     }
     
      //$lista_tbl_rol = $sentencia->fetchAll(PDO::FETCH_ASSOC);
@@ -44,7 +48,7 @@
             </div>
             
             <button type="Submit" class="btn btn-success">Agregar</button>
-            <a name="" id="" class="btn btn-primary" href="index.php" role="button">Cancelar</a >
+            <a  class="btn btn-primary" href="index.php" role="button">Cancelar</a >
         </form>
     </div>
     

@@ -20,7 +20,7 @@
             //Verificamos si existe una peticion $_POST, validamos si ese if isset sucedio, lo vamos igualar a ese valor, de lo contrario no sucedio
             //Lo verificamos este valor $_POST["nombredelrol"] lo comparamos con la llave de pregunta (?) $_POST["nombredelrol"] si sucedio, por lo contrario va a quedar en blanco.
             $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : "" ;
-            $nombredelrol=(isset($_POST["nombredelrol"])) ? $_POST["nombredelrol"] : "";
+            $nombredelrol= (isset($_POST["nombredelrol"])) ? $_POST["nombredelrol"] : "";
             //Actualizamos los datos.
             $sentencia = $conexion->prepare (" UPDATE tbl_rol  SET  nombredelrol=:nombredelrol WHERE id=:id ");
             
@@ -28,6 +28,7 @@
             $sentencia->bindParam(":nombredelrol",$nombredelrol);
             $sentencia->bindParam(":id",$txtID);
             $sentencia->execute();
+            header("location:index.php");
             
         }
     
