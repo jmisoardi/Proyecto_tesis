@@ -1,4 +1,5 @@
 <?php 
+    
     include("../../bd.php");
     
     //Recepción del envío txtID.    
@@ -21,18 +22,22 @@
             //Lo verificamos este valor $_POST["nombredelrol"] lo comparamos con la llave de pregunta (?) $_POST["nombredelrol"] si sucedio, por lo contrario va a quedar en blanco.
             $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : "" ;
             $nombredelrol= (isset($_POST["nombredelrol"])) ? $_POST["nombredelrol"] : "";
-            //Actualizamos los datos.
-            $sentencia = $conexion->prepare (" UPDATE tbl_rol  SET  nombredelrol=:nombredelrol WHERE id=:id ");
             
-            //Asignando los valores que vienen del   POST (Los que vienen del formulario)
-            $sentencia->bindParam(":nombredelrol",$nombredelrol);
-            $sentencia->bindParam(":id",$txtID);
-            $sentencia->execute();
-            header("location:index.php");
-            
+            //Evitamos dejar espacios vacíos !empty.
+            if(!empty($nombredelrol)){    
+                //Actualizamos los datos.
+                $sentencia = $conexion->prepare (" UPDATE tbl_rol  SET  nombredelrol=:nombredelrol WHERE id=:id ");
+                
+                //Asignando los valores que vienen del POST (Los que vienen del formulario)
+                $sentencia->bindParam(":nombredelrol",$nombredelrol);
+                $sentencia->bindParam(":id",$txtID);
+                $sentencia->execute();
+                header("location:index.php");
+            }
         }
     
 ?>
+
 <?php include("../../templates/header.php");?>
 <br>
 <br>
@@ -42,7 +47,6 @@
     }
 </style>
     <h1>Asignación de Roles</h1> 
-
 
     <div class="card">
     <div class="card-header" style="background-color:bisque" >Ingrese los datos para el registro</div>

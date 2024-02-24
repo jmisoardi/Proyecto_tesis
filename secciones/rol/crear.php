@@ -8,8 +8,8 @@
         //Lo verificamos este valor $_POST["nombredelrol"] lo comparamos con la llave de pregunta (?) $_POST["nombredelrol"] si sucedio, de lo contrario va a quedar vacío.
         $nombredelrol = (isset($_POST["nombredelrol"])) ? $_POST["nombredelrol"]: "";
         
+        //Usamos este if para que no este vacio el campo, cuando tiene que introducir el "Nombre del Rol".
         if(!empty($nombredelrol)){
-
             
             //Preparamos la insercción de los datos.
             $sentencia = $conexion->prepare("INSERT INTO `tbl_rol`(id, nombredelrol) VALUES (null, :nombredelrol)");
