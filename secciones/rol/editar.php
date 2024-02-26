@@ -69,7 +69,7 @@
                     class="form-control" name="nombredelrol" id="nombredelrol" aria-describedby="helpId" placeholder=""/>                    
             </div>
                     
-            <button type="Submit" class="btn btn-success">Agregar</button>
+            <button type="Submit" class="btn btn-success">Actualizar</button>
             <a name="" id="" class="btn btn-primary" href="index.php" role="button">Cancelar</a >
 
         </div>
