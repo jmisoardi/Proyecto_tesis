@@ -1,3 +1,32 @@
+<?php 
+    include("../../bd.php");
+    if ($_POST){
+        print_r($_POST);
+        
+        //Verificamos si existe una peticion $_POST, validamos si ese if isset sucedio, lo vamos igualar a ese valor, de lo contrario no sucedio
+        //Lo verificamos este valor $_POST["usuario"] lo comparamos con la llave de pregunta (?) $_POST["usuario"] si sucedio, de lo contrario va a quedar vacío.
+        $usuario = (isset($_POST["usuario"])) ? $_POST["usuario"]: "";
+        $password = (isset($_POST["password"])) ? $_POST["password"]: "";
+        $email = (isset($_POST["email"])) ? $_POST["email"]: "";
+        
+        //Usamos este if para que no este vacio el campo, cuando tiene que introducir el "Nombre del Usuario","password" y "email".
+        if( !empty ($usuario) && !empty($password) && !empty ($email) ){
+            
+            //Preparamos la insercción de los datos.
+            $sentencia = $conexion->prepare("INSERT INTO `tbl_usuario`(id, usuario, password, email) VALUES (null, :usuario, :password, :email)");
+            
+            //Asignando los valores que vienen del  método POST (Los que vienen del formulario).
+            $sentencia->bindParam(":usuario",$usuario);
+            $sentencia->bindParam(":password",$password);
+            $sentencia->bindParam(":email",$email);
+            $sentencia->execute();
+            header("Location:index.php");
+        }
+    
+    }
+
+?>
+
 <?php include("../../templates/header.php");?>
 
 <br>

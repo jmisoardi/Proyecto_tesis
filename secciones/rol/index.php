@@ -18,7 +18,7 @@
     $sentencia->execute();
     $lista_tbl_rol = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 //Utilizamos el print_r para saber que estamos consultando los registros de la base de datos de la tabla de rol.
-    print_r($lista_tbl_rol);
+    //print_r($lista_tbl_rol);
 ?>
 
 
@@ -86,7 +86,6 @@
                 </table>
             </div>
         </div>
-    
     <div class="card-footer text-muted" style="background-color:bisque"></div>
 </div>
         

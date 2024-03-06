@@ -51,7 +51,6 @@
                 </tbody>
             </table>
         </div>
-        
     </div>
     <div class="card-footer text-muted" style="background-color:bisque"></div>
 </div>
