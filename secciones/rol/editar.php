@@ -8,13 +8,15 @@
                 $txtID = (isset($_GET['txtID'])) ? $_GET['txtID'] : "";
                 
                 //Preparamos la conexion de Editar.
-                $sentencia = $conexion->prepare ( "SELECT * FROM tbl_rol WHERE id=:id" );
+                $sentencia = $conexion->prepare ( "SELECT * FROM tbl_usuario WHERE id=:id" );
                 $sentencia->bindParam( ":id" ,$txtID );
                 $sentencia->execute();
                 
                 //Utilizamos el FETCH_LAZY para que cargue solo un registro.
                 $registro = $sentencia->fetch(PDO::FETCH_LAZY);
-                $nombredelrol = $registro["nombredelrol"];
+                $usuario = $registro["usuario"]; 
+                $usuario = $registro["usuario"]; 
+                $usuario = $registro["usuario"]; 
     }
         if ($_POST) {
             print_r($_POST);
@@ -32,7 +34,7 @@
                 $sentencia->bindParam(":nombredelrol",$nombredelrol);
                 $sentencia->bindParam(":id",$txtID);
                 $sentencia->execute();
-                header("location:index.php");
+               // header("location:index.php");
             }
         }
     
@@ -46,10 +48,10 @@
         text-align: center; font-family: Georgia, sans-serif;
     }
 </style>
-    <h1>Asignación de Roles</h1> 
+    <h1>Editar/Rol</h1> 
 
     <div class="card">
-    <div class="card-header" style="background-color:bisque" >Ingrese los datos para el registro</div>
+    <div class="card-header" style="background-color:bisque" >Actualizar datos del registro</div>
     
     <form action="" method="post" enctype="multipart/form-data" style="background-color:azure">
         <div class="card-body">
