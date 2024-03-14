@@ -13,10 +13,10 @@ if (isset($_GET['txtID'])) {
         }
 
 
-//Preparamos la sentencia de $conexion y ejecutamos, seguido creamos una lista_tbl_rol, que las filas se devuelvan como un array asociativo.
-$sentencia = $conexion->prepare("SELECT * FROM `tbl_usuario`");
-$sentencia->execute();
-$lista_tbl_usuario = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    //Preparamos la sentencia de $conexion y ejecutamos, seguido creamos una lista_tbl_rol, que las filas se devuelvan como un array asociativo.
+    $sentencia = $conexion->prepare("SELECT * FROM `tbl_usuario`");
+    $sentencia->execute();
+    $lista_tbl_usuario = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 

@@ -1,3 +1,16 @@
+<?php 
+    include("../../bd.php");
+
+
+
+    //Preparamos la sentencia de $conexion y ejecutamos, seguido creamos una lista_tbl_rol, que las filas se devuelvan como un array asociativo.
+    $sentencia = $conexion->prepare("SELECT * FROM `tbl_persona`");
+    $sentencia->execute();
+    $lista_tbl_persona = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
+
 <?php include("../../templates/header.php");?>
 
 <br/>
@@ -9,7 +22,6 @@
     }
 </style>
     <h1>Personal</h1> 
-
 
 <div class="card">
     <!--Header y button primary-->
@@ -35,19 +47,24 @@
                     </tr>
                 </thead>
                 <tbody>
+                
+                <?php foreach ($lista_tbl_persona as $registro) {?>     
                     <tr class="">
                         <td scope="row">Jair </td>
-                        <td>Isoardi</td>
-                        <td>32578143</td>
-                        <td>jmisoardi@hotmail.com</td>
-                        <td>2954443014</td>
-                        <td>13/02/2024</td>
-<!--Etiqueta de botones Editar y Eliminar-->
+                        <td><?php echo $registro['nombre']; ?></td> 
+                        <td><?php echo $registro['apellido']; ?> </td>
+                        <td><?php echo $registro['dni']; ?> </td>
+                        <td><?php echo $registro['fechanacimiento']; ?></td> 
+                        <td> <?php echo $registro['email']; ?></td>
+                        <td> <?php echo $registro['telefono']; ?></td>
+                        <td> <?php echo $registro['idrol']; ?></td>
+                        <td> <?php echo $registro['fechaingreso']; ?></td>
+                        <!--Etiqueta de botones Editar y Eliminar-->
                         <td><a name="" id="" class="btn btn-info" href="#" role="button">Editar</a> |
                             <a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a>
                         </td>
                     </tr>
-                
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
