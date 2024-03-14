@@ -18,6 +18,29 @@
         $password = $registro["password"];
         $email = $registro["email"];
     }
+    if ($_POST) {
+        print_r($_POST);
+        //Verificamos si existe una peticion $_POST, validamos si ese if isset sucedio, lo vamos igualar a ese valor, de lo contrario no sucedio
+        //Lo verificamos este valor $_POST["nombredelrol"] lo comparamos con la llave de pregunta (?) $_POST["nombredelrol"] si sucedio, por lo contrario va a quedar en blanco.
+        $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : "" ;
+        $usuario= (isset($_POST["usuario"])) ? $_POST["usuario"] : "";
+        $password= (isset($_POST["password"])) ? $_POST["password"] : "";
+        $email= (isset($_POST["email"])) ? $_POST["email"] : "";
+        
+        //Evitamos dejar espacios vacíos !empty.
+        if (!empty($usuario) && !empty($password) && !empty($email)){   
+            //Actualizamos los datos.
+            $sentencia = $conexion->prepare (" UPDATE tbl_usuario  SET  usuario=:usuario, password=:password, email=:email  WHERE id=:id ");
+            
+            //Asignando los valores que vienen del POST (Los que vienen del formulario)
+            $sentencia->bindParam(":usuario",$usuario);
+            $sentencia->bindParam(":password",$password);
+            $sentencia->bindParam(":email",$email);
+            $sentencia->bindParam(":id",$txtID);
+            $sentencia->execute();
+            header("location:index.php");
+        }
+    }
 ?>
 
 <?php include("../../templates/header.php");?>

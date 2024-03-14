@@ -8,15 +8,14 @@
                 $txtID = (isset($_GET['txtID'])) ? $_GET['txtID'] : "";
                 
                 //Preparamos la conexion de Editar.
-                $sentencia = $conexion->prepare ( "SELECT * FROM tbl_usuario WHERE id=:id" );
+                $sentencia = $conexion->prepare ( "SELECT * FROM tbl_rol WHERE id=:id" );
                 $sentencia->bindParam( ":id" ,$txtID );
                 $sentencia->execute();
                 
                 //Utilizamos el FETCH_LAZY para que cargue solo un registro.
                 $registro = $sentencia->fetch(PDO::FETCH_LAZY);
-                $usuario = $registro["usuario"]; 
-                $usuario = $registro["usuario"]; 
-                $usuario = $registro["usuario"]; 
+                $nombredelrol = $registro["nombredelrol"]; 
+               
     }
         if ($_POST) {
             print_r($_POST);
