@@ -1,3 +1,44 @@
+<?php 
+    include("../../bd.php");
+    
+    if ($_POST){
+        //print_r($_POST);
+        
+        //Verificamos si existe una peticion $_POST, validamos si ese if isset sucedio, lo vamos igualar a ese valor, de lo contrario no sucedio
+        //Lo verificamos este valor $_POST["usuario"] lo comparamos con la llave de pregunta (?) $_POST["usuario"] si sucedio, de lo contrario va a quedar vacío.
+        $nombre = (isset($_POST["nombre"])) ? $_POST["nombre"]: "";
+        $apellido = (isset($_POST["apellido"])) ? $_POST["apellido"]: "";
+        $dni = (isset($_POST["dni"])) ? $_POST["dni"]: "";
+        $fechanacimiento = (isset($_POST["fechanacimiento"])) ? $_POST["fechanacimiento"]: "";
+        $email = (isset($_POST["email"])) ? $_POST["email"]: "";        
+        $telefono = (isset($_POST["telefono"])) ? $_POST["telefono"]: "";
+        $idrol = (isset($_POST["idrol"])) ? $_POST["idrol"]: "";
+        $fechaingreso = (isset($_POST["fechaingreso"])) ? $_POST["fechaingreso"]: "";
+
+ 
+
+        //Usamos este if para que no este vacio el campo, cuando tiene que introducir el "Nombre del Usuario","password" y "email".
+        //if (!empty ($nombre) && !empty($apellido) && !empty($dni) && !empty($fechanacimiento) && !empty($email) && !empty($telefono) && !empty($idrol) && !empty($fechaingreso)){
+            
+            //Preparamos la insercción de los datos.
+            $sentencia = $conexion->prepare("INSERT INTO `tbl_persona`(id, nombre, apellido, dni, fechanacimiento, email, telefono, idrol, fechaingreso) VALUES (null, :nombre, :apellido, :dni, :fechanacimiento, :email, :telefono, :idrol, :fechaingreso)");
+            
+            //Asignando los valores que vienen del  método POST (Los que vienen del formulario).
+            $sentencia->bindParam(":nombre",$nombre);
+            $sentencia->bindParam(":apellido",$apellido);
+            $sentencia->bindParam(":dni",$dni);
+            $sentencia->bindParam(":fechanacimiento",$fechanacimiento);
+            $sentencia->bindParam(":email",$email);
+            $sentencia->bindParam(":telefono",$telefono);
+            $sentencia->bindParam(":idrol",$idrol);
+            $sentencia->bindParam(":fechaingreso",$fechaingreso);
+            $sentencia->execute();
+            header("Location:index.php");
+        //}
+    
+    }
+?>
+
 <?php include("../../templates/header.php");?>
 <br>
 <br>
@@ -15,7 +56,7 @@
     
     <div class="card-body">
 <!--Formulario para cargar los datos, con style de color-->   
-    <form  action="" method="post" enctype="" style="background-color:azure">
+    <form  action="" method="post" enctype="multipart/form-data" style="background-color:azure">
 
         <div class="mb-3">
             <label for="Nombre" class="form-label"><u>Nombre:</u></label>
@@ -69,7 +110,6 @@
         <!--Button bs5-button-default y bs5-button-a (sirve para direccionar) -->
         <button type="submit" class="btn btn-success">Agregar</button>
         <a name="" id="" class="btn btn-primary" href="index.php" role="button" >Cancelar</a>
-
     </form>
     
     <br>
