@@ -37,33 +37,46 @@
                 class="table">
                 <thead>
                     <tr>
+                        <style> 
+                            th {
+                                text-align: center; font-family: Georgia, sans-serif;
+                                }
+                        </style>
+                        <th scope="col" style="background-color:azure"><u>ID</u></th>
                         <th scope="col" style="background-color:azure"><u>Nombre</u></th>
                         <th scope="col" style="background-color:azure"><u>Apellido</u></th>
                         <th scope="col" style="background-color:azure"><u>Dni</u></th>
+                        <th scope="col" style="background-color:azure"><u>Fecha/Nacimiento</u></th>
                         <th scope="col" style="background-color:azure"><u>Email</u></th>
-                        <th scope="col" style="background-color:azure"><u>Teléfono</u></th>
+                        <th scope="col" style="background-color:azure"><u>telefono</u></th>
+                        <th scope="col" style="background-color:azure"><u>Id rol</u></th>
                         <th scope="col" style="background-color:azure"><u>Fecha/Ingreso</u></th>
                         <th scope="col" style="background-color:azure"><u>Acciones</u></th>
                     </tr>
                 </thead>
-                <tbody>
                 
-                <?php foreach ($lista_tbl_persona as $registro) {?>     
-                    <tr class="">
-                        <td scope="row">Jair </td>
-                        <td><?php echo $registro['nombre']; ?></td> 
-                        <td><?php echo $registro['apellido']; ?> </td>
-                        <td><?php echo $registro['dni']; ?> </td>
-                        <td><?php echo $registro['fechanacimiento']; ?></td> 
-                        <td> <?php echo $registro['email']; ?></td>
-                        <td> <?php echo $registro['telefono']; ?></td>
-                        <td> <?php echo $registro['idrol']; ?></td>
-                        <td> <?php echo $registro['fechaingreso']; ?></td>
-                        <!--Etiqueta de botones Editar y Eliminar-->
-                        <td><a name="" id="" class="btn btn-info" href="#" role="button">Editar</a> |
-                            <a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a>
-                        </td>
-                    </tr>
+                <tbody>
+                    <?php foreach ($lista_tbl_persona as $registro) {?>     
+                        <style>
+                                td  {
+                                    text-align: center; font-family: Georgia, sans-serif;
+                                    }   
+                        </style>
+                        <tr class="">
+                            <td scope="row"><?php echo $registro['id'];?></td>
+                            <td><?php echo $registro['nombre']; ?></td> 
+                            <td><?php echo $registro['apellido']; ?> </td>
+                            <td><?php echo $registro['dni']; ?> </td>
+                            <td><?php echo $registro['fechanacimiento']; ?></td> 
+                            <td> <?php echo $registro['email']; ?></td>
+                            <td> <?php echo $registro['telefono']; ?></td>
+                            <td> <?php echo $registro['idrol']; ?></td>
+                            <td> <?php echo $registro['fechaingreso']; ?></td>
+                            <!--Etiqueta de botones Editar y Eliminar-->
+                            <td><a name="" id="" class="btn btn-info" href="#" role="button">Editar</a> |
+                                <a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a>
+                            </td>
+                        </tr>
                     <?php } ?>
                 </tbody>
             </table>
