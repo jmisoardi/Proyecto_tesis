@@ -47,7 +47,7 @@
         text-align: center; font-family: Georgia, sans-serif;
     }
 </style>
-    <h1>Editar/Rol</h1> 
+    <h1>Rol/Editar</h1> 
 
     <div class="card">
     <div class="card-header" style="background-color:bisque" >Actualizar datos del registro</div>

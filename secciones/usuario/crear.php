@@ -1,7 +1,7 @@
 <?php 
     include("../../bd.php");
     if ($_POST){
-        print_r($_POST);
+        //print_r($_POST);
         
         //Verificamos si existe una peticion $_POST, validamos si ese if isset sucedio, lo vamos igualar a ese valor, de lo contrario no sucedio
         //Lo verificamos este valor $_POST["usuario"] lo comparamos con la llave de pregunta (?) $_POST["usuario"] si sucedio, de lo contrario va a quedar vacío.
@@ -10,7 +10,7 @@
         $email = (isset($_POST["email"])) ? $_POST["email"]: "";
         
         //Usamos este if para que no este vacio el campo, cuando tiene que introducir el "Nombre del Usuario","password" y "email".
-        if( !empty ($usuario) && !empty($password) && !empty ($email) ){
+        if (!empty ($usuario) && !empty($password) && !empty ($email) ){
             
             //Preparamos la insercción de los datos.
             $sentencia = $conexion->prepare("INSERT INTO `tbl_usuario`(id, usuario, password, email) VALUES (null, :usuario, :password, :email)");
