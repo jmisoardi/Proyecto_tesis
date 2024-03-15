@@ -2,7 +2,7 @@
     include("../../bd.php");
     
     if ($_POST){
-        //print_r($_POST);
+        print_r($_POST);
         
         //Verificamos si existe una peticion $_POST, validamos si ese if isset sucedio, lo vamos igualar a ese valor, de lo contrario no sucedio
         //Lo verificamos este valor $_POST["usuario"] lo comparamos con la llave de pregunta (?) $_POST["usuario"] si sucedio, de lo contrario va a quedar vacío.
@@ -12,7 +12,9 @@
         $fechanacimiento = (isset($_POST["fechanacimiento"])) ? $_POST["fechanacimiento"]: "";
         $email = (isset($_POST["email"])) ? $_POST["email"]: "";        
         $telefono = (isset($_POST["telefono"])) ? $_POST["telefono"]: "";
+        
         $idrol = (isset($_POST["idrol"])) ? $_POST["idrol"]: "";
+        
         $fechaingreso = (isset($_POST["fechaingreso"])) ? $_POST["fechaingreso"]: "";
 
  
@@ -21,7 +23,9 @@
         //if (!empty ($nombre) && !empty($apellido) && !empty($dni) && !empty($fechanacimiento) && !empty($email) && !empty($telefono) && !empty($idrol) && !empty($fechaingreso)){
             
             //Preparamos la insercción de los datos.
-            $sentencia = $conexion->prepare("INSERT INTO `tbl_persona`(id, nombre, apellido, dni, fechanacimiento, email, telefono, idrol, fechaingreso) VALUES (null, :nombre, :apellido, :dni, :fechanacimiento, :email, :telefono, :idrol, :fechaingreso)");
+            $sentencia = $conexion->prepare("INSERT INTO 
+            `tbl_persona` ('id', 'nombre', 'apellido', 'dni', 'fechanacimiento', 'email', 'telefono', 'idrol', 'fechaingreso') 
+            VALUES (null, :nombre, :apellido, :dni, :fechanacimiento, :email, :telefono, :idrol, :fechaingreso)");
             
             //Asignando los valores que vienen del  método POST (Los que vienen del formulario).
             $sentencia->bindParam(":nombre",$nombre);
@@ -37,6 +41,10 @@
         //}
     
     }
+    //Preparamos la sentencia de $conexion y ejecutamos, seguido creamos una lista_tbl_rol, que las filas se devuelvan como un array asociativo.
+    $sentencia = $conexion->prepare("SELECT * FROM `tbl_rol`");
+    $sentencia->execute();
+    $lista_tbl_rol = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <?php include("../../templates/header.php");?>
@@ -63,7 +71,7 @@
             <input type="text" class="form-control" name="Nombre" id="Nombre" aria-describedby="helpId" placeholder="Ingrese Nombre"/>
         </div>
         
-        <div class="mb-3">
+        <div class="mb-3"> 
             <label for="apellido" class="form-label"><u>Apellido:</u></label>
             <input type="text" class="form-control" name="apellido" id="apellido" aria-describedby="helpId" placeholder="Ingrese Apellido"/>
         </div>
@@ -93,11 +101,11 @@
             <label for="idrol" class="form-label"><u>Rol:</u></label>
             <select
                 class="form-select form-select-ms" name="idrol" id="idrol">
-                
-                <option selected>Seleccione un rol</option>
-                <option value="">Docente</option>
-                <option value="">Alumno</option>
-                
+                <?php foreach ($lista_tbl_rol as $registro) {?>      
+                    <option value ="<?php echo $registro['id']?>">
+                                    <?php echo $registro['nombredelrol']?>
+                    </option>
+                <?php }?>
             </select>
         </div>
 
