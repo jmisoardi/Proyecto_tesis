@@ -49,7 +49,7 @@
                                 }
                         </style>
                         <th scope="col" style="background-color:azure"><u>ID</u></th>
-                        <th scope="col" style="background-color:azure"><u>Nombre</u></th>
+                        <th scope="col" style="background-color:azure"><u>Nombre/aPE</u></th>
                         <th scope="col" style="background-color:azure"><u>Dni</u></th>
                         <th scope="col" style="background-color:azure"><u>Fecha/Nacimiento</u></th>
                         <th scope="col" style="background-color:azure"><u>Email</u></th>
@@ -71,12 +71,11 @@
                             <td scope="row"><?php echo $registro['id'];?></td>
                             <!--La etiqueta <td> podemos agrupar datos en una sola casilla-->
                                         <td>
-                                            <?php echo $registro['apellido']; ?> 
+                                            <?php echo $registro['nombre'] . ' ' . $registro['apellido']; ; ?> 
                                         </td>
-                                        <td><?php echo $registro['nombre']; ?></td>
-                            
-                                        <td><?php echo $registro['dni']; ?> </td>
-                                        <td><?php echo $registro['fechanacimiento']; ?></td> 
+                                        <!--<td><?php echo $registro['apellido'];?></td>-->
+                                        <td> <?php echo $registro['dni']; ?> </td>
+                                        <td> <?php echo $registro['fechanacimiento']; ?></td> 
                                         <td> <?php echo $registro['email']; ?></td>
                                         <td> <?php echo $registro['telefono']; ?></td>
                                         <td> <?php echo $registro['idrol']; ?></td>

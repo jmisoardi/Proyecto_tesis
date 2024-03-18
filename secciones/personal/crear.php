@@ -24,7 +24,7 @@
             
             //Preparamos la insercción de los datos.
             $sentencia = $conexion->prepare("INSERT INTO 
-            `tbl_persona` ('id', 'nombre', 'apellido', 'dni', 'fechanacimiento', 'email', 'telefono', 'idrol', 'fechaingreso') 
+            `tbl_persona`(`id`, `nombre`, `apellido`, `dni`, `fechanacimiento`, `email`, `telefono`, `idrol`, `fechaingreso`) 
             VALUES (null, :nombre, :apellido, :dni, :fechanacimiento, :email, :telefono, :idrol, :fechaingreso)");
             
             //Asignando los valores que vienen del  método POST (Los que vienen del formulario).
@@ -67,8 +67,8 @@
     <form  action="" method="post" enctype="multipart/form-data" style="background-color:azure">
 
         <div class="mb-3">
-            <label for="Nombre" class="form-label"><u>Nombre:</u></label>
-            <input type="text" class="form-control" name="Nombre" id="Nombre" aria-describedby="helpId" placeholder="Ingrese Nombre"/>
+            <label for="nombre" class="form-label"><u>Nombre:</u></label>
+            <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Ingrese Nombre"/>
         </div>
         
         <div class="mb-3"> 
