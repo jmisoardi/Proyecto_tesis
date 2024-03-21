@@ -5,7 +5,7 @@
         print_r($_POST);
         
         //Verificamos si existe una peticion $_POST, validamos si ese if isset sucedio, lo vamos igualar a ese valor, de lo contrario no sucedio
-        //Lo verificamos este valor $_POST["usuario"] lo comparamos con la llave de pregunta (?) $_POST["usuario"] si sucedio, de lo contrario va a quedar vacío.
+        //Lo verificamos a este valor $_POST["usuario"] lo comparamos con la llave de pregunta (?) $_POST["usuario"] si sucedio, de lo contrario va a quedar vacío.
         $nombre = (isset($_POST["nombre"])) ? $_POST["nombre"]: "";
         $apellido = (isset($_POST["apellido"])) ? $_POST["apellido"]: "";
         $dni = (isset($_POST["dni"])) ? $_POST["dni"]: "";
