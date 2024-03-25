@@ -5,7 +5,7 @@
 
     //Preparamos la sentencia de $conexion y ejecutamos, seguido creamos una consulta seguido de una subconsulta para obtener tbl_rol.id =tbl_persona.idrol. Nombre del Rol, con obtención de un dato (as idrol) acto seguido las filas devuelvan un array asociativo.
     $sentencia = $conexion->prepare("SELECT * ,
-     (SELECT nombredelrol 
+    (SELECT nombredelrol 
     FROM tbl_rol 
     WHERE tbl_rol.id =tbl_persona.idrol limit 1) as idrol 
     FROM `tbl_persona`");
@@ -71,7 +71,7 @@
                                         <td>
                                             <?php echo $registro['nombre'] . ' ' . $registro['apellido']; ; ?> 
                                         </td>
-                                        <!--<td><?php echo $registro['apellido'];?></td>-->
+                                        <!--<td></td>-->
                                         <td> <?php echo $registro['dni']; ?> </td>
                                         <td> <?php echo $registro['fechanacimiento']; ?></td> 
                                         <td> <?php echo $registro['email']; ?></td>
