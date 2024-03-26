@@ -71,7 +71,6 @@
                                         <td>
                                             <?php echo $registro['nombre'] . ' ' . $registro['apellido']; ; ?> 
                                         </td>
-                                        <!--<td></td>-->
                                         <td> <?php echo $registro['dni']; ?> </td>
                                         <td> <?php echo $registro['fechanacimiento']; ?></td> 
                                         <td> <?php echo $registro['email']; ?></td>
