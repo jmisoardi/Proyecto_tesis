@@ -31,32 +31,33 @@ if (isset($_GET['txtID'])) {
 </style>
     <h1>Usuarios</h1> 
 <div class="card">
-    
     <!--Header y button primary-->
         <div class="card-header" style="background-color:bisque">   
             <a name="" id="" class="btn btn-primary" href="crear.php" role="button" >Agregar Usuarios</a>
         </div> 
     
         <div class="card-body" style="background-color:azure">
-    
+            
+                    
             <div class="table-responsive-sm">
                 <table
                     class="table">
                     <thead>
                         <tr>
-                        <!--Alineación central del ID, Nombre/Rol, Acciones-->
-                        <style> 
-                            th {
-                                text-align: center; font-family: Georgia, sans-serif;
-                                }
-                        </style>
-                            <th scope="col" style="background-color:azure"><u>ID</u></th>
-                            <th scope="col" style="background-color:azure"><u>Nombre/Usuario</u></th>
-                            <th scope="col" style="background-color:azure"><u>Password</u></th>
-                            <th scope="col" style="background-color:azure"><u>Email</u></th>
-                            <th scope="col" style="background-color:azure"><u>Acciones</u></th>
+                            <!--Alineación central del ID, Nombre/Rol, Acciones-->
+                            <style> 
+                                th {
+                                    text-align: center; font-family: Georgia, sans-serif;
+                                    }
+                            </style>
+                                <th scope="col" style="background-color:azure"><u>ID</u></th>
+                                <th scope="col" style="background-color:azure"><u>Nombre/Usuario</u></th>
+                                <th scope="col" style="background-color:azure"><u>Password</u></th>
+                                <th scope="col" style="background-color:azure"><u>Email</u></th>
+                                <th scope="col" style="background-color:azure"><u>Acciones</u></th>
                         </tr>
                     </thead>
+                    
                     <tbody>
                     <!--Usamos el foreach para recorrer el arreglo de la lista de rol y asignarlo a la variable $registro-->  
                         <?php foreach ($lista_tbl_usuario as $registro) {?>     
@@ -66,21 +67,21 @@ if (isset($_GET['txtID'])) {
                                 td  {
                                     text-align: center; font-family: Georgia, sans-serif;
                                     }   
-                                    </style>
-                                    <tr class="">
-                                        <td scope="row"><?php echo $registro['id'];?></td>
-                                        <td><?php echo $registro['usuario'];?></td>
-                                        <td><?php echo $registro['password'];?></td>
-                                        <td><?php echo $registro['email'];?></td>
-                                    
-                                        <td>
-                                            <!--Utilizamos bs5-button-a seguido de la línea de código para editar el ID de la fila. -->
-                                            <a class="btn btn-info" href="editar.php?txtID=<?php echo $registro['id']; ?>" role="button" >Editar</a >
-                                            <!--Utilizamos bs5-button-a seguido de la línea de código para obtener el ID y que nos elimine la fila. -->
-                                            <!--El signo sirve para pasar parametros por URL.-->
-                                            <a class="btn btn-danger" href="index.php?txtID=<?php echo $registro['id']; ?>" role="button" >Eliminar</a >   
-                                        </td>
-                                    </tr>
+                            </style>
+                                <tr class="">
+                                    <td scope="row"><?php echo $registro['id'];?></td>
+                                    <td><?php echo $registro['usuario'];?></td>
+                                    <td><?php echo $registro['password'];?></td>
+                                    <td><?php echo $registro['email'];?></td>
+                                
+                                    <td>
+                                        <!--Utilizamos bs5-button-a seguido de la línea de código para editar el ID de la fila. -->
+                                        <a class="btn btn-info" href="editar.php?txtID=<?php echo $registro['id']; ?>" role="button" >Editar</a >
+                                        <!--Utilizamos bs5-button-a seguido de la línea de código para obtener el ID y que nos elimine la fila. -->
+                                        <!--El signo sirve para pasar parametros por URL.-->
+                                        <a class="btn btn-danger" href="index.php?txtID=<?php echo $registro['id']; ?>" role="button" >Eliminar</a >   
+                                    </td>
+                                </tr>
                         <?php } ?>    
                     </tbody>
                 </table>
