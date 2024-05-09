@@ -1,8 +1,6 @@
 <?php 
     include("../../bd.php");
 
-
-
     //Preparamos la sentencia de $conexion y ejecutamos, seguido creamos una consulta seguido de una subconsulta para obtener tbl_rol.id =tbl_persona.idrol. Nombre del Rol, con obtención de un dato (as idrol) acto seguido las filas devuelvan un array asociativo.
     $sentencia = $conexion->prepare("SELECT * ,
     (SELECT nombredelrol 
@@ -13,7 +11,6 @@
     $lista_tbl_persona = $sentencia->fetchAll(PDO::FETCH_ASSOC); 
 
 ?>
-
 
 <?php include("../../templates/header.php");?>
 
