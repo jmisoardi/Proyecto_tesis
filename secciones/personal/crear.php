@@ -17,7 +17,7 @@
         
         $fechaingreso = (isset($_POST["fechaingreso"])) ? $_POST["fechaingreso"]: "";
 
- 
+
 
         //Usamos este if para que no este vacio el campo, cuando tiene que introducir el "Nombre del Usuario","password" y "email".
         //if (!empty ($nombre) && !empty($apellido) && !empty($dni) && !empty($fechanacimiento) && !empty($email) && !empty($telefono) && !empty($idrol) && !empty($fechaingreso)){

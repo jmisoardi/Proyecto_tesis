@@ -1,6 +1,17 @@
 <?php 
     include("../../bd.php");
 
+    //Verificamos si se envío txtID por el metodo GET (enviar).    
+    if (isset($_GET['txtID'])) {
+        //Verificamos si está presente en la URL txtID, asignamos el valor en  $_GET['txtID'] de lo contrario no se asigna ningún valor con :"" .
+        $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
+        //Preparamos la conexion de Borrado.
+        $sentencia = $conexion->prepare ( "DELETE FROM tbl_persona WHERE id=:id" );
+        $sentencia->bindParam( ":id" ,$txtID );
+        $sentencia->execute();
+        header("Location:index.php");
+    }
+
     //Preparamos la sentencia de $conexion y ejecutamos, seguido creamos una consulta seguido de una subconsulta para obtener tbl_rol.id =tbl_persona.idrol. Nombre del Rol, con obtención de un dato (as idrol) acto seguido las filas devuelvan un array asociativo.
     $sentencia = $conexion->prepare("SELECT * ,
     (SELECT nombredelrol 
