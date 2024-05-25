@@ -12,33 +12,25 @@
         $fechanacimiento = (isset($_POST["fechanacimiento"])) ? $_POST["fechanacimiento"]: "";
         $email = (isset($_POST["email"])) ? $_POST["email"]: "";        
         $telefono = (isset($_POST["telefono"])) ? $_POST["telefono"]: "";
-        
         $idrol = (isset($_POST["idrol"])) ? $_POST["idrol"]: "";
-        
         $fechaingreso = (isset($_POST["fechaingreso"])) ? $_POST["fechaingreso"]: "";
 
-
-
-        //Usamos este if para que no este vacio el campo, cuando tiene que introducir el "Nombre del Usuario","password" y "email".
-        //if (!empty ($nombre) && !empty($apellido) && !empty($dni) && !empty($fechanacimiento) && !empty($email) && !empty($telefono) && !empty($idrol) && !empty($fechaingreso)){
-            
-            //Preparamos la insercción de los datos.
-            $sentencia = $conexion->prepare("INSERT INTO 
-            `tbl_persona`(`id`, `nombre`, `apellido`, `dni`, `fechanacimiento`, `email`, `telefono`, `idrol`, `fechaingreso`) 
-            VALUES (null, :nombre, :apellido, :dni, :fechanacimiento, :email, :telefono, :idrol, :fechaingreso)");
-            
-            //Asignando los valores que vienen del  método POST (Los que vienen del formulario).
-            $sentencia->bindParam(":nombre",$nombre);
-            $sentencia->bindParam(":apellido",$apellido);
-            $sentencia->bindParam(":dni",$dni);
-            $sentencia->bindParam(":fechanacimiento",$fechanacimiento);
-            $sentencia->bindParam(":email",$email);
-            $sentencia->bindParam(":telefono",$telefono);
-            $sentencia->bindParam(":idrol",$idrol);
-            $sentencia->bindParam(":fechaingreso",$fechaingreso);
-            $sentencia->execute();
-            header("Location:index.php");
-        //}
+        //Preparamos la insercción de los datos.
+        $sentencia = $conexion->prepare("INSERT INTO 
+        `tbl_persona`(`id`, `nombre`, `apellido`, `dni`, `fechanacimiento`, `email`, `telefono`, `idrol`, `fechaingreso`) 
+        VALUES (null, :nombre, :apellido, :dni, :fechanacimiento, :email, :telefono, :idrol, :fechaingreso)");
+        
+        //Asignando los valores que vienen del  método POST (Los que vienen del formulario).
+        $sentencia->bindParam(":nombre",$nombre);
+        $sentencia->bindParam(":apellido",$apellido);
+        $sentencia->bindParam(":dni",$dni);
+        $sentencia->bindParam(":fechanacimiento",$fechanacimiento);
+        $sentencia->bindParam(":email",$email);
+        $sentencia->bindParam(":telefono",$telefono);
+        $sentencia->bindParam(":idrol",$idrol);
+        $sentencia->bindParam(":fechaingreso",$fechaingreso);
+        $sentencia->execute();
+        header("Location:index.php");        
     
     }
     //Preparamos la sentencia de $conexion y ejecutamos, seguido creamos una lista_tbl_rol, que las filas se devuelvan como un array asociativo.

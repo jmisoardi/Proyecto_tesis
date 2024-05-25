@@ -93,15 +93,13 @@
             </div>
             
 
-            <button type="Submit" class="btn btn-success">Agregar</button>
+            <button type="Submit" class="btn btn-success">Actualizar</button>
             <a name="" id="" class="btn btn-primary" href="index.php" role="button">Cancelar</a >
         </form>
     </div>
     
     <div class="card-footer text-muted" style="background-color:bisque"></div>
 </div>
-
-
 
 
 <?php include("../../templates/footer.php");?>
