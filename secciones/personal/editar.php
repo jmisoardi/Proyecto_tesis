@@ -148,7 +148,7 @@
                     class="form-select form-select-ms" name="idrol" id="idrol">
                     <?php foreach ($lista_tbl_rol as $registro) {?>      
                         
-                        <option <?php echo ($idrol== $registro['id'])?"selected":"";?> value ="<?php echo $registro['id']?>">
+                        <option <?php echo ($idrol== $registro['id'])? "selected" : ""; ?> value ="<?php echo $registro['id']?>">
                                         <?php echo $registro['nombredelrol']?>
                         </option>
                     <?php }?>
