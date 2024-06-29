@@ -17,13 +17,14 @@
             crossorigin="anonymous"
         ></script>
         
+        <!--Script para data table (diseño)-->
         <script>
             $(document).ready( function(){
                 $("#tabla_id").DataTable ({
-                    "pagelLength":3,
+                    "pagelLength":5,
                     lengthMenu:[
-                        [3,10,25,50],
-                        [3,10,25,50]
+                        [5,10,25,50],
+                        [5,10,25,50]
                     ],
                     "language":{
                         "url":"https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"

@@ -40,8 +40,8 @@ if (isset($_GET['txtID'])) {
             
                     
             <div class="table-responsive-sm">
-                <table
-                    class="table">
+                <!--Usamos el id "tabla_id" para que tenga los estilos de busquedas, el script se encuentra en el footer-->
+                <table class="table" id="tabla_id">
                     <thead>
                         <tr>
                             <!--Alineación central del ID, Nombre/Rol, Acciones-->
