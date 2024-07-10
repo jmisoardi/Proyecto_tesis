@@ -44,7 +44,7 @@
     <div class="card-body" style="background-color:azure">
         
         <div class="table-responsive-sm">
-        <!--Usamos el id "tabla_id" para que tenga los estilos de busquedas, el script se encuentra en el footer-->
+        <!--Usamos el id "tabla_id" para que tengan los estilos de busquedas, el script se encuentra en el footer-->
             <table class="table" id="tabla_id">
                 <thead>
                     <tr>
@@ -55,13 +55,13 @@
                             }
                         </style>
                             <th scope="col" style="background-color:azure"><u>ID</u></th>
-                            <th scope="col" style="background-color:azure"><u>Nombre/Apellido</u></th>
+                            <th scope="col" style="background-color:azure"><u>N/Apellido</u></th>
                             <th scope="col" style="background-color:azure"><u>Dni</u></th>
-                            <th scope="col" style="background-color:azure"><u>Fecha/Nacimiento</u></th>
+                            <th scope="col" style="background-color:azure"><u>F/Nacimiento</u></th>
                             <th scope="col" style="background-color:azure"><u>Email</u></th>
                             <th scope="col" style="background-color:azure"><u>Telefono</u></th>
                             <th scope="col" style="background-color:azure"><u>Rol</u></th>
-                            <th scope="col" style="background-color:azure"><u>Fecha/Ingreso</u></th>
+                            <th scope="col" style="background-color:azure"><u>F/Ingreso</u></th>
                             <th scope="col" style="background-color:azure"><u>Acciones</u></th>
                     </tr>
                 </thead>
