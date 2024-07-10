@@ -32,10 +32,15 @@
 
         <!--Data table installation, brinda estilo y funciones para el data table-->
         <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
-
         <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
-    </head>
+        
+        <!--Script para sweet alert -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+
+
+        
+    </head>
     <body>
         <header style="background-color:#63cdda;  text-align:center; font-family: Georgia, sans-serif;" >
             <h1><u>Gestión de Datos</u></h1>

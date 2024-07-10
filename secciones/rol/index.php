@@ -32,7 +32,8 @@
     }
 </style>
     <h1>Rol</h1> 
-<div class="card">
+    
+    <div class="card">
     
     <!--Header y button primary-->
         <div class="card-header" style="background-color:bisque">   
@@ -67,7 +68,7 @@
                             <!--Usamos el foreach para recorrer el arreglo de la lista de rol y asignarlo a la variable $registro-->  
                             <?php foreach ($lista_tbl_rol as $registro) {?>     
                                 <tr class="">
-                            <!--Utilizamos php echo $registro['id'] para mostrar el dato de la base de datos-->
+                                    <!--Utilizamos php echo $registro['id'] para mostrar el dato de la base de datos-->
                                     <td scope="row"> <?php echo $registro['id']; ?></td>
                                     <td> <?php echo $registro['nombredelrol'];   ?></td>
                                     
@@ -76,7 +77,7 @@
                                         <a class="btn btn-info" href="editar.php?txtID=<?php echo $registro['id']; ?>" role="button" >Editar</a >
                                         <!--Utilizamos bs5-button-a seguido de la línea de código para obtener el ID y que nos elimine la fila. -->
                                         <!--El signo sirve para pasar parametros por URL.-->
-                                        <a class="btn btn-danger" href="index.php?txtID=<?php echo $registro['id']; ?>" role="button" >Eliminar</a >
+                                        <a class="btn btn-danger" href="javascript:borrar(<?php echo $registro['id']; ?>);" role="button" >Eliminar</a >
                                     </td>
                                     
                                 </tr>
@@ -87,7 +88,29 @@
             </div>
         </div>
     <div class="card-footer text-muted" style="background-color:bisque"></div>
-</div>
+    
+    <script>
+        function borrar(id){
+            alert(id);
+            Swal.fire({
+            title: "Desea borrar el registro?",
+            
+            showCancelButton: true,
+            confirmButtonText: "Si",
+            }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                Swal.fire("Saved!", "", "success");
+            } else if (result.isDenied) {
+                Swal.fire("Changes are not saved", "", "info");
+            }
+            });
+
+
+            //index.php?txtID=
+        }
+
+    </script>
         
 
 
