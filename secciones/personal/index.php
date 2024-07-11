@@ -9,8 +9,9 @@
         $sentencia = $conexion->prepare ( "DELETE FROM tbl_persona WHERE id=:id" );
         $sentencia->bindParam( ":id" ,$txtID );
         $sentencia->execute();
-        
-        header("Location:index.php");
+        //Mensaje de Registro Eliminado (Sweet alert).
+        $mensaje="Registro Eliminado";
+        header("Location:index.php?mensaje=".$mensaje);
     }
 
     //Preparamos la sentencia de $conexion y ejecutamos, seguido creamos una consulta seguido de una subconsulta para obtener tbl_rol.id =tbl_persona.idrol. Nombre del Rol, con obtención de un dato (as idrol) acto seguido las filas devuelvan un array asociativo.
