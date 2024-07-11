@@ -20,7 +20,9 @@
             $sentencia->bindParam(":password",$password);
             $sentencia->bindParam(":email",$email);
             $sentencia->execute();
-            header("Location:index.php");
+            //Mensaje de Registro Agregado (Sweet alert).
+            $mensaje="Registro Agregado";
+            header("Location:index.php?mensaje=".$mensaje);
         }
     
     }

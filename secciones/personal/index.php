@@ -9,6 +9,7 @@
         $sentencia = $conexion->prepare ( "DELETE FROM tbl_persona WHERE id=:id" );
         $sentencia->bindParam( ":id" ,$txtID );
         $sentencia->execute();
+        
         header("Location:index.php");
     }
 
@@ -94,7 +95,7 @@
                                             <a class="btn btn-info" href="editar.php?txtID=<?php echo $registro['id']; ?>" role="button" >Editar</a >
                                             <!--Utilizamos bs5-button-a seguido de la línea de código para obtener el ID y que nos elimine la fila. -->
                                             <!--El signo sirve para pasar parametros por URL.-->
-                                            <a class="btn btn-danger" href="index.php?txtID=<?php echo $registro['id']; ?>" role="button" >Eliminar</a >   
+                                            <a class="btn btn-danger" href="javascript:borrar(<?php echo $registro['id']; ?>);" role="button" >Eliminar</a >   
                                         </td>
                         </tr>
                     <?php } ?>

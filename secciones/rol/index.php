@@ -1,25 +1,25 @@
 <?php 
-// Incluimos la base de datos.
+    // Incluimos la base de datos.
     include("../../bd.php");
 
-//Verificamos si se envío txtID por el metodo GET (enviar).    
+    //Verificamos si se envío txtID por el metodo GET (enviar).    
     if (isset($_GET['txtID'])) {
-//Verificamos si está presente en la URL txtID, asignamos el valor en  $_GET['txtID'] de lo contrario no se asigna ningún valor con :"" .
+        //Verificamos si está presente en la URL txtID, asignamos el valor en  $_GET['txtID'] de lo contrario no se asigna ningún valor con :"" .
         $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
-//Preparamos la conexion de Borrado.
+        //Preparamos la conexion de Borrado.
         $sentencia = $conexion->prepare ( "DELETE FROM tbl_rol WHERE id=:id" );
         $sentencia->bindParam( ":id" ,$txtID );
         $sentencia->execute();
-        //Mensaje de Registro eliminado
+        //Mensaje de Registro Eliminado (Sweet alert).
         $mensaje="Registro Eliminado";
         header("Location:index.php?mensaje=".$mensaje);
     }
 
-//Preparamos la sentencia de $conexion y ejecutamos, seguido creamos una lista_tbl_rol, que las filas se devuelvan como un array asociativo.
+    //Preparamos la sentencia de $conexion y ejecutamos, seguido creamos una lista_tbl_rol, que las filas se devuelvan como un array asociativo.
     $sentencia = $conexion->prepare("SELECT * FROM `tbl_rol`");
     $sentencia->execute();
     $lista_tbl_rol = $sentencia->fetchAll(PDO::FETCH_ASSOC);
-//Utilizamos el print_r para saber que estamos consultando los registros de la base de datos de la tabla de rol.
+    //Utilizamos el print_r para saber que estamos consultando los registros de la base de datos de la tabla de rol.
     //print_r($lista_tbl_rol);
 ?>
 

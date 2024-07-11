@@ -66,8 +66,9 @@
         $sentencia->bindParam(":fechaingreso",$fechaingreso);
         $sentencia->bindParam(":id",$txtID);
         $sentencia->execute();
-
-        header("Location:index.php");
+        //Mensaje de Registro Actualizado (Sweet alert).
+        $mensaje="Registro Actualizado";
+        header("Location:index.php?mensaje=".$mensaje);
     }
 ?>
 

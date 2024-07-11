@@ -17,11 +17,9 @@
             //Asignando los valores que vienen del  método POST (Los que vienen del formulario).
             $sentencia->bindParam(":nombredelrol",$nombredelrol);
             $sentencia->execute();
-            
-            //Mensaje de registro agregado
+            //Mensaje de Registro Agregado (Sweet alert).
             $mensaje="Registro Agregado";
-            header("Location:index.php?mensaje=".$mensaje);
-            
+            header("Location:index.php?mensaje=".$mensaje);    
         }
     }
 ?>

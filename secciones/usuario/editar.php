@@ -38,7 +38,9 @@
             $sentencia->bindParam(":email",$email);
             $sentencia->bindParam(":id",$txtID);
             $sentencia->execute();
-            header("location:index.php");
+            //Mensaje de Registro Actualizado (Sweet alert).
+            $mensaje="Registro Actualizado";
+            header("Location:index.php?mensaje=".$mensaje);
         }
     }
 ?>

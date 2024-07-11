@@ -30,7 +30,10 @@
         $sentencia->bindParam(":idrol",$idrol);
         $sentencia->bindParam(":fechaingreso",$fechaingreso);
         $sentencia->execute();
-        header("Location:index.php");        
+        //Mensaje de Registro Agregado (Sweet alert).
+        $mensaje="Registro Agregado";
+        header("Location:index.php?mensaje=".$mensaje);
+        //header("Location:index.php");        
     
     }
     //Preparamos la sentencia de $conexion y ejecutamos, seguido creamos una lista_tbl_rol, que las filas se devuelvan como un array asociativo.

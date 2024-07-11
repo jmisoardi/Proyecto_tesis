@@ -33,10 +33,9 @@
                 $sentencia->bindParam(":nombredelrol",$nombredelrol);
                 $sentencia->bindParam(":id",$txtID);
                 $sentencia->execute();
-                //Mensaje de registro actualizado
+                //Mensaje de Registro Actualizado (Sweet alert).
                 $mensaje="Registro Actualizado";
-                header("Location:index.php?mensaje=".$mensaje);
-                
+                header("Location:index.php?mensaje=".$mensaje);    
             }
         }
 ?>
