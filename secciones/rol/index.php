@@ -10,7 +10,9 @@
         $sentencia = $conexion->prepare ( "DELETE FROM tbl_rol WHERE id=:id" );
         $sentencia->bindParam( ":id" ,$txtID );
         $sentencia->execute();
-        header("Location:index.php");
+        //Mensaje de Registro eliminado
+        $mensaje="Registro Eliminado";
+        header("Location:index.php?mensaje=".$mensaje);
     }
 
 //Preparamos la sentencia de $conexion y ejecutamos, seguido creamos una lista_tbl_rol, que las filas se devuelvan como un array asociativo.
@@ -21,11 +23,9 @@
     //print_r($lista_tbl_rol);
 ?>
 
-
 <?php include("../../templates/header.php");?>
 <br>
 <br>
-
 <style> 
     h1 { 
         text-align: center; font-family: Georgia, sans-serif;
@@ -89,29 +89,4 @@
         </div>
     <div class="card-footer text-muted" style="background-color:bisque"></div>
     
-    <script>
-        function borrar(id){
-            alert(id);
-            Swal.fire({
-            title: "Desea borrar el registro?",
-            
-            showCancelButton: true,
-            confirmButtonText: "Si",
-            }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
-            if (result.isConfirmed) {
-                Swal.fire("Saved!", "", "success");
-            } else if (result.isDenied) {
-                Swal.fire("Changes are not saved", "", "info");
-            }
-            });
-
-
-            //index.php?txtID=
-        }
-
-    </script>
-        
-
-
 <?php include("../../templates/footer.php");?>

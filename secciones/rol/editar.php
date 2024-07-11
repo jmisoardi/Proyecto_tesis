@@ -15,7 +15,7 @@
                 //Utilizamos el FETCH_LAZY para que cargue solo un registro.
                 $registro = $sentencia->fetch(PDO::FETCH_LAZY);
                 $nombredelrol = $registro["nombredelrol"]; 
-               
+                
     }
         if ($_POST) {
             print_r($_POST);
@@ -33,10 +33,12 @@
                 $sentencia->bindParam(":nombredelrol",$nombredelrol);
                 $sentencia->bindParam(":id",$txtID);
                 $sentencia->execute();
-               // header("location:index.php");
+                //Mensaje de registro actualizado
+                $mensaje="Registro Actualizado";
+                header("Location:index.php?mensaje=".$mensaje);
+                
             }
         }
-    
 ?>
 
 <?php include("../../templates/header.php");?>

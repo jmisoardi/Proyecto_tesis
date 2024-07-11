@@ -33,7 +33,24 @@
             
             });
         </script>
-
+        
+        <!--Sweet alert -->
+        <script>
+            function borrar(id){
+                                Swal.fire({
+                                        title: "¿Desea borrar el registro?",
+                                        showCancelButton: true,
+                                        confirmButtonText: "Si",
+                                        }).then((result) => {
+                                                                if (result.isConfirmed) {
+                                                                    window.location="index.php?txtID="+id;
+                                                                    Swal.fire("Registro Borrado", "", "success");
+                                                                } 
+                                                            }
+                                                );
+                                
+                                }
+        </script>
 
     </body>
 </html>

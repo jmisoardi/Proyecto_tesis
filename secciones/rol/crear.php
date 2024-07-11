@@ -17,15 +17,15 @@
             //Asignando los valores que vienen del  método POST (Los que vienen del formulario).
             $sentencia->bindParam(":nombredelrol",$nombredelrol);
             $sentencia->execute();
-            header("Location:index.php");
+            
+            //Mensaje de registro agregado
+            $mensaje="Registro Agregado";
+            header("Location:index.php?mensaje=".$mensaje);
+            
         }
     }
-    
-     //$lista_tbl_rol = $sentencia->fetchAll(PDO::FETCH_ASSOC);
-
-    //print_r("$lista_tbl_rol");
-
 ?>
+
 <?php include("../../templates/header.php");?>
 <br>
 <br>

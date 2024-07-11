@@ -70,3 +70,9 @@
             </nav>
             
         <main class="container"> 
+            <!--Sweet alert Mensaje de confirmación-->
+        <?php if (isset($_GET['mensaje'])) { ?>
+            <script>
+                Swal.fire({icon:"success", title:"<?php echo $_GET['mensaje']; ?>"});    
+            </script>
+        <?php } ?>
