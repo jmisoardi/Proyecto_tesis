@@ -1,31 +1,29 @@
 <?php
-include ("../../bd.php");
+    include ("../../bd.php");
 
-//Verificamos si se envío txtID por el metodo GET (enviar).    
-if (isset($_GET['txtID'])) {
-            //Verificamos si está presente en la URL txtID, asignamos el valor en  $_GET['txtID'] de lo contrario no se asigna ningún valor con :"" .
-            $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
-            //Preparamos la conexion de Borrado.
-            $sentencia = $conexion->prepare ( "DELETE FROM tbl_usuario WHERE id=:id" );
-            $sentencia->bindParam( ":id" ,$txtID );
-            $sentencia->execute();
-            //Mensaje de Registro Eliminado (Sweet alert).
-            $mensaje="Registro Eliminado";
-            header("Location:index.php?mensaje=".$mensaje);
-        }
+    //Verificamos si se envío txtID por el metodo GET (enviar).    
+    if (isset($_GET['txtID'])) {
+                //Verificamos si está presente en la URL txtID, asignamos el valor en  $_GET['txtID'] de lo contrario no se asigna ningún valor con :"" .
+                $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
+                //Preparamos la conexion de Borrado.
+                $sentencia = $conexion->prepare ( "DELETE FROM tbl_usuario WHERE id=:id" );
+                $sentencia->bindParam( ":id" ,$txtID );
+                $sentencia->execute();
+                //Mensaje de Registro Eliminado (Sweet alert).
+                $mensaje="Registro Eliminado";
+                header("Location:index.php?mensaje=".$mensaje);
+            }
 
-
-    //Preparamos la sentencia de $conexion y ejecutamos, seguido creamos una lista_tbl_rol, que las filas se devuelvan como un array asociativo.
-    $sentencia = $conexion->prepare("SELECT * FROM `tbl_usuario`");
-    $sentencia->execute();
-    $lista_tbl_usuario = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+        //Preparamos la sentencia de $conexion y ejecutamos, seguido creamos una lista_tbl_rol, que las filas se devuelvan como un array asociativo.
+        $sentencia = $conexion->prepare("SELECT * FROM `tbl_usuario`");
+        $sentencia->execute();
+        $lista_tbl_usuario = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
 <?php include("../../templates/header.php");?>
 <br>
 <br>
-
 <style> 
     h1 {
         text-align: center; font-family: Georgia, sans-serif;
@@ -39,7 +37,6 @@ if (isset($_GET['txtID'])) {
         </div> 
     
         <div class="card-body" style="background-color:azure">
-            
                     
             <div class="table-responsive-sm">
                 <!--Usamos el id "tabla_id" para que tenga los estilos de busquedas, el script se encuentra en el footer-->
@@ -61,7 +58,7 @@ if (isset($_GET['txtID'])) {
                     </thead>
                     
                     <tbody>
-                    <!--Usamos el foreach para recorrer el arreglo de la lista de rol y asignarlo a la variable $registro-->  
+                        <!--Usamos el foreach para recorrer el arreglo de la lista de rol y asignarlo a la variable $registro-->  
                         <?php foreach ($lista_tbl_usuario as $registro) {?>     
                         
                             <!--Alineación central style-->
@@ -91,7 +88,5 @@ if (isset($_GET['txtID'])) {
         </div>
         <div class="card-footer text-muted" style="background-color:bisque"></div>
 </div>
-
-
 
 <?php include("../../templates/footer.php");?>

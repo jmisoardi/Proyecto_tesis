@@ -20,37 +20,24 @@
         <!--Script para data table (diseño)-->
         <script>
             $(document).ready( function(){
-                $("#tabla_id").DataTable ({
-                    "pagelLength":5,
-                    lengthMenu:[
-                        [5,10,25,50],
-                        [5,10,25,50]
-                    ],
-                    "language":{
-                        "url":"https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
-                    }
-                    });   
-            
-            });
+                $("#tabla_id").DataTable ({"pagelLength":10, lengthMenu:[[10,20,30,50],[10,20,30,50]], "language":{"url":"https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"}});  });
         </script>
         
         <!--Sweet alert -->
         <script>
             function borrar(id){
-                                Swal.fire({
-                                        title: "¿Desea borrar el registro?",
-                                        showCancelButton: true,
-                                        confirmButtonText: "Si",
-                                        }).then((result) => {
-                                                                if (result.isConfirmed) {
-                                                                    window.location="index.php?txtID="+id;
-                                                                    Swal.fire("Registro Borrado", "", "success");
-                                                                } 
-                                                            }
-                                                );
-                                
-                                }
+                Swal.fire({
+                    title: "¿Desea borrar el registro?",
+                    showCancelButton: true,
+                    confirmButtonText: "Si",
+                        }).then((result) => {
+                                if (result.isConfirmed) {
+                                    window.location="index.php?txtID="+id;
+                                    Swal.fire("Registro Borrado", "", "success");
+                                } 
+                            }
+                        );
+            }
         </script>
-
     </body>
 </html>

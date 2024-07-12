@@ -27,11 +27,9 @@
             header("Location:index.php");
         }else{
             $mensaje="Error: El usuario o password son incorrecto";
-        }
-        
-        print_r($registro);
+        }        
+        //print_r($registro);
     }
-    
 ?>
 <!doctype html>
 <html lang="en">
@@ -39,11 +37,7 @@
         <title>Login</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <!-- Bootstrap CSS v5.2.1 -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -52,85 +46,78 @@
             crossorigin="anonymous"
         />
     </head>
-
     <body>
         <header>
             <head>
                 <!--Estilo css para ver el ojo en el LOGIN-->
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-                
             </head>
         </header>
         <main class="container">
-        
-        <div class="row">
-            <div class="col-md-4"></div>
-                
-            <div class="col-md-4">
-                <br><br><br><br><br><br><br><br><br><br><br>
-                
-                <style> 
-                    h1 { text-align: center; font-family: Georgia, sans-serif; }
-                </style>
-                <h1>Iniciar Sesion</h1> 
+            <div class="row">
+                <div class="col-md-4"></div>
+                    
+                <div class="col-md-4">
+                    <br><br><br><br><br><br><br><br><br><br><br>
+                    
+                    <style> 
+                        h1 { text-align: center; font-family: Georgia, sans-serif; }
+                    </style>
+                    <h1>Iniciar Sesion</h1> 
 
-                <div class="card">
-                    <div class="card-header" style="background-color:bisque"></div>
-                        <div class="card-body"style="background-color:azure">
-                        
-                        <!--Alerta de error en el inicio de sesion con mensaje-->
-                        <?php if (isset($mensaje)){?>
-                            <div
-                                class="alert alert-danger" role="alert">
-                                <strong><?php echo $mensaje;?></strong>
-                            </div>
-                        <?php }?>
-
-                        <form action="" method="post">
-                            <div class="mb-3">
-                                <label for="usuario" class="form-label">Usuario:</label>
-                                    <input type="text" class="form-control" name="usuario" id="usuario"  placeholder="Escriba su usuario"/>
-                                
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Contraseña:</label>
-                                <div class="input-group">
-                                    <input type="password" class="form-control" name="password" id="password" placeholder="Escriba su contraseña"/>
-                                    <span class="input-group-text" onclick="togglePassword()">
-                                        <i class="fas fa-eye" id="togglePasswordIcon"></i>
-                                    </span>
-                                </div>
-                            </div>
-                            <!--Script para ver el password-->
-                            <script>
-                                function togglePassword() {
-                                        var passwordInput = document.getElementById("password");
-                                        var toggleIcon = document.getElementById("togglePasswordIcon");
-                                        if (passwordInput.type === "password") {
-                                            passwordInput.type = "text";
-                                            toggleIcon.classList.remove("fa-eye");
-                                            toggleIcon.classList.add("fa-eye-slash");
-                                        } else {
-                                            passwordInput.type = "password";
-                                            toggleIcon.classList.remove("fa-eye-slash");
-                                            toggleIcon.classList.add("fa-eye");
-                                        }
-                                }
-                            </script>
-                            <!--Contenedor para centrar el botón-->
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Entrar al sistema</button>
-                            </div>
+                    <div class="card">
+                        <div class="card-header" style="background-color:bisque"></div>
+                            <div class="card-body"style="background-color:azure">
                             
+                                <!--Alerta de error en el inicio de sesion con mensaje-->
+                                <?php if (isset($mensaje)){?>
+                                    <div
+                                        class="alert alert-danger" role="alert">
+                                        <strong><?php echo $mensaje;?></strong>
+                                    </div>
+                                <?php }?>
 
-                        </form>
-                        
-                        </div>
-                    <div class="card-footer text-muted" style="background-color:bisque"> </div>
+                                <form action="" method="post">
+                                    <div class="mb-3">
+                                        <label for="usuario" class="form-label">Usuario:</label>
+                                            <input type="text" class="form-control" name="usuario" id="usuario"  placeholder="Escriba su usuario"/>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Contraseña:</label>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" name="password" id="password" placeholder="Escriba su contraseña"/>
+                                            <span class="input-group-text" onclick="togglePassword()">
+                                                <i class="fas fa-eye" id="togglePasswordIcon"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!--Script para ver el password-->
+                                    <script>
+                                        function togglePassword() {
+                                                var passwordInput = document.getElementById("password");
+                                                var toggleIcon = document.getElementById("togglePasswordIcon");
+                                                if (passwordInput.type === "password") {
+                                                    passwordInput.type = "text";
+                                                    toggleIcon.classList.remove("fa-eye");
+                                                    toggleIcon.classList.add("fa-eye-slash");
+                                                } else {
+                                                    passwordInput.type = "password";
+                                                    toggleIcon.classList.remove("fa-eye-slash");
+                                                    toggleIcon.classList.add("fa-eye");
+                                                }
+                                        }
+                                    </script>
+                                    <!--Contenedor para centrar el botón-->
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary">Entrar al sistema</button>
+                                    </div>
+                                    
+                                </form>
+                            </div>
+                        <div class="card-footer text-muted" style="background-color:bisque"> </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        
         </main>
         <footer>
             <!-- place footer here -->
@@ -141,7 +128,6 @@
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
             crossorigin="anonymous"
         ></script>
-
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
