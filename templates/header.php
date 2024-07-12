@@ -1,9 +1,15 @@
 <!-- Dirección base del proyecto-->
 <?php 
+    session_start();
     $url_base= "http://localhost/Proyecto_tesis/";
-
+    
+    //Verificamos que exista ese usuario, de lo contrario se invía al login.
+    if (!isset($_SESSION['usuario'])) {
+        header("Location:".$url_base."login.php");
+    }else{
+        
+    }
 ?>
-
 <!--Contiene Menu y parte del Container -->
 <!doctype html>
 <html lang="en">
@@ -64,7 +70,7 @@
                         <a class="nav-link" href="<?php echo $url_base;?>secciones/usuario/">Usuarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cerrar.php">Cerrar Sesión</a>
+                        <a class="nav-link" href="<?php echo $url_base;?>cerrar.php">Cerrar Sesión</a>
                     </li>
                 </ul>
             </nav>

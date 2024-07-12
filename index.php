@@ -9,7 +9,7 @@
                 <div class="container-fluid py-5" style="background-color:azure">
                     <h1 class="display-5 fw-bold">Introducción</h1>
                     <p class="col-md-8 fs-4">
-                        <h1>Bienvenidos a "BridgeClass"</h1>
+                        <h1>Bienvenid@ <?php echo $_SESSION['usuario'];?> a "BridgeClass"</h1>
                             Nos enorgullece presentarles un proyecto que surge del compromiso con la excelencia educativa y la innovación constante. 
                         Desde su concepción, nuestra plataforma se ha distinguido por su carácter original y vanguardista, 
                         con un enfoque inclusivo y participativo que busca atender las diversas necesidades y expectativas de docentes y alumnos por igual.
