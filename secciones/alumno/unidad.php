@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mensajes</title>
+    <title>Unidad</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -21,28 +21,30 @@
                         <a class="nav-link" href="noticias.php">Noticias</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="mensajes.php">Mensajes</a>
+                        <a class="nav-link" href="mensajes.php">Mensajes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="unidad.php">Unidad</a>
                     </li>
+                    
                     <li class="nav-item">
-                        <a class="nav-link" href="perfil.php">Perfil</a>
+                        <a class="nav-link active" aria-current="page" href="unidad.php">Unidad</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
+
+
     <div class="container mt-5">
-        <h1>Mensajes</h1>
-        <ul class="list-group">
-            <li class="list-group-item">Mensaje 1</li>
-            <li class="list-group-item">Mensaje 2</li>
-            <li class="list-group-item">Mensaje 3</li>
-        </ul>
+        <h1>Perfil del Estudiante</h1>
+        <p class="lead">Nombre: [Nombre del Alumno]</p>
+        <p class="lead">Email: [Email del Alumno]</p>
+        <p class="lead">Carrera: [Carrera del Alumno]</p>
     </div>
 
+    
     <footer class="bg-dark text-white text-center py-3 mt-auto">
         <p>&copy; 2024 Portal del Estudiante</p>
     </footer>
