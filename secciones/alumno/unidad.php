@@ -24,11 +24,10 @@
                         <a class="nav-link" href="mensajes.php">Mensajes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="unidad.php">Unidad</a>
-                    </li>
-                    
-                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="unidad.php">Unidad</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="perfil.php">Perfil</a>
                     </li>
                 </ul>
             </div>
