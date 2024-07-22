@@ -2,11 +2,10 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Inicio</title>
+    <title>Unidad</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Portal del Estudiante</a>
@@ -16,7 +15,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
+                        <a class="nav-link" href="index.php">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="noticias.php">Noticias</a>
@@ -25,7 +24,7 @@
                         <a class="nav-link" href="mensajes.php">Mensajes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="unidad.php">Unidad</a>
+                        <a class="nav-link active" aria-current="page" href="unidad.php">Unidad</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="perfil.php">Perfil</a>
@@ -33,22 +32,18 @@
                 </ul>
             </div>
         </div>
-    </nav>GIT 
+    </nav>
+
+
 
     <div class="container mt-5">
-        
-        <h1>Bienvenido al Portal del Estudiante</h1>
-        <p class="lead">Bienvenido, [Nombre del Alumno]. Aquí puedes encontrar las últimas noticias y actualizaciones.</p>
-        <p>Nos complace darte la bienvenida a nuestro portal, donde podrás acceder a la información más relevante sobre tus estudios y actividades académicas. Aquí encontrarás:</p>
-        <ul>
-            <li>Las últimas noticias y eventos de la universidad.</li>
-            <li>Un espacio para gestionar y consultar tus mensajes.</li>
-            <li>Tu perfil personal con toda la información relevante.</li>
-        </ul>
-        <p>Esperamos que encuentres este portal útil y que te ayude a mantenerte al día con todas tus tareas y responsabilidades. Si tienes alguna pregunta o necesitas asistencia, no dudes en ponerte en contacto con nosotros.</p>
-        <p>¡Te deseamos mucho éxito en tus estudios!</p>
+        <h1>Perfil del Estudiante</h1>
+        <p class="lead">Nombre: [Nombre del Alumno]</p>
+        <p class="lead">Email: [Email del Alumno]</p>
+        <p class="lead">Carrera: [Carrera del Alumno]</p>
     </div>
 
+    
     <footer class="bg-dark text-white text-center py-3 mt-auto">
         <p>&copy; 2024 Portal del Estudiante</p>
     </footer>

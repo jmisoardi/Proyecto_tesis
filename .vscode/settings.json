@@ -51,6 +51,7 @@
         "carácter",
         "cargar",
         "cargue",
+        "Carrera",
         "casilla",
         "centrar",
         "Cerrar",
@@ -129,7 +130,10 @@
         "Estilo",
         "estilos",
         "Estudiante",
+<<<<<<< HEAD
         "estudios",
+=======
+>>>>>>> 36acbb03fe6456f1469170921f8e13c27c3774ba
         "Etiqueta",
         "eventos",
         "Evitamos",
@@ -179,6 +183,7 @@
         "logueado",
         "mantenerte",
         "Mensaje",
+        "mensajes",
         "método",
         "modificar",
         "mostrar",
@@ -193,7 +198,10 @@
         "Nombre",
         "nombredelrol",
         "nombredelusuario",
+<<<<<<< HEAD
         "nosotros",
+=======
+>>>>>>> 36acbb03fe6456f1469170921f8e13c27c3774ba
         "noticias",
         "nuestra",
         "nuestro",
@@ -204,7 +212,11 @@
         "parametros",
         "participativo",
         "pasar",
+<<<<<<< HEAD
         "perfil",
+=======
+        "Perfil",
+>>>>>>> 36acbb03fe6456f1469170921f8e13c27c3774ba
         "Personales",
         "peticion",
         "plataforma",
@@ -249,10 +261,14 @@
         "tiene",
         "tienes",
         "titulo",
+<<<<<<< HEAD
         "toda",
         "todas",
         "últimas",
         "universidad",
+=======
+        "unidad",
+>>>>>>> 36acbb03fe6456f1469170921f8e13c27c3774ba
         "Usamos",
         "usuario",
         "Usuarios",
