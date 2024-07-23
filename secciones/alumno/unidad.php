@@ -18,10 +18,10 @@
                         <a class="nav-link" href="index.php">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="noticias.php">Noticias</a>
+                        <a class="nav-link" href="noticia.php">Noticias</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="mensajes.php">Mensajes</a>
+                        <a class="nav-link" href="mensaje.php">Mensajes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="unidad.php">Unidad</a>
