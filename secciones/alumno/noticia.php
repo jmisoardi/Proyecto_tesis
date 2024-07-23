@@ -1,3 +1,6 @@
+
+<?php include("templates/header_alu.php")?>
+<br><br>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,48 +8,16 @@
     <title>Noticias</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Portal del Estudiante</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="noticia.php">Noticias</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="mensaje.php">Mensajes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="unidad.php">Unidad</a>
-                    </li>                   
-                    <li class="nav-item">
-                        <a class="nav-link" href="perfil.php">Perfil</a>
-                    </li>
-                </ul>
-            </div>
+    <body>
+        <div class="container mt-5">
+            <h1>Noticias</h1>
+            <ul class="list-group">
+                <li class="list-group-item">Noticia 1</li>
+                <li class="list-group-item">Noticia 2</li>
+                <li class="list-group-item">Noticia 3</li>
+            </ul>
         </div>
-    </nav>
-
-    <div class="container mt-5">
-        <h1>Noticias</h1>
-        <ul class="list-group">
-            <li class="list-group-item">Noticia 1</li>
-            <li class="list-group-item">Noticia 2</li>
-            <li class="list-group-item">Noticia 3</li>
-        </ul>
-    </div>
-
-    <footer class="bg-dark text-white text-center py-3 mt-auto">
-        <p>&copy; 2024 Portal del Estudiante</p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    </body>
 </html>
+<br><br>
+<?php include("templates/footer_alu.php")?>
