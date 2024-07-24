@@ -1,4 +1,4 @@
-<?php include("templates/header_alu.php")?>
+<?php include("templates_alu/header_alu.php")?>
     <br>
     <br>
     <br>
@@ -17,4 +17,4 @@
         <p>¡Te deseamos mucho éxito en tus estudios!</p>
     </div>
 <br><br>
-<?php include("templates/footer_alu.php")?>
+<?php include("templates_alu/footer_alu.php")?>

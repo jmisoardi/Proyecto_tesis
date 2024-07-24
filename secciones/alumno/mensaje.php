@@ -1,5 +1,5 @@
 
-<?php include("templates/header_alu.php")?>
+<?php include("templates_alu/header_alu.php")?>
 <br><br>
 <!DOCTYPE html>
 <html lang="es">
@@ -21,4 +21,4 @@
     </body>
 </html>
 <br><br>
-<?php include("templates/footer_alu.php")?>
+<?php include("templates_alu/footer_alu.php")?>
