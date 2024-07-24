@@ -3,7 +3,7 @@
     <br>
     <br>
     <br>
-    <div class="container mt-5">
+    <div class="container mt-5 "style="background-color:azure">
         
         <h1>Bienvenido al Portal del Estudiante</h1>
         <p class="lead">Bienvenido, [Nombre del Alumno]. Aquí puedes encontrar las últimas noticias y actualizaciones.</p>
