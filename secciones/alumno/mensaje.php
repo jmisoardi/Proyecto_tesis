@@ -10,7 +10,7 @@
 </head>
     <body>
         
-        <div class="container mt-5">
+        <div class="container mt-5" style="background-color:azure">
             <h1>Mensajes</h1>
             <ul class="list-group">
                 <li class="list-group-item">Mensaje 1</li>

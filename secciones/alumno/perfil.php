@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
     <body>        
-        <div class="container mt-5">
+        <div class="container mt-5" style="background-color:azure">
             <h1>Perfil del Estudiante</h1>
             <p class="lead">Nombre: [Nombre del Alumno]</p>
             <p class="lead">Email: [Email del Alumno]</p>
