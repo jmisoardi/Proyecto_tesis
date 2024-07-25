@@ -1,6 +1,6 @@
 
-.background {
-    background-image: url('imagen_tesis/background-image.webp');
+.background-alu {
+    background-image: url('imagen_tesis/background-alu.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -10,7 +10,7 @@
     z-index: -1;
 }
 
-.content {
+.content-alu {
     position: relative;
     z-index: 1;
     padding: 20px;

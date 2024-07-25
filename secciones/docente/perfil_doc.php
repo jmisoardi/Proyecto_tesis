@@ -10,10 +10,10 @@
 </head>
     <body>        
         <div class="container mt-5" style="background-color:azure">
-            <h1>Perfil del Estudiante</h1>
-            <p class="lead">Nombre: [Nombre del Alumno]</p>
-            <p class="lead">Email: [Email del Alumno]</p>
-            <p class="lead">Carrera: [Carrera del Alumno]</p>
+            <h1>Perfil del Docente</h1>
+            <p class="lead">Nombre: [Nombre del Docente]</p>
+            <p class="lead">Email: [Email del Docente]</p>
+            <p class="lead">Carrera: [Carrera del Docente]</p>
         </div>
     </body>
 </html>

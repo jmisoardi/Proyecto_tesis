@@ -1,8 +1,5 @@
 <?php include("templates_alu/header_alu.php")?>
     <br>
-    <br>
-    <br>
-    <br>
     <div class="container mt-5 "style="background-color:azure">
         
         <h1>Bienvenido al Portal del Estudiante</h1>
@@ -16,5 +13,5 @@
         <p>Esperamos que encuentres este portal útil y que te ayude a mantenerte al día con todas tus tareas y responsabilidades. Si tienes alguna pregunta o necesitas asistencia, no dudes en ponerte en contacto con nosotros.</p>
         <p>¡Te deseamos mucho éxito en tus estudios!</p>
     </div>
-<br><br>
+<br>
 <?php include("templates_alu/footer_alu.php")?>
