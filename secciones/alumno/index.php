@@ -1,5 +1,7 @@
 <?php include("templates_alu/header_alu.php")?>
     <br>
+    <br>
+    <br>
     <div class="p-5 mb-4 bg-light rounded-3">
                 <div class="container-fluid py-5" style="background-color:azure">
                     <h1 class="display-5 fw-bold">Introducción</h1>
@@ -17,12 +19,12 @@
                         Example button
                     </button> -->
                 </div>
-            </div>
+    </div>
 
     <!-- <div class="container mt-5 "style="background-color:azure">
         
         <h1>Bienvenido al Portal del Estudiante</h1>
-        <p class="lead">Bienvenido, <?php echo $_SESSION['usuario'];?>. Aquí puedes encontrar las últimas noticias y actualizaciones.</p>
+        <p class="lead">Bienvenido, . Aquí puedes encontrar las últimas noticias y actualizaciones.</p>
         <p>Nos complace darte la bienvenida a nuestro portal, donde podrás acceder a la información más relevante sobre tus estudios y actividades académicas. Aquí encontrarás:</p>
         <ul>
             <li>Las últimas noticias y eventos de la universidad.</li>

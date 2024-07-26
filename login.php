@@ -32,7 +32,7 @@
             foreach ($lista_tbl_rol as $rolfor) {
                 if ($rolfor['id'] === $rolpersona) {
                     $tipoderol = $rolfor['nombredelrol'];
-                    
+                    /* print_r($tipoderol); */
                     break; 
                 }
             }
@@ -42,6 +42,7 @@
                     break;
                 case 'docente':
                     header("Location:secciones/docente/index.php");
+                    break;
                 case 'alumno':
                     header("Location:secciones/alumno/index.php");
                     break;

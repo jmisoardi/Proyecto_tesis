@@ -1,3 +1,15 @@
+<!-- Dirección base del proyecto-->
+<?php 
+        session_start();
+        $url_base= "http://localhost/Proyecto_tesis/";
+        
+        //Verificamos que exista ese usuario, de lo contrario se invía al login.
+        if (!isset($_SESSION['usuario'])) {
+            header("Location:".$url_base."login.php");
+        }else{
+            
+        }
+?>
 <!-- Archivo header.php -->
 <!DOCTYPE html>
 <html lang="es">
@@ -20,22 +32,22 @@
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
+                                    <a class="nav-link active" aria-current="page" href="<?php echo $url_base;?>secciones/docente/index.php">Inicio</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="noticia_doc.php">Noticias</a>
+                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/docente/noticia_doc.php">Noticias</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="mensaje_doc.php">Mensajes</a>
+                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/docente/mensaje_doc.php">Mensajes</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="unidad_doc.php">Unidad</a>
+                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/docente/unidad_doc.php">Unidad</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="perfil_doc.php">Perfil</a>
+                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/docente/perfil_doc.php">Perfil</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="cerrar_doc.php">Cerrar Sesion</a>
+                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/docente/cerrar_doc.php">Cerrar Sesion</a>
                                 </li>
                             </ul>
                         </div>
