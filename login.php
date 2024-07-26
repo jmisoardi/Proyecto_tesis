@@ -3,10 +3,10 @@
     session_start();
     if($_POST){
         include("./bd.php");
-
+        
         //Preparamos la sentencia de $conexion y contamos cuantos registros hay, ejecutamos, seguido creamos una lista_tbl_rol, que las filas se devuelvan como un array asociativo.
         $sentencia = $conexion->prepare("SELECT * ,count(*) as n_usuario
-        FROM `tbl_usuario` 
+        FROM `tbl_persona` 
         WHERE usuario=:usuario 
         AND password=:password
         ");
@@ -19,17 +19,39 @@
 
         $sentencia->execute();
         $registro = $sentencia->fetch(PDO::FETCH_LAZY);
+        $rolpersona = $registro->idrol;
         
         if ($registro["n_usuario"]>0) {
             $_SESSION['usuario']=$registro["usuario"];
             $_SESSION['logueado']=true;
-
-            header("Location:index.php");
+            
+            $sentencia = $conexion->prepare("SELECT * FROM `tbl_rol`");
+            $sentencia->execute();
+            $lista_tbl_rol = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            
+            foreach ($lista_tbl_rol as $rolfor) {
+                if ($rolfor['id'] === $rolpersona) {
+                    $tipoderol = $rolfor['nombredelrol'];
+                    
+                    break; 
+                }
+            }
+            switch ($tipoderol) {
+                case 'administrador':
+                    header("Location:index.php");
+                    break;
+                case 'docente':
+                    header("Location:secciones/docente/index.php");
+                case 'alumno':
+                    header("Location:secciones/alumno/index.php");
+                    break;
+            }       
         }else{
             $mensaje="Error: El usuario o password son incorrecto";
         }        
-        //print_r($registro);
+        
     }
+
 ?>
 <!doctype html>
 <html lang="en">
