@@ -1,6 +1,6 @@
 
 <?php include("templates_doc/header_doc.php")?>
-<br><br>
+<br>
 <!DOCTYPE html>
 <html lang="es">
 <head>

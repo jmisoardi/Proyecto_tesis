@@ -1,6 +1,6 @@
 
 <?php include("templates_alu/header_alu.php")?>
-<br><br>
+<br>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,7 +10,7 @@
 </head>
     <body>
         <div class="container mt-5" style="background-color:azure">
-            <h1>Perfil del Estudiante</h1>
+            <h1>Unidad del Estudiante</h1>
             <p class="lead">Nombre: [Nombre del Alumno]</p>
             <p class="lead">Email: [Email del Alumno]</p>
             <p class="lead">Carrera: [Carrera del Alumno]</p>
