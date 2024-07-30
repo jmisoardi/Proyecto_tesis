@@ -23,7 +23,7 @@
         
         if ($registro["n_usuario"]>0) {
             $_SESSION['usuario']=$registro["usuario"];
-            $_SESSION['logueado']=true;
+            /* $_SESSION['rolpersona']=$rolpersona; */
             
             $sentencia = $conexion->prepare("SELECT * FROM `tbl_rol`");
             $sentencia->execute();
@@ -31,12 +31,13 @@
             
             foreach ($lista_tbl_rol as $rolfor) {
                 if ($rolfor['id'] === $rolpersona) {
-                    $tipoderol = $rolfor['nombredelrol'];
+                    $_SESSION['rolpersona'] = $rolfor['nombredelrol'];
                     /* print_r($tipoderol); */
                     break; 
                 }
             }
-            switch ($tipoderol) {
+            /* print_r($_SESSION ['rolpersona']);  */
+            switch ($_SESSION['rolpersona']) {
                 case 'administrador':
                     header("Location:index.php");
                     break;

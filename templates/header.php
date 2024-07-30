@@ -1,13 +1,37 @@
 <!-- Dirección base del proyecto-->
 <?php 
     session_start();
-    $url_base= "http://localhost/Proyecto_tesis/";
+    $url_base = "http://localhost/Proyecto_tesis/";
     
-    //Verificamos que exista ese usuario, de lo contrario se invía al login.
-    if (!isset($_SESSION['usuario'])) {
-        header("Location:".$url_base."login.php");
-    }else{
-        
+    // Verifica si la sesión de usuario está establecida
+    if (!isset($_SESSION['usuario']) || !isset($_SESSION['rolpersona'])) {
+        header("Location: " . $url_base . "login.php");
+        exit(); // Detiene la ejecución del script después de redirigir
+    } else {
+        // Evita redirecciones múltiples verificando si ya está en la página correcta
+        $current_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    
+        switch ($_SESSION['rolpersona']) {
+            case 'administrador':
+                $redirect_url = $url_base . "index.php";
+                break;
+            case 'docente':
+                $redirect_url = $url_base . "secciones/docente/index.php";
+                break;
+            case 'alumno':
+                $redirect_url = $url_base . "secciones/alumno/index.php";
+                break;
+            default:
+                // Si el rol no es reconocido, redirige a login o una página de error
+                $redirect_url = $url_base . "login.php";
+                break;
+        }
+    
+        // Redirige solo si no está ya en la página correcta
+        if ($current_url != $redirect_url) {
+            header("Location: " . $redirect_url);
+            exit(); // Detiene la ejecución del script después de redirigir
+        }
     }
 ?>
 <!--Contiene Menu y parte del Container -->
