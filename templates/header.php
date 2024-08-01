@@ -70,15 +70,26 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="<?php echo $url_base;?>" aria-current="page">Sistema<span class="visually-hidden">(current)</span></a>
                     </li>
+                    <?php if ($_SESSION['rolpersona'] == 'administrador') { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo $url_base;?>secciones/personal/">Personal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo $url_base;?>secciones/rol/">Rol</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo $url_base;?>secciones/usuario/">Usuarios</a>
+                        </li>
+                    <?php } ?>
                     <!--Ingresamos en "href php con la dirección base"-->
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="<?php echo $url_base;?>secciones/personal/">Personal</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $url_base;?>secciones/rol/">Rol</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $url_base;?>secciones/usuario/">Usuarios</a>
+                        <a class="nav-link" href="<?php echo $url_base;?>secciones/usuario/">Usuarios</a> -->
                     </li>
 <!--Se agrego para usarlo en el navegador simplemente comodidad, ver si va en la linea con Personal, rol, usuario, -->
                     <li class="nav-item">
