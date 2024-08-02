@@ -8,31 +8,7 @@
         header("Location: " . $url_base . "login.php");
         exit(); // Detiene la ejecución del script después de redirigir
     } else {
-        // Evita redirecciones múltiples verificando si ya está en la página correcta
-        $current_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    
-        switch ($_SESSION['rolpersona']) {
-            case 'administrador':
-                $redirect_url = $url_base . "index.php";
-                break;
-            case 'docente':
-                $redirect_url = $url_base . "secciones/docente/index.php";
-                break;
-            case 'alumno':
-                $redirect_url = $url_base . "secciones/alumno/index.php";
-                break;
-            default:
-                // Si el rol no es reconocido, redirige a login o una página de error
-                $redirect_url = $url_base . "login.php";
-                break;
-        }
-    
-        // Redirige solo si no está ya en la página correcta
-        if ($current_url != $redirect_url) {
-            header("Location: " . $redirect_url);
-            exit(); // Detiene la ejecución del script después de redirigir
-        }
-    }
+            }
 ?>
 <!--Contiene Menu y parte del Container -->
 <!doctype html>
@@ -70,26 +46,15 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="<?php echo $url_base;?>" aria-current="page">Sistema<span class="visually-hidden">(current)</span></a>
                     </li>
-                    <?php if ($_SESSION['rolpersona'] == 'administrador') { ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo $url_base;?>secciones/personal/">Personal</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo $url_base;?>secciones/rol/">Rol</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo $url_base;?>secciones/usuario/">Usuarios</a>
-                        </li>
-                    <?php } ?>
                     <!--Ingresamos en "href php con la dirección base"-->
-                    <!-- <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="<?php echo $url_base;?>secciones/personal/">Personal</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $url_base;?>secciones/rol/">Rol</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $url_base;?>secciones/usuario/">Usuarios</a> -->
+                        <a class="nav-link" href="<?php echo $url_base;?>secciones/usuario/">Usuarios</a>
                     </li>
 <!--Se agrego para usarlo en el navegador simplemente comodidad, ver si va en la linea con Personal, rol, usuario, -->
                     <li class="nav-item">
