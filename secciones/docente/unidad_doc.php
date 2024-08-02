@@ -10,7 +10,7 @@
 </head>
     <body>
         <div class="container mt-5" style="background-color:azure">
-            <h1>Perfil del Docente</h1>
+            <h1>Unidad del Docente</h1>
             <p class="lead">Nombre: [Nombre del Docente]</p>
             <p class="lead">Email: [Email del Docente]</p>
             <p class="lead">Carrera: [Carrera del Docente]</p>
