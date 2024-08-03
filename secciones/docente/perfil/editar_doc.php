@@ -79,15 +79,13 @@
 ?>
 
 <?php include("../templates_doc/header_doc.php")?>
-<br>
-<br>
 <!--Estilo para Datos Personales-->
 <style> 
-    h1 {
+    h4 {
         text-align: center; font-family: Georgia, sans-serif;
     }
 </style>
-    <h1>Datos Personales</h1> 
+    <h4>Datos Personales</h4> 
 
 
 <div class="card">
@@ -180,7 +178,6 @@
         <a name="" id="" class="btn btn-primary" href="index.php" role="button" >Cancelar</a>
     </form>
     
-
-
-
+<br>
+<br>
 <?php include("../templates_doc/footer_doc.php")?>
