@@ -20,6 +20,8 @@
             $telefono = $registro["telefono"]; 
             $idrol = $registro["idrol"];
             $fechaingreso = $registro["fechaingreso"];
+            $usuario = $registro["usuario"];
+            $password = $registro["password"];
         
         //Preparamos la sentencia de $conexion y ejecutamos, seguido creamos una lista_tbl_rol, que las filas se devuelvan como un array asociativo.
         $sentencia = $conexion->prepare("SELECT * FROM `tbl_rol`");
@@ -40,6 +42,8 @@
         $telefono = (isset($_POST["telefono"])) ? $_POST["telefono"]: "";
         $idrol = (isset($_POST["idrol"])) ? $_POST["idrol"]: "";
         $fechaingreso = (isset($_POST["fechaingreso"])) ? $_POST["fechaingreso"]: "";
+        $usuario = (isset($_POST["usuario"])) ? $_POST["usuario"]: "";
+        $password = (isset($_POST["password"])) ? $_POST["password"]: "";
             
         //Preparamos la insercción de los datos.
         $sentencia = $conexion->prepare("
@@ -53,6 +57,8 @@
             telefono=:telefono,
             idrol=:idrol,
             fechaingreso=:fechaingreso
+            usuario=:usuario,
+            password=:password
         WHERE id=:id ");
         
         //Asignando los valores que vienen del  método POST (Los que vienen del formulario).
@@ -64,6 +70,8 @@
         $sentencia->bindParam(":telefono",$telefono);
         $sentencia->bindParam(":idrol",$idrol);
         $sentencia->bindParam(":fechaingreso",$fechaingreso);
+        $sentencia->bindParam(":usuario",$usuario);
+        $sentencia->bindParam(":password",$password);
         $sentencia->bindParam(":id",$txtID);
         $sentencia->execute();
         //Mensaje de Registro Actualizado (Sweet alert).
@@ -161,6 +169,18 @@
             <input type="date" 
                 value= "<?php echo $fechaingreso; ?>"
                 class="form-control" name="fechaingreso" id="fechaingreso" aria-describedby="helpId" placeholder="Ingrese Fecha"/>
+        </div>
+        <div class="mb-3">
+            <label for="usuario" class="form-label"><u>Usuario:</u></label>
+            <input type="text" 
+                value= "<?php echo $fechaingreso; ?>"
+                class="form-control" name="usuario" id="usuario" aria-describedby="helpId" placeholder="Usuario"/>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label"><u>Fecha/Ingreso:</u></label>
+            <input type="date" 
+                value= "<?php echo $fechaingreso; ?>"
+                class="form-control" name="password" id="password" aria-describedby="helpId" placeholder="Contraseña"/>
         </div>
             
         <!--Button bs5-button-default y bs5-button-a (sirve para direccionar) -->

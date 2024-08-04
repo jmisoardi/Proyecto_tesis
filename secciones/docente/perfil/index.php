@@ -1,10 +1,18 @@
 <?php 
     include("../../../bd.php");
-
+    include("../templates_doc/header_doc.php");
+    // Verifica si la sesión de usuario está establecida
+    $url_base = "http://localhost/Proyecto_tesis/";
+    if (!isset($_SESSION['usuario'])) {
+        header("Location: " . $url_base . "login.php");
+        exit(); // Detiene la ejecución del script después de redirigir
+    } else {
+        
+        }
     //Verificamos si se envío txtID por el metodo GET (enviar).    
-    if (isset($_GET['txtID'])) {
+    /* if (isset($_GET['txtID'])) { */
         //Verificamos si está presente en la URL txtID, asignamos el valor en  $_GET['txtID'] de lo contrario no se asigna ningún valor con :"" .
-        $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
+        /* $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :""; */
         //Preparamos la conexion de Borrado.
         /* $sentencia = $conexion->prepare ( "DELETE FROM tbl_persona WHERE id=:id" );
         $sentencia->bindParam( ":id" ,$txtID );
@@ -12,20 +20,37 @@
         //Mensaje de Registro Eliminado (Sweet alert).
         $mensaje="Registro Eliminado";
         header("Location:index.php?mensaje=".$mensaje); */
-    }
+    /* } */
+    
 
     //Preparamos la sentencia de $conexion y ejecutamos, seguido creamos una consulta seguido de una subconsulta para obtener tbl_rol.id =tbl_persona.idrol. Nombre del Rol, con obtención de un dato (as idrol) acto seguido las filas devuelvan un array asociativo.
-    $sentencia = $conexion->prepare("SELECT * ,
+   /*  $sentencia = $conexion->prepare("SELECT * ,
     (SELECT nombredelrol 
     FROM tbl_rol 
     WHERE tbl_rol.id =tbl_persona.idrol limit 1) as idrol 
-    FROM `tbl_persona`");
+    FROM `tbl_persona` 
+    WHERE usuario = :usuario LIMIT 1");
+
+    $sentencia->bindParam(':usuario', $_SESSION['usuario']);
     $sentencia->execute();
-    $lista_tbl_persona = $sentencia->fetchAll(PDO::FETCH_ASSOC); 
+    $lista_tbl_persona = $sentencia->fetch(PDO::FETCH_ASSOC);  */
+$usuario_doc = $_SESSION['usuario'];
+
+$sentencia = $conexion->prepare("SELECT * FROM tbl_persona WHERE usuario = :usuario LIMIT 1");
+$sentencia->bindParam(':usuario', $usuario_doc); 
+$sentencia->execute();
+$usuario_doc = $sentencia->fetch(PDO::FETCH_ASSOC);
+
+print_r($usuario_doc);
+
+
+
 
 ?>
 
-<?php include("../templates_doc/header_doc.php")?>
+<?php 
+/* include("../templates_doc/header_doc.php") */
+?>
 <br>
 <!-- <!DOCTYPE html>
 <html lang="es">
@@ -72,7 +97,7 @@
                                     
                                     <tbody>
                                     <!--Usamos el foreach para recorrer el arreglo de la lista de persona y asignarlo a la variable $registro-->  
-                                        <?php foreach ($lista_tbl_persona as $registro) {?>     
+                                        <?php if ($usuario_doc) {?>     
                                             <!--Alineación central style-->
                                             <style>
                                                     td  {
@@ -80,19 +105,19 @@
                                                         }   
                                             </style>
                                             <tr class="">
-                                                <td scope="row"><?php echo $registro['id'];?></td>
+                                                <td scope="row"><?php echo $usuario_doc['id'];?></td>
                                                 <!--La etiqueta <td> podemos agrupar datos en una sola casilla-->
                                                             <td>
-                                                                <?php echo $registro['nombre'] . ' ' . $registro['apellido']; ; ?> 
+                                                                <?php echo $usuario_doc['nombre'] . ' ' . $usuario_doc['apellido']; ; ?> 
                                                             </td>
-                                                            <td> <?php echo $registro['dni']; ?> </td>
-                                                            <td> <?php echo $registro['fechanacimiento']; ?></td> 
-                                                            <td> <?php echo $registro['email']; ?></td>
-                                                            <td> <?php echo $registro['telefono']; ?></td>
-                                                            <td> <?php echo $registro['idrol']; ?></td>
-                                                            <td> <?php echo $registro['fechaingreso']; ?></td>
-                                                            <td> <?php echo $registro['usuario']; ?></td>
-                                                            <td> <?php echo $registro['password']; ?></td>
+                                                            <td> <?php echo $usuario_doc['dni']; ?> </td>
+                                                            <td> <?php echo $usuario_doc['fechanacimiento']; ?></td> 
+                                                            <td> <?php echo $usuario_doc['email']; ?></td>
+                                                            <td> <?php echo $usuario_doc['telefono']; ?></td>
+                                                            <td> <?php echo $usuario_doc['idrol']; ?></td>
+                                                            <td> <?php echo $usuario_doc['fechaingreso']; ?></td>
+                                                            <td> <?php echo $usuario_doc['usuario']; ?></td>
+                                                            <td> <?php echo $usuario_doc['password']; ?></td>
                                                             <!--Etiqueta de botones Editar y Eliminar-->
                                                             <td>
                                                                 <!--Utilizamos bs5-button-a seguido de la línea de código para editar el ID de la fila. -->

@@ -43,9 +43,9 @@
         <a name="" id="" class="btn btn-primary" href="crear.php" role="button" >Agregar Registro</a>
     </div> 
     
-    <div class="card-body" style="background-color:azure">
+    <div class="card-body-xl" style="background-color:azure">
         
-        <div class="table-responsive-sm">
+        <div class="table-responsive">
         <!--Usamos el id "tabla_id" para que tengan los estilos de busquedas, el script se encuentra en el footer-->
             <table class="table" id="tabla_id">
                 <thead>
@@ -64,6 +64,9 @@
                             <th scope="col" style="background-color:azure"><u>Telefono</u></th>
                             <th scope="col" style="background-color:azure"><u>Rol</u></th>
                             <th scope="col" style="background-color:azure"><u>F/Ingreso</u></th>
+                            <th scope="col" style="background-color:azure"><u>Usuario</u></th>
+                            <th scope="col" style="background-color:azure"><u>Password</u></th>
+
                             <th scope="col" style="background-color:azure"><u>Acciones</u></th>
                     </tr>
                 </thead>
@@ -90,6 +93,8 @@
                                         <td> <?php echo $registro['telefono']; ?></td>
                                         <td> <?php echo $registro['idrol']; ?></td>
                                         <td> <?php echo $registro['fechaingreso']; ?></td>
+                                        <td> <?php echo $registro['usuario']; ?></td>
+                                        <td> <?php echo $registro['password']; ?></td>
                                         <!--Etiqueta de botones Editar y Eliminar-->
                                         <td>
                                             <!--Utilizamos bs5-button-a seguido de la línea de código para editar el ID de la fila. -->

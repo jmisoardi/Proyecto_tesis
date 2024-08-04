@@ -14,11 +14,13 @@
         $telefono = (isset($_POST["telefono"])) ? $_POST["telefono"]: "";
         $idrol = (isset($_POST["idrol"])) ? $_POST["idrol"]: "";
         $fechaingreso = (isset($_POST["fechaingreso"])) ? $_POST["fechaingreso"]: "";
+        $usuario = (isset($_POST["usuario"])) ? $_POST["usuario"]: "";
+        $password = (isset($_POST["password"])) ? $_POST["password"]: "";
 
         //Preparamos la insercción de los datos.
         $sentencia = $conexion->prepare("INSERT INTO 
-        `tbl_persona`(`id`, `nombre`, `apellido`, `dni`, `fechanacimiento`, `email`, `telefono`, `idrol`, `fechaingreso`) 
-        VALUES (null, :nombre, :apellido, :dni, :fechanacimiento, :email, :telefono, :idrol, :fechaingreso)");
+        `tbl_persona`(`id`, `nombre`, `apellido`, `dni`, `fechanacimiento`, `email`, `telefono`, `idrol`, `fechaingreso`, 'usuario', 'password' ) 
+        VALUES (null, :nombre, :apellido, :dni, :fechanacimiento, :email, :telefono, :idrol, :fechaingreso, :usuario, :password)");
         
         //Asignando los valores que vienen del  método POST (Los que vienen del formulario).
         $sentencia->bindParam(":nombre",$nombre);
@@ -29,6 +31,8 @@
         $sentencia->bindParam(":telefono",$telefono);
         $sentencia->bindParam(":idrol",$idrol);
         $sentencia->bindParam(":fechaingreso",$fechaingreso);
+        $sentencia->bindParam(":usuario",$usuario);
+        $sentencia->bindParam(":password",$password);
         $sentencia->execute();
         //Mensaje de Registro Agregado (Sweet alert).
         $mensaje="Registro Agregado";
@@ -107,6 +111,16 @@
         <div class="mb-3">
             <label for="fechaingreso" class="form-label"><u>Fecha/Ingreso:</u></label>
             <input type="date" class="form-control" name="fechaingreso" id="fechaingreso" aria-describedby="helpId" placeholder="Ingrese Fecha"/>
+            
+        </div>
+        <div class="mb-3">
+            <label for="usuario" class="form-label"><u>Usuario:</u></label>
+            <input type="text" class="form-control" name="usuario" id="usuario" aria-describedby="helpId" placeholder="Usuario"/>
+            
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label"><u>Password:</u></label>
+            <input type="text" class="form-control" name="password" id="password" aria-describedby="helpId" placeholder="Password"/>
             
         </div>
         
