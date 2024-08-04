@@ -121,7 +121,7 @@ print_r($usuario_doc);
                                                             <!--Etiqueta de botones Editar y Eliminar-->
                                                             <td>
                                                                 <!--Utilizamos bs5-button-a seguido de la línea de código para editar el ID de la fila. -->
-                                                                <a class="btn btn-info" href="editar_doc.php?txtID=<?php echo $registro['id']; ?>" role="button" >Editar</a >    
+                                                                <a class="btn btn-info" href="editar_doc.php?txtID=<?php echo $usuario_doc['id']; ?>" role="button" >Editar</a >    
                                                             </td>
                                             </tr>
                                         <?php } ?>
