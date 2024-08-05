@@ -51,6 +51,9 @@
                         <a class="nav-link" href="<?php echo $url_base;?>secciones/personal/">Personal</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="<?php echo $url_base;?>secciones/noticia/">Noticia</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="<?php echo $url_base;?>secciones/rol/">Rol</a>
                     </li>
                     <li class="nav-item">
