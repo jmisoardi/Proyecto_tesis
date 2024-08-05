@@ -147,7 +147,7 @@
         </div>
         <div class="mb-3">
                 <label for="idrol" class="form-label"><u>Rol:</u></label>
-                <input type="text" class="form-control" id="idrol" readonly name="idrol" 
+                <input type="text" class="form-control" id="idrol" disabled name="idrol" 
                     <?php foreach($lista_tbl_rol as $registro){
                                     if($idrol == $registro['id']) { ?> 
                                     value="<?php echo $registro['nombredelrol']?>"
@@ -159,7 +159,7 @@
             <label for="fechaingreso" class="form-label"><u>Fecha/Ingreso:</u></label>
             <input type="date" 
                 value= "<?php echo $fechaingreso; ?>"
-                class="form-control"  readonly name="fechaingreso" id="fechaingreso" aria-describedby="helpId" placeholder="Ingrese Fecha"/>
+                class="form-control"  disabled name="fechaingreso" id="fechaingreso" aria-describedby="helpId" placeholder="Ingrese Fecha"/>
         </div>
         <div class="mb-3">
             <label for="usuario" class="form-label"><u>Usuario:</u></label>

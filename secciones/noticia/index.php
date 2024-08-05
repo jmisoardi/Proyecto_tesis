@@ -22,11 +22,11 @@
         <h1>Enviar Noticia</h1>
             <form action="send_news.php" method="post">
         
-                <label for="title" class="form-label"><h3>Título:</h3></label>
-                    <input type="text" id="title" name="title" required><br>
+                <label for="titulo" class="form-label"><h3>Título:</h3></label>
+                    <input type="text" id="titulo" name="titulo" required><br>
                 
-                <label for="message" class="form-label"><h3>Mensaje:</h3></label>
-                    <textarea class="form-control"id="message" name="message" rows="10" cols="50" required></textarea><br>
+                <label for="cuerpo" class="form-label"><h3>Mensaje:</h3></label>
+                    <textarea class="form-control"id="cuerpo" name="cuerpo" rows="10" cols="50" required></textarea><br>
             
                 <input type="submit" value="Enviar Noticia">
             </form>    

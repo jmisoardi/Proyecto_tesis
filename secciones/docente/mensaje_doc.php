@@ -11,11 +11,26 @@
     <body>
         <div class="container mt-5" style="background-color:azure">
             <h1>Mensajes</h1>
-            <ul class="list-group">
-                <li class="list-group-item">Mensaje 1</li>
-                <li class="list-group-item">Mensaje 2</li>
-                <li class="list-group-item">Mensaje 3</li>
-            </ul>
+                <form action="send_message.php" method="post" enctype="multipart/form-data">
+                    <label for="receiver">Para:</label>
+                    <select name="receiver" id="receiver">
+                        <!-- Aquí se deben listar los usuarios disponibles -->
+                        <option value="1">Docente 1</option>
+                        <option value="2">Alumno 1</option>
+                        <!-- Continuar con otros usuarios -->
+                    </select>
+
+                        <label for="subject">Asunto:</label>
+                    <input type="text" name="subject" id="subject" required>
+
+                    <label for="message">Mensaje:</label>
+                    <textarea name="message" id="message" required></textarea>
+
+                    <label for="attachment">Adjuntar archivo:</label>
+                    <input type="file" name="attachment" id="attachment">
+
+                    <button type="submit">Enviar Mensaje</button>
+                </form>
         </div>
     </body>
 </html>
