@@ -57,7 +57,6 @@
             telefono=:telefono,
             usuario=:usuario,
             password=:password
-
         WHERE id=:id ");
         
         //Asignando los valores que vienen del  método POST (Los que vienen del formulario).
@@ -146,14 +145,16 @@
                 class="form-control" name="telefono" id="telefono" aria-describedby="helpId" placeholder="Ingrese Teléfono"/>            
                     <small id="helpId" class="form-text text-muted"> sin (0) y sin (15)</small>
         </div>
-        
         <div class="mb-3">
-            <label for="idrol" class="form-label"><u>Rol:</u></label>
-            <input type="text" class="form-control"  readonly name="idrol" id="idrol" <?php foreach($lista_tbl_rol as $registro){?> 
-                <?php echo($idrol==$registro['id'])?> value="<?php echo $registro['nombredelrol']?>"
-                            <?php }?> aria-describedby="helpId" placeholder="" />
-            </div>
-            
+                <label for="idrol" class="form-label"><u>Rol:</u></label>
+                <input type="text" class="form-control" id="idrol" readonly name="idrol" 
+                    <?php foreach($lista_tbl_rol as $registro){
+                                    if($idrol == $registro['id']) { ?> 
+                                    value="<?php echo $registro['nombredelrol']?>"
+                                    <?php }
+                    }?> 
+                    aria-describedby="helpId" placeholder="" />
+        </div>
         <div class="mb-3">
             <label for="fechaingreso" class="form-label"><u>Fecha/Ingreso:</u></label>
             <input type="date" 

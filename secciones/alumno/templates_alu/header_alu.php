@@ -10,7 +10,6 @@
         } else {
                 
                 }
-
 ?>
 <!-- Archivo header.php -->
 <!DOCTYPE html>
@@ -20,6 +19,8 @@
     <title>Alumno</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">    
     <link rel="stylesheet" href="../../css/styles.css">
+    <!--Script para sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
 </head>
     <body>
     <div class="background-alu"></div>
@@ -55,4 +56,10 @@
                         </div>
                 </div>
         </nav>
+        <!--Sweet alert Mensaje de confirmación-->
+        <?php if (isset($_GET['mensaje'])) { ?>
+            <script>
+                Swal.fire({icon:"success", title:"<?php echo $_GET['mensaje']; ?>"});    
+            </script>
+        <?php } ?>
     <!-- fin archivo header.php -->

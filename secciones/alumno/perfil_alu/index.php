@@ -9,7 +9,7 @@
     } else {
         
         }
-    
+
 $usuario_alu = $_SESSION['usuario'];
 
 $sentencia = $conexion->prepare("SELECT * FROM tbl_persona WHERE usuario = :usuario LIMIT 1");
@@ -46,7 +46,6 @@ $usuario_alu = $sentencia->fetch(PDO::FETCH_ASSOC);
                                 <th scope="col" style="background-color:azure"><u>Acciones</u></th>
                         </tr>
                     <!-- </thead> -->
-                    
                     <tbody>
                     <!--Usamos el foreach para recorrer el arreglo de la lista de persona y asignarlo a la variable $registro-->  
                         <?php if ($usuario_alu) {?>     
