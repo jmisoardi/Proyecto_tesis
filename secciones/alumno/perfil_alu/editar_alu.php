@@ -40,7 +40,7 @@
         $fechanacimiento = (isset($_POST["fechanacimiento"])) ? $_POST["fechanacimiento"]: "";
         $email = (isset($_POST["email"])) ? $_POST["email"]: "";        
         $telefono = (isset($_POST["telefono"])) ? $_POST["telefono"]: "";
-        /* $idrol = (isset($_POST["idrol"])) ? $_POST["idrol"]: ""; */
+        $idrol = (isset($_POST["idrol"])) ? $_POST["idrol"]: "";
         $fechaingreso = (isset($_POST["fechaingreso"])) ? $_POST["fechaingreso"]: "";
         $usuario = (isset($_POST["usuario"])) ? $_POST["usuario"]: "";
         $password = (isset($_POST["password"])) ? $_POST["password"]: "";
@@ -55,6 +55,7 @@
             fechanacimiento=:fechanacimiento,
             email=:email,
             telefono=:telefono,
+            idrol=:idrol,
             usuario=:usuario,
             password=:password
 
