@@ -47,7 +47,7 @@
                                     <a class="nav-link" href="<?php echo $url_base;?>secciones/docente/unidad_doc.php">Unidad</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/docente/perfil/index.php">Perfil</a>
+                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/docente/perfil_doc/index.php">Perfil</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo $url_base;?>secciones/docente/cerrar_doc.php">Cerrar Sesion</a>
