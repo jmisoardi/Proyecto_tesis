@@ -56,7 +56,7 @@
             email=:email,
             telefono=:telefono,
             idrol=:idrol,
-            fechaingreso=:fechaingreso
+            fechaingreso=:fechaingreso,
             usuario=:usuario,
             password=:password
         WHERE id=:id ");
@@ -70,8 +70,8 @@
         $sentencia->bindParam(":telefono",$telefono);
         $sentencia->bindParam(":idrol",$idrol);
         $sentencia->bindParam(":fechaingreso",$fechaingreso);
-        $sentencia->bindParam(":usuario",$usuario);
-        $sentencia->bindParam(":password",$password);
+        $sentencia->bindParam(":usuario" ,$usuario);
+        $sentencia->bindParam(":password" ,$password);
         $sentencia->bindParam(":id",$txtID);
         $sentencia->execute();
         //Mensaje de Registro Actualizado (Sweet alert).
@@ -90,8 +90,6 @@
     }
 </style>
     <h1>Datos Personales</h1> 
-
-
 <div class="card">
     <div class="card-header" style="background-color:bisque">Ingrese los datos para el registro</div>
     
@@ -173,13 +171,13 @@
         <div class="mb-3">
             <label for="usuario" class="form-label"><u>Usuario:</u></label>
             <input type="text" 
-                value= "<?php echo $fechaingreso; ?>"
+                value= "<?php echo $usuario; ?>"
                 class="form-control" name="usuario" id="usuario" aria-describedby="helpId" placeholder="Usuario"/>
         </div>
         <div class="mb-3">
-            <label for="password" class="form-label"><u>Fecha/Ingreso:</u></label>
-            <input type="date" 
-                value= "<?php echo $fechaingreso; ?>"
+            <label for="password" class="form-label"><u>Password:</u></label>
+            <input type="text" 
+                value= "<?php echo $password; ?>"
                 class="form-control" name="password" id="password" aria-describedby="helpId" placeholder="Contraseña"/>
         </div>
             
