@@ -13,6 +13,7 @@
         
          //Utilizamos el FETCH_LAZY para que cargue solo un registro.
         $registro = $sentencia->fetch(PDO::FETCH_LAZY);
+        $fecha = $registro["fecha"]; 
         $titulo = $registro["titulo"]; 
         $cuerpo = $registro["cuerpo"]; 
     }
@@ -21,17 +22,20 @@
     if ($_POST) { 
         print_r($_POST);
         $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : "";
+        $fecha= (isset($_POST['fecha'])) ? $_POST['fecha'] : "";
         $titulo = (isset($_POST['titulo'])) ? $_POST['titulo'] : "" ;
         $cuerpo= (isset($_POST['cuerpo'])) ? $_POST['cuerpo'] : "";
     
         $sentencia = $conexion->prepare("
         UPDATE tbl_noticia 
         SET
+            fecha=:fecha,    
             titulo=:titulo,
-            cuerpo=:cuerpo    
+            cuerpo=:cuerpo
         WHERE id=:id ");
         
         //Asignando los valores que vienen del  método POST (Los que vienen del formulario).
+        $sentencia->bindParam(":fecha",$fecha);
         $sentencia->bindParam(":titulo",$titulo);
         $sentencia->bindParam(":cuerpo",$cuerpo);
         $sentencia->bindParam(":id",$txtID);
@@ -52,14 +56,20 @@
                     <input type="text"
                     value="<?php echo $txtID?>" id="txtID" readonly name="txtID" required><br>
                 
-                <label for="titulo" class="form-label"><h4>Titulo:</h4></label>
+                <label for="fecha" class="form-label"><h4>fecha:</h4></label>
+                    <input type="text"
+                    value="<?php echo $fecha_formateada = date('d/m/Y H:i:s', strtotime($registro['fecha']));?>" 
+                    class="form-control" id="fecha" name="fecha"><br>
+                
+                    <label for="titulo" class="form-label"><h4>Titulo:</h4></label>
                     <input type="text"
                     value="<?php echo $titulo?>" 
                     class="form-control" id="titulo" name="titulo"><br>
                 
-                    <label for="cuerpo" class="form-label"><h3>Mensaje:</h3></label>
+
+                <label for="cuerpo" class="form-label"><h3>Mensaje:</h3></label>
                     <textarea 
-                    class="form-control" id="cuerpo" name="cuerpo" rows="10" cols="50"><?php echo htmlspecialchars($cuerpo, ENT_QUOTES, 'UTF-8'); ?></textarea><br>
+                    class="form-control" id="cuerpo" name="cuerpo" rows="10" cols="50"><?php echo htmlspecialchars($cuerpo); ?></textarea><br>
 
                 <!--Button bs5-button-default y bs5-button-a (sirve para direccionar) -->
                 <button type="submit" class="btn btn-success">Actualizar</button>
@@ -68,7 +78,6 @@
 
             </form>    
     </div>
-
 
     <?php 
     include("../../templates/footer.php");

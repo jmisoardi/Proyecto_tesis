@@ -58,9 +58,9 @@
                             }
                         </style>
                             <th scope="col" style="background-color:azure"><u>ID</u></th>
+                            <th scope="col" style="background-color:azure"><u>Fecha</u></th>
                             <th scope="col" style="background-color:azure"><u>Titulo</u></th>
-                            <th scope="col" style="background-color:azure"><u>Cuerpo</u></th>
-                            
+                            <th scope="col" style="background-color:azure"><u>Cuerpo</u></th> 
                             <th scope="col" style="background-color:azure"><u>Acciones</u></th>
                     </tr>
                 </thead>
@@ -70,11 +70,11 @@
                     <?php foreach ($lista_tbl_noticia as $registro) {?>     
                         
                         <!--Alineación central style-->
-                        
                         <tr class="">
                             <td scope="row"><?php echo $registro['id'];?></td>
                             <!--La etiqueta <td> podemos agrupar datos en una sola casilla-->
                                         
+                                        <td> <?php echo $fecha_formateada = date('d/m/Y H:i:s', strtotime($registro['fecha'])); ?></td> 
                                         <td> <?php echo $registro['titulo']; ?> </td>
                                         <td> <?php echo $registro['cuerpo']; ?></td> 
                                         <!--Etiqueta de botones Editar y Eliminar-->
