@@ -49,7 +49,7 @@
     <?php include("../../templates/header.php");?>
 
     <div class="container mt-5" style="background-color:azure">
-        <h1>Enviar Noticia</h1>
+        <h1>Editar Noticia</h1>
             <form action="" method="post" enctype="multipart/form-data">
         
                 <label for="txtID" class="form-label"><h4>Id:</h4></label>

@@ -38,7 +38,7 @@
                                     <a class="nav-link active" aria-current="page" href="<?php echo $url_base;?>secciones/alumno/index.php">Inicio</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/alumno/noticia.php">Noticias</a>
+                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/alumno/noticia_alu/index.php">Noticias</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo $url_base;?>secciones/alumno/mensaje.php">Mensajes</a>
