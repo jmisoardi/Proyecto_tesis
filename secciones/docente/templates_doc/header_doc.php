@@ -40,7 +40,7 @@
                                     <a class="nav-link" href="<?php echo $url_base;?>secciones/docente/noticia_doc/index.php">Noticias</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/docente/mensaje_doc.php">Mensajes</a>
+                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/docente/mensaje_doc/index.php">Mensajes</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo $url_base;?>secciones/docente/unidad_doc.php">Unidad</a>

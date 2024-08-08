@@ -74,21 +74,21 @@
                             <div class="mb-3 ">
                                 <label for="fecha" class="form-label"><h4>Fecha:</h4></label>
                                 <input type="text"
-                                value="<?php echo $fecha_formateada = date('d/m/Y H:i:s', strtotime($registro['fecha']));?>" 
-                                class="form-control w-auto" id="fecha" readonly name="fecha">
+                                    value="<?php echo $fecha_formateada = date('d/m/Y H:i:s', strtotime($registro['fecha']));?>" 
+                                    class="form-control w-auto" id="fecha" readonly name="fecha">
                             </div>
                             
                             <div class="mb-3 ">
                                 <label for="titulo" class="form-label"><h4>Titulo:</h4></label>
                                 <input type="text"
-                                value="<?php echo $titulo?>" 
-                                class="form-control" id="titulo" readonly name="titulo">
+                                    value="<?php echo $titulo?>" 
+                                    class="form-control" id="titulo" readonly name="titulo">
                             </div>
                             
                             <div class="mb-3 ">
                                 <label for="cuerpo" class="form-label"><h4>Mensaje:</h4></label>
                                 <textarea 
-                                class="form-control" id="cuerpo" readonly name="cuerpo" rows="10" cols="50"><?php echo htmlspecialchars($cuerpo); ?></textarea>
+                                    class="form-control" id="cuerpo" readonly name="cuerpo" rows="10" cols="50"><?php echo htmlspecialchars($cuerpo); ?></textarea>
                             </div>
                             <!-- boton para regresar al index -->
                             <div class="text-center">
