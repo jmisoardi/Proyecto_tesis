@@ -7,8 +7,7 @@
     if (!isset($_SESSION['usuario']) || !isset($_SESSION['rolpersona'])) {
         header("Location: " . $url_base . "login.php");
         exit(); // Detiene la ejecución del script después de redirigir
-    } else {
-        
+    } else {    
         }
 ?>
 <!-- Archivo header.php -->
@@ -38,7 +37,7 @@
                                     <a class="nav-link active" aria-current="page" href="<?php echo $url_base;?>secciones/docente/index.php">Inicio</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/docente/noticia_doc.php">Noticias</a>
+                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/docente/noticia_doc/index.php">Noticias</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo $url_base;?>secciones/docente/mensaje_doc.php">Mensajes</a>

@@ -1,6 +1,6 @@
 <?php 
     include("../../../bd.php");
-    include("../templates_alu/header_alu.php");
+    include("../templates_doc/header_doc.php");
     /* include("../noticia/index.php"); */
     
     if (isset($_GET['txtID'])) {
@@ -28,21 +28,19 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="../../../css/styles.css">
     </head>
-        <body>
-            <!--Estilo para el titulo-->
-            <style> 
-                h1,h2 {
-                    text-align: center; font-family: Georgia, sans-serif;
-                    
-                    }
-            </style>
-            <div class="card">
+    <body>
+        <!--Estilo para el titulo-->
+        <style> 
+            h1,h2 {
+                text-align: center; font-family: Georgia, sans-serif;                
+            }
+        </style>
+        <div class="card">
                 <!--Header y button primary-->
-                <label class="card" style="background-color:gold"><h1>Noticias</h1></label>
-                <div class="card-header" style="background-color:silver"></div>
+                    <label class="card" style="background-color:gold"><h1>Noticias</h1></label>
+                    <div class="card-header" style="background-color:silver"></div>
                 <br>
                 <div class="card-body-lg" style="background-color:azure">
-            
                     <div class="table-responsive">
                     <!--Usamos el id "tabla_id" para que tengan los estilos de busquedas, el script se encuentra en el footer-->
                         <table class="table" id="tabla_id">
@@ -54,7 +52,6 @@
                                         text-align: center; font-family: Georgia, sans-serif;
                                         }
                                     </style>
-
                                         <!-- <th scope="col" style="background-color:azure"><u>ID</u></th> -->
                                         <th scope="col" style="background-color:azure"><u>Fecha</u></th>
                                         <th scope="col" style="background-color:azure"><u>Titulo</u></th>
@@ -73,7 +70,7 @@
                                                     <!--Etiqueta de botones Editar y Eliminar-->
                                                     <td>
                                                         <!--Utilizamos bs5-button-a seguido de la línea de código para editar el ID de la fila. -->
-                                                        <a class="btn btn-info" href="vista_alu.php?txtID=<?php echo $registro['id']; ?>" role="button" >Ver</a >
+                                                        <a class="btn btn-info" href="vista_doc.php?txtID=<?php echo $registro['id']; ?>" role="button" >Ver</a >
                                                     </td>
                                     </tr>
                                 <?php } ?>
@@ -81,11 +78,12 @@
                         </table>
                     </div>
                 </div>
-                <br>
-                <br>
-                <div class="card-footer text-muted" style="background-color:silver"></div>
-            </div>
-        </body>
+            <br>
+            <br>
+            <div class="card-footer text-muted" style="background-color:silver"></div>
+        </div>
+    </body>
 </html>
+
 <br><br>
-<?php include("../templates_alu/footer_alu.php")?>
+<?php include("../templates_doc/footer_doc.php")?>
