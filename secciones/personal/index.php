@@ -40,7 +40,9 @@
 <div class="card">
     <!--Header y button primary-->
     <div class="card-header" style="background-color:bisque">   
-        <a name="" id="" class="btn btn-primary" href="crear.php" role="button" >Agregar Registro</a>
+        <a name="" id="" href="crear.php" role="button" >
+            <img src="../../css/imagen_tesis/icons/icon_agregar.png" alt="Eliminar" style="width: 48px; height: 48px; vertical-align: middle;">
+        </a>
     </div> 
     
     <div class="card-body-xl" style="background-color:azure">
@@ -98,10 +100,15 @@
                                         <!--Etiqueta de botones Editar y Eliminar-->
                                         <td>
                                             <!--Utilizamos bs5-button-a seguido de la línea de código para editar el ID de la fila. -->
-                                            <a class="btn btn-info" href="editar.php?txtID=<?php echo $registro['id']; ?>" role="button" >Editar</a >
+                                            <a  href="editar.php?txtID=<?php echo $registro['id']; ?>" role="button" >
+                                                <img src="../../css/imagen_tesis/icons/icon_editar.png" alt="Editar" style="width: 48px; height: 48px; vertical-align: middle;">                                            
+                                            </a >
                                             <!--Utilizamos bs5-button-a seguido de la línea de código para obtener el ID y que nos elimine la fila. -->
                                             <!--El signo sirve para pasar parametros por URL.-->
-                                            <a class="btn btn-danger" href="javascript:borrar(<?php echo $registro['id']; ?>);" role="button" >Eliminar</a >   
+                                            <a  href="javascript:borrar(<?php echo $registro['id']; ?>);" role="button" >
+                                                <img src="../../css/imagen_tesis/icons/icon_eliminar.png" alt="Eliminar" style="width: 48px; height: 48px; vertical-align: middle;">                                            
+                                            </a >
+                                                
                                         </td>
                         </tr>
                     <?php } ?>

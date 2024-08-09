@@ -92,7 +92,9 @@
                         </div>
                         <!-- boton para regresar al index -->
                         <div class="text-center">
-                            <a name="" id="" class="btn btn-primary" href="index.php" role="button">Regresar</a>
+                            <a name="" id="" class="btn btn-info" href="index.php" role="button">
+                                <img src="../../../css/imagen_tesis/icons/atras.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                            </a>
                         </div>
                     </form> 
                     <br>

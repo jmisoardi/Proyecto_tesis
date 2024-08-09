@@ -1,5 +1,8 @@
 
-<?php include("templates_alu/header_alu.php")?>
+<?php 
+    include("../templates_alu/header_alu.php");
+?>
+
 <br>
 <!DOCTYPE html>
 <html lang="es">
@@ -7,6 +10,7 @@
     <meta charset="UTF-8">
     <title>Mensajes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/styles.css">
 </head>
     <body>
         <div class="container mt-5" style="background-color:azure">
@@ -20,4 +24,4 @@
     </body>
 </html>
 <br><br>
-<?php include("templates_alu/footer_alu.php")?>
+<?php include("../templates_alu/footer_alu.php")?>

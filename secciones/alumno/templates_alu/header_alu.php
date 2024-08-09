@@ -28,29 +28,43 @@
         <nav class="navbar navbar-expand navbar-light bg-info">
             <!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Portal del Estudiante</a>
+                    
+                    <a class="navbar-brand" href="<?php echo $url_base;?>secciones/alumno/home_alu/index.php">Portal del Estudiante</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav">
+                                
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="<?php echo $url_base;?>secciones/alumno/index.php">Inicio</a>
+                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/alumno/home_alu/index.php">
+                                        <img src="../../../css/imagen_tesis/icons/inicio.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                    </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/alumno/noticia_alu/index.php">Noticias</a>
+                                <li class="nav-link">
+                                    <a  href="<?php echo $url_base;?>secciones/alumno/noticia_alu/index.php">
+                                        <img src="../../../css/imagen_tesis/icons/noticia.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                    </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/alumno/mensaje.php">Mensajes</a>
+                                <li class="nav-link">
+                                    <a  href="<?php echo $url_base;?>secciones/alumno/mensaje_alu/index.php">
+                                        <img src="../../../css/imagen_tesis/icons/mensaje.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                    </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/alumno/unidad.php">Unidad</a>
+                                <li class="nav-link">
+                                    <a  href="<?php echo $url_base;?>secciones/alumno/unidad_alu/index.php">
+                                        <img src="../../../css/imagen_tesis/icons/libro.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                    </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/alumno/perfil_alu/index.php">Perfil</a>
+                                <li class="nav-link">
+                                    <a  href="<?php echo $url_base;?>secciones/alumno/perfil_alu/index.php">
+                                        <img src="../../../css/imagen_tesis/icons/perfil.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                    </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/alumno/cerrar.php">Cerrar Sesion</a>
+                                <li >
+                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/alumno/cerrar.php">
+                                        <img src="../../../css/imagen_tesis/icons/cerrar.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                    </a>
                                 </li>
                             </ul>
                         </div>

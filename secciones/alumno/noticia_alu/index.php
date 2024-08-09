@@ -73,7 +73,9 @@
                                                     <!--Etiqueta de botones Editar y Eliminar-->
                                                     <td>
                                                         <!--Utilizamos bs5-button-a seguido de la línea de código para editar el ID de la fila. -->
-                                                        <a class="btn btn-info" href="vista_alu.php?txtID=<?php echo $registro['id']; ?>" role="button" >Ver</a >
+                                                        <a class="btn btn-info" href="vista_alu.php?txtID=<?php echo $registro['id']; ?>" role="button" >
+                                                            <img src="../../../css/imagen_tesis/icons/ver.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                        </a >
                                                     </td>
                                     </tr>
                                 <?php } ?>

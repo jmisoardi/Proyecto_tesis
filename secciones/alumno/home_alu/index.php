@@ -1,8 +1,22 @@
-<?php include("templates_alu/header_alu.php")?>
-    <br>
-    <br>
-    <br>
-    <div class="p-5 mb-4 bg-light rounded-3">
+
+<?php include("../templates_alu/header_alu.php")?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Alumno</title>
+    <!--Script para sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">    
+    <link rel="stylesheet" href="../../../css/styles.css">
+</head>    
+<br>
+    <body>
+        
+        <br>
+        <br>
+        <div class="p-5 mb-4 bg-light rounded-3">
                 <div class="container-fluid py-5" style="background-color:azure">
                     <h1 class="display-5 fw-bold">Introducción</h1>
                     <p class="col-md-8 fs-4">
@@ -19,20 +33,7 @@
                         Example button
                     </button> -->
                 </div>
-    </div>
-    Revisando si puedo cargar los cambios en el repositorio de github
-    <!-- <div class="container mt-5 "style="background-color:azure">
-        
-        <h1>Bienvenido al Portal del Estudiante</h1>
-        <p class="lead">Bienvenido, . Aquí puedes encontrar las últimas noticias y actualizaciones.</p>
-        <p>Nos complace darte la bienvenida a nuestro portal, donde podrás acceder a la información más relevante sobre tus estudios y actividades académicas. Aquí encontrarás:</p>
-        <ul>
-            <li>Las últimas noticias y eventos de la universidad.</li>
-            <li>Un espacio para gestionar y consultar tus mensajes.</li>
-            <li>Tu perfil personal con toda la información relevante.</li>
-        </ul>
-        <p>Esperamos que encuentres este portal útil y que te ayude a mantenerte al día con todas tus tareas y responsabilidades. Si tienes alguna pregunta o necesitas asistencia, no dudes en ponerte en contacto con nosotros.</p>
-        <p>¡Te deseamos mucho éxito en tus estudios!</p>
-    </div> -->
+            </div>
+    </body>
     <br>
-<?php include("templates_alu/footer_alu.php")?>
+<?php include("../templates_alu/footer_alu.php")?>
