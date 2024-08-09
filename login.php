@@ -42,10 +42,10 @@
                     header("Location:index.php");
                     break;
                 case 'docente':
-                    header("Location:secciones/docente/index.php");
+                    header("Location:secciones/docente/home_doc/index.php");
                     break;
                 case 'alumno':
-                    header("Location:secciones/alumno/index.php");
+                    header("Location:secciones/alumno/home_alu/index.php");
                     break;
             }       
         }else{

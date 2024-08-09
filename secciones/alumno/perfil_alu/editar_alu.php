@@ -31,7 +31,7 @@
         $lista_tbl_rol = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     }
     if ($_POST){
-        print_r($_POST);
+        /* print_r($_POST); */
         
         //Verificamos si existe una peticion $_POST, validamos si ese if isset sucedio, lo vamos igualar a ese valor, de lo contrario no sucedio
         //Lo verificamos a este valor $_POST["usuario"] lo comparamos con la llave de pregunta (?) $_POST["usuario"] si sucedio, de lo contrario va a quedar vacío.
@@ -183,8 +183,12 @@
                 </div>
                     
                 <!--Button bs5-button-default y bs5-button-a (sirve para direccionar) -->
-                <button type="submit" class="btn btn-success">Actualizar</button>
-                <a name="" id="" class="btn btn-primary" href="index.php" role="button" >Cancelar</a>
+                <button type="submit" class="btn btn">
+                    <img src="../../../css/imagen_tesis/icons/aceptar.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                </button>
+                <a name="" id="" class="btn btn" href="index.php" role="button" >
+                    <img src="../../../css/imagen_tesis/icons/cancelar.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                </a>
             </form>
         </div>
     </div>

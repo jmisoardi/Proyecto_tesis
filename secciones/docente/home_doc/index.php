@@ -1,8 +1,21 @@
-<?php include("templates_doc/header_doc.php")?>
-    <br>
-    <br>
-    <div class="p-5 mb-4 bg-light rounded-3">
-                <div class="container-fluid py-5" style="background-color:azure">
+<?php include("../templates_doc/header_doc.php")?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Docente</title>
+    <!--Script para sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">    
+    <link rel="stylesheet" href="../../../css/styles.css">
+</head>
+<br>    
+    <body>
+        <br>
+        <br>
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5" style="background-color:azure">
                     <h1 class="display-5 fw-bold">Introducción</h1>
                     <p class="col-md-8 fs-4">
                         <h1>Bienvenid@ <?php echo $_SESSION['usuario'];?> al Portal del Docente "BridgeClass"</h1>
@@ -13,8 +26,8 @@
                             <li>Un espacio para la comunicación con tus colegas y estudiantes.</li>
                             <li>Tu perfil profesional con todos los detalles relevantes.</li>
                         </ul>
-                            En un mundo donde la educación es clave para el desarrollo personal y social, creemos firmemente en la importancia de brindar herramientas que faciliten el proceso de enseñanza y aprendizaje. 
-                            Es por ello que hemos creado esta página web, un espacio diseñado para conectar a docentes y alumnos en un entorno virtual dinámico y enriquecedor.
+                        En un mundo donde la educación es clave para el desarrollo personal y social, creemos firmemente en la importancia de brindar herramientas que faciliten el proceso de enseñanza y aprendizaje. 
+                        Es por ello que hemos creado esta página web, un espacio diseñado para conectar a docentes y alumnos en un entorno virtual dinámico y enriquecedor.
                         <br>
                         <p>Este portal está pensado para ser tu aliado en la gestión diaria de tus actividades académicas. Esperamos que te sea de gran utilidad y que te facilite la organización y planificación de tus clases y proyectos.</p>
                         <p>Si necesitas asistencia o tienes alguna pregunta, no dudes en contactarnos. Estamos aquí para ayudarte.</p>
@@ -24,6 +37,8 @@
                         Example button
                     </button> -->
                 </div>
-    </div>
+        </div>
+        
+    </body>    
 <br>
-<?php include("templates_doc/footer_doc.php")?>
+<?php include("../templates_doc/footer_doc.php")?>
