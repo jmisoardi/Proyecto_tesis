@@ -31,16 +31,17 @@
     <body>
         <!--Estilo para el titulo-->
         <style> 
-            h1,h2 {
+            h1,h2, table{
                 text-align: center; font-family: Georgia, sans-serif;                
             }
         </style>
         <div class="card">
-                <!--Header y button primary-->
-                    <label class="card" style="background-color:gold"><h1>Noticias</h1></label>
-                    <div class="card-header" style="background-color:silver"></div>
+                
+                <label class="card" style="background-color:gold"><h1>Noticias</h1></label>
+                <div class="card-header" style="background-color:silver"></div>
                 <br>
-                <div class="card-body-lg" style="background-color:azure">
+                
+                <div class="card-body-xl" style="background-color:azure">
                     <div class="table-responsive">
                     <!--Usamos el id "tabla_id" para que tengan los estilos de busquedas, el script se encuentra en el footer-->
                         <table class="table" id="tabla_id">

@@ -40,7 +40,7 @@ $usuario_alu = $sentencia->fetch(PDO::FETCH_ASSOC);
                                 text-align: center; font-family: Georgia, sans-serif;
                             }
                             </style>
-                                <th scope="col" style="background-color:azure"><u>ID</u></th>
+                                <th scope="col" style="background-color:azure"><u></u></th>
                                 <th scope="col" style="background-color:azure"><u>N/Apellido</u></th>
                                 <th scope="col" style="background-color:azure"><u>Dni</u></th>
                                 <th scope="col" style="background-color:azure"><u>F/Nacimiento</u></th>
@@ -63,7 +63,7 @@ $usuario_alu = $sentencia->fetch(PDO::FETCH_ASSOC);
                                     }   
                                     </style>
                             <tr class="">
-                                <td scope="row"><?php echo $usuario_alu['id'];?></td>
+                                <td scope="row"><?php $usuario_alu['id'];?></td>
                                 <!--La etiqueta <td> podemos agrupar datos en una sola casilla-->
                                     <td>
                                         <?php echo $usuario_alu['nombre'] . ' ' . $usuario_alu['apellido']; ; ?> 

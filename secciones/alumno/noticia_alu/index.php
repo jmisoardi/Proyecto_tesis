@@ -31,7 +31,7 @@
         <body>
             <!--Estilo para el titulo-->
             <style> 
-                h1,h2 {
+                h1,h2,table {
                     text-align: center; font-family: Georgia, sans-serif;
                     
                     }
