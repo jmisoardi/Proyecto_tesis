@@ -26,8 +26,6 @@
 ?>
 
 <?php include("../../templates/header.php");?>
-
-<br/>
 <br/>
     <!--Estilo para el titulo Personal-->
 <style> 
