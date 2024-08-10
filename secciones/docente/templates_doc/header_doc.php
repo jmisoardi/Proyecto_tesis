@@ -51,7 +51,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-link">
-                                    <a  href="<?php echo $url_base;?>secciones/docente/unidad_doc.php">
+                                    <a  href="<?php echo $url_base;?>secciones/docente/unidad_doc/index.php">
                                         <img src="../../../css/imagen_tesis/icons/libro.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                     </a>
                                 </li>

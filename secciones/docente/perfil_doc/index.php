@@ -83,7 +83,9 @@ $usuario_doc = $sentencia->fetch(PDO::FETCH_ASSOC);
                                             <!--Etiqueta de botones Editar y Eliminar-->
                                             <td>
                                                 <!--Utilizamos bs5-button-a seguido de la línea de código para editar el ID de la fila. -->
-                                                <a class="btn btn-info" href="editar_doc.php?txtID=<?php echo $usuario_doc['id']; ?>" role="button" >Editar</a >    
+                                                <a class="btn btn-info" href="editar_doc.php?txtID=<?php echo $usuario_doc['id']; ?>" role="button" >
+                                                    <img src="../../../css/imagen_tesis/icons/icon_editar.png" style="width: 32px; height: 32px; vertical-align: middle;">
+                                                </a >    
                                             </td>
                             </tr>
                         <?php } ?>

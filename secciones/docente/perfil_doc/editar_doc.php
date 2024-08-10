@@ -183,8 +183,12 @@
             </div>
                 
             <!--Button bs5-button-default y bs5-button-a (sirve para direccionar) -->
-            <button type="submit" class="btn btn-success">Actualizar</button>
-            <a name="" id="" class="btn btn-primary" href="index.php" role="button" >Cancelar</a>
+            <button type="submit" class="btn btn">
+                <img src="../../../css/imagen_tesis/icons/aceptar.png" style="width: 30px; height: 30px; vertical-align: middle;">
+            </button>
+            <a name="" id="" class="btn btn" href="index.php" role="button" >
+                <img src="../../../css/imagen_tesis/icons/cancelar.png" style="width: 30px; height: 30px; vertical-align: middle;">
+            </a>
         </form>
     </div>
 </div>  
