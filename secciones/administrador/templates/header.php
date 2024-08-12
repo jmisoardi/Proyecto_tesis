@@ -6,11 +6,11 @@
     // Verifica si la sesión de usuario está establecida
     if (!isset($_SESSION['usuario']) && !isset($_SESSION['rolpersona'])) {
         
-        /* header("Location: " . $url_base . "login.php"); */
+        header("Location: " . $url_base . "login.php"); 
         
         switch ($_SESSION['rolpersona']) {
             case 'administrador':
-                header("Location:secciones/administrador/index.php");
+                header("Location:index.php");
                 break;
             case 'docente':
                 header("Location:secciones/docente/home_doc/index.php");
