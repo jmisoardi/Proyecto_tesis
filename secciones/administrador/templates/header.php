@@ -4,8 +4,23 @@
     $url_base = "http://localhost/Proyecto_tesis/";
     
     // Verifica si la sesión de usuario está establecida
-    if (!isset($_SESSION['usuario']) || !isset($_SESSION['rolpersona'])) {
-        header("Location: " . $url_base . "login.php");
+    if (!isset($_SESSION['usuario']) && !isset($_SESSION['rolpersona'])) {
+        
+        /* header("Location: " . $url_base . "login.php"); */
+        
+        switch ($_SESSION['rolpersona']) {
+            case 'administrador':
+                header("Location:secciones/administrador/index.php");
+                break;
+            case 'docente':
+                header("Location:secciones/docente/home_doc/index.php");
+                break;
+            case 'alumno':
+                header("Location:secciones/alumno/home_alu/index.php");
+                break;
+        }       
+        
+
         exit(); // Detiene la ejecución del script después de redirigir
     } else {
             }
@@ -48,16 +63,16 @@
                     </li>
                     <!--Ingresamos en "href php con la dirección base"-->
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $url_base;?>secciones/personal/">Personal</a>
+                        <a class="nav-link" href="<?php echo $url_base;?>secciones/administrador/personal/">Personal</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $url_base;?>secciones/noticia/">Noticia</a>
+                        <a class="nav-link" href="<?php echo $url_base;?>secciones/administrador/noticia/">Noticia</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $url_base;?>secciones/rol/">Rol</a>
+                        <a class="nav-link" href="<?php echo $url_base;?>secciones/administrador/rol/">Rol</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $url_base;?>secciones/usuario/">Usuarios</a>
+                        <a class="nav-link" href="<?php echo $url_base;?>secciones/administrador/usuario/">Usuarios</a>
                     </li>
 <!--Se agrego para usarlo en el navegador simplemente comodidad, ver si va en la linea con Personal, rol, usuario, -->
                     <li class="nav-item">

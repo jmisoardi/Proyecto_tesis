@@ -1,5 +1,5 @@
 <?php 
-    include("../../bd.php");
+    include("../../../bd.php");
     
     //Recepción del envío txtID.
     if(isset($_GET['txtID'])){
@@ -46,7 +46,7 @@
     }    
         
     ?>
-    <?php include("../../templates/header.php");?>
+    <?php include("../templates/header.php");?>
 
     <div class="container mt-5" style="background-color:azure">
         <h1>Editar Noticia</h1>
@@ -80,6 +80,6 @@
     </div>
 
     <?php 
-    include("../../templates/footer.php");
+    include("../templates/footer.php");
     ?>    
     

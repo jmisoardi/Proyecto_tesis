@@ -1,5 +1,5 @@
 <?php 
-    include("../../bd.php");
+    include("../../../bd.php");
 
     //Verificamos si se envío txtID por el metodo GET (enviar).    
     if (isset($_GET['txtID'])) {
@@ -25,7 +25,7 @@
 
 ?>
 
-<?php include("../../templates/header.php");?>
+<?php include("../templates/header.php");?>
 <br/>
     <!--Estilo para el titulo Personal-->
 <style> 
@@ -39,7 +39,7 @@
     <!--Header y button primary-->
     <div class="card-header" style="background-color:bisque">   
         <a name="" id="" href="crear.php" role="button" >
-            <img src="../../css/imagen_tesis/icons/icon_agregar.png" alt="Eliminar" style="width: 48px; height: 48px; vertical-align: middle;">
+            <img src="../../../css/imagen_tesis/icons/icon_agregar.png" style="width: 48px; height: 48px; vertical-align: middle;">
         </a>
     </div> 
     
@@ -99,12 +99,12 @@
                                         <td>
                                             <!--Utilizamos bs5-button-a seguido de la línea de código para editar el ID de la fila. -->
                                             <a  href="editar.php?txtID=<?php echo $registro['id']; ?>" role="button" >
-                                                <img src="../../css/imagen_tesis/icons/icon_editar.png" alt="Editar" style="width: 48px; height: 48px; vertical-align: middle;">                                            
+                                                <img src="../../../css/imagen_tesis/icons/icon_editar.png" alt="Editar" style="width: 48px; height: 48px; vertical-align: middle;">                                            
                                             </a >
                                             <!--Utilizamos bs5-button-a seguido de la línea de código para obtener el ID y que nos elimine la fila. -->
                                             <!--El signo sirve para pasar parametros por URL.-->
                                             <a  href="javascript:borrar(<?php echo $registro['id']; ?>);" role="button" >
-                                                <img src="../../css/imagen_tesis/icons/icon_eliminar.png" alt="Eliminar" style="width: 48px; height: 48px; vertical-align: middle;">                                            
+                                                <img src="../../../css/imagen_tesis/icons/icon_eliminar.png" alt="Eliminar" style="width: 48px; height: 48px; vertical-align: middle;">                                            
                                             </a >
                                                 
                                         </td>
@@ -114,8 +114,10 @@
             </table>
         </div>
     </div>
+    <br>
     <div class="card-footer text-muted" style="background-color:bisque"></div>
 </div>
+<br>
+<br>
 
-
-<?php include("../../templates/footer.php");?>
+<?php include("../templates/footer.php");?>

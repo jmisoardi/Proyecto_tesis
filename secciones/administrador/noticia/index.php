@@ -1,5 +1,5 @@
 <?php 
-    include("../../bd.php");
+    include("../../../bd.php");
     
     if (isset($_GET['txtID'])) {
         $txtID = (isset($_GET['txtID'])) ? $_GET['txtID'] :"";
@@ -18,7 +18,7 @@
     $lista_tbl_noticia = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<?php include("../../templates/header.php");?>
+<?php include("../templates/header.php");?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -93,4 +93,4 @@
 </body>
 </html>
 
-<?php include("../../templates/footer.php");?>
+<?php include("../templates/footer.php");?>

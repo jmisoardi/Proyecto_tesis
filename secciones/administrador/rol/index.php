@@ -1,6 +1,6 @@
 <?php 
     // Incluimos la base de datos.
-    include("../../bd.php");
+    include("../../../bd.php");
 
     //Verificamos si se envío txtID por el metodo GET (enviar).    
     if (isset($_GET['txtID'])) {
@@ -23,7 +23,7 @@
     //print_r($lista_tbl_rol);
 ?>
 
-<?php include("../../templates/header.php");?>
+<?php include("../templates/header.php");?>
 <br>
 <br>
 <style> 
@@ -89,4 +89,4 @@
         </div>
     <div class="card-footer text-muted" style="background-color:bisque"></div>
     
-<?php include("../../templates/footer.php");?>
+<?php include("../templates/footer.php");?>

@@ -1,5 +1,5 @@
 <?php 
-    include("../../bd.php");
+    include("../../../bd.php");
     if ($_POST){
         //print_r($_POST);
         
@@ -29,7 +29,7 @@
 
 ?>
 
-<?php include("../../templates/header.php");?>
+<?php include("../templates/header.php");?>
 
 <br>
 <br>
@@ -72,4 +72,4 @@
 </div>
 
 
-<?php include("../../templates/footer.php");?>
+<?php include("../templates/footer.php");?>

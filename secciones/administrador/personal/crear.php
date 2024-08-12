@@ -1,5 +1,5 @@
 <?php 
-    include("../../bd.php");
+    include("../../../bd.php");
     
     if ($_POST){
         print_r($_POST);
@@ -46,7 +46,7 @@
     $lista_tbl_rol = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<?php include("../../templates/header.php");?>
+<?php include("../../../templates/header.php");?>
 <br>
 <br>
 <!--Estilo para Datos Personales-->

@@ -1,5 +1,5 @@
 <?php 
-    include("templates/header.php");
+    include("secciones/administrador/templates/header.php");
 ?>
     <br>
     <br>
@@ -25,6 +25,6 @@
             </div>
 
 <?php 
-    include("templates/footer.php");
+    include("secciones/administrador/templates/footer.php");
 ?>
 

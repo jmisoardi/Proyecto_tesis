@@ -1,5 +1,5 @@
 <?php 
-    include ("../../bd.php");
+    include ("../../../bd.php");
     date_default_timezone_set('America/Argentina/Buenos_Aires');
     
     if($_POST){
@@ -28,7 +28,7 @@
         header("Location:index.php?mensaje=".$mensaje);
     }
 ?>
-<?php include("../../templates/header.php")?>
+<?php include("../templates/header.php")?>
 <br>
 <style> 
     h1 {
@@ -57,4 +57,4 @@
 
             </form>    
     </div>
-<?php  include("../../templates/footer.php") ?>
+<?php  include("../templates/footer.php") ?>

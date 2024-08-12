@@ -1,5 +1,5 @@
 <?php
-    include ("../../bd.php");
+    include ("../../../bd.php");
 
     //Verificamos si se envío txtID por el metodo GET (enviar).    
     if (isset($_GET['txtID'])) {
@@ -21,7 +21,7 @@
 
 ?>
 
-<?php include("../../templates/header.php");?>
+<?php include("../templates/header.php");?>
 <br>
 <br>
 <style> 
@@ -89,4 +89,4 @@
         <div class="card-footer text-muted" style="background-color:bisque"></div>
 </div>
 
-<?php include("../../templates/footer.php");?>
+<?php include("../templates/footer.php");?>

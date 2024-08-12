@@ -1,5 +1,5 @@
 <?php 
-    include("../../bd.php");
+    include("../../../bd.php");
     //Recepción del envío txtID.    
     if (isset($_GET['txtID'])) {
         //Verificamos si está presente en la URL txtID, asignamos el valor en  $_GET['txtID'] de lo contrario no se asigna ningún valor con :"" .
@@ -80,7 +80,7 @@
     }
 ?>
 
-<?php include("../../templates/header.php");?>
+<?php include("../../../templates/header.php");?>
 
 <!--Estilo para Datos Personales-->
 <style> 
@@ -186,4 +186,4 @@
     </form>
     
 
-<?php include("../../templates/footer.php"); ?>
+<?php include("../../../templates/footer.php"); ?>
