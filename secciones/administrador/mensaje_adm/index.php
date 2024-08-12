@@ -1,7 +1,7 @@
 
 <?php 
     include("../../../bd.php");
-    include("../templates_alu/header_alu.php")?>
+    include("../templates/header.php")?>
 
 
 <br>
@@ -43,4 +43,4 @@
     </body>
 </html>
 <br><br>
-<?php include("../templates_alu/footer_alu.php")?>
+<?php include("../templates/footer.php")?>

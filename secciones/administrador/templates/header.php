@@ -72,6 +72,9 @@
                         <a class="nav-link" href="<?php echo $url_base;?>secciones/administrador/rol/">Rol</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="<?php echo $url_base;?>secciones/administrador/mensaje_adm/">Mensaje</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="<?php echo $url_base;?>secciones/administrador/usuario/">Usuarios</a>
                     </li>
 <!--Se agrego para usarlo en el navegador simplemente comodidad, ver si va en la linea con Personal, rol, usuario, -->
