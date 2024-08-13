@@ -32,21 +32,21 @@
 
     $sentencia = $conexion->prepare("
     SELECT 
-        m.id, 
-        p1.nombre AS remitente_nombre, 
-        p2.nombre AS destinatario_nombre, 
-        m.asunto, 
-        m.cuerpo, 
-        m.fecha_envio, 
-        m.leido 
-    FROM 
-        tbl_mensaje m
-    JOIN 
-        tbl_persona p1 ON m.id_remitente = p1.id
-    JOIN 
-        tbl_persona p2 ON m.id_destinatario = p2.id
-    WHERE 
-        m.id_remitente = :id_usuario");
+    tbl_mensaje.id, 
+    persona_remitente.nombre AS nombre_remitente, 
+    persona_destinatario.nombre AS nombre_destinatario, 
+    tbl_mensaje.asunto, 
+    tbl_mensaje.cuerpo, 
+    tbl_mensaje.fecha_envio, 
+    tbl_mensaje.leido 
+FROM 
+    tbl_mensaje
+JOIN 
+    tbl_persona AS persona_remitente ON tbl_mensaje.id_remitente = persona_remitente.id
+JOIN 
+    tbl_persona AS persona_destinatario ON tbl_mensaje.id_destinatario = persona_destinatario.id
+WHERE 
+    tbl_mensaje.id_remitente = :id_usuario;");
 
     $sentencia->bindParam(':id_usuario', $id_usuario);
     $sentencia->execute();
@@ -111,10 +111,10 @@
                                 
                                 <!--Alineación central style-->
                                 <tr class="">
-                                    <td scope="row"><?php echo $registro['remitente_nombre'];?></td>
+                                    <td scope="row"><?php echo $registro['nombre_remitente'];?></td>
                                     <!--La etiqueta <td> podemos agrupar datos en una sola casilla-->
                                                 
-                                        <td> <?php echo $registro['destinatario_nombre']; ?></td>
+                                        <td> <?php echo $registro['nombre_destinatario']; ?></td>
                                         <td> <?php echo $registro['asunto']; ?> </td>
                                         <td> <?php echo $registro['cuerpo']; ?></td> 
                                         <td> <?php echo $fecha_formateada = date('d/m/Y H:i:s', strtotime($registro['fecha_envio'])); ?></td> 
