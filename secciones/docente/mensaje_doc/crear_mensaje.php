@@ -39,11 +39,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="../../../css/styles.css">
-        <title>Document</title>
+        
     </head>
         <body>
-            
-            
             <style> 
             h1 {
                 text-align: center; font-family: Georgia, sans-serif;
@@ -51,7 +49,7 @@
             
             </style>
         <div class="container mt-5" style="background-color:azure">
-            <h1>Enviar Noticia</h1>
+            <h1>Enviar Mensaje</h1>
             <form action="" method="post" enctype="multipart/form-data">
                 
                 <!-- <label for="fecha" class="form-label"><h4>Fecha:</h4></label>

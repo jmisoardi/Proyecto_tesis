@@ -19,7 +19,7 @@
 
         //Preparamos la insercción de los datos.
         $sentencia = $conexion->prepare("INSERT INTO 
-        `tbl_persona`(`id`, `nombre`, `apellido`, `dni`, `fechanacimiento`, `email`, `telefono`, `idrol`, `fechaingreso`, 'usuario', 'password' ) 
+        `tbl_persona`(`id`, `nombre`, `apellido`, `dni`, `fechanacimiento`, `email`, `telefono`, `idrol`, `fechaingreso`, `usuario`, `password` ) 
         VALUES (null, :nombre, :apellido, :dni, :fechanacimiento, :email, :telefono, :idrol, :fechaingreso, :usuario, :password)");
         
         //Asignando los valores que vienen del  método POST (Los que vienen del formulario).
@@ -46,7 +46,7 @@
     $lista_tbl_rol = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<?php include("../../../templates/header.php");?>
+<?php include("../templates/header.php");?>
 <br>
 <br>
 <!--Estilo para Datos Personales-->
@@ -132,4 +132,4 @@
     <br>
     <div class="card-footer text-muted" style="background-color:bisque"></div>
     
-<?php include("../../templates/footer.php");?>
+<?php include("../templates/footer.php");?>
