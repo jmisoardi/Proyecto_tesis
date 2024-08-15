@@ -32,22 +32,21 @@
 
     $sentencia = $conexion->prepare("
     SELECT 
-    tbl_mensaje.id, 
-    remitente.nombre AS remitente_nombre, 
-    destinatario.nombre AS destinatario_nombre, 
-    tbl_mensaje.asunto, 
-    tbl_mensaje.cuerpo, 
-    tbl_mensaje.fecha_envio, 
-    tbl_mensaje.leido 
-FROM 
-    tbl_mensaje
-JOIN 
-    tbl_persona AS remitente ON tbl_mensaje.id_remitente = remitente.id
-JOIN 
-    tbl_persona AS destinatario ON tbl_mensaje.id_destinatario = destinatario.id
-WHERE 
-    tbl_mensaje.id_remitente = :id_usuario;");
-
+        tbl_mensaje.id, 
+        remitente.nombre AS remitente_nombre, 
+        tbl_persona.nombre AS destinatario_nombre, 
+        tbl_mensaje.asunto, 
+        tbl_mensaje.cuerpo, 
+        tbl_mensaje.fecha_envio 
+    FROM 
+        tbl_mensaje
+    JOIN 
+        tbl_persona AS remitente ON tbl_mensaje.id_remitente = remitente.id
+    JOIN 
+        tbl_persona ON tbl_mensaje.destinatario_nombre = tbl_persona.id
+    WHERE 
+        tbl_mensaje.id_remitente = :id_usuario; ");
+        
     $sentencia->bindParam(':id_usuario', $id_usuario);
     $sentencia->execute();
     $lista_tbl_mensaje = $sentencia->fetchAll(PDO::FETCH_ASSOC);
@@ -96,7 +95,7 @@ WHERE
                                     <th scope="col" style="background-color:azure"><u>Asunto</u></th>
                                     <th scope="col" style="background-color:azure"><u>Cuerpo</u></th>
                                     <th scope="col" style="background-color:azure"><u>Fecha</u></th>
-                                    <th scope="col" style="background-color:azure"><u>leido</u></th>
+                                    
                                     <th scope="col" style="background-color:azure"><u>Acciones</u></th>
                             </tr>
                         </thead>
@@ -114,7 +113,7 @@ WHERE
                                         <td> <?php echo $registro['asunto']; ?> </td>
                                         <td> <?php echo $registro['cuerpo']; ?></td> 
                                         <td> <?php echo $fecha_formateada = date('d/m/Y H:i:s', strtotime($registro['fecha_envio'])); ?></td> 
-                                                <td> <?php echo $registro['leido'] ? 'Si' : 'No'; ?></td> 
+                                                
                                                 <!--Etiqueta de botones Editar y Eliminar-->
                                                 <td>
                                                     <!--El signo sirve para pasar parametros por URL.-->

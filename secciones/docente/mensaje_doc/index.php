@@ -1,7 +1,7 @@
 
 <?php 
     include("../../../bd.php");
-    include("../templates_doc/header_doc.php");
+    include("../templates_doc/header_doc.php"); 
     
     $usuario = $_SESSION['usuario'];
     
@@ -10,12 +10,12 @@
         //Verificamos si está presente en la URL txtID, asignamos el valor en  $_GET['txtID'] de lo contrario no se asigna ningún valor con :"" .
         $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
         //Preparamos la conexion de Borrado.
-        $sentencia = $conexion->prepare ( "DELETE FROM tbl_mensaje WHERE id=:id" );
+        $sentencia = $conexion->prepare ( "DELETE FROM `tbl_mensaje` WHERE id=:id" );
         $sentencia->bindParam( ":id" ,$txtID );
         $sentencia->execute();
         
         //Mensaje de Registro Eliminado (Sweet alert).
-        /* $mensaje="Registro Eliminado"; */
+        $mensaje="Registro Eliminado";
         header("Location:index.php?mensaje=".$mensaje);
     }
 
@@ -36,28 +36,28 @@
 
     $sentencia = $conexion->prepare("
     SELECT 
-    tbl_mensaje.id, 
-    remitente.nombre AS remitente_nombre, 
-    destinatario.nombre AS destinatario_nombre, 
-    tbl_mensaje.asunto, 
-    tbl_mensaje.cuerpo, 
-    tbl_mensaje.fecha_envio, 
-    tbl_mensaje.leido 
-FROM 
-    tbl_mensaje
-JOIN 
-    tbl_persona AS remitente ON tbl_mensaje.id_remitente = remitente.id
-JOIN 
-    tbl_persona AS destinatario ON tbl_mensaje.id_destinatario = destinatario.id
-WHERE 
-    tbl_mensaje.id_remitente = :id_usuario;");
-
+        tbl_mensaje.id, 
+        remitente.nombre AS remitente_nombre, 
+        tbl_persona.nombre AS destinatario_nombre, 
+        tbl_mensaje.asunto, 
+        tbl_mensaje.cuerpo, 
+        tbl_mensaje.fecha_envio 
+    FROM 
+        tbl_mensaje
+    JOIN 
+        tbl_persona AS remitente ON tbl_mensaje.id_remitente = remitente.id
+    JOIN 
+        tbl_persona ON tbl_mensaje.destinatario_nombre = tbl_persona.id
+    WHERE 
+        tbl_mensaje.id_remitente = :id_usuario;");
+    
     $sentencia->bindParam(':id_usuario', $id_usuario);
     $sentencia->execute();
     $lista_tbl_mensaje = $sentencia->fetchAll(PDO::FETCH_ASSOC);
-?>
+    ?>
 
 <br>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -65,6 +65,7 @@ WHERE
         <title>Noticias</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="../../../css/styles.css">
+        
     </head>
     <body>
         <!-- <div style="margin-bottom: 10px;">
@@ -104,7 +105,7 @@ WHERE
                                     <th scope="col" style="background-color:azure"><u>Asunto</u></th>
                                     <th scope="col" style="background-color:azure"><u>Cuerpo</u></th>
                                     <th scope="col" style="background-color:azure"><u>Fecha</u></th>
-                                    <th scope="col" style="background-color:azure"><u>leido</u></th>
+                                    
                                     <th scope="col" style="background-color:azure"><u>Acciones</u></th>
                             </tr>
                         </thead>
@@ -122,7 +123,7 @@ WHERE
                                         <td> <?php echo $registro['asunto']; ?> </td>
                                         <td> <?php echo $registro['cuerpo']; ?></td> 
                                         <td> <?php echo $fecha_formateada = date('d/m/Y H:i:s', strtotime($registro['fecha_envio'])); ?></td> 
-                                                <td> <?php echo $registro['leido'] ? 'Si' : 'No'; ?></td> 
+                                                
                                                 <!--Etiqueta de botones Editar y Eliminar-->
                                                 <td>
                                                     <!--Utilizamos bs5-button-a seguido de la línea de código para editar el ID de la fila. -->
