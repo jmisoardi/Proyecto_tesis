@@ -34,7 +34,7 @@
     SELECT 
         tbl_mensaje.id, 
         remitente.nombre AS remitente_nombre, 
-        tbl_persona.nombre AS destinatario_nombre, 
+        destinatario.nombre AS destinatario_nombre, 
         tbl_mensaje.asunto, 
         tbl_mensaje.cuerpo, 
         tbl_mensaje.fecha_envio 
@@ -43,7 +43,7 @@
     JOIN 
         tbl_persona AS remitente ON tbl_mensaje.id_remitente = remitente.id
     JOIN 
-        tbl_persona ON tbl_mensaje.destinatario_nombre = tbl_persona.id
+        tbl_persona AS destinatario ON tbl_mensaje.destinatario_nombre = destinatario.id
     WHERE 
         tbl_mensaje.id_remitente = :id_usuario; ");
         
