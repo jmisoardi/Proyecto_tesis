@@ -78,7 +78,13 @@
                 <label for="cuerpo">Mensaje:</label>
                 <textarea name="cuerpo" id="cuerpo" class="form-control" rows="5" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <br>
+            <button   type="submit" class="btn btn-primary">Enviar</button>
+            <div class="text-center">
+                <a name="" id="" class="btn btn-info" href="index.php" role="button">
+                    <img src="../../../css/imagen_tesis/icons/atras.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                </a>
+            </div>
         </form>
     </body>
 </html>
