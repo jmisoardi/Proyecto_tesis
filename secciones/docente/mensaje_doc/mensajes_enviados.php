@@ -25,30 +25,11 @@
 
     // Obtenemos los mensajes recibidos junto con la información del remitente
     $sentencia = $conexion->prepare("
-<<<<<<< HEAD
         SELECT p.nombre, p.apellido, m.asunto, m.cuerpo, m.fecha_envio
         FROM tbl_mensaje m
         INNER JOIN tbl_persona p ON m.id_destinatario = p.id
         WHERE m.id_remitente = :id_usuario
     ");
-=======
-    SELECT 
-        tbl_mensaje.id, 
-        remitente.nombre AS remitente_nombre, 
-        destinatario.nombre AS destinatario_nombre, 
-        tbl_mensaje.asunto, 
-        tbl_mensaje.cuerpo, 
-        tbl_mensaje.fecha_envio 
-    FROM 
-        tbl_mensaje
-    JOIN 
-        tbl_persona AS remitente ON tbl_mensaje.id_remitente = remitente.id
-    JOIN 
-        tbl_persona AS destinatario ON tbl_mensaje.destinatario_nombre = destinatario.id
-    WHERE 
-        tbl_mensaje.id_remitente = :id_usuario; ");
-        
->>>>>>> 0bd9d8891b7296d7cf2caef20ed73f855eef683f
     $sentencia->bindParam(':id_usuario', $id_usuario);
     $sentencia->execute();
     $mensajes_recibidos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
