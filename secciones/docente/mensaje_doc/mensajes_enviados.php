@@ -72,27 +72,28 @@
                                     <td>
                                         <!--Utilizamos bs5-button-a seguido de la línea de código para obtener el ID y que nos elimine la fila. -->
                                         <!--El signo sirve para pasar parametros por URL.-->
-                                        <a class="btn btn-danger" href="javascript:borrar(<?php echo $registro['id']; ?>);" role="button" >Eliminar</a >   
+                                        <a class="btn btn-danger" href="javascript:borrar(<?php echo $mensaje['id_usuario']; ?>);" role="button" >Eliminar</a >   
                                     </td>
                                 </tr>
                             <?php } ?>
                             
                         </tbody>
                     </table>
+                </div>
             </div>
-            <br>
             <br>
             <div class="card-footer text-muted" style="background-color:bisque"></div>
         </div>
-        <br>
     </body>
+    <br>
     <br>
     <div class="text-center">
         <a name="" id="" class="btn btn-info" href="index.php" role="button">
             <img src="../../../css/imagen_tesis/icons/atras.png" style="width: 30px; height: 30px; vertical-align: middle;">
         </a>
     </div>
+    <br>
+    <br>
+    <?php include("../templates_doc/footer_doc.php") ?>
 </html>
-<br>
-<br>
-<?php include("../templates_doc/footer_doc.php") ?>
+

@@ -2,6 +2,8 @@
     include ("../../../bd.php");
     include("../templates_doc/header_doc.php");
     
+    $usuario = $_SESSION['usuario'];
+    
     date_default_timezone_set('America/Argentina/Buenos_Aires');
     
     if($_POST){
@@ -12,10 +14,15 @@
         $fecha = date('Y-m-d H:i:s'); 
         
         // Obtener el ID del remitente desde la sesión
-        $remitente_id = $_SESSION['id_usuario'];  
+        $sentencia = $conexion->prepare("SELECT id FROM tbl_persona WHERE usuario = :usuario limit 1");
+        $sentencia->bindParam(':usuario', $usuario);
+        $sentencia->execute();
+        $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
 
-        // Consulta para obtener el ID y nombre del destinatario utilizando su email
-        $sentencia = $conexion->prepare("SELECT id, nombre FROM tbl_persona WHERE email = :email");
+        $remitente_id = $resultado['id'];;  
+
+        // Consulta para obtener el ID del destinatario utilizando su email
+        $sentencia = $conexion->prepare("SELECT id FROM tbl_persona WHERE email = :email");
         $sentencia->bindParam(':email', $destinatario_email);
         $sentencia->execute();
         $destinatario = $sentencia->fetch(PDO::FETCH_ASSOC);
@@ -31,13 +38,14 @@
         // Insertar el mensaje en la base de datos
         $sentencia = $conexion->prepare("
             INSERT INTO tbl_mensaje 
-            (id_remitente, destinatario_nombre, asunto, cuerpo, fecha_envio) 
+            (id_remitente, id_destinatario, email, asunto, cuerpo, fecha_envio) 
             VALUES 
-            (:id_remitente, :destinatario_nombre, :asunto, :cuerpo, :fecha_envio)
+            (:id_remitente, :id_destinatario, :email, :asunto, :cuerpo, :fecha_envio)
         ");
         
         $sentencia->bindParam(':id_remitente', $remitente_id);
-        $sentencia->bindParam(':destinatario_nombre', $destinatario_id);
+        $sentencia->bindParam(':id_destinatario', $destinatario_id);
+        $sentencia->bindParam(':email', $destinatario_email);
         $sentencia->bindParam(':asunto', $asunto);
         $sentencia->bindParam(':cuerpo', $cuerpo);
         $sentencia->bindParam(':fecha_envio', $fecha);
@@ -48,6 +56,11 @@
         header("Location:index.php?mensaje=".$mensaje);
         exit();
     }
+
+    // Consulta para obtener todos los correos electrónicos de los usuarios
+    $sentencia_usuarios = $conexion->prepare("SELECT email, nombre FROM tbl_persona");
+    $sentencia_usuarios->execute();
+    $usuarios = $sentencia_usuarios->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -65,10 +78,17 @@
             }
         </style>
 
-        <form action="procesar_mensaje.php" method="POST">
+        <form action="" method="POST">
             <div class="form-group">
                 <label for="destinatario">Destinatario (Correo Electrónico):</label>
-                <input type="email" name="destinatario" id="destinatario" class="form-control" required>
+                <select name="destinatario" id="destinatario" class="form-control" required>
+                    <option value="" disabled selected>Selecciona un destinatario</option>
+                    <?php foreach($usuarios as $usuario): ?>
+                        <option value="<?php echo $usuario['email']; ?>">
+                            <?php echo $usuario['nombre']; ?> - <?php echo $usuario['email']; ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
             </div>
             <div class="form-group">
                 <label for="asunto">Asunto:</label>
@@ -79,7 +99,7 @@
                 <textarea name="cuerpo" id="cuerpo" class="form-control" rows="5" required></textarea>
             </div>
             <br>
-            <button   type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" class="btn btn-primary">Enviar</button>
             <div class="text-center">
                 <a name="" id="" class="btn btn-info" href="index.php" role="button">
                     <img src="../../../css/imagen_tesis/icons/atras.png" style="width: 30px; height: 30px; vertical-align: middle;">

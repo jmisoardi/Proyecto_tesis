@@ -20,10 +20,10 @@
         $sentencia->bindParam(":cuerpo",$cuerpo);
         $sentencia->execute();
         
-        //Mensaje de Registro Agregado (Sweet alert).
         $fecha_formateada = date('d/m/Y H:i:s', strtotime($fecha));
         /* echo $fecha_formateada; */ // Mostrará la fecha en el formato deseado
         
+        //Mensaje de Registro Agregado (Sweet alert).
         $mensaje="Mensaje Creado";
         header("Location:index.php?mensaje=".$mensaje);
     }

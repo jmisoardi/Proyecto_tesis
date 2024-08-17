@@ -25,7 +25,7 @@
 
     // Obtenemos los mensajes recibidos junto con la información del remitente
     $sentencia = $conexion->prepare("
-        SELECT p.nombre, p.apellido, m.asunto, m.cuerpo, m.fecha_envio
+        SELECT p.nombre, p.apellido, m.email, m.asunto, m.cuerpo, m.fecha_envio
         FROM tbl_mensaje m
         INNER JOIN tbl_persona p ON m.id_remitente = p.id
         WHERE m.id_destinatario = :id_usuario
@@ -57,6 +57,7 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="background-color:azure"><u>Remitente</u></th>
+                                <th scope="col" style="background-color:azure"><u>Email</u></th> 
                                 <th scope="col" style="background-color:azure"><u>Asunto</u></th> 
                                 <th scope="col" style="background-color:azure"><u>Cuerpo</u></th>
                                 <th scope="col" style="background-color:azure"><u>Fecha de Envío</u></th>
@@ -67,6 +68,7 @@
                             <?php foreach ($mensajes_recibidos as $mensaje) { ?>
                                 <tr>
                                     <td><?php echo $mensaje['nombre'] . ' ' . $mensaje['apellido']; ?></td>
+                                    <td><?php echo $mensaje['email']; ?></td>
                                     <td><?php echo $mensaje['asunto']; ?></td>
                                     <td><?php echo $mensaje['cuerpo']; ?></td>
                                     <td><?php echo date('d/m/Y H:i:s', strtotime($mensaje['fecha_envio'])); ?></td>
