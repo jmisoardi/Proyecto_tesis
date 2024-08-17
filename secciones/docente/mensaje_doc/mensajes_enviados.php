@@ -25,7 +25,7 @@
 
     // Obtenemos los mensajes recibidos junto con la información del remitente
     $sentencia = $conexion->prepare("
-        SELECT p.nombre, p.apellido, m.asunto, m.cuerpo, m.fecha_envio
+        SELECT p.nombre, p.apellido, m.id, m.asunto, m.cuerpo, m.fecha_envio
         FROM tbl_mensaje m
         INNER JOIN tbl_persona p ON m.id_destinatario = p.id
         WHERE m.id_remitente = :id_usuario
@@ -72,7 +72,7 @@
                                     <td>
                                         <!--Utilizamos bs5-button-a seguido de la línea de código para obtener el ID y que nos elimine la fila. -->
                                         <!--El signo sirve para pasar parametros por URL.-->
-                                        <a class="btn btn-danger" href="javascript:borrar(<?php echo $mensaje['id_usuario']; ?>);" role="button" >Eliminar</a >   
+                                        <a class="btn btn-danger" href="javascript:borrar(<?php echo $mensaje['id']; ?>);" role="button" >Eliminar</a >   
                                     </td>
                                 </tr>
                             <?php } ?>
