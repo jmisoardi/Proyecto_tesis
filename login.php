@@ -36,7 +36,7 @@
                     break; 
                 }
             }
-            /* print_r($_SESSION ['rolpersona']);  */
+            /* Recorremos el switch  para dar acceso a los ususario */
             switch ($_SESSION['rolpersona']) {
                 case 'administrador':
                     header("Location:index.php");
@@ -87,7 +87,6 @@
                         h1 { text-align: center; font-family: Georgia, sans-serif; }
                     </style>
                     <h1>Iniciar Sesion</h1> 
-
                     <div class="card">
                         <div class="card-header" style="background-color:bisque"></div>
                             <div class="card-body"style="background-color:azure">
@@ -134,7 +133,6 @@
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-primary">Entrar al sistema</button>
                                     </div>
-                                    
                                 </form>
                             </div>
                         <div class="card-footer text-muted" style="background-color:bisque"> </div>

@@ -10,23 +10,24 @@
         
         }
     
-$usuario_doc = $_SESSION['usuario'];
-
-$sentencia = $conexion->prepare("SELECT * FROM tbl_persona WHERE usuario = :usuario LIMIT 1");
-$sentencia->bindParam(':usuario', $usuario_doc); 
-$sentencia->execute();
-$usuario_doc = $sentencia->fetch(PDO::FETCH_ASSOC);
-/* print_r($usuario_doc); */
+    $usuario_doc = $_SESSION['usuario'];
+    
+    /* Seleccionamos datos de la table Persona */
+    
+    $sentencia = $conexion->prepare("SELECT * FROM tbl_persona WHERE usuario = :usuario LIMIT 1");
+    $sentencia->bindParam(':usuario', $usuario_doc); 
+    $sentencia->execute();
+    $usuario_doc = $sentencia->fetch(PDO::FETCH_ASSOC);
+    /* print_r($usuario_doc); */
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../css/styles.css">
-</head>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../../css/styles.css">
+    </head>
 </html>   
 
 <br>

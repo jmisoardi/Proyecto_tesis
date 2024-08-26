@@ -1,6 +1,7 @@
 <?php   
-        include("../../../bd.php");
-        include("../templates_doc/header_doc.php"); 
+    /* Incluimos Base de Datos y Templates/header */
+    include("../../../bd.php");
+    include("../templates_doc/header_doc.php"); 
     
     //Recepción del envío txtID.
     if(isset($_GET['txtID'])){
@@ -18,13 +19,15 @@
         $titulo = $registro["titulo"]; 
         $cuerpo = $registro["cuerpo"]; 
     }
+    /* Recibimos los datos del metodo Post */
     if ($_POST) { 
         print_r($_POST);
         $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : "";
         $fecha= (isset($_POST['fecha'])) ? $_POST['fecha'] : "";
         $titulo = (isset($_POST['titulo'])) ? $_POST['titulo'] : "" ;
         $cuerpo= (isset($_POST['cuerpo'])) ? $_POST['cuerpo'] : "";
-    
+        
+        /* Actualizacion de la tabla Noticia */
         $sentencia = $conexion->prepare("
         UPDATE tbl_noticia 
         SET
@@ -54,6 +57,7 @@
     <br>
     <br>
         <body>
+            <!-- Estilos de h1 h2 label -->
             <style> 
                 h1, h2, label {
                     text-align: center; 
