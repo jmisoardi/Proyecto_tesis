@@ -1,17 +1,13 @@
-
-<?php 
-    include("../templates_alu/header_alu.php");
-?>
-
+<?php include("../templates_alu/header_alu.php");?>
 <br>
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Unidad</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../css/styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Unidad</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../css/styles.css">
+    </head>
     <body>
         <div class="container mt-5" style="background-color:azure">
             <h1>Unidad del Estudiante</h1>

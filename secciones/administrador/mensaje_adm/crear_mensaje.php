@@ -77,7 +77,6 @@
                 text-align: center; font-family: Georgia, sans-serif;
             }
         </style>
-
         <form action="" method="POST">
             <div class="form-group">
                 <label for="destinatario">Destinatario (Correo Electrónico):</label>

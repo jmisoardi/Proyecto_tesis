@@ -62,7 +62,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Recorremos el arreglo de mensajes recibidos -->
+                            <!-- Recorrer el arreglo de mensajes recibidos -->
                             <?php foreach ($mensajes_recibidos as $mensaje) { ?>
                                 <tr>
                                     <td><?php echo $mensaje['nombre'] . ' ' . $mensaje['apellido']; ?></td>

@@ -14,7 +14,6 @@
         $mensaje="Registro Eliminado";
         header("Location:index.php?mensaje=".$mensaje);
     }
-
     //Preparamos la sentencia de $conexion y ejecutamos, seguido creamos una lista_tbl_rol, que las filas se devuelvan como un array asociativo.
     $sentencia = $conexion->prepare("SELECT * FROM `tbl_rol`");
     $sentencia->execute();
@@ -22,7 +21,6 @@
     //Utilizamos el print_r para saber que estamos consultando los registros de la base de datos de la tabla de rol.
     //print_r($lista_tbl_rol);
 ?>
-
 <?php include("../templates/header.php");?>
 <br>
 <br>
@@ -32,16 +30,13 @@
     }
 </style>
     <h1>Rol</h1> 
-    
     <div class="card">
-    
+
     <!--Header y button primary-->
         <div class="card-header" style="background-color:bisque">   
             <a name="" id="" class="btn btn-primary" href="crear.php" role="button" >Agregar Registro</a>
         </div> 
-    
         <div class="card-body" style="background-color:azure">
-    
             <div class="table-responsive-sm">
                 <table
                     class="table">
@@ -82,11 +77,9 @@
                                     
                                 </tr>
                             <?php }?>
-                        
                     </tbody>
                 </table>
             </div>
         </div>
     <div class="card-footer text-muted" style="background-color:bisque"></div>
-    
 <?php include("../templates/footer.php");?>

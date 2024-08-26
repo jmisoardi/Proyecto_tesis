@@ -1,6 +1,6 @@
 <?php   
-        include("../../../bd.php");
-        include("../templates_alu/header_alu.php"); 
+    include("../../../bd.php");
+    include("../templates_alu/header_alu.php"); 
     
     //Recepción del envío txtID.
     if(isset($_GET['txtID'])){

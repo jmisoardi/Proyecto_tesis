@@ -1,4 +1,5 @@
-<?php 
+<?php
+    // Incluimos la base de datos. 
     include("../../../bd.php");
     
     //Recepción del envío txtID.
@@ -17,8 +18,6 @@
         $titulo = $registro["titulo"]; 
         $cuerpo = $registro["cuerpo"]; 
     }
-
-
     if ($_POST) { 
         print_r($_POST);
         $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : "";
@@ -45,41 +44,30 @@
         header("Location:index.php?mensaje=".$mensaje);    
     }    
         
-    ?>
-    <?php include("../templates/header.php");?>
+?>
+<?php include("../templates/header.php");?>
+<div class="container mt-5" style="background-color:azure">
+    <h1>Editar Noticia</h1>
+        <form action="" method="post" enctype="multipart/form-data">    
+            <label for="txtID" class="form-label"><h4>Id:</h4></label>
+                <input type="text"
+                value="<?php echo $txtID?>" id="txtID" readonly name="txtID" required><br>
+            <label for="fecha" class="form-label"><h4>fecha:</h4></label>
+                <input type="text"
+                value="<?php echo $fecha_formateada = date('d/m/Y H:i:s', strtotime($registro['fecha']));?>" 
+                class="form-control" id="fecha" name="fecha"><br>        
+            <label for="titulo" class="form-label"><h4>Titulo:</h4></label>
+                <input type="text"
+                value="<?php echo $titulo?>" 
+                class="form-control" id="titulo" name="titulo"><br>
+            <label for="cuerpo" class="form-label"><h3>Mensaje:</h3></label>
+                <textarea 
+                class="form-control" id="cuerpo" name="cuerpo" rows="10" cols="50"><?php echo htmlspecialchars($cuerpo); ?></textarea><br>
 
-    <div class="container mt-5" style="background-color:azure">
-        <h1>Editar Noticia</h1>
-            <form action="" method="post" enctype="multipart/form-data">
-        
-                <label for="txtID" class="form-label"><h4>Id:</h4></label>
-                    <input type="text"
-                    value="<?php echo $txtID?>" id="txtID" readonly name="txtID" required><br>
-                
-                <label for="fecha" class="form-label"><h4>fecha:</h4></label>
-                    <input type="text"
-                    value="<?php echo $fecha_formateada = date('d/m/Y H:i:s', strtotime($registro['fecha']));?>" 
-                    class="form-control" id="fecha" name="fecha"><br>
-                
-                    <label for="titulo" class="form-label"><h4>Titulo:</h4></label>
-                    <input type="text"
-                    value="<?php echo $titulo?>" 
-                    class="form-control" id="titulo" name="titulo"><br>
-                
-
-                <label for="cuerpo" class="form-label"><h3>Mensaje:</h3></label>
-                    <textarea 
-                    class="form-control" id="cuerpo" name="cuerpo" rows="10" cols="50"><?php echo htmlspecialchars($cuerpo); ?></textarea><br>
-
-                <!--Button bs5-button-default y bs5-button-a (sirve para direccionar) -->
-                <button type="submit" class="btn btn-success">Actualizar</button>
-                <a name="" id="" class="btn btn-primary" href="index.php" role="button" >Cancelar</a>
-                <!-- <input type="submit" value="Enviar Noticia"> -->
-
-            </form>    
-    </div>
-
-    <?php 
-    include("../templates/footer.php");
-    ?>    
-    
+            <!--Button bs5-button-default y bs5-button-a (sirve para direccionar) -->
+            <button type="submit" class="btn btn-success">Actualizar</button>
+            <a name="" id="" class="btn btn-primary" href="index.php" role="button" >Cancelar</a>
+            <!-- <input type="submit" value="Enviar Noticia"> -->
+        </form>    
+</div>
+<?php include("../templates/footer.php");?>

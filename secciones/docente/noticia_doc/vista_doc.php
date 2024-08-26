@@ -27,7 +27,7 @@
         $titulo = (isset($_POST['titulo'])) ? $_POST['titulo'] : "" ;
         $cuerpo= (isset($_POST['cuerpo'])) ? $_POST['cuerpo'] : "";
         
-        /* Actualizacion de la tabla Noticia */
+        /* Actualización de la tabla Noticia */
         $sentencia = $conexion->prepare("
         UPDATE tbl_noticia 
         SET

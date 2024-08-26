@@ -4,6 +4,7 @@
     
     $usuario = $_SESSION['usuario'];
     
+    /* Obtenemos el tiempo de zona. */ 
     date_default_timezone_set('America/Argentina/Buenos_Aires');
     
     if($_POST){
