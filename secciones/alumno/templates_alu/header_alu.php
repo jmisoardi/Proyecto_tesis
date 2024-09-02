@@ -5,7 +5,7 @@
 
         // Verifica si la sesión de usuario está establecida
         if (!isset($_SESSION['usuario']) || !isset($_SESSION['rolpersona'])) {
-            header("Location: " . $url_base . "login.php");
+            header("Location: " . $url_base . "index.php");
             exit(); // Detiene la ejecución del script después de redirigir
         } else {
                 
@@ -61,7 +61,7 @@
                                     </a>
                                 </li>
                                 <li >
-                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/alumno/cerrar.php">
+                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/alumno/cerrar_alu.php">
                                         <img src="../../../css/imagen_tesis/icons/cerrar.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                     </a>
                                 </li>

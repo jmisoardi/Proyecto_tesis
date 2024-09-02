@@ -2,14 +2,18 @@
 <?php 
     session_start();
     $url_base = "http://localhost/Proyecto_tesis/";
-    
+    $varsesion = $_SESSION['usuario'];
+    if ($varsesion==null || $varsesion='') {
+        echo "no tiene acceso";
+        die();
+    }
     // Verifica si la sesión de usuario está establecida
-    if (!isset($_SESSION['usuario']) && !isset($_SESSION['rolpersona'])) {
-        header("Location: " . $url_base . "login.php"); 
+   /*  if (!isset($_SESSION['usuario']) && !isset($_SESSION['rolpersona'])) {
+        header("Location: " . $url_base . "index.php"); 
 
         switch ($_SESSION['rolpersona']) {
             case 'administrador':
-                header("Location:index.php");
+                header("Location:secciones/administrador/home_adm/index.php");
                 break;
             case 'docente':
                 header("Location:secciones/docente/home_doc/index.php");
@@ -20,7 +24,7 @@
         }       
         exit(); // Detiene la ejecución del script después de redirigir
     } else {
-            }
+            } */
 ?>
 <!--Contiene Menu y parte del Container -->
 <!doctype html>
@@ -79,7 +83,7 @@
                         <a class="nav-link" href="<?php echo $url_base;?>secciones/docente/home_doc/index.php">Docente</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $url_base;?>cerrar.php">Cerrar Sesión</a>
+                        <a class="nav-link" href="<?php echo $url_base;?>secciones/administrador/cerrar_adm.php">Cerrar Sesión</a>
                     </li>
                 </ul>
             </nav>

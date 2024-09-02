@@ -2,10 +2,12 @@
 <?php 
     session_start();
     $url_base = "http://localhost/Proyecto_tesis/";
+    
+    $roldocente = $_SESSION['rolpersona'];
 
     // Verifica si la sesión de usuario está establecida
-    if (!isset($_SESSION['usuario']) || !isset($_SESSION['rolpersona'])) {
-        header("Location: " . $url_base . "login.php");
+    if (!isset($_SESSION['usuario']) || (!isset($_SESSION['rolpersona']) && $_SESSION['rolpersona'] != $roldocente)) {
+        header("Location: " . $url_base . "index.php");
         exit(); // Detiene la ejecución del script después de redirigir
     } else {    
         }
