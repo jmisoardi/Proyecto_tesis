@@ -33,3 +33,21 @@
     padding: 20px;
     color: #333;
 }
+
+.background-login {
+    background-image: url('imagen_tesis/background-login.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+.content-login {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    color: #333;
+}

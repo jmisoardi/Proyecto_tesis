@@ -2,16 +2,16 @@
 <?php 
     session_start();
     $url_base = "http://localhost/Proyecto_tesis/";
-    $varsesion = $_SESSION['usuario'];
+    /* $varsesion = $_SESSION['usuario'];
     if ($varsesion==null || $varsesion='') {
         echo "no tiene acceso";
         die();
-    }
+    } */
     // Verifica si la sesión de usuario está establecida
-   /*  if (!isset($_SESSION['usuario']) && !isset($_SESSION['rolpersona'])) {
+    if (!isset($_SESSION['usuario']) && ($_SESSION['rolpersona'] !== 'administrador')) {
         header("Location: " . $url_base . "index.php"); 
 
-        switch ($_SESSION['rolpersona']) {
+        /* switch ($_SESSION['rolpersona']) {
             case 'administrador':
                 header("Location:secciones/administrador/home_adm/index.php");
                 break;
@@ -22,9 +22,9 @@
                 header("Location:secciones/alumno/home_alu/index.php");
                 break;
         }       
-        exit(); // Detiene la ejecución del script después de redirigir
+        exit(); */ // Detiene la ejecución del script después de redirigir
     } else {
-            } */
+            }
 ?>
 <!--Contiene Menu y parte del Container -->
 <!doctype html>
