@@ -63,93 +63,94 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <!-- Bootstrap CSS v5.2.1 -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
-        <link rel="stylesheet" href="css/imagen_tesis/background-login.webp">
+        <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
-        <div class="background-login"></div>
-        <div class="content-login">
         <header>
             <head>
                 <!--Estilo css para ver el ojo en el LOGIN-->
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
             </head>
         </header>
-        <main class="container">
-            <div class="row">
-                <div class="col-md-4"></div>
-                    
-                <div class="col-md-4">
-                    <br><br><br><br><br>
-                    <style> 
-                        h1 { text-align: center; font-family: Georgia, sans-serif; }
-                    </style>
-                    <h1>Iniciar Sesion</h1> 
-                    <div class="card">
-                        <div class="card-header" style="background-color:bisque"></div>
-                            <div class="card-body"style="background-color:azure">
-                            
-                                <!--Alerta de error en el inicio de sesion con mensaje-->
-                                <?php if (isset($mensaje)){?>
-                                    <div
-                                        class="alert alert-danger" role="alert">
-                                        <strong><?php echo $mensaje;?></strong>
-                                    </div>
-                                <?php }?>
-
-                                <form action="" method="post">
-                                    <div class="mb-3">
-                                        <label for="usuario" class="form-label">Usuario:</label>
-                                            <input type="text" class="form-control" name="usuario" id="usuario"  placeholder="Escriba su usuario"/>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="password" class="form-label">Contraseña:</label>
-                                        <div class="input-group">
-                                            <input type="password" class="form-control" name="password" id="password" placeholder="Escriba su contraseña"/>
-                                            <span class="input-group-text" onclick="togglePassword()">
-                                                <i class="fas fa-eye" id="togglePasswordIcon"></i>
-                                            </span>
+        <div class="background-login-3"></div>
+        <div class="content-login-3">
+            <main class="container">
+                <div class="row">
+                    <div class="col-md-4"></div>
+                        
+                    <div class="col-md-4">
+                        <br><br><br><br><br>
+                        <style> 
+                            h1 { text-align: center; font-family: Georgia, sans-serif; }
+                        </style>
+                        <h1>Iniciar Sesion</h1> 
+                        <div class="card">
+                            <div class="card-header" style="background-color:bisque"><br></div>
+                                <div class="card-body"style="background-color:azure">
+                                
+                                    <!--Alerta de error en el inicio de sesion con mensaje-->
+                                    <?php if (isset($mensaje)){?>
+                                        <div
+                                            class="alert alert-danger" role="alert">
+                                            <strong><?php echo $mensaje;?></strong>
                                         </div>
-                                    </div>
-                                    <!--Script para ver el password-->
-                                    <script>
-                                        function togglePassword() {
-                                                var passwordInput = document.getElementById("password");
-                                                var toggleIcon = document.getElementById("togglePasswordIcon");
-                                                if (passwordInput.type === "password") {
-                                                    passwordInput.type = "text";
-                                                    toggleIcon.classList.remove("fa-eye");
-                                                    toggleIcon.classList.add("fa-eye-slash");
-                                                } else {
-                                                    passwordInput.type = "password";
-                                                    toggleIcon.classList.remove("fa-eye-slash");
-                                                    toggleIcon.classList.add("fa-eye");
-                                                }
-                                        }
-                                    </script>
-                                    <!--Contenedor para centrar el botón-->
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-primary">Entrar al sistema</button>
-                                    </div>
-                                </form>
-                            </div>
-                        <div class="card-footer text-muted" style="background-color:bisque"> </div>
+                                    <?php }?>
+
+                                    <form action="" method="post">
+                                        <div class="mb-3">
+                                            <label for="usuario" class="form-label">Usuario:</label>
+                                                <input type="text" class="form-control" name="usuario" id="usuario"  placeholder="Escriba su usuario"/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="password" class="form-label">Contraseña:</label>
+                                            <div class="input-group">
+                                                <input type="password" class="form-control" name="password" id="password" placeholder="Escriba su contraseña"/>
+                                                <span class="input-group-text" onclick="togglePassword()">
+                                                    <i class="fas fa-eye" id="togglePasswordIcon"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <!--Script para ver el password-->
+                                        <script>
+                                            function togglePassword() {
+                                                    var passwordInput = document.getElementById("password");
+                                                    var toggleIcon = document.getElementById("togglePasswordIcon");
+                                                    if (passwordInput.type === "password") {
+                                                        passwordInput.type = "text";
+                                                        toggleIcon.classList.remove("fa-eye");
+                                                        toggleIcon.classList.add("fa-eye-slash");
+                                                    } else {
+                                                        passwordInput.type = "password";
+                                                        toggleIcon.classList.remove("fa-eye-slash");
+                                                        toggleIcon.classList.add("fa-eye");
+                                                    }
+                                            }
+                                        </script>
+                                        <!--Contenedor para centrar el botón-->
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-info">Ingresar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            <div class="card-footer text-muted" style="background-color:bisque"><br> </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </main>
+            </main>
+        </div>
         <footer>
             <!-- place footer here -->
         </footer>
         <!-- Bootstrap JavaScript Libraries -->
-        <script
+        <!-- <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
             crossorigin="anonymous"
-        ></script>
-        <script
+        ></script> -->
+        <!-- <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
-        ></script>
+        ></script> -->
     </body>
 </html>
