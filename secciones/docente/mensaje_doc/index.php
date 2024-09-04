@@ -45,7 +45,6 @@
     </head>
     <body>
         <br>
-        <br>
         <div class="card">
             <div class="card-header" style="background-color:bisque">
                 <a name="" id="" class="btn btn-primary" href="crear_mensaje.php" role="button" >Crear Mensaje</a>

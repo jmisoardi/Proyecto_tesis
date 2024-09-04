@@ -11,6 +11,7 @@
         exit(); // Detiene la ejecución del script después de redirigir
     } else {    
         }
+        
 ?>
 <!-- Archivo header.php -->
 <!DOCTYPE html>

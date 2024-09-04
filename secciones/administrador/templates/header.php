@@ -1,30 +1,37 @@
 <!-- Dirección base del proyecto-->
 <?php 
+    
     session_start();
     $url_base = "http://localhost/Proyecto_tesis/";
-    /* $varsesion = $_SESSION['usuario'];
-    if ($varsesion==null || $varsesion='') {
-        echo "no tiene acceso";
-        die();
+    
+    if ($_SESSION['rolpersona'] != 'administrador') {
+        // Mensaje de Alerta antes de la redirección
+        echo "<script>
+                alert('USTED NO TIENE ACCESO A ESTA SECCION.');
+                setTimeout(function() {
+                    window.location.href = '" . $url_base . "index.php';
+                }, 1000); // Redirecciona después de 1 segundo
+            </script>";
+        exit(); // Detener la ejecución de PHP para que el script JS funcione
+    }
+    
+    
+    /* session_start();
+    $url_base = "http://localhost/Proyecto_tesis/"; */
+
+    /* if ($_SESSION['rolpersona']!= 'administrador') { */
+        /* header("Location:" . $url_base . "index.php"); */
+         //Mensaje de Registro Eliminado (Sweet alert).
+    /*     echo "<script> alert('No tienes acceso a esta sección.');</script>";
+        header('Location:' . $url_base. 'index.php');
     } */
+    
     // Verifica si la sesión de usuario está establecida
     if (!isset($_SESSION['usuario']) && ($_SESSION['rolpersona'] !== 'administrador')) {
         header("Location: " . $url_base . "index.php"); 
 
-        /* switch ($_SESSION['rolpersona']) {
-            case 'administrador':
-                header("Location:secciones/administrador/home_adm/index.php");
-                break;
-            case 'docente':
-                header("Location:secciones/docente/home_doc/index.php");
-                break;
-            case 'alumno':
-                header("Location:secciones/alumno/home_alu/index.php");
-                break;
-        }       
-        exit(); */ // Detiene la ejecución del script después de redirigir
-    } else {
-            }
+        
+    } 
 ?>
 <!--Contiene Menu y parte del Container -->
 <!doctype html>
