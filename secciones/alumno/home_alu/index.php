@@ -1,6 +1,5 @@
 
 <?php include("../templates_alu/header_alu.php")?>
-
 <!DOCTYPE html>
 <html lang="es">
     <head>

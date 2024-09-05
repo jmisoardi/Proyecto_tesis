@@ -1,5 +1,4 @@
 <?php include("../templates_doc/header_doc.php")?>
-
 <!DOCTYPE html>
 <html lang="es">
     <head>

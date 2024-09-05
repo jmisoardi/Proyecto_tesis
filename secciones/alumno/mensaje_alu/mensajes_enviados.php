@@ -1,6 +1,6 @@
 <?php 
+    include("../templates_alu/header_alu.php"); 
     include("../../../bd.php");
-    include("../templates_alu/header_.php"); 
     
     $usuario = $_SESSION['usuario'];
      //Verificamos si se envío txtID por el metodo GET (enviar).    

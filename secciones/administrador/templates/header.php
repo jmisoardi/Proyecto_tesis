@@ -1,38 +1,26 @@
 <!-- Dirección base del proyecto-->
-<?php 
-    
+<?php     
     session_start();
     $url_base = "http://localhost/Proyecto_tesis/";
     
+    // Verifica si la sesión de usuario está establecida
+    if (!isset($_SESSION['usuario']) || !isset($_SESSION['rolpersona'])) {
+        header("Location: " . $url_base . "index.php"); 
+    }
+    
+    //Verificamos el rol del usuario.
     if ($_SESSION['rolpersona'] != 'administrador') {
         // Mensaje de Alerta antes de la redirección
         echo "<script>
                 alert('USTED NO TIENE ACCESO A ESTA SECCION.');
                 setTimeout(function() {
                     window.location.href = '" . $url_base . "index.php';
-                }, 1000); // Redirecciona después de 1 segundo
+                }, 500); // Redirecciona después de 1 segundo
             </script>";
         exit(); // Detener la ejecución de PHP para que el script JS funcione
-    }
-    
-    
-    /* session_start();
-    $url_base = "http://localhost/Proyecto_tesis/"; */
-
-    /* if ($_SESSION['rolpersona']!= 'administrador') { */
-        /* header("Location:" . $url_base . "index.php"); */
-         //Mensaje de Registro Eliminado (Sweet alert).
-    /*     echo "<script> alert('No tienes acceso a esta sección.');</script>";
-        header('Location:' . $url_base. 'index.php');
-    } */
-    
-    // Verifica si la sesión de usuario está establecida
-    if (!isset($_SESSION['usuario']) && ($_SESSION['rolpersona'] !== 'administrador')) {
-        header("Location: " . $url_base . "index.php"); 
-
-        
-    } 
+    }     
 ?>
+
 <!--Contiene Menu y parte del Container -->
 <!doctype html>
 <html lang="en">
@@ -43,19 +31,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <!-- Bootstrap CSS v5.2.1 -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="../../../css/styles.css">
+        
         <!--Script para data table-->
-        <script 
-            src="https://code.jquery.com/jquery-3.7.1.min.js" 
-            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
-            crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+            
+            /* Data table installation, brinda estilo y funciones para el data table */
         </script>
-        <!--Data table installation, brinda estilo y funciones para el data table-->
-        <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
+            <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
         <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+        
         <!--Script para sweet alert -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>    
+        
+
     </head>
     <body>
+    <div class="background-adm-1"></div>
+    <div class="content-adm-1"> 
         <header style="background-color:#63cdda;  text-align:center; font-family: Georgia, sans-serif;" >
             <h1><u>Gestión de Datos</u></h1>
         </header>
@@ -63,7 +56,7 @@
             <nav class="navbar navbar-expand navbar-light bg-light">
                 <ul class="nav navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="<?php echo $url_base;?>" aria-current="page">Sistema<span class="visually-hidden">(current)</span></a>
+                        <a class="nav-link active" href="<?php echo $url_base;?>secciones/administrador/home_adm/index.php" aria-current="page">Sistema<span class="visually-hidden">(current)</span></a>
                     </li>
                     <!--Ingresamos en "href php con la dirección base"-->
                     <li class="nav-item">
@@ -94,7 +87,7 @@
                     </li>
                 </ul>
             </nav>
-            
+
         <main class="container"> 
         <!--Sweet alert Mensaje de confirmación-->
         <?php if (isset($_GET['mensaje'])) { ?>

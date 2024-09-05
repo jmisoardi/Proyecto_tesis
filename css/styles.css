@@ -82,3 +82,19 @@
     padding: 20px;
     color: #333;
 }
+.background-adm-1 {
+    background-image: url('imagen_tesis/background-adm-1.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+.content-adm-1 {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    color: #333;
+}

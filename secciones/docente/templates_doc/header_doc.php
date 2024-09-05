@@ -1,17 +1,24 @@
 <!-- Dirección base del proyecto-->
-<?php 
+<?php     
     session_start();
     $url_base = "http://localhost/Proyecto_tesis/";
     
-    $roldocente = $_SESSION['rolpersona'];
-
     // Verifica si la sesión de usuario está establecida
-    if (!isset($_SESSION['usuario']) || (!isset($_SESSION['rolpersona']) && $_SESSION['rolpersona'] != $roldocente)) {
-        header("Location: " . $url_base . "index.php");
-        exit(); // Detiene la ejecución del script después de redirigir
-    } else {    
-        }
-        
+    if (!isset($_SESSION['usuario']) || !isset($_SESSION['rolpersona'])) {
+        header("Location: " . $url_base . "index.php"); 
+    } 
+    
+    //Verificamos el rol de usuario.
+    if ($_SESSION['rolpersona'] != 'docente' && $_SESSION['rolpersona'] != 'administrador') {
+        // Mensaje de Alerta antes de la redirección
+        echo "<script>
+                alert('USTED NO TIENE ACCESO A ESTA SECCION.');
+                setTimeout(function() {
+                    window.location.href = '" . $url_base . "index.php';
+                }, 500); // Redirecciona después de 1 segundo
+            </script>";
+        exit(); // Detener la ejecución de PHP para que el script JS funcione
+    }     
 ?>
 <!-- Archivo header.php -->
 <!DOCTYPE html>
