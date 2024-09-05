@@ -20,12 +20,19 @@
     $lista_tbl_noticia = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <?php include("../templates/header.php");?>
+<br>
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
         <title>Noticias</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style> 
+            h1 { 
+                text-align: center; font-family: Georgia, sans-serif;
+                }
+        </style>
+        <h1>Noticia</h1> 
     </head>
     <body>
         <!--Estilo para el titulo Personal-->

@@ -23,7 +23,6 @@
 ?>
 <?php include("../templates/header.php");?>
 <br>
-<br>
 <style> 
     h1 { 
         text-align: center; font-family: Georgia, sans-serif;
