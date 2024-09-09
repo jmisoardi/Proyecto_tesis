@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!-- Formulario para editar material -->
 <div class="unidad">
-    <form action="editar.php?id=<?php echo $id; ?>" method="POST" enctype="multipart/form-data">
+    <form action="editar_material.php?id=<?php echo $id; ?>" method="POST" enctype="multipart/form-data">
         <label for="unidad">Unidad:</label>
         <input type="text" id="unidad" name="unidad" value="<?php echo htmlspecialchars($material['unidad']); ?>" required><br>
 
