@@ -8,13 +8,8 @@
         header("Location: " . $url_base . "login.php");
         exit();
     }
-
 ?>
 
 
 
-
-
-
-
-<?php include ("../templates_doc/footer_doc.php"); ?>
+<?php include("../templates_doc/footer_doc.php"); ?>
