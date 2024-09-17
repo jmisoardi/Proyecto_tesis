@@ -27,7 +27,11 @@
             $sentencia->bindParam(":archivo", $file_name); // Corregido el valor de archivo
             $sentencia->execute();
 
-            echo '<p style="color: green;">El archivo se subió correctamente.</p>';
+             // Mensaje de Registro Eliminado
+        $mensaje = "Registro Agregado";
+        header("Location: index.php?mensaje=" . $mensaje);
+        exit();
+           /*  echo '<p style="color: green;">El archivo se subió correctamente.</p>'; */
         } else {
             echo '<p style="color: red;">Hubo un error al subir el archivo.</p>';
         }
@@ -55,7 +59,7 @@
                 <label for="archivo">Seleccionar archivo PDF:</label>
                 <input type="file" id="archivo" name="archivo" accept=".pdf" required><br><br>
         
-                <input type="submit" value="Subir Material" class="btn">
+                <input type="submit" value="Subir Material" class="btn btn-info">
             </form>
         </div>
         <div class="text-center">
@@ -63,6 +67,7 @@
                 <img src="../../../css/imagen_tesis/icons/atras.png" style="width: 30px; height: 30px; vertical-align: middle;">
             </a>
         </div>
+        
     </body>
 </html>
 <br><br>
