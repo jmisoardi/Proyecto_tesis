@@ -1,7 +1,5 @@
 <?php 
     include("./bd.php");
-    
-    session_start();
     session_start();
     if($_POST){
         $usuario=$_POST["usuario"];

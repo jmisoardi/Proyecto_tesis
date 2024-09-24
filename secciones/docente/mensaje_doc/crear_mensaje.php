@@ -2,7 +2,7 @@
     include ("../../../bd.php");
     include("../templates_doc/header_doc.php");
     
-    $usuario = $_SESSION['usuario'];
+    /* $usuario = $_SESSION['usuario']; */
     
     date_default_timezone_set('America/Argentina/Buenos_Aires');
     

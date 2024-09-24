@@ -1,9 +1,47 @@
     <?php 
     include("../../../bd.php");
     include("../templates_doc/header_doc.php");
-    
+    include("../mensaje_doc/api_key.php");
+
     $usuario = $_SESSION['usuario'];
-     //Verificamos si se envío txtID por el metodo GET (enviar).    
+     // Verificamos si se envió el formulario para crear un mensaje
+    if ($_POST) {
+        $id_remitente = $_SESSION['id_usuario']; // ID del usuario en sesión
+        $id_destinatario = $_POST['id_destinatario']; // ID del destinatario del mensaje
+        $asunto = $_POST['asunto'];
+        $cuerpo = $_POST['cuerpo'];
+        $email_destinatario = $_POST['email_destinatario']; // Email del destinatario
+
+        // Insertamos el mensaje en la base de datos
+        $sentencia = $conexion->prepare("INSERT INTO tbl_mensaje (id_remitente, id_destinatario, asunto, cuerpo, fecha_envio) VALUES (:id_remitente, :id_destinatario, :asunto, :cuerpo, NOW())");
+        $sentencia->bindParam(':id_remitente', $id_remitente);
+        $sentencia->bindParam(':id_destinatario', $id_destinatario);
+        $sentencia->bindParam(':asunto', $asunto);
+        $sentencia->bindParam(':cuerpo', $cuerpo);
+        $sentencia->execute();
+
+        // Después de insertar el mensaje, enviamos un correo con Resend
+        require __DIR__ . '/vendor/autoload.php';
+
+        $resend = Resend::client('re_jdMPTgQ3_4MiaotqdQnRaXqa9sshUHuqv');
+        try {
+            $resend->emails->send([
+                'from' => 'TuNombre <jmisoardi@hotmail.com>',
+                'to' => [$email_destinatario],
+                'subject' => $asunto,
+                'html' => '<p>' . $cuerpo . '</p>',
+            ]);
+
+            echo "Correo enviado exitosamente";
+        } catch (Exception $e) {
+            echo "Error al enviar el correo: " . $e->getMessage();
+        }
+
+        // Redireccionamos a la página de mensajes
+        header("Location: mensajes_recibidos.php");
+        exit;
+    }
+    /*  //Verificamos si se envío txtID por el metodo GET (enviar).    
     if (isset($_GET['txtID'])) {
         $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
         $sentencia = $conexion->prepare ( "DELETE FROM `tbl_mensaje` WHERE id=:id" );
@@ -14,7 +52,7 @@
         $mensaje="Registro Eliminado";
         header("Location:index.php?mensaje=".$mensaje);
     }
-    
+     */
     // Obtenemos el id del usuario en sesión;
     $sentencia = $conexion->prepare("SELECT id FROM tbl_persona WHERE usuario = :usuario limit 1");
     $sentencia->bindParam(':usuario', $usuario);
