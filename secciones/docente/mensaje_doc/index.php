@@ -1,7 +1,7 @@
     <?php 
     include("../../../bd.php");
     include("../templates_doc/header_doc.php");
-    include("../mensaje_doc/api_key.php");
+    
 
     $usuario = $_SESSION['usuario'];
      // Verificamos si se envió el formulario para crear un mensaje
@@ -19,40 +19,8 @@
         $sentencia->bindParam(':asunto', $asunto);
         $sentencia->bindParam(':cuerpo', $cuerpo);
         $sentencia->execute();
-
-        // Después de insertar el mensaje, enviamos un correo con Resend
-        require __DIR__ . '/vendor/autoload.php';
-
-        $resend = Resend::client('re_jdMPTgQ3_4MiaotqdQnRaXqa9sshUHuqv');
-        try {
-            $resend->emails->send([
-                'from' => 'TuNombre <jmisoardi@hotmail.com>',
-                'to' => [$email_destinatario],
-                'subject' => $asunto,
-                'html' => '<p>' . $cuerpo . '</p>',
-            ]);
-
-            echo "Correo enviado exitosamente";
-        } catch (Exception $e) {
-            echo "Error al enviar el correo: " . $e->getMessage();
-        }
-
-        // Redireccionamos a la página de mensajes
-        header("Location: mensajes_recibidos.php");
-        exit;
     }
-    /*  //Verificamos si se envío txtID por el metodo GET (enviar).    
-    if (isset($_GET['txtID'])) {
-        $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
-        $sentencia = $conexion->prepare ( "DELETE FROM `tbl_mensaje` WHERE id=:id" );
-        $sentencia->bindParam( ":id" ,$txtID );
-        $sentencia->execute();
         
-        //Mensaje de Registro Eliminado (Sweet alert).
-        $mensaje="Registro Eliminado";
-        header("Location:index.php?mensaje=".$mensaje);
-    }
-     */
     // Obtenemos el id del usuario en sesión;
     $sentencia = $conexion->prepare("SELECT id FROM tbl_persona WHERE usuario = :usuario limit 1");
     $sentencia->bindParam(':usuario', $usuario);
@@ -61,7 +29,7 @@
 
     $id_usuario = $resultado['id'];
 
-    // Obtenemos los mensajes recibidos junto con la información del remitente
+    /* // Obtenemos los mensajes recibidos junto con la información del remitente
     $sentencia = $conexion->prepare("
         SELECT p.nombre, p.apellido, m.email, m.asunto, m.cuerpo, m.fecha_envio
         FROM tbl_mensaje m
@@ -70,7 +38,7 @@
     ");
     $sentencia->bindParam(':id_usuario', $id_usuario);
     $sentencia->execute();
-    $mensajes_recibidos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    $mensajes_recibidos = $sentencia->fetchAll(PDO::FETCH_ASSOC); */
 ?>
 
 <!DOCTYPE html>
