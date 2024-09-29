@@ -86,7 +86,7 @@ $msg = '';
 
                 // Enviar el correo
                 $mail->send();
-                $msg = 'Mensaje enviado correctamente';
+                $msg = 'Mensaje enviado correctamente al destinatario';
             } catch (Exception $e) {
                 $msg = "Error al enviar el mensaje: {$mail->ErrorInfo}";
             }

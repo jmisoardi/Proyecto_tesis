@@ -35,7 +35,7 @@
                 <!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
                 <div class="container-fluid">
                     <!-- Portal de Docente, con el direccionamiento -->                                                                                                                                            
-                    <a class="navbar-brand" href="<?php echo $url_base;?>secciones/docente/home_doc/index.php">Portal del Docente</a>
+                    <a class="navbar-brand" href="http://localhost/Proyecto_tesis/secciones/docente/home_doc/index.php">Portal del Docente</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -44,37 +44,37 @@
                             <ul class="navbar-nav">
                                 <!-- Distintas seccion del aula docente -->
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/docente/home_doc/index.php">
+                                    <a class="nav-link" href="http://localhost/Proyecto_tesis/secciones/docente/home_doc/index.php">
                                         <img src="../../../css/imagen_tesis/icons/inicio.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                     </a>
                                 </li>
                                 <!-- Seccion noticia -->
                                 <li class="nav-link">
-                                    <a href="<?php echo $url_base;?>secciones/docente/noticia_doc/index.php">
+                                    <a href="http://localhost/Proyecto_tesis/secciones/docente/noticia_doc/index.php">
                                         <img src="../../../css/imagen_tesis/icons/noticia.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                     </a>
                                 </li>
                                 <!-- Seccion mensaje -->
                                 <li class="nav-link">
-                                    <a  href="<?php echo $url_base;?>secciones/docente/mensaje_doc/index.php">
+                                    <a  href="http://localhost/Proyecto_tesis/secciones/docente/mensaje_doc/index.php">
                                         <img src="../../../css/imagen_tesis/icons/mensaje.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                     </a>
                                 </li>
                                 <!-- Seccion unidad -->
                                 <li class="nav-link">
-                                    <a  href="<?php echo $url_base;?>secciones/docente/unidad_doc/index.php">
+                                    <a  href="http://localhost/Proyecto_tesis/secciones/docente/unidad_doc/index.php">
                                         <img src="../../../css/imagen_tesis/icons/libro.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                     </a>
                                 </li>
                                 <!-- Seccion perfil -->
                                 <li class="nav-link">
-                                    <a  href="<?php echo $url_base;?>secciones/docente/perfil_doc/index.php">
+                                    <a  href="http://localhost/Proyecto_tesis/secciones/docente/perfil_doc/index.php">
                                         <img src="../../../css/imagen_tesis/icons/perfil.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                     </a>
                                 </li>
                                 <!-- Seccion de cierre de sesion -->
                                 <li class="nav-link">
-                                    <a  href="<?php echo $url_base;?>secciones/docente/cerrar_doc.php">
+                                    <a  href="http://localhost/Proyecto_tesis/secciones/docente/cerrar_doc.php">
                                         <img src="../../../css/imagen_tesis/icons/cerrar.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                     </a>
                                 </li>

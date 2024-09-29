@@ -51,10 +51,10 @@
         $sentencia->bindParam(':fecha_envio', $fecha);
         $sentencia->execute();
         
-        // Redirigir al usuario con un mensaje de éxito
+       /*  // Redirigir al usuario con un mensaje de éxito
         $mensaje="Mensaje Enviado";
         header("Location:index.php?mensaje=".$mensaje);
-        exit();
+        exit(); */
     }
 
     // Consulta para obtener todos los correos electrónicos de los usuarios

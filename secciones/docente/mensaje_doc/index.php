@@ -12,8 +12,7 @@
         
         //Mensaje de Registro Eliminado (Sweet alert).
         $mensaje="Registro Eliminado";
-        header("Location:secciones/docente/perfil_doc/index.php?mensaje=".$mensaje);
-        
+        header("Location:http://localhost/Proyecto_tesis/secciones/docente/mensaje_doc/index.php?mensaje=".$mensaje);    
     }
     
     // Obtenemos el id del usuario en sesión;
@@ -35,7 +34,6 @@
     $sentencia->execute();
     $mensajes_recibidos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -49,7 +47,7 @@
         <br>
         <div class="card">
             <div class="card-header" style="background-color:bisque">
-                <a name="" id="" class="btn btn-primary" href="crear_mensaje.php" role="button" >Crear Mensaje</a>
+                <a name="" id="" class="btn btn-primary" href="crear_men.php" role="button" >Crear Mensaje</a>
             </div>
             <div class="card-body-xl" style="background-color:azure">
                 <div class="table-responsive">
