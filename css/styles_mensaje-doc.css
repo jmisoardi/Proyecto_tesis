@@ -5,7 +5,7 @@ body {
     padding: 0px;
 }
 .container {
-    max-width: 600px;
+    max-width: 900px;
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
@@ -26,18 +26,8 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-.btn {
-    background-color: #28a745;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.btn:hover {
-    background-color: #218838;
-}
-.msg {
+
+/* .msg {
     margin-bottom: 20px;
     padding: 10px;
     border-radius: 5px;
@@ -49,4 +39,28 @@ body {
 .msg.error {
     background-color: #f8d7da;
     color: #721c24;
+} */
+.msg {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 1.5em; /* Aumenta el tamaño del texto */
+    font-weight: bold; /* Hace que el texto sea más pesado */
+    width: 100%; /* Define un ancho mayor para destacarlo */
+    max-width: 800px; /* Limita el ancho máximo */
+    text-align: center; /* Centra el texto para mayor énfasis */
+}
+
+/* Estilo para mensajes de éxito */
+.msg.success {
+    background-color: #d4edda; /* Color de fondo existente */
+    color: #155724; /* Color de texto existente */
+    border: 2px solid #155724; /* Añade un borde con el mismo color del texto */
+}
+
+/* Estilo para mensajes de error */
+.msg.error {
+    background-color: #f8d7da; /* Color de fondo existente */
+    color: #721c24; /* Color de texto existente */
+    border: 2px solid #721c24; /* Añade un borde con el mismo color del texto */
 }
