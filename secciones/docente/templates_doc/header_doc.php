@@ -5,20 +5,16 @@
     
     // Verifica si la sesión de usuario está establecida
     if (!isset($_SESSION['usuario']) || !isset($_SESSION['rolpersona'])) {
-        header("Location: " . $url_base . "index.php"); 
-    } 
+        header("Location: " . $url_base . "index.php");
+        exit();
+    }
     
-    //Verificamos el rol de usuario.
+    // Verificamos el rol de usuario
     if ($_SESSION['rolpersona'] != 'docente' && $_SESSION['rolpersona'] != 'administrador') {
-        // Mensaje de Alerta antes de la redirección
-        echo "<script>
-                alert('USTED NO TIENE ACCESO A ESTA SECCION.');
-                setTimeout(function() {
-                    window.location.href = '" . $url_base . "index.php';
-                }, 500); // Redirecciona después de 1 segundo
-            </script>";
-        exit(); // Detener la ejecución de PHP para que el script JS funcione
-    }     
+        $_SESSION['error_message'] = "USTED NO TIENE ACCESO A ESTA SECCION.";
+        header("Location: " . $url_base . "index.php");
+        exit();
+    }
 ?>
 <!-- Archivo header.php -->
 <!DOCTYPE html>
