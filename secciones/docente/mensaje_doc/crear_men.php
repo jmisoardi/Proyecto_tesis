@@ -71,9 +71,9 @@ $msg = '';
             try {
                 // Configuración del servidor SMTP
                 $mail->isSMTP();
-                $mail->Host = 'smtp.office365.com'; // Servidor SMTP de Hotmail/Outlook
+                $mail->Host = 'smtp-relay.brevo.com'; // Servidor SMTP de Hotmail/Outlook
                 $mail->SMTPAuth = true;
-                $mail->Username = 'jmisoardi@hotmail.com'; // Tu dirección de correo Hotmail
+                $mail->Username = '7d22be001@smtp-brevo.com'; // Tu dirección de correo Hotmail
                 $mail->Password = $_ENV['EMAIL_PASSWORD']; // Obtener la contraseña desde .env
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Seguridad
                 $mail->Port = 587; // Puerto SMTP

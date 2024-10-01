@@ -11,8 +11,8 @@
         $sentencia->execute();
         
         //Mensaje de Registro Eliminado (Sweet alert).
-        $mensaje="Registro Eliminado";
-        header("Location:http://localhost/Proyecto_tesis/secciones/docente/mensaje_doc/index.php?mensaje=".$mensaje);    
+        /* $mensaje="Registro Eliminado";
+        header("Location:http://localhost/Proyecto_tesis/secciones/docente/mensaje_doc/index.php?mensaje=".$mensaje);     */
     }
     
     // Obtenemos el id del usuario en sesión;
