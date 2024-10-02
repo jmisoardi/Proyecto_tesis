@@ -1,5 +1,4 @@
 <?php 
-    
     session_start();
     include("../../../bd.php");
 
@@ -12,9 +11,9 @@
         $sentencia->bindParam( ":id" ,$txtID );
         $sentencia->execute();
         
-        /* //Mensaje de Registro Eliminado (Sweet alert).
+        //Mensaje de Registro Eliminado (Sweet alert).
         $mensaje="Registro Eliminado";
-        header("Location:index.php?mensaje=".$mensaje);   */  
+        header("Location:index.php?mensaje=".$mensaje);    
     }
     // Asegúrate de que la variable $usuario_doc esté definida
     /* if (isset($_SESSION['usuario'])) {
@@ -69,9 +68,9 @@
     $mensajes_recibidos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     
     
-    include("../templates_doc/header_doc.php");
+    /* include("../templates_doc/header_doc.php"); */
 ?>
-
+<?php include("../templates_doc/header_doc.php");?>
 <br>
 <!-- <!DOCTYPE html>
 <html lang="es">

@@ -1,17 +1,18 @@
 <?php 
+    session_start();
     include("../../../bd.php");
-    include("../templates_doc/header_doc.php");
-
+    
+    $usuario_doc = $_SESSION['usuario'];
     // Verifica si la sesión de usuario está establecida
-    $url_base = "http://localhost/Proyecto_tesis/";
+    /* $url_base = "http://localhost/Proyecto_tesis/";
     if (!isset($_SESSION['usuario'])) {
         header("Location: " . $url_base . "login.php");
         exit(); // Detiene la ejecución del script después de redirigir
     } else {
         
-    }
+    } */
     
-    $usuario_doc = $_SESSION['usuario'];
+    
     
     /* Seleccionamos datos de la table Persona */
     
@@ -24,17 +25,17 @@
 <?php 
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>Perfil Docente</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../../../css/styles.css">
     </head>
-</html>   
-
+    </html>   --> 
+<?php include("../templates_doc/header_doc.php");?>
 <br>
     <div class="card">
         <div class="card-body" style="background-color:azure">
@@ -49,7 +50,7 @@
                                 text-align: center; font-family: Georgia, sans-serif;
                                 }
                             </style>
-                                <th scope="col" style="background-color:azure"><u></u></th>
+                                <th scope="col" style="background-color:azure"><u>id</u></th>
                                 <th scope="col" style="background-color:azure"><u>N/Apellido</u></th>
                                 <th scope="col" style="background-color:azure"><u>Dni</u></th>
                                 <th scope="col" style="background-color:azure"><u>F/Nacimiento</u></th>
@@ -65,27 +66,27 @@
                     
                     <tbody>
                     <!--Usamos el foreach para recorrer el arreglo de la lista de persona y asignarlo a la variable $registro-->  
-                        <?php if ($usuario_doc) {?>     
+                        <?php foreach ($usuario_doc as $datos_perfil) {?>     
                             <!--Alineación central style-->
-                            <style>
+                            <!-- <style>
                                     td  {
                                         text-align: center; font-family: Georgia, sans-serif;
                                         }   
-                            </style>
+                            </style> -->
                             <tr class="">
                                 <td scope="row"><?php $usuario_doc['id'];?></td>
                                 <!--La etiqueta <td> podemos agrupar datos en una sola casilla-->
                                             <td>
-                                                <?php echo $usuario_doc['nombre'] . ' ' . $usuario_doc['apellido']; ; ?> 
+                                                <?php echo $datos_perfil['nombre'] . ' ' . $datos_perfil['apellido']; ; ?> 
                                             </td>
-                                            <td> <?php echo $usuario_doc['dni']; ?> </td>
-                                            <td> <?php echo $usuario_doc['fechanacimiento']; ?></td> 
-                                            <td> <?php echo $usuario_doc['email']; ?></td>
-                                            <td> <?php echo $usuario_doc['telefono']; ?></td>
-                                            <td> <?php echo $usuario_doc['idrol']; ?></td>
-                                            <td> <?php echo $usuario_doc['fechaingreso']; ?></td>
-                                            <td> <?php echo $usuario_doc['usuario']; ?></td>
-                                            <td> <?php echo $usuario_doc['password']; ?></td>
+                                            <td> <?php echo $datos_perfil['dni']; ?> </td>
+                                            <td> <?php echo $datos_perfil['fechanacimiento']; ?></td> 
+                                            <td> <?php echo $datos_perfil['email']; ?></td>
+                                            <td> <?php echo $datos_perfil['telefono']; ?></td>
+                                            <td> <?php echo $datos_perfil['idrol']; ?></td>
+                                            <td> <?php echo $datos_perfil['fechaingreso']; ?></td>
+                                            <td> <?php echo $datos_perfil['usuario']; ?></td>
+                                            <td> <?php echo $datos_perfil['password']; ?></td>
                                             <!--Etiqueta de botones Editar y Eliminar-->
                                             <td>
                                                 <!--Utilizamos bs5-button-a seguido de la línea de código para editar el ID de la fila. -->

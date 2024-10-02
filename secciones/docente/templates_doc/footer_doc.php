@@ -18,7 +18,8 @@
             $(document).ready( function(){
                 $("#tabla_id").DataTable ({"pagelLength":10, lengthMenu:[[10,20,30,50],[10,20,30,50]], "language":{"url":"https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"}});  });
         </script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
+    
     <!--Sweet alert -->
     <script>
         function borrar(id){
