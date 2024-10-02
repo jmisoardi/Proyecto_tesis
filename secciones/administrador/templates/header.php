@@ -10,13 +10,7 @@
     
     //Verificamos el rol del usuario.
     if ($_SESSION['rolpersona'] != 'administrador') {
-        // Mensaje de Alerta antes de la redirección
-        echo "<script>
-                alert('USTED NO TIENE ACCESO A ESTA SECCION.');
-                setTimeout(function() {
-                    window.location.href = '" . $url_base . "index.php';
-                }, 500); // Redirecciona después de 1 segundo
-            </script>";
+        header("Location: " . $url_base . "index.php"); 
         exit(); // Detener la ejecución de PHP para que el script JS funcione
     }     
 ?>
@@ -31,6 +25,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <!-- Bootstrap CSS v5.2.1 -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
+        <!-- Estilo de Css -->
         <link rel="stylesheet" href="../../../css/styles.css">
         
         <!--Script para data table-->

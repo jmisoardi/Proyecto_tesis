@@ -1,9 +1,9 @@
 <?php 
     include("../../../bd.php");
-    include("../templates_doc/header_doc.php"); 
+    include("../templates_doc/header_doc.php");
     
     $usuario = $_SESSION['usuario'];
-     //Verificamos si se envío txtID por el metodo GET (enviar).    
+    //Verificamos si se envío txtID por el metodo GET (enviar).    
     if (isset($_GET['txtID'])) {
         $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
         $sentencia = $conexion->prepare ( "DELETE FROM `tbl_mensaje` WHERE id=:id" );
@@ -11,10 +11,9 @@
         $sentencia->execute();
         
         //Mensaje de Registro Eliminado (Sweet alert).
-        /* $mensaje="Registro Eliminado";
-        header("Location:http://localhost/Proyecto_tesis/secciones/docente/mensaje_doc/index.php?mensaje=".$mensaje);     */
+        /* $mensaje="Registro Eliminado"; */
+        /* header("Location:http://localhost/Proyecto_tesis/secciones/docente/mensaje_doc/index.php?mensaje=".$mensaje);     */
     }
-    
     // Obtenemos el id del usuario en sesión;
     $sentencia = $conexion->prepare("SELECT id FROM tbl_persona WHERE usuario = :usuario limit 1");
     $sentencia->bindParam(':usuario', $usuario);
@@ -22,18 +21,22 @@
     $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
     
     $id_usuario = $resultado['id'];
-
+    
     // Obtenemos los mensajes recibidos junto con la información del remitente
     $sentencia = $conexion->prepare("
-        SELECT p.nombre, p.apellido, m.id, m.email, m.subject, m.message, m.fecha_envio
-        FROM tbl_mensaje m
-        INNER JOIN tbl_persona p ON m.id_destinatario = p.id
-        WHERE m.id_remitente = :id_usuario
+    SELECT p.nombre, p.apellido, m.id, m.email, m.subject, m.message, m.fecha_envio
+    FROM tbl_mensaje m
+    INNER JOIN tbl_persona p ON m.id_destinatario = p.id
+    WHERE m.id_remitente = :id_usuario
     ");
     $sentencia->bindParam(':id_usuario', $id_usuario);
     $sentencia->execute();
     $mensajes_recibidos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    
+    
 ?>
+
+<br>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -90,11 +93,11 @@
     </body>
     <br>
     <br>
-    <div class="text-center">
+    <!-- <div class="text-center">
         <a name="" id="" class="btn btn-info" href="index.php" role="button">
             <img src="../../../css/imagen_tesis/icons/atras.png" style="width: 30px; height: 30px; vertical-align: middle;">
         </a>
-    </div>
+    </div> -->
     <br>
     <br>
     <?php include("../templates_doc/footer_doc.php") ?>

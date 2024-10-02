@@ -1,14 +1,15 @@
 <?php 
     include("../../../bd.php");
     include("../templates_doc/header_doc.php");
+
     // Verifica si la sesión de usuario está establecida
-    /* $url_base = "http://localhost/Proyecto_tesis/";
+    $url_base = "http://localhost/Proyecto_tesis/";
     if (!isset($_SESSION['usuario'])) {
         header("Location: " . $url_base . "login.php");
         exit(); // Detiene la ejecución del script después de redirigir
     } else {
         
-        } */
+    }
     
     $usuario_doc = $_SESSION['usuario'];
     
@@ -18,14 +19,18 @@
     $sentencia->bindParam(':usuario', $usuario_doc); 
     $sentencia->execute();
     $usuario_doc = $sentencia->fetch(PDO::FETCH_ASSOC);
-    /* print_r($usuario_doc); */
+    print_r($usuario_doc);
+    ?>
+<?php 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Perfil Docente</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
         <link rel="stylesheet" href="../../../css/styles.css">
     </head>
 </html>   
