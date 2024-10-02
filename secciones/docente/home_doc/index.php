@@ -1,14 +1,4 @@
 <?php include("../templates_doc/header_doc.php")?>
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>Docente</title>
-        <!--Script para sweet alert -->
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">    
-        <link rel="stylesheet" href="../../../css/styles.css">
-    </head>
     <br>    
     <body>
         <div class="p-5 mb-4 bg-light rounded-3">

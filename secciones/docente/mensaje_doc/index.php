@@ -1,8 +1,10 @@
 <?php 
-    include("../../../bd.php");
-    include("../templates_doc/header_doc.php");
     
-    $usuario = $_SESSION['usuario'];
+    session_start();
+    include("../../../bd.php");
+
+    $usuario_doc = $_SESSION['usuario'];
+    /* $_SESSION['usuario'] = $usuario_doc; */
     //Verificamos si se envío txtID por el metodo GET (enviar).    
     if (isset($_GET['txtID'])) {
         $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
@@ -10,18 +12,51 @@
         $sentencia->bindParam( ":id" ,$txtID );
         $sentencia->execute();
         
-        //Mensaje de Registro Eliminado (Sweet alert).
-        /* $mensaje="Registro Eliminado"; */
-        /* header("Location:http://localhost/Proyecto_tesis/secciones/docente/mensaje_doc/index.php?mensaje=".$mensaje);     */
+        /* //Mensaje de Registro Eliminado (Sweet alert).
+        $mensaje="Registro Eliminado";
+        header("Location:index.php?mensaje=".$mensaje);   */  
     }
+    // Asegúrate de que la variable $usuario_doc esté definida
+    /* if (isset($_SESSION['usuario'])) {
+        $usuario_doc = $_SESSION['usuario'];
+
+        // Obtenemos el id del usuario en sesión;
+        $sentencia = $conexion->prepare("SELECT id FROM tbl_persona WHERE usuario = :usuario LIMIT 1");
+        $sentencia->bindParam(':usuario', $usuario_doc);
+        $sentencia->execute();
+        $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
+        
+        if ($resultado) {
+            $id_usuario = $resultado['id']; // Guardamos el ID en una variable
+        } else {
+            // Manejar el caso en que no se encuentre el usuario
+            $_SESSION['error_message'] = "Usuario no encontrado.";
+            header("Location: " . $url_base . "index.php");
+            exit();
+        }
+    } else {
+        // Manejar el caso en que no hay usuario en sesión
+        $_SESSION['error_message'] = "No se ha iniciado sesión.";
+        header("Location: " . $url_base . "index.php");
+        exit();
+    } */
     // Obtenemos el id del usuario en sesión;
     $sentencia = $conexion->prepare("SELECT id FROM tbl_persona WHERE usuario = :usuario limit 1");
-    $sentencia->bindParam(':usuario', $usuario);
+    $sentencia->bindParam(':usuario', $usuario_doc);
     $sentencia->execute();
     $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
     
-    $id_usuario = $resultado['id'];
+    if ($resultado) {
+        $id_usuario = $resultado['id']; // Guardamos el ID en una variable
+    } else {
+        // Manejar el caso en que no se encuentre el usuario
+        $_SESSION['error_message'] = "Usuario no encontrado.";
+        header("Location: " . $url_base . "index.php");
+        exit();
+    }
     
+    $id_usuario = $resultado['id'];
+
     // Obtenemos los mensajes recibidos junto con la información del remitente
     $sentencia = $conexion->prepare("
     SELECT p.nombre, p.apellido, m.id, m.email, m.subject, m.message, m.fecha_envio
@@ -34,10 +69,11 @@
     $mensajes_recibidos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     
     
+    include("../templates_doc/header_doc.php");
 ?>
 
 <br>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
@@ -45,7 +81,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="../../../css/styles.css">
     </head>
-    <body>
+    <body> -->
         <br>
         <br>
         <div class="card">
@@ -90,7 +126,7 @@
             <br>
             <div class="card-footer text-muted" style="background-color:bisque"></div>
         </div>
-    </body>
+    <!-- </body> -->
     <br>
     <br>
     <!-- <div class="text-center">

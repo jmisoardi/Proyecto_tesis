@@ -1,6 +1,11 @@
 <!-- Dirección base del proyecto-->
-<?php     
-    session_start();
+<?php  
+    
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    include("../../../bd.php");
+
     $url_base = "http://localhost/Proyecto_tesis/";
     
     // Verifica si la sesión de usuario está establecida
@@ -8,10 +13,27 @@
         header("Location: " . $url_base . "index.php");
         exit();
     }
-    
+
     // Verificamos el rol de usuario
     if ($_SESSION['rolpersona'] != 'docente' && $_SESSION['rolpersona'] != 'administrador') {
         $_SESSION['error_message'] = "USTED NO TIENE ACCESO A ESTA SECCION.";
+        header("Location: " . $url_base . "index.php");
+        exit();
+    }
+    
+    $usuario_doc = $_SESSION['usuario'];
+
+    /* Seleccionamos datos de la table Persona */
+    $sentencia = $conexion->prepare("SELECT id FROM tbl_persona WHERE usuario = :usuario LIMIT 1 ");
+    $sentencia->bindParam(':usuario', $usuario_doc); 
+    $sentencia->execute();
+    $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
+
+    if ($resultado) {
+        $id_usuario = $resultado['id']; // Guardamos el ID en una variable
+    } else {
+        // Manejar el caso en que no se encuentre el usuario
+        $_SESSION['error_message'] = "Usuario no encontrado.";
         header("Location: " . $url_base . "index.php");
         exit();
     }
@@ -25,17 +47,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <!-- Bootstrap CSS v5.2.1 -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- Estilo de Css -->
         <link rel="stylesheet" href="../../css/styles.css">
-        
+        <link rel="stylesheet" href="../../../css/styles.css">
         <!--Script para data table-->
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
-        
         </script>
             <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
         <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
-
         <!--Script para sweet alert-->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
     
