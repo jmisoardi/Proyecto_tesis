@@ -5,3 +5,6 @@ composer.json
 # Ignorar la carpeta vendor
 /vendor/
 .env
+
+# Ignorar la carpeta vscode
+.vscode/launch.json
