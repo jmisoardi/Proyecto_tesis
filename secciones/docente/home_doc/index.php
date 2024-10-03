@@ -8,7 +8,7 @@
                         <h1>Bienvenid@ <?php echo $_SESSION['usuario'];?> al Portal del Docente "BridgeClass"</h1>
                         <p>Nos alegra tenerte en nuestro portal, diseñado específicamente para apoyar tu labor académica y facilitarte el acceso a la información que necesitas. Aquí podrás encontrar:</p>
                         <ul>
-                            <li>Actualizaciones y anuncios importantes de la universidad.</li>
+                            <li>Actualizaciones y anuncios importantes de la Institución.</li>
                             <li>Herramientas para gestionar tus cursos, desde el plan de estudios hasta el seguimiento de tus alumnos.</li>
                             <li>Un espacio para la comunicación con tus colegas y estudiantes.</li>
                             <li>Tu perfil profesional con todos los detalles relevantes.</li>

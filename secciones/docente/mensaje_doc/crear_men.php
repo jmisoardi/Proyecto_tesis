@@ -1,7 +1,7 @@
 <?php 
     session_start();
+    // Incluir base de datos
     include("../../../bd.php");
-    /* include("../templates_doc/header_doc.php"); */
 
     // Incluir el autoload de Composer
     require '../../../vendor/autoload.php';
@@ -101,25 +101,25 @@
         $usuarios = $sentencia_usuarios->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <?php include("../templates_doc/header_doc.php");?>
-<br>
-<br>
 <head>
     <link rel="stylesheet" href="../../../css/styles_mensaje-doc.css">
     <title>Enviar Mensaje</title>
 </head>
-    <!-- <body> -->
-        <div class="container">
-            <style> 
-                h3 {
-                    text-align: center; font-family: Georgia, sans-serif;
-                    }
-            </style>
-            <h3>Enviar Mensaje</h3>
+    <body>
+        <br>
+        <div class="card-header" style="background-color:bisque">    
+            <style> h1 { text-align: center; font-family: Georgia, sans-serif; } </style>
+            <h1>-Enviar Mensaje- <br></h1>
+        </div>
+        <br>
+        <div class="container-fluid py-5" style="background-color:azure">
             <?php if ($msg != ''): ?>
                 <div class="msg <?php echo strpos($msg, 'Error') === false ? 'success' : 'error'; ?>">
                     <?php echo $msg; ?>
                 </div>
             <?php endif; ?>
+            
+            <!-- Formulario para los datos del envío de mensaje -->
             <form action="" method="POST">
             <div class="form-group">
                     <label for="email">Destinatario (Correo Electrónico):</label>
@@ -144,13 +144,13 @@
             </form>
         </div>
         <br>
-        
-   <!--  </body> -->
+        <br>
+    </body>
     <div class="text-center">
+        
         <a name="" id="" class="btn btn-info" href="index.php" role="button">
             <img src="../../../css/imagen_tesis/icons/atras.png" style="width: 30px; height: 30px; vertical-align: middle;">
         </a>
     </div>
-<br>
-<br>
+
 <?php include("../templates_doc/footer_doc.php") ?>

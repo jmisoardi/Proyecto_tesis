@@ -72,17 +72,7 @@
 ?>
 <?php include("../templates_doc/header_doc.php");?>
 <br>
-<!-- <!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>Mensajes Recibidos</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../../css/styles.css">
-    </head>
-    <body> -->
-        <br>
-        <br>
+    <body>
         <div class="card">
             <div class="card-header" style="background-color:bisque">
                 <a name="" id="" class="btn btn-primary" href="crear_men.php" role="button" >Crear Mensaje</a>
@@ -125,14 +115,7 @@
             <br>
             <div class="card-footer text-muted" style="background-color:bisque"></div>
         </div>
-    <!-- </body> -->
-    <br>
-    <br>
-    <!-- <div class="text-center">
-        <a name="" id="" class="btn btn-info" href="index.php" role="button">
-            <img src="../../../css/imagen_tesis/icons/atras.png" style="width: 30px; height: 30px; vertical-align: middle;">
-        </a>
-    </div> -->
+    </body>
     <br>
     <br>
     <?php include("../templates_doc/footer_doc.php") ?>
