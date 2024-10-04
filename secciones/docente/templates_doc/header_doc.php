@@ -21,10 +21,10 @@
         exit();
     }
     
-    $usuario_doc = $_SESSION['usuario'];
+    /* $usuario_doc = $_SESSION['usuario']; */
 
     /* Seleccionamos datos de la table Persona */
-    $sentencia = $conexion->prepare("SELECT id FROM tbl_persona WHERE usuario = :usuario LIMIT 1 ");
+   /*  $sentencia = $conexion->prepare("SELECT id FROM tbl_persona WHERE usuario = :usuario LIMIT 1 ");
     $sentencia->bindParam(':usuario', $usuario_doc); 
     $sentencia->execute();
     $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
@@ -36,7 +36,7 @@
         $_SESSION['error_message'] = "Usuario no encontrado.";
         header("Location: " . $url_base . "index.php");
         exit();
-    }
+    } */
 ?>
 <!-- Archivo header.php -->
 <!doctype html>
