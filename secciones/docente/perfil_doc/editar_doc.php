@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     include("../../../bd.php");
     //Recepción del envío txtID.    
     if (isset($_GET['txtID'])) {
@@ -32,7 +33,7 @@
         
         //Verificamos si existe una peticion $_POST, validamos si ese if isset sucedio, lo vamos igualar a ese valor, de lo contrario no sucedio
         //Lo verificamos a este valor $_POST["usuario"] lo comparamos con la llave de pregunta (?) $_POST["usuario"] si sucedio, de lo contrario va a quedar vacío.
-        /* $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : ""; */
+        $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : "";
         $nombre = (isset($_POST["nombre"])) ? $_POST["nombre"]: "";
         $apellido = (isset($_POST["apellido"])) ? $_POST["apellido"]: "";
         $dni = (isset($_POST["dni"])) ? $_POST["dni"]: "";
@@ -182,6 +183,12 @@
                 </a>
             </form>
         </div>
-    </div>  
+    </div> 
+    <br> 
+    <div class="text-center"> 
+        <a name="" id="" class="btn btn-info" href="index.php" role="button">
+            <img src="../../../css/imagen_tesis/icons/atras.png" style="width: 30px; height: 30px; vertical-align: middle;">
+        </a>
+    </div>
 <br>
 <?php include("../templates_doc/footer_doc.php")?>

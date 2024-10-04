@@ -4,28 +4,32 @@
     
     $usuario_doc = $_SESSION['usuario'];
     // Verifica si la sesión de usuario está establecida
-    /* $url_base = "http://localhost/Proyecto_tesis/";
+    $url_base = "http://localhost/Proyecto_tesis/";
     if (!isset($_SESSION['usuario'])) {
         header("Location: " . $url_base . "login.php");
         exit(); // Detiene la ejecución del script después de redirigir
     } else {
         
-    } */
+    }
     
     
     
     /* Seleccionamos datos de la table Persona */
     
-    $sentencia = $conexion->prepare("SELECT * FROM tbl_persona WHERE usuario = :usuario LIMIT 1");
-    $sentencia->bindParam(':usuario', $usuario_doc); 
-    $sentencia->execute();
-    $usuario_doc = $sentencia->fetch(PDO::FETCH_ASSOC);
-    print_r($usuario_doc);
-    ?>
-<?php 
-?>
+   // Preparar la consulta SQL
+$sentencia = $conexion->prepare("SELECT `id`, `nombre`, `apellido`, `dni`, `fechanacimiento`, `email`, `telefono`, `idrol`, `fechaingreso`, `usuario`, `password` FROM `tbl_persona` WHERE `usuario` = :usuario");
+// Vincular el parámetro `:usuario` con la variable `$usuario_doc`
+$sentencia->bindParam(':usuario', $usuario_doc);
+// Ejecutar la consulta
+$sentencia->execute();
+// Obtener todos los registros coincidentes
+$usuarios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
-<!-- <!DOCTYPE html>
+   /*  print_r($usuario_doc); */
+
+
+
+/* <!-- <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -34,8 +38,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../../../css/styles.css">
     </head>
-    </html>   --> 
-<?php include("../templates_doc/header_doc.php");?>
+    </html>   -->  */
+include("../templates_doc/header_doc.php");?>
 <br>
     <div class="card">
         <div class="card-body" style="background-color:azure">
@@ -66,7 +70,7 @@
                     
                     <tbody>
                     <!--Usamos el foreach para recorrer el arreglo de la lista de persona y asignarlo a la variable $registro-->  
-                        <?php foreach ($usuario_doc as $datos_perfil) {?>     
+                        <?php foreach ($usuarios as $datos_perfil) {?>     
                             <!--Alineación central style-->
                             <!-- <style>
                                     td  {
@@ -74,27 +78,23 @@
                                         }   
                             </style> -->
                             <tr class="">
-                                <td scope="row"><?php $usuario_doc['id'];?></td>
-                                <!--La etiqueta <td> podemos agrupar datos en una sola casilla-->
-                                            <td>
-                                                <?php echo $datos_perfil['nombre'] . ' ' . $datos_perfil['apellido']; ; ?> 
-                                            </td>
-                                            <td> <?php echo $datos_perfil['dni']; ?> </td>
-                                            <td> <?php echo $datos_perfil['fechanacimiento']; ?></td> 
-                                            <td> <?php echo $datos_perfil['email']; ?></td>
-                                            <td> <?php echo $datos_perfil['telefono']; ?></td>
-                                            <td> <?php echo $datos_perfil['idrol']; ?></td>
-                                            <td> <?php echo $datos_perfil['fechaingreso']; ?></td>
-                                            <td> <?php echo $datos_perfil['usuario']; ?></td>
-                                            <td> <?php echo $datos_perfil['password']; ?></td>
-                                            <!--Etiqueta de botones Editar y Eliminar-->
-                                            <td>
-                                                <!--Utilizamos bs5-button-a seguido de la línea de código para editar el ID de la fila. -->
-                                                <a class="btn btn-info" href="editar_doc.php?txtID=<?php echo $usuario_doc['id']; ?>" role="button" >
-                                                    <img src="../../../css/imagen_tesis/icons/icon_editar.png" style="width: 32px; height: 32px; vertical-align: middle;">
-                                                </a >    
-                                            </td>
+                                <td scope="row"><?php echo $datos_perfil['id']; ?></td>
+                                <td><?php echo $datos_perfil['nombre'] . ' ' . $datos_perfil['apellido']; ?></td>
+                                <td><?php echo $datos_perfil['dni']; ?></td>
+                                <td><?php echo $datos_perfil['fechanacimiento']; ?></td>
+                                <td><?php echo $datos_perfil['email']; ?></td>
+                                <td><?php echo $datos_perfil['telefono']; ?></td>
+                                <td><?php echo $datos_perfil['idrol']; ?></td>
+                                <td><?php echo $datos_perfil['fechaingreso']; ?></td>
+                                <td><?php echo $datos_perfil['usuario']; ?></td>
+                                <td><?php echo $datos_perfil['password']; ?></td>
+                                <td>
+                                    <a class="btn btn-info" href="editar_doc.php?txtID=<?php echo $datos_perfil['id']; ?>" role="button">
+                                        <img src="../../../css/imagen_tesis/icons/icon_editar.png" style="width: 32px; height: 32px; vertical-align: middle;">
+                                    </a>
+                                </td>
                             </tr>
+
                         <?php } ?>
                     </tbody>
                 </table>
