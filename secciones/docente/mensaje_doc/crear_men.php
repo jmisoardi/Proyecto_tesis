@@ -44,10 +44,10 @@
                 $destinatario = $sentencia->fetch(PDO::FETCH_ASSOC);
                 
                 // Si no se encuentra el destinatario, mostrar un error o manejar el caso
-                if (!$destinatario) {
+                /* if (!$destinatario) {
                     echo "El destinatario no existe.";
                     exit();
-                }
+                } */
 
                 $destinatario_id = $destinatario['id'];
 
@@ -122,6 +122,7 @@
             <!-- Formulario para los datos del envío de mensaje -->
             <form action="" method="POST">
             <div class="form-group">
+                
                     <label for="email">Destinatario (Correo Electrónico):</label>
                     <select name="email" id="email" class="form-control" required>
                         <option value="" disabled selected>Selecciona un destinatario</option>

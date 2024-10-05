@@ -1,7 +1,7 @@
 <?php 
-    
     include("../../../bd.php");
-    /* session_start(); */
+    session_start();
+
     //Recepción del envío txtID.    
     if (isset($_GET['txtID'])) {
         //Verificamos si está presente en la URL txtID, asignamos el valor en  $_GET['txtID'] de lo contrario no se asigna ningún valor con :"" .
@@ -21,7 +21,7 @@
         $email = $registro["email"]; 
         $telefono = $registro["telefono"]; 
         $idrol = $registro["idrol"];
-        $fechaingreso = $registro["fechaingreso"];
+        /* $fechaingreso = $registro["fechaingreso"]; */
         $usuario = $registro["usuario"];
         $password = $registro["password"];
 
@@ -34,7 +34,7 @@
         
         //Verificamos si existe una peticion $_POST, validamos si ese if isset sucedio, lo vamos igualar a ese valor, de lo contrario no sucedio
         //Lo verificamos a este valor $_POST["usuario"] lo comparamos con la llave de pregunta (?) $_POST["usuario"] si sucedio, de lo contrario va a quedar vacío.
-        $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : "";
+        /* $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : ""; */
         $nombre = (isset($_POST["nombre"])) ? $_POST["nombre"]: "";
         $apellido = (isset($_POST["apellido"])) ? $_POST["apellido"]: "";
         $dni = (isset($_POST["dni"])) ? $_POST["dni"]: "";
@@ -83,6 +83,8 @@
 <?php include("../templates_doc/header_doc.php");?>
 <br>
 <br>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <div class="card mx-auto" style="max-width: 500px;">
         <div class="card-header" style="background-color:bisque">    
                 <style> h1 { text-align: center; font-family: Georgia, sans-serif; } </style>
@@ -96,13 +98,13 @@
             <!--Formulario para cargar los datos, a traves del metodo Post, con style de color-->   
                 <form  action="" method="post" enctype="multipart/form-data" style="background-color:azure">
                     
-                    <!-- <div class="mb-3">
-                        <label for="txtID" class="form-label">ID:</label> -->
+                    <!-- <div class="mb-3"> -->
+                        <!-- <label for="txtID" class="form-label">ID:</label> -->
                         <!-- En este input se encuentra el readonly es que un atributo de lectura solamente, el usuario no puede modificar el valor -->
-                        <!-- <input type="text"  -->
-                            <!-- value= " --><?php /*  echo $txtID; */ ?><!-- " -->
-                            <!-- class="form-control w-auto" readonly name="txtID" id="txtID" aria-describedby="helpId" placeholder="ID" />   
-                    </div>  -->
+                        <!-- <input type="text" 
+                            value= "  /* echo $txtID; */ ?>" 
+                            class="form-control w-auto" readonly name="txtID" id="txtID" aria-describedby="helpId" placeholder="ID" />    -->
+                    <!-- </div>   -->
                     <div class="mb-3">
                         <label for="nombre" class="form-label"><u>Nombre:</u></label>
                         <input type="text" 
@@ -155,24 +157,45 @@
                                 }?> 
                                 aria-describedby="helpId" placeholder="" />
                     </div>
-                    <div class="mb-3">
+                    <!-- <div class="mb-3">
                         <label for="fechaingreso" class="form-label"><u>Fecha/Ingreso:</u></label>
                         <input type="date" 
-                            value= "<?php echo $fechaingreso; ?>"
+                            value= "/*  echo $fechaingreso; */ ?>"
                             class="form-control w-auto"  disabled name="fechaingreso" id="fechaingreso" aria-describedby="helpId"/>
-                    </div>
+                    </div> -->
                     <div class="mb-3"> 
                         <label for="usuario" class="form-label"><u>usuario:</u></label>
                         <input type="text" 
                             value= "<?php echo $usuario; ?>"
-                            class="form-control w-auto" name="usuario" id="usuario" aria-describedby="helpId" />
+                            class="form-control w-auto" disabled name="usuario" id="usuario" aria-describedby="helpId" />
                     </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label"><u>Password:</u></label>
-                            <input type="text" 
+                    <div class="mb-3">
+                        <label for="password" class="form-label"><u>Password:</u></label>
+                        <div class="input-group">
+                            <input type="password" 
                                 value= "<?php echo $password; ?>"
                                 class="form-control w-auto" name="password" id="password" aria-describedby="helpId" />
+                            <button type="button" class="btn btn-outline-secondary" onclick="togglePassword()">
+                                <i id="toggleIcon" class="fa fa-eye"></i>
+                            </button>
                         </div>
+                    </div>
+
+                    <script>
+                        function togglePassword() {
+                            var passwordInput = document.getElementById("password");
+                            var toggleIcon = document.getElementById("toggleIcon");
+                            if (passwordInput.type === "password") {
+                                passwordInput.type = "text";
+                                toggleIcon.classList.remove("fa-eye");
+                                toggleIcon.classList.add("fa-eye-slash");
+                            } else {
+                                passwordInput.type = "password";
+                                toggleIcon.classList.remove("fa-eye-slash");
+                                toggleIcon.classList.add("fa-eye");
+                            }
+                        }
+                    </script>
                     <!--Button bs5-button-default y bs5-button-a (sirve para direccionar) -->
                     <button type="submit" class="btn btn">
                         <img src="../../../css/imagen_tesis/icons/aceptar.png" style="width: 30px; height: 30px; vertical-align: middle;">
