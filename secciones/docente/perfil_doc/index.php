@@ -1,26 +1,16 @@
 <?php 
     session_start();
+   /*  print_r($_SESSION); */ 
     include("../../../bd.php");
-    
-    // Verifica si la sesión de usuario está establecida
-    $url_base = "http://localhost/Proyecto_tesis/";
-    if (!isset($_SESSION['usuario'])) {
-        header("Location: " . $url_base . "login.php");
-        exit(); // Detiene la ejecución del script después de redirigir
-    } else {
-        
-    }
+
     $usuario_doc = $_SESSION['usuario'];
     
     /* Seleccionamos datos de la table Persona */
-    
-    // Preparar la consulta SQL
     $sentencia = $conexion->prepare("SELECT * FROM tbl_persona WHERE usuario = :usuario LIMIT 1");
     $sentencia->bindParam(':usuario', $usuario_doc); 
     $sentencia->execute();
     $usuario_doc = $sentencia->fetch(PDO::FETCH_ASSOC);
     
-    /*  print_r($usuario_doc); */
 ?>
 <?php include("../templates_doc/header_doc.php");?>    
 <br>

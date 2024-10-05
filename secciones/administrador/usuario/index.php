@@ -46,7 +46,7 @@
                                         }
                                 </style>
                                     <th scope="col" style="background-color:azure"><u>ID</u></th>
-                                    <th scope="col" style="background-color:azure"><u>Nombre/Usuario</u></th>
+                                    <!-- <th scope="col" style="background-color:azure"><u>Nombre/Usuario</u></th> -->
                                     <th scope="col" style="background-color:azure"><u>Password</u></th>
                                     <th scope="col" style="background-color:azure"><u>Email</u></th>
                                     <th scope="col" style="background-color:azure"><u>Acciones</u></th>
@@ -64,7 +64,7 @@
                                 </style>
                                     <tr class="">
                                         <td scope="row"><?php echo $registro['id'];?></td>
-                                        <td><?php echo $registro['usuario'];?></td>
+                                        <!-- <td><?php /* echo $registro['usuario']; */?></td> -->
                                         <td><?php echo $registro['password'];?></td>
                                         <td><?php echo $registro['email'];?></td>
                                     

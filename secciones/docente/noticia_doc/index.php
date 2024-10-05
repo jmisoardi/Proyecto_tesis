@@ -1,15 +1,15 @@
 <?php 
+    session_start();
     include("../../../bd.php");
-    include("../templates_doc/header_doc.php");
     /* include("../noticia/index.php"); */
     
     if (isset($_GET['txtID'])) {
         $txtID = (isset($_GET['txtID'])) ? $_GET['txtID'] :"";
-
+        
         $sentencia = $conexion->prepare ( "DELETE FROM tbl_noticia WHERE id=:id" );
         $sentencia->bindParam( ":id" ,$txtID );
         $sentencia->execute();
-
+        
         //Mensaje de Registro Eliminado (Sweet alert).
         $mensaje="Mensaje Eliminado";
         header("Location:index.php?mensaje=".$mensaje);
@@ -18,16 +18,9 @@
     $sentencia = $conexion->prepare("SELECT * FROM `tbl_noticia`");
     $sentencia->execute();
     $lista_tbl_noticia = $sentencia->fetchAll(PDO::FETCH_ASSOC);
-?>
+    ?>
+<?php include("../templates_doc/header_doc.php");?>
 <br>
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>Noticias</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../../css/styles.css">
-    </head>
     <body>
         <!--Estilo para el titulo-->
         <style> 

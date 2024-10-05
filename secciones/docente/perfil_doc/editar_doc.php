@@ -1,6 +1,7 @@
 <?php 
-    /* session_start(); */
+    
     include("../../../bd.php");
+    /* session_start(); */
     //Recepción del envío txtID.    
     if (isset($_GET['txtID'])) {
         //Verificamos si está presente en la URL txtID, asignamos el valor en  $_GET['txtID'] de lo contrario no se asigna ningún valor con :"" .
@@ -95,13 +96,13 @@
             <!--Formulario para cargar los datos, a traves del metodo Post, con style de color-->   
                 <form  action="" method="post" enctype="multipart/form-data" style="background-color:azure">
                     
-                   <!--  <div class="mb-3"> -->
-                        <!-- <label for="txtID" class="form-label">ID:</label> -->
-                        <!--En este input se encuentra el readonly es que un atributo de lectura solamente, el usuario no puede modificar el valor-->
-                        <!-- <input type="text"  -->
-                            <!-- value= "/*  echo $txtID; */ ?>"
-                            class="form-control w-auto" readonly name="txtID" id="txtID" aria-describedby="helpId" placeholder="ID" />     -->
-                    <!-- </div>  -->
+                    <div class="mb-3">
+                        <label for="txtID" class="form-label">ID:</label>
+                        <!-- En este input se encuentra el readonly es que un atributo de lectura solamente, el usuario no puede modificar el valor -->
+                        <input type="text" 
+                            value= "<?php  echo $txtID; ?>"
+                            class="form-control w-auto" readonly name="txtID" id="txtID" aria-describedby="helpId" placeholder="ID" />   
+                    </div> 
                     <div class="mb-3">
                         <label for="nombre" class="form-label"><u>Nombre:</u></label>
                         <input type="text" 
@@ -158,19 +159,19 @@
                         <label for="fechaingreso" class="form-label"><u>Fecha/Ingreso:</u></label>
                         <input type="date" 
                             value= "<?php echo $fechaingreso; ?>"
-                            class="form-control w-auto"  disabled name="fechaingreso" id="fechaingreso" aria-describedby="helpId" placeholder="Ingrese Fecha"/>
+                            class="form-control w-auto"  disabled name="fechaingreso" id="fechaingreso" aria-describedby="helpId"/>
                     </div>
                     <div class="mb-3"> 
                         <label for="usuario" class="form-label"><u>usuario:</u></label>
                         <input type="text" 
                             value= "<?php echo $usuario; ?>"
-                            class="form-control w-auto" name="usuario" id="apellido" aria-describedby="helpId" placeholder="Ingrese Apellido"/>
+                            class="form-control w-auto" name="usuario" id="usuario" aria-describedby="helpId" />
                     </div>
                         <div class="mb-3">
                             <label for="password" class="form-label"><u>Password:</u></label>
                             <input type="text" 
                                 value= "<?php echo $password; ?>"
-                                class="form-control w-auto" name="password" id="password" aria-describedby="helpId" placeholder="Ingrese password"/>
+                                class="form-control w-auto" name="password" id="password" aria-describedby="helpId" />
                         </div>
                     <!--Button bs5-button-default y bs5-button-a (sirve para direccionar) -->
                     <button type="submit" class="btn btn">
