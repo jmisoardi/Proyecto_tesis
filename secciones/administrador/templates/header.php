@@ -1,6 +1,9 @@
 <!-- Dirección base del proyecto-->
 <?php     
-    session_start();
+    /* session_start(); */
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
     $url_base = "http://localhost/Proyecto_tesis/";
     
     // Verifica si la sesión de usuario está establecida
@@ -30,12 +33,10 @@
         
         <!--Script para data table-->
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
-            
-            /* Data table installation, brinda estilo y funciones para el data table */
         </script>
             <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
         <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
-        
+
         <!--Script para sweet alert -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>    
         

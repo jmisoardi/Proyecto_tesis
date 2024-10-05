@@ -38,6 +38,7 @@
                                     <th scope="col" style="background-color:azure"><u>F/Nacimiento</u></th>
                                     <th scope="col" style="background-color:azure"><u>Email</u></th>
                                     <th scope="col" style="background-color:azure"><u>Telefono</u></th>
+                                    <th scope="col" style="background-color:azure"><u>Idrol</u></th>
                                     <th scope="col" style="background-color:azure"><u>Usuario</u></th>
                                     <th scope="col" style="background-color:azure"><u>Password</u></th>
                                     <!-- <th scope="col" style="background-color:azure"><u></u></th>
@@ -51,13 +52,11 @@
                                 
                                 <tr class="">
                                     <td scope="row"><?php echo $usuario_doc['nombre'] . ' ' . $usuario_doc['apellido'] ; ?></td>
-                                    <td>
-                                        <?php echo $usuario_doc['dni']; ?>
-                                    </td>
+                                    <td><?php echo $usuario_doc['dni']; ?></td>
                                     <td><?php echo $usuario_doc['fechanacimiento']; ?></td>
                                     <td><?php echo $usuario_doc['email']; ?></td>
                                     <td><?php echo $usuario_doc['telefono']; ?></td>
-                                    <!-- <td> echo $usuario_doc['idrol'];</td> -->
+                                    <td><?php  echo $usuario_doc['idrol'];?></td>
                                     <!-- <td> echo $usuario_doc['fechaingreso']; </td> -->
                                     <td><?php  echo $usuario_doc['usuario'];?> </td>
                                     <td><?php echo str_repeat('*', strlen($usuario_doc['password'])); ?> </td>

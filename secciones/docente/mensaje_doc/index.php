@@ -56,15 +56,16 @@
             </div>
             <div class="card-body-xl" style="background-color:azure">
                 <div class="table-responsive">
-                    <table class="table" id="tabla_id">
+                <table class="table" id="tabla_id">
                         <thead>
                             <tr>
                                 <th scope="col" style="background-color:azure"><u>Remitente</u></th>
                                 <th scope="col" style="background-color:azure"><u>Destinatario</u></th>
-                                <th scope="col" style="background-color:azure"><u>email</u></th> 
-                                <th scope="col" style="background-color:azure"><u>subject</u></th> 
-                                <th scope="col" style="background-color:azure"><u>message</u></th>
+                                <th scope="col" style="background-color:azure"><u>Email</u></th> 
+                                <th scope="col" style="background-color:azure"><u>Asunto</u></th> 
+                                <th scope="col" style="background-color:azure"><u>Mensaje</u></th>
                                 <th scope="col" style="background-color:azure"><u>Fecha de Envío</u></th>
+                                <th scope="col" style="background-color:azure"><u>Acciones</u></th>
                             </tr>
                         </thead>
                         <tbody>

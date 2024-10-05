@@ -100,9 +100,9 @@
         $sentencia_usuarios->execute();
         $usuarios = $sentencia_usuarios->fetchAll(PDO::FETCH_ASSOC);
 ?>
-<?php include("../templates_doc/header_doc.php");?>
+<?php include("../templates/header.php");?>
 <head>
-    <link rel="stylesheet" href="../../../css/styles_mensaje.css">
+    <link rel="stylesheet" href="../../../css/styles_mensaje-doc.css">
     <title>Enviar Mensaje</title>
 </head>
     <body>
@@ -154,4 +154,4 @@
         </a>
     </div>
 
-<?php include("../templates_doc/footer_doc.php") ?>
+<?php include("../templates/footer.php") ?>

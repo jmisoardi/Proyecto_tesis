@@ -21,26 +21,12 @@
 ?>
 <?php include("../templates/header.php");?>
 <br>
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>Noticias</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <style> 
-            h1 { 
-                text-align: center; font-family: Georgia, sans-serif;
-                }
-        </style>
-        <h1>Noticia</h1> 
-    </head>
-    <body>
+<title>Noticias</title>
+    
         <!--Estilo para el titulo Personal-->
-        <style> 
-            h1,h2 {
-                    text-align: center; font-family: Georgia, sans-serif;
-                    }
-        </style>
+        <style> h1,h2 { text-align: center; font-family: Georgia, sans-serif; } </style>
+        <h1>Noticia</h1> 
+    <body>
         <div class="card">
             <!--Header y button primary-->
             <div class="card-header" style="background-color:bisque">   
@@ -80,7 +66,7 @@
                                                 <!--Etiqueta de botones Editar y Eliminar-->
                                                 <td>
                                                     <!--Utilizamos bs5-button-a seguido de la línea de código para editar el ID de la fila. -->
-                                                    <a class="btn btn-info" href="editar_not.php?txtID=<?php echo $registro['id']; ?>" role="button" >Editar</a >
+                                                    <a class="btn btn-info" href="editar_not.php?txtID=<?php echo $registro['id']; ?>" role="button" >Editar </a ><br>
                                                     <!--Utilizamos bs5-button-a seguido de la línea de código para obtener el ID y que nos elimine la fila. -->
                                                     <!--El signo sirve para pasar parametros por URL.-->
                                                     <a class="btn btn-danger" href="javascript:borrar(<?php echo $registro['id']; ?>);" role="button" >Eliminar</a >   
