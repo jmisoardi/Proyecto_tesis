@@ -1,6 +1,10 @@
 <!-- Dirección base del proyecto-->
 <?php     
-    session_start();
+    
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
     $url_base = "http://localhost/Proyecto_tesis/";
     
     // Verifica si la sesión de usuario está establecida
@@ -11,75 +15,82 @@
     
     //Verificamos el rol del usuario
     if ($_SESSION['rolpersona'] != 'alumno' && $_SESSION['rolpersona'] != 'administrador') {
-        
-        // Mensaje de Alerta antes de la redirección
-        echo "<script>
-                alert('USTED NO TIENE ACCESO A ESTA SECCION.');
-                setTimeout(function() {
-                    window.location.href = '" . $url_base . "index.php';
-                }, 500); // Redirecciona después de 1 segundo
-            </script>";
-        exit(); // Detener la ejecución de PHP para que el script JS funcione
+        $_SESSION['error_message'] = "USTED NO TIENE ACCESO A ESTA SECCION.";
+        header("Location: " . $url_base . "index.php"); 
+        exit(); 
     }     
 ?>
 <!-- Archivo header.php -->
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="UTF-8">
         <title>Alumno</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        
+        <!-- Bootstrap CSS v5.2.1 -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">    
-        <!-- <link rel="stylesheet" href="../../css/styles.css"> -->
+        
+        <!-- Estilo de Css -->
+        <link rel="stylesheet" href="../../css/styles.css">
+        <link rel="stylesheet" href="../../../css/styles.css">
+        
+        <!--Script para data table-->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
+        <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+        
         <!--Script para sweet alert -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
     </head>
+    
     <body>
-    <div class="background-alu"></div>
-    <div class="content-alu"> 
-        <nav class="navbar navbar-expand navbar-light bg-info">
-                <div class="container-fluid">
-                    <!-- Barra de navegación  -->
-                    <a class="navbar-brand" href="<?php echo $url_base;?>secciones/alumno/home_alu/index.php">Portal del Estudiante</a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav">
-                                <!-- Direccionamiento en barra de navegación de alumno -->
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/alumno/home_alu/index.php">
-                                        <img src="../../../css/imagen_tesis/icons/inicio.png" style="width: 30px; height: 30px; vertical-align: middle;">
-                                    </a>
-                                </li>
-                                <li class="nav-link">
-                                    <a  href="<?php echo $url_base;?>secciones/alumno/noticia_alu/index.php">
-                                        <img src="../../../css/imagen_tesis/icons/noticia.png" style="width: 30px; height: 30px; vertical-align: middle;">
-                                    </a>
-                                </li>
-                                <li class="nav-link">
-                                    <a  href="<?php echo $url_base;?>secciones/alumno/mensaje_alu/index.php">
-                                        <img src="../../../css/imagen_tesis/icons/mensaje.png" style="width: 30px; height: 30px; vertical-align: middle;">
-                                    </a>
-                                </li>
-                                <li class="nav-link">
-                                    <a  href="<?php echo $url_base;?>secciones/alumno/unidad_alu/index.php">
-                                        <img src="../../../css/imagen_tesis/icons/libro.png" style="width: 30px; height: 30px; vertical-align: middle;">
-                                    </a>
-                                </li>
-                                <li class="nav-link">
-                                    <a  href="<?php echo $url_base;?>secciones/alumno/perfil_alu/index.php">
-                                        <img src="../../../css/imagen_tesis/icons/perfil.png" style="width: 30px; height: 30px; vertical-align: middle;">
-                                    </a>
-                                </li>
-                                <li >
-                                    <a class="nav-link" href="<?php echo $url_base;?>secciones/alumno/cerrar_alu.php">
-                                        <img src="../../../css/imagen_tesis/icons/cerrar.png" style="width: 30px; height: 30px; vertical-align: middle;">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                </div>
-        </nav>
+        <div class="background-alu"></div>
+        <div class="content-alu"> 
+            <nav class="navbar navbar-expand navbar-light bg-info">
+                    <div class="container-fluid">
+                        <!-- Barra de navegación  -->
+                        <a class="navbar-brand" href="<?php echo $url_base;?>secciones/alumno/home_alu/index.php">Portal del Estudiante</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav">
+                                    <!-- Direccionamiento en barra de navegación de alumno -->
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="<?php echo $url_base;?>secciones/alumno/home_alu/index.php">
+                                            <img src="../../../css/imagen_tesis/icons/inicio.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                        </a>
+                                    </li>
+                                    <li class="nav-link">
+                                        <a  href="<?php echo $url_base;?>secciones/alumno/noticia_alu/index.php">
+                                            <img src="../../../css/imagen_tesis/icons/noticia.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                        </a>
+                                    </li>
+                                    <li class="nav-link">
+                                        <a  href="<?php echo $url_base;?>secciones/alumno/mensaje_alu/index.php">
+                                            <img src="../../../css/imagen_tesis/icons/mensaje.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                        </a>
+                                    </li>
+                                    <li class="nav-link">
+                                        <a  href="<?php echo $url_base;?>secciones/alumno/unidad_alu/index.php">
+                                            <img src="../../../css/imagen_tesis/icons/libro.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                        </a>
+                                    </li>
+                                    <li class="nav-link">
+                                        <a  href="<?php echo $url_base;?>secciones/alumno/perfil_alu/index.php">
+                                            <img src="../../../css/imagen_tesis/icons/perfil.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                        </a>
+                                    </li>
+                                    <li >
+                                        <a class="nav-link" href="<?php echo $url_base;?>secciones/alumno/cerrar_alu.php">
+                                            <img src="../../../css/imagen_tesis/icons/cerrar.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                    </div>     
+            </nav>
         <!--Sweet alert Mensaje de confirmación-->
         <?php if (isset($_GET['mensaje'])) { ?>
             <script>

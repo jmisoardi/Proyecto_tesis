@@ -24,8 +24,7 @@
                         Example button
                     </button> -->
                 </div>
-        </div>
-        
+        </div>    
     </body>    
 <br>
 <?php include("../templates_doc/footer_doc.php")?>

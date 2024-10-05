@@ -157,17 +157,11 @@
                                 }?> 
                                 aria-describedby="helpId" placeholder="" />
                     </div>
-                    <!-- <div class="mb-3">
-                        <label for="fechaingreso" class="form-label"><u>Fecha/Ingreso:</u></label>
-                        <input type="date" 
-                            value= "/*  echo $fechaingreso; */ ?>"
-                            class="form-control w-auto"  disabled name="fechaingreso" id="fechaingreso" aria-describedby="helpId"/>
-                    </div> -->
                     <div class="mb-3"> 
                         <label for="usuario" class="form-label"><u>usuario:</u></label>
                         <input type="text" 
                             value= "<?php echo $usuario; ?>"
-                            class="form-control w-auto" disabled name="usuario" id="usuario" aria-describedby="helpId" />
+                            class="form-control w-auto" readonly name="usuario" id="usuario" aria-describedby="helpId" />
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label"><u>Password:</u></label>

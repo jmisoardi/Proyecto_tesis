@@ -52,15 +52,14 @@
         <link rel="stylesheet" href="../../css/styles.css">
         <link rel="stylesheet" href="../../../css/styles.css">
         <!--Script para data table-->
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
-        </script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
             <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
         <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
         
         <!--Script para sweet alert-->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
-    
     </head>
+        
         <body>
             <div class="background-doc"></div>
             <div class="content-doc"> 
