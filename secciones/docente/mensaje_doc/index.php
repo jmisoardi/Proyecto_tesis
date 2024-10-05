@@ -15,44 +15,21 @@
         $mensaje="Registro Eliminado";
         header("Location:index.php?mensaje=".$mensaje);    
     }
-    // Asegúrate de que la variable $usuario_doc esté definida
-    /* if (isset($_SESSION['usuario'])) {
-        $usuario_doc = $_SESSION['usuario'];
-
-        // Obtenemos el id del usuario en sesión;
-        $sentencia = $conexion->prepare("SELECT id FROM tbl_persona WHERE usuario = :usuario LIMIT 1");
-        $sentencia->bindParam(':usuario', $usuario_doc);
-        $sentencia->execute();
-        $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
-        
-        if ($resultado) {
-            $id_usuario = $resultado['id']; // Guardamos el ID en una variable
-        } else {
-            // Manejar el caso en que no se encuentre el usuario
-            $_SESSION['error_message'] = "Usuario no encontrado.";
-            header("Location: " . $url_base . "index.php");
-            exit();
-        }
-    } else {
-        // Manejar el caso en que no hay usuario en sesión
-        $_SESSION['error_message'] = "No se ha iniciado sesión.";
-        header("Location: " . $url_base . "index.php");
-        exit();
-    } */
+    
     // Obtenemos el id del usuario en sesión;
     $sentencia = $conexion->prepare("SELECT id FROM tbl_persona WHERE usuario = :usuario limit 1");
     $sentencia->bindParam(':usuario', $usuario_doc);
     $sentencia->execute();
     $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
     
-    if ($resultado) {
+   /*  if ($resultado) {
         $id_usuario = $resultado['id']; // Guardamos el ID en una variable
     } else {
         // Manejar el caso en que no se encuentre el usuario
         $_SESSION['error_message'] = "Usuario no encontrado.";
         header("Location: " . $url_base . "index.php");
         exit();
-    }
+    } */
     
     $id_usuario = $resultado['id'];
 

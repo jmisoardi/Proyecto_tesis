@@ -90,19 +90,19 @@
         </div>
     </div>
         <div class="card mx-auto" style="max-width: 500px;">
-            <div class="card-header" style="background-color:bisque">Ingrese los datos para el registro</div>
+            <!-- <div class="card-header" style="background-color:bisque">Ingrese los datos para el registro</div> -->
             
             <div class="card-body">
             <!--Formulario para cargar los datos, a traves del metodo Post, con style de color-->   
                 <form  action="" method="post" enctype="multipart/form-data" style="background-color:azure">
                     
-                    <div class="mb-3">
-                        <label for="txtID" class="form-label">ID:</label>
+                    <!-- <div class="mb-3">
+                        <label for="txtID" class="form-label">ID:</label> -->
                         <!-- En este input se encuentra el readonly es que un atributo de lectura solamente, el usuario no puede modificar el valor -->
-                        <input type="text" 
-                            value= "<?php  echo $txtID; ?>"
-                            class="form-control w-auto" readonly name="txtID" id="txtID" aria-describedby="helpId" placeholder="ID" />   
-                    </div> 
+                        <!-- <input type="text"  -->
+                            <!-- value= " --><?php /*  echo $txtID; */ ?><!-- " -->
+                            <!-- class="form-control w-auto" readonly name="txtID" id="txtID" aria-describedby="helpId" placeholder="ID" />   
+                    </div>  -->
                     <div class="mb-3">
                         <label for="nombre" class="form-label"><u>Nombre:</u></label>
                         <input type="text" 
