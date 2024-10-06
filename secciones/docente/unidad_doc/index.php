@@ -1,12 +1,7 @@
 <?php 
+    session_start();
     include("../../../bd.php");
-    include("../templates_doc/header_doc.php");
-
-    $url_base = "http://localhost/Proyecto_tesis/";
-    if (!isset($_SESSION['usuario'])) {
-        header("Location: " . $url_base . "login.php");
-        exit();
-    }
+    
     if (isset($_GET['txtID'])) {
         // Verificamos si está presente en la URL txtID, asignamos el valor en $_GET['txtID']
         $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
@@ -30,13 +25,13 @@
         $sentencia = $conexion->prepare("DELETE FROM tbl_material WHERE id=:id");
         $sentencia->bindParam(":id", $txtID);
         $sentencia->execute();
-    
+        
         // Mensaje de Registro Eliminado
         $mensaje = "Registro Eliminado";
         header("Location: index.php?mensaje=" . $mensaje);
         exit();
     }
-   /*  if (isset($_GET['txtID'])) {
+    /*  if (isset($_GET['txtID'])) {
         //Verificamos si está presente en la URL txtID, asignamos el valor en  $_GET['txtID'] de lo contrario no se asigna ningún valor con :"" .
         $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
         //Preparamos la conexion de Borrado.
@@ -46,20 +41,16 @@
         //Mensaje de Registro Eliminado (Sweet alert).
         $mensaje="Registro Eliminado";
         header("Location:index.php?mensaje=".$mensaje);
-    } */
+        } */
     // Consulta para obtener los archivos disponibles
     $sentencia = $conexion->prepare("SELECT * FROM `tbl_material`");
     $sentencia->execute();
     $lista_tbl_material = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 ?>
+
+<?php include("../templates_doc/header_doc.php");?>
 <br><br>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../css/styles.css">
-</head>
+
 <body>
     <!-- Tabla para mostrar archivos subidos -->
     <div class="unidad">
