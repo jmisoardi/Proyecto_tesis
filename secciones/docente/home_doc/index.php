@@ -3,9 +3,9 @@
     <body>
         <div class="p-5 mb-4 bg-light rounded-3">
             <div class="container-fluid py-5" style="background-color:azure">
-                    <h1 class="display-5 fw-bold">Introducción</h1>
+                    <h1 class="display-5 fw-bold"><?php echo $_SESSION['usuario'];?></h1>
                     <p class="col-md-8 fs-4">
-                        <h1>Bienvenid@ <?php echo $_SESSION['usuario'];?> al Portal del Docente "BridgeClass"</h1>
+                        <h1>Bienvenid@</h1><h1>Portal del Docente "BridgeClass"</h1>
                         <p>Nos alegra tenerte en nuestro portal, diseñado específicamente para apoyar tu labor académica y facilitarte el acceso a la información que necesitas. Aquí podrás encontrar:</p>
                         <ul>
                             <li>Actualizaciones y anuncios importantes de la Institución.</li>

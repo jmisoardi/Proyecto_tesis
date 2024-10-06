@@ -10,10 +10,6 @@
         $sentencia = $conexion->prepare ( "DELETE FROM `tbl_mensaje` WHERE id=:id" );
         $sentencia->bindParam( ":id" ,$txtID );
         $sentencia->execute();
-        
-        //Mensaje de Registro Eliminado (Sweet alert).
-        $mensaje="Registro Eliminado";
-        header("Location:index.php?mensaje=".$mensaje);    
     }
     
     // Obtenemos el id del usuario en sesión;
@@ -21,15 +17,6 @@
     $sentencia->bindParam(':usuario', $usuario_doc);
     $sentencia->execute();
     $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
-    
-   /*  if ($resultado) {
-        $id_usuario = $resultado['id']; // Guardamos el ID en una variable
-    } else {
-        // Manejar el caso en que no se encuentre el usuario
-        $_SESSION['error_message'] = "Usuario no encontrado.";
-        header("Location: " . $url_base . "index.php");
-        exit();
-    } */
     
     $id_usuario = $resultado['id'];
 
@@ -81,7 +68,9 @@
                                     <td>
                                         <!--Utilizamos bs5-button-a seguido de la línea de código para obtener el ID y que nos elimine la fila. -->
                                         <!--El signo sirve para pasar parametros por URL.-->
-                                        <a class="btn btn-danger" href="javascript:borrar(<?php echo $mensaje['id']; ?>);" role="button" >Eliminar</a >   
+                                        <a  href="javascript:borrar(<?php echo $mensaje['id']; ?>);" role="button" >
+                                            <img src="../../../css/imagen_tesis/icons/eliminar.png" alt="Eliminar" style="width: 48px; height: 48px; vertical-align: middle;">                                            
+                                        </a >
                                     </td>
                                 </tr>
                             <?php } ?>
