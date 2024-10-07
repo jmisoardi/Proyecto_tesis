@@ -77,7 +77,7 @@
                             </dt>
                             <dd>En este nivel, los estudiantes aprenderán cómo presentarse a sí mismos y a otras personas. Además, los estudiantes serán capaces de utilizar expresiones cotidianas y frases para necesidades inmediatas, así como también, preguntas y responder sobre información personal.</dd>
                             <div class="text-center">
-                                <a name="" id="" class="btn btn-info" href="material_doc.php" role="button">
+                                <a name="" id="" class="btn btn-info" href="material_a1.php" role="button">
                                     <img src="../../../css/imagen_tesis/icons/ver.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                 </a>
                             </div>
@@ -88,6 +88,11 @@
                                 <span>A2</span><br><br>Pre-Intermediate
                             </dt>
                             <dd>En este nivel, los estudiantes aprenderán cómo presentarse a sí mismos y a otras personas. Además, los estudiantes serán capaces de utilizar expresiones cotidianas y frases para necesidades inmediatas, así como también, preguntas y responder sobre información personal.</dd>
+                            <div class="text-center">
+                                <a name="" id="" class="btn btn-info" href="material_a2.php" role="button">
+                                    <img src="../../../css/imagen_tesis/icons/ver.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                </a>
+                            </div>
                         </div>
                         
                         <div class="term">

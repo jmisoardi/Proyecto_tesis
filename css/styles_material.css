@@ -1,5 +1,5 @@
 details {
-    width: 80%;
+    width: 85%;
     margin: 0 auto ;
     background: #9ce5f2;
     margin-bottom: .5rem;
@@ -20,21 +20,22 @@ summary {
 
 summary:before {
     content: '';
-    border-width: .4rem;
+    border-width: .6rem; /* Aumentar el tamaño del triángulo */
     border-style: solid;
-    border-color: transparent transparent transparent #064b54;
+    border-color: transparent transparent transparent #100e02; /* Mantener el color original */
     position: absolute;
-    top: 1.3rem;
+    top: 1.1rem; /* Ajustar la posición vertical para centrarlo con el texto */
     left: 1rem;
     transform: rotate(0);
-    transform-origin: .2rem 50%;
-    transition: .25s transform ease;
+    transform-origin: .3rem 50%; /* Ajustar el punto de rotación para un mejor efecto */
+    transition: 1.25s transform ease; /* Mantener la duración de la transición */
 }
 
-  /* THE MAGIC 🧙‍♀️ */
+/* Rotación del triángulo al abrir el details */
 details[open] > summary:before {
     transform: rotate(90deg);
 }
+
 
 
 details summary::-webkit-details-marker {

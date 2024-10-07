@@ -27,9 +27,9 @@
         $sentencia->execute();
         
         // Mensaje de Registro Eliminado
-        $mensaje = "Registro Eliminado";
+       /*  $mensaje = "Registro Eliminado";
         header("Location: index.php?mensaje=" . $mensaje);
-        exit();
+        exit(); */
     }
     if (isset($_GET['txtID'])) {
         //Verificamos si está presente en la URL txtID, asignamos el valor en  $_GET['txtID'] de lo contrario no se asigna ningún valor con :"" .
@@ -48,6 +48,7 @@
 <?php include("../templates_doc/header_doc.php");?>
 <br><br>
 <link rel="stylesheet" href="../../../css/styles_material.css">
+<link rel="stylesheet" href="../../../css/styles_checkbox.css">
 <!-- <link rel="stylesheet" href="../../../css/styles_index.css"> -->
     <body>
         <!-- Tabla para mostrar archivos subidos -->
@@ -60,7 +61,7 @@
             <h1>Materiales disponibles</h1>
             <div class="card-header" style="background-color:bisque">   
                 <!-- </div>  -->
-                <!-- <style> h2 { text-align: center; font-family: Georgia, sans-serif; } </style> -->
+                <style> input  { text-align: center;/*  font-family: Georgia, sans-serif; */ } </style>
                 
                 <!-- Para tener en cuenta a la hora de subir material a la plataforma -->
                 <!-- <div class="mb-3">
@@ -69,17 +70,33 @@
                 </div> -->
                 
                 <table><br>
-                    <details><br>
                 <!-- Seccion Nº-1 -->
-                        <summary><h2>Hello!</h2></summary>
-                        <details><br>
-                            <summary><h2>Grammar</h2></summary>
-                                <ul>
-                                    <li><h3>-Possessive adjectives:</h3></li>  
+                    <details id="section1"><br>
+                        <summary><h2>Hello! 
+                                    <label class="switch">
+                                        <input type="checkbox" id="enableSection1" onclick="toggleSection('section1', 'enableSection1')">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </h2>
+                        </summary>
+                        <details id="grammarSection"><br>
+                            <summary>
+                                    <h2>Grammar 
+                                        <label class="switch">
+                                            <input type="checkbox" id="enableGrammar" onclick="toggleSection('grammarSection', 'enableGrammar')" disabled>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </h2>
+                            </summary>
+                            
+                            <ul>
+                                    <li><h3>-Possessive adjectives:</h3>
                                         <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
                                             <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                         </a>
-                                    <li><h3>-verb to be:</h3></li>
+                                            
+                                    </li>
+                                            <li><h3>-verb to be:</h3></li>
                                         <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
                                             <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                         </a>
@@ -682,4 +699,30 @@
             <img src="../../../css/imagen_tesis/icons/atras.png" style="width: 30px; height: 30px; vertical-align: middle;">
         </a>
     </div>
+    <script>
+    function toggleSection(sectionId, toggleId) {
+    const section = document.getElementById(sectionId);
+    const toggle = document.getElementById(toggleId);
+
+    if (sectionId === 'section1') {
+        // Cuando se habilita/deshabilita la sección principal ("Hello")
+        const grammarToggle = document.getElementById('enableGrammar');
+        if (toggle.checked) {
+        section.open = true; // Abre la sección
+        grammarToggle.disabled = false; // Habilita el switch de "Grammar"
+        } else {
+        section.open = false; // Cierra la sección
+        grammarToggle.disabled = true; // Deshabilita el switch de "Grammar"
+        document.getElementById('grammarSection').open = false; // Asegura que "Grammar" también se cierre
+        }
+    } else {
+        // Habilitación/deshabilitación de subsecciones (como "Grammar")
+        if (toggle.checked) {
+        section.open = true; // Abre la subsección
+        } else {
+        section.open = false; // Cierra la subsección
+        }
+    }
+    }
+</script>
 <?php include("../templates_doc/footer_doc.php"); ?>
