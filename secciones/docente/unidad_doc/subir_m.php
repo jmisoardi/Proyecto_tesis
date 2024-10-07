@@ -50,7 +50,7 @@ if ($_POST) {
         </form>
     </div>
     <div class="text-center">
-        <a name="" id="" class="btn btn-info" href="index.php" role="button">
+        <a name="" id="" class="btn btn-info" href="material_doc.php" role="button">
             <img src="../../../css/imagen_tesis/icons/atras.png" style="width: 30px; height: 30px; vertical-align: middle;">
         </a>
     </div>

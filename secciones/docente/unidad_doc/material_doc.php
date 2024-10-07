@@ -48,71 +48,133 @@
 <?php include("../templates_doc/header_doc.php");?>
 <br><br>
 <link rel="stylesheet" href="../../../css/styles_material.css">
+<!-- <link rel="stylesheet" href="../../../css/styles_index.css"> -->
     <body>
         <!-- Tabla para mostrar archivos subidos -->
         <div class="unidad">
-            <div class="text-center">
+            <!-- <div class="text-center">
                 <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
                     <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
                 </a>
-            </div>
-            <h2>Materiales disponibles</h2>
-            <!-- <div class="card-header" style="background-color:bisque">    -->
+            </div> -->
+            <h1>Materiales disponibles</h1>
+            <div class="card-header" style="background-color:bisque">   
                 <!-- </div>  -->
+                <!-- <style> h2 { text-align: center; font-family: Georgia, sans-serif; } </style> -->
+                
+                <!-- Para tener en cuenta a la hora de subir material a la plataforma -->
+                <!-- <div class="mb-3">
+                    <label for="unidad_1" class="form-label"><u>Unidad</u></label>
+                    <input type="text" class="form-control w-auto " name="unidad_1" id="unidad_1"  placeholder=" Grammar"/> 
+                </div> -->
+                
                 <table>
-                    <details>
-                        <summary><h2>Unidad-1</h2></summary>
+                    <details><br>
+                        <summary><h2>Hello!</h2></summary>
+                        <details><br>
+                            <summary><h2>Grammar</h2>
+                            </summary>
                             <ul>
-                                <li>1</li>
-                                <li>2</li>
-                                <li>3</li>
-                                <li>4</li>
-                                <li>5</li>
+                                <li>-Possessive adjectives:</li>  <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
+                                                                        <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                                    </a>
+                                                                   
+                                                                
+                                <li>-verb to be:</li>
+                                <li>-this / that / these / those:</li>
+                                <li>singular / plural nouns:</li>
                             </ul>
+                        </details>
+                        <details>
+                            <summary><h2>Vocabulary</h2></summary>
+                                <ul>
+                                    <li>-Countries and nationalities</li>
+                                    <li>-Favourite things</li>
+                                    <!-- <li>Exercises</li> -->
+                                </ul>
+                        </details> 
+                        <details>
+                            <summary><h2>Funtions</h2></summary>
+                                <ul>
+                                    <li>-Greetings</li>
+                                    <li></li>
+                                    <!-- <li>Exercises</li> -->
+                                </ul>
+                        </details>
                     </details>
-                    <details>
-                        <summary><h2>Unidad-2</h2></summary>
-                            <h1>Test headline</h1>
+                    <details><br>
+                        <summary><h2>People</h2></summary>
+                        <details><br>
+                            <summary><h2> </label> </h2></summary>
                             <ul>
-                                <li>1</li>
-                                <li>2</li>
-                                <li>3</li>
-                                <li>4</li>
-                                <li>5</li>
+                                <li>-Possessive 's:</li>
+                                <li>-Have got:</li>
                             </ul>
+                        </details>
+                        <details>
+                            <summary><h2>Vocabulary</h2></summary>
+                                <ul>
+                                    <li>-Objects</li>
+                                    <li>-Family</li>
+                                    <li>-Appearence adjective</li>
+                                </ul>
+                        </details>        
+                        <details>
+                            <summary><h2>Funtions</h2></summary>
+                                <ul>
+                                    <li>-Describing people</li>
+                                    <li></li>
+                                    <!-- <li>Exercises</li> -->
+                                </ul>
+                        </details>        
+                        <details>
+                            <summary><h2>Skills</h2></summary>
+                                <ul>
+                                    <li>-Discover Skills: Cool People</li>
+                                    <li>-Study Skill: Reading</li>
+                                    <!-- <li>Exercises</li> -->
+                                </ul>
+                        </details>        
+                        <details>
+                            <summary><h2>Revision</h2></summary>
+                                <ul>
+                                    <li>-Let´s Revise!</li>
+                                    <li>-Promunciation: /h/</li>
+                                    <!-- <li>Exercises</li> -->
+                                </ul>
+                        </details>        
                     </details>
-                    <details>
-                        <summary><h2>Unidad-3</h2></summary>
+                    
+                    <!-- <details>
+                        <summary><h1>People</h1></summary>
+                        <details>
+                            <summary><h2>Grammar</h2></summary>
                             <ul>
-                                <li>1</li>
-                                <li>2</li>
-                                <li>3</li>
-                                <li>4</li>
-                                <li>5</li>
+                                <li>Possessive adjectives; to be, this / that / these / those, singular / plural nouns</li>
+                                <li>Topic 2</li>
+                                <li>Topic 3</li>
                             </ul>
-                    </details>
-                    <details>
-                        <summary><h2>Unidad-4</h2></summary>
-                            <ul>
-                                <li>1</li>
-                                <li>2</li>
-                                <li>3</li>
-                                <li>4</li>
-                                <li>5</li>
-                            </ul>
-                    </details>
-                    <details>
-                        <summary><h2>Unidad-5</h2></summary>
-                            <ul>
-                                <li>1</li>
-                                <li>2</li>
-                                <li>3</li>
-                                <li>4</li>
-                                <li>5</li>
-                            </ul>
-                    </details>
+                            <details>
+                                <summary><h4>Possessive adjectives</h4></summary>
+                                <ul>
+                                    <li>Definition</li>
+                                    <li>Examples</li>
+                                    <li>Exercises</li>
+                                </ul>
+                            </details>
+                        </details>
+                    </details> -->
                 </table>
             </div>
+        </div>
     </body>
-<br><br>
+    <br>
+    
+    <div class="text-center">
+        <a name="" id="" class="btn btn-info" href="index.php" role="button">
+            <img src="../../../css/imagen_tesis/icons/atras.png" style="width: 30px; height: 30px; vertical-align: middle;">
+        </a>
+    </div>
+
+<!-- <br><br> -->
 <?php include("../templates_doc/footer_doc.php"); ?>
