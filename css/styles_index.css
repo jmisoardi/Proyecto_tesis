@@ -5,20 +5,19 @@ $color_secondary: #0c004f;*/
 $color_secondary: #c0d2d4; */
 /* $color_secondary--rgba: rgba($color_secondary, 10%); */
 
-    body {
+/*     body {
     font-family: "Montserrat", sans-serif;
-    /* text-transform: lowercase; */
     font-weight: 400;
     line-height: 1.666;
     background:  #c0d2d4;
     color: #555;
-    }
+    } */
 
     h3 {
     font-weight: 900;
     font-size: 450%;
     text-align: center;
-    /* margin-top: 4rem; */
+    
     color: #a083bc;
     line-height: 1.2;
     span {
