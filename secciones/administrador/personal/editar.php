@@ -82,96 +82,96 @@
 ?>
 <?php include("../templates/header.php");?>
 <!--Estilo para Datos Personales-->
-<style> 
-    h1 {
-        text-align: center; font-family: Georgia, sans-serif;
-    }
-</style>
-    <h1>Datos Personales</h1> 
-    <div class="card mx-auto" style="max-width: 500px;">
-        <div class="card-header" style="background-color:bisque">Ingrese los datos para el registro</div>
-        <div class="card-body">
-            
-        <!--Formulario para cargar los datos, con style de color-->   
-            <form  action="" method="post" enctype="multipart/form-data" style="background-color:azure">
-                <div class="mb-3">
-                    <label for="txtID" class="form-label">ID:</label>
-                    <!--En este input se encuentra el readonly es que un atributo de lectura solamente, el usuario no puede modificar el valor-->
-                    <input type="text" 
-                        value= "<?php echo $txtID; ?>"
-                        class="form-control w-auto" readonly name="txtID" id="txtID" aria-describedby="helpId" placeholder="ID" />    
-                </div>        
-                <div class="mb-3">
-                    <label for="nombre" class="form-label"><u>Nombre:</u></label>
-                    <input type="text" 
-                        value= "<?php echo $nombre; ?>"
-                        class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Ingrese Nombre"/>
-                </div>
-                <div class="mb-3"> 
-                    <label for="apellido" class="form-label"><u>Apellido:</u></label>
-                    <input type="text" 
-                        value= "<?php echo $apellido; ?>"
-                        class="form-control" name="apellido" id="apellido" aria-describedby="helpId" placeholder="Ingrese Apellido"/>
-                </div>
-                <div class="mb-3">
-                    <label for="dni" class="form-label"><u>Dni:</u></label>
-                    <input type="number" 
-                        value= "<?php echo $dni; ?>"
-                        class="form-control w-auto" name="dni" id="dni" aria-describedby="helpId" placeholder="Ingrese Dni"/>            
-                </div>
-                <div class="mb-3">
-                    <label for="fechanacimiento" class="form-label"><u>Fecha/Nacimiento:</u></label>
-                    <input type="date" 
-                        value= "<?php echo $fechanacimiento; ?>"
-                        class="form-control w-auto" name="fechanacimiento" id="fechanacimiento" aria-describedby="helpId" placeholder="Ingrese Dni"/>            
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label"><u>Email:</u></label>
-                    <input type="email"
-                        value= "<?php echo $email; ?>" 
-                        class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder=" Por ejemplo: abc@mail.com"/> 
-                </div>
-                <div class="mb-3">
-                    <label for="telefono" class="form-label"><u>Teléfono:</u></label>
-                    <input type="number" 
-                        value= "<?php echo $telefono; ?>"
-                        class="form-control w-auto" name="telefono" id="telefono" aria-describedby="helpId" placeholder="Ingrese Teléfono"/>            
-                            <small id="helpId" class="form-text text-muted"> sin (0) y sin (15)</small>
-                </div>
-                <div class="mb-3">
-                    <label for="idrol" class="form-label"><u>Rol:</u></label>
-                        <select
-                            class="form-select w-auto form-select-ms" name="idrol" id="idrol">
-                            <?php foreach ($lista_tbl_rol as $registro) {?>      
-                                <option <?php echo ($idrol== $registro['id'])? "selected" : ""; ?> value ="<?php echo $registro['id']?>">
-                                                <?php echo $registro['nombredelrol']?>
-                                </option>
-                            <?php }?>
-                        </select>
-                </div>
-                <div class="mb-3">
-                    <label for="fechaingreso" class="form-label"><u>Fecha/Ingreso:</u></label>
-                    <input type="date" 
-                        value= "<?php echo $fechaingreso; ?>"
-                        class="form-control w-auto" name="fechaingreso" id="fechaingreso" aria-describedby="helpId" placeholder="Ingrese Fecha"/>
-                </div>
-                <div class="mb-3">
-                    <label for="usuario" class="form-label"><u>Usuario:</u></label>
-                    <input type="text" 
-                        value= "<?php echo $usuario; ?>"
-                        class="form-control w-auto" name="usuario" id="usuario" aria-describedby="helpId" placeholder="Usuario"/>
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label"><u>Password:</u></label>
-                    <input type="text" 
-                        value= "<?php echo $password; ?>"
-                        class="form-control w-auto" name="password" id="password" aria-describedby="helpId" placeholder="Contraseña"/>
-                </div>
+    <style> 
+        h1 {
+            text-align: center; font-family: Georgia, sans-serif;
+        }
+    </style>
+        <h1>Datos Personales</h1> 
+        <div class="card mx-auto" style="max-width: 500px;">
+            <div class="card-header" style="background-color:bisque">Ingrese los datos para el registro</div>
+            <div class="card-body">
                 
-                <!--Button bs5-button-default y bs5-button-a (sirve para direccionar) -->
-                <button type="submit" class="btn btn-success">Actualizar</button>
-                <a name="" id="" class="btn btn-primary" href="index.php" role="button" >Cancelar</a>
-            </form>
+            <!--Formulario para cargar los datos, con style de color-->   
+                <form  action="" method="post" enctype="multipart/form-data" style="background-color:azure">
+                    <div class="mb-3">
+                        <label for="txtID" class="form-label">ID:</label>
+                        <!--En este input se encuentra el readonly es que un atributo de lectura solamente, el usuario no puede modificar el valor-->
+                        <input type="text" 
+                            value= "<?php echo $txtID; ?>"
+                            class="form-control w-auto" readonly name="txtID" id="txtID" aria-describedby="helpId" placeholder="ID" />    
+                    </div>        
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label"><u>Nombre:</u></label>
+                        <input type="text" 
+                            value= "<?php echo $nombre; ?>"
+                            class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Ingrese Nombre"/>
+                    </div>
+                    <div class="mb-3"> 
+                        <label for="apellido" class="form-label"><u>Apellido:</u></label>
+                        <input type="text" 
+                            value= "<?php echo $apellido; ?>"
+                            class="form-control" name="apellido" id="apellido" aria-describedby="helpId" placeholder="Ingrese Apellido"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dni" class="form-label"><u>Dni:</u></label>
+                        <input type="number" 
+                            value= "<?php echo $dni; ?>"
+                            class="form-control w-auto" name="dni" id="dni" aria-describedby="helpId" placeholder="Ingrese Dni"/>            
+                    </div>
+                    <div class="mb-3">
+                        <label for="fechanacimiento" class="form-label"><u>Fecha/Nacimiento:</u></label>
+                        <input type="date" 
+                            value= "<?php echo $fechanacimiento; ?>"
+                            class="form-control w-auto" name="fechanacimiento" id="fechanacimiento" aria-describedby="helpId" placeholder="Ingrese Dni"/>            
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label"><u>Email:</u></label>
+                        <input type="email"
+                            value= "<?php echo $email; ?>" 
+                            class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder=" Por ejemplo: abc@mail.com"/> 
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label"><u>Teléfono:</u></label>
+                        <input type="number" 
+                            value= "<?php echo $telefono; ?>"
+                            class="form-control w-auto" name="telefono" id="telefono" aria-describedby="helpId" placeholder="Ingrese Teléfono"/>            
+                                <small id="helpId" class="form-text text-muted"> sin (0) y sin (15)</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="idrol" class="form-label"><u>Rol:</u></label>
+                            <select
+                                class="form-select w-auto form-select-ms" name="idrol" id="idrol">
+                                <?php foreach ($lista_tbl_rol as $registro) {?>      
+                                    <option <?php echo ($idrol== $registro['id'])? "selected" : ""; ?> value ="<?php echo $registro['id']?>">
+                                                    <?php echo $registro['nombredelrol']?>
+                                    </option>
+                                <?php }?>
+                            </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fechaingreso" class="form-label"><u>Fecha/Ingreso:</u></label>
+                        <input type="date" 
+                            value= "<?php echo $fechaingreso; ?>"
+                            class="form-control w-auto" name="fechaingreso" id="fechaingreso" aria-describedby="helpId" placeholder="Ingrese Fecha"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="usuario" class="form-label"><u>Usuario:</u></label>
+                        <input type="text" 
+                            value= "<?php echo $usuario; ?>"
+                            class="form-control w-auto" name="usuario" id="usuario" aria-describedby="helpId" placeholder="Usuario"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label"><u>Password:</u></label>
+                        <input type="text" 
+                            value= "<?php echo $password; ?>"
+                            class="form-control w-auto" name="password" id="password" aria-describedby="helpId" placeholder="Contraseña"/>
+                    </div>
+                    
+                    <!--Button bs5-button-default y bs5-button-a (sirve para direccionar) -->
+                    <button type="submit" class="btn btn-success">Actualizar</button>
+                    <a name="" id="" class="btn btn-primary" href="index.php" role="button" >Cancelar</a>
+                </form>
+            </div>
         </div>
-    </div>
 <?php include("../templates/footer.php"); ?>

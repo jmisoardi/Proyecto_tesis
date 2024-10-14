@@ -22,15 +22,6 @@
     $sentencia->execute();
     $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
     
-    /*  if ($resultado) {
-        $id_usuario = $resultado['id']; // Guardamos el ID en una variable
-    } else {
-        // Manejar el caso en que no se encuentre el usuario
-        $_SESSION['error_message'] = "Usuario no encontrado.";
-        header("Location: " . $url_base . "index.php");
-        exit();
-    } */
-    
     $id_usuario = $resultado['id'];
 
     // Obtenemos los mensajes recibidos junto con la información del remitente

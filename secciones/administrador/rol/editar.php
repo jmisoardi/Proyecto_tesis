@@ -41,33 +41,33 @@
 <?php include("../templates/header.php");?>
 <br>
 <br>
-<style> 
-    h1 {
-        text-align: center; font-family: Georgia, sans-serif;
-    }
-</style>
-    <h1>Rol/Editar</h1> 
-    <div class="card">
-        <div class="card-header" style="background-color:bisque" >Actualizar datos del registro</div>
-            <form action="" method="post" enctype="multipart/form-data" style="background-color:azure">
-                <div class="card-body">
-                    <div class="mb-3">
-                        <label for="txtID" class="form-label">ID:</label>
-                        <!--En este input se encuentra el readonly es que un atributo de lectura solamente, el usuario no puede modificar el valor-->
-                        <input type="text" 
-                            value= "<?php echo $txtID; ?>"
-                            class="form-control" readonly name="txtID" id="txtID" aria-describedby="helpId" placeholder="ID" />    
+    <style> 
+        h1 {
+            text-align: center; font-family: Georgia, sans-serif;
+        }
+    </style>
+        <h1>Rol/Editar</h1> 
+        <div class="card">
+            <div class="card-header" style="background-color:bisque" >Actualizar datos del registro</div>
+                <form action="" method="post" enctype="multipart/form-data" style="background-color:azure">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="txtID" class="form-label">ID:</label>
+                            <!--En este input se encuentra el readonly es que un atributo de lectura solamente, el usuario no puede modificar el valor-->
+                            <input type="text" 
+                                value= "<?php echo $txtID; ?>"
+                                class="form-control" readonly name="txtID" id="txtID" aria-describedby="helpId" placeholder="ID" />    
+                        </div>
+                        <div class="mb-3">
+                            <label for="nombredelrol" class="form-label"><u>Nombre del Rol:</u></label>
+                            <input type="text" 
+                                value= "<?php echo $nombredelrol; ?>"    
+                                class="form-control" name="nombredelrol" id="nombredelrol" aria-describedby="helpId" placeholder=""/>                    
+                        </div>
+                        <button type="Submit" class="btn btn-success">Actualizar</button>
+                        <a name="" id="" class="btn btn-primary" href="index.php" role="button">Cancelar</a >
                     </div>
-                    <div class="mb-3">
-                        <label for="nombredelrol" class="form-label"><u>Nombre del Rol:</u></label>
-                        <input type="text" 
-                            value= "<?php echo $nombredelrol; ?>"    
-                            class="form-control" name="nombredelrol" id="nombredelrol" aria-describedby="helpId" placeholder=""/>                    
-                    </div>
-                    <button type="Submit" class="btn btn-success">Actualizar</button>
-                    <a name="" id="" class="btn btn-primary" href="index.php" role="button">Cancelar</a >
-                </div>
-            </form>
-        <div class="card-footer text-muted" style="background-color:bisque"></div>
-    </div>
+                </form>
+            <div class="card-footer text-muted" style="background-color:bisque"></div>
+        </div>
 <?php include("../templates/footer.php");?>

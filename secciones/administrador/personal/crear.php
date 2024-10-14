@@ -48,74 +48,74 @@
 <br>
 <br>
 <!--Estilo para Datos Personales-->
-<style> 
-    h1 {
-        text-align: center; font-family: Georgia, sans-serif;
-    }
-</style>
-    <h1>Datos Personales</h1> 
-    <div class="card">
-        <div class="card-header" style="background-color:bisque">Ingrese los datos para el registro</div>
-        <div class="card-body">
-    <!--Formulario ingreso de datos de la persona, con style de color-->   
-        <form  action="" method="post" enctype="multipart/form-data" style="background-color:azure">
-            <div class="mb-3">
-                <label for="nombre" class="form-label"><u>Nombre:</u></label>
-                <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Ingrese Nombre"/>
-            </div>
-            <div class="mb-3"> 
-                <label for="apellido" class="form-label"><u>Apellido:</u></label>
-                <input type="text" class="form-control" name="apellido" id="apellido" aria-describedby="helpId" placeholder="Ingrese Apellido"/>
-            </div>
-            <div class="mb-3">
-                <label for="dni" class="form-label"><u>Dni:</u></label>
-                <input type="number" class="form-control" name="dni" id="dni" aria-describedby="helpId" placeholder="Ingrese Dni"/>            
-            </div>
-            <div class="mb-3">
-                <label for="fechanacimiento" class="form-label"><u>Fecha/Nacimiento:</u></label>
-                <input type="date" class="form-control" name="fechanacimiento" id="fechanacimiento" aria-describedby="helpId" placeholder="Ingrese Dni"/>            
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label"><u>Email:</u></label>
-                <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder=" Por ejemplo: abc@mail.com"/> 
-            </div>
-            <div class="mb-3">
-                <label for="telefono" class="form-label"><u>Teléfono:</u></label>
-                <input type="number" class="form-control" name="telefono" id="telefono" aria-describedby="helpId" placeholder="Ingrese Teléfono"/>            
-                <small id="helpId" class="form-text text-muted"> sin (0) y sin (15)</small>
-            </div>
-            <div class="mb-3">
-                <label for="idrol" class="form-label"><u>Rol:</u></label>
-                <select
-                    class="form-select form-select-ms" name="idrol" id="idrol">
-                    <?php foreach ($lista_tbl_rol as $registro) {?>      
-                        <option value ="<?php echo $registro['id']?>">
-                                        <?php echo $registro['nombredelrol']?>
-                        </option>
-                    <?php }?>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="fechaingreso" class="form-label"><u>Fecha/Ingreso:</u></label>
-                <input type="date" class="form-control" name="fechaingreso" id="fechaingreso" aria-describedby="helpId" placeholder="Ingrese Fecha"/>
+    <style> 
+        h1 {
+            text-align: center; font-family: Georgia, sans-serif;
+        }
+    </style>
+        <h1>Datos Personales</h1> 
+        <div class="card">
+            <div class="card-header" style="background-color:bisque">Ingrese los datos para el registro</div>
+            <div class="card-body">
+        <!--Formulario ingreso de datos de la persona, con style de color-->   
+            <form  action="" method="post" enctype="multipart/form-data" style="background-color:azure">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label"><u>Nombre:</u></label>
+                    <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Ingrese Nombre"/>
+                </div>
+                <div class="mb-3"> 
+                    <label for="apellido" class="form-label"><u>Apellido:</u></label>
+                    <input type="text" class="form-control" name="apellido" id="apellido" aria-describedby="helpId" placeholder="Ingrese Apellido"/>
+                </div>
+                <div class="mb-3">
+                    <label for="dni" class="form-label"><u>Dni:</u></label>
+                    <input type="number" class="form-control" name="dni" id="dni" aria-describedby="helpId" placeholder="Ingrese Dni"/>            
+                </div>
+                <div class="mb-3">
+                    <label for="fechanacimiento" class="form-label"><u>Fecha/Nacimiento:</u></label>
+                    <input type="date" class="form-control" name="fechanacimiento" id="fechanacimiento" aria-describedby="helpId" placeholder="Ingrese Dni"/>            
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label"><u>Email:</u></label>
+                    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder=" Por ejemplo: abc@mail.com"/> 
+                </div>
+                <div class="mb-3">
+                    <label for="telefono" class="form-label"><u>Teléfono:</u></label>
+                    <input type="number" class="form-control" name="telefono" id="telefono" aria-describedby="helpId" placeholder="Ingrese Teléfono"/>            
+                    <small id="helpId" class="form-text text-muted"> sin (0) y sin (15)</small>
+                </div>
+                <div class="mb-3">
+                    <label for="idrol" class="form-label"><u>Rol:</u></label>
+                    <select
+                        class="form-select form-select-ms" name="idrol" id="idrol">
+                        <?php foreach ($lista_tbl_rol as $registro) {?>      
+                            <option value ="<?php echo $registro['id']?>">
+                                            <?php echo $registro['nombredelrol']?>
+                            </option>
+                        <?php }?>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="fechaingreso" class="form-label"><u>Fecha/Ingreso:</u></label>
+                    <input type="date" class="form-control" name="fechaingreso" id="fechaingreso" aria-describedby="helpId" placeholder="Ingrese Fecha"/>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="usuario" class="form-label"><u>Usuario:</u></label>
+                    <input type="text" class="form-control" name="usuario" id="usuario" aria-describedby="helpId" placeholder="Usuario"/>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label"><u>Password:</u></label>
+                    <input type="text" class="form-control" name="password" id="password" aria-describedby="helpId" placeholder="Password"/>
+                    
+                </div>
                 
-            </div>
-            <div class="mb-3">
-                <label for="usuario" class="form-label"><u>Usuario:</u></label>
-                <input type="text" class="form-control" name="usuario" id="usuario" aria-describedby="helpId" placeholder="Usuario"/>
-                
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label"><u>Password:</u></label>
-                <input type="text" class="form-control" name="password" id="password" aria-describedby="helpId" placeholder="Password"/>
-                
-            </div>
-            
-            <!--Button bs5-button-default y bs5-button-a (sirve para direccionar) -->
-            <button type="submit" class="btn btn-success">Agregar</button>
-            <a name="" id="" class="btn btn-primary" href="index.php" role="button" >Cancelar</a>
-        </form>
-    </div>
+                <!--Button bs5-button-default y bs5-button-a (sirve para direccionar) -->
+                <button type="submit" class="btn btn-success">Agregar</button>
+                <a name="" id="" class="btn btn-primary" href="index.php" role="button" >Cancelar</a>
+            </form>
+        </div>
     <br>
     <div class="card-footer text-muted" style="background-color:bisque"></div>
 <?php include("../templates/footer.php");?>
