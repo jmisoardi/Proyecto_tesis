@@ -3,7 +3,7 @@
     include("../../../bd.php");
 
     $usuario = $_SESSION['usuario'];
-    /* $_SESSION['usuario'] = $usuario_doc; */
+
     //Verificamos si se envío txtID por el metodo GET (enviar).    
     if (isset($_GET['txtID'])) {
         $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
@@ -22,7 +22,7 @@
     $sentencia->execute();
     $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
     
-   /*  if ($resultado) {
+    /*  if ($resultado) {
         $id_usuario = $resultado['id']; // Guardamos el ID en una variable
     } else {
         // Manejar el caso en que no se encuentre el usuario

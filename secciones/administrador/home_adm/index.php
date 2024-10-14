@@ -4,11 +4,8 @@
 <br>
 <br>
 <br>
-
-
 <body>
-    
-    <!-- Datos de bienvenida para el ausuario -->
+    <!-- Datos de bienvenida para el Usuario -->
     <div class="p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5" style="background-color:azure">
             <h1 class="display-5 fw-bold">Introducción</h1>
