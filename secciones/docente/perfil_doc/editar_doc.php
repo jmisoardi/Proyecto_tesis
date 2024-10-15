@@ -1,6 +1,6 @@
 <?php 
-    include("../../../bd.php");
     session_start();
+    include("../../../bd.php");
 
     //Recepción del envío txtID.    
     if (isset($_GET['txtID'])) {
@@ -83,129 +83,129 @@
 <?php include("../templates_doc/header_doc.php");?>
 <br>
 <br>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <div class="card mx-auto" style="max-width: 500px;">
-        <div class="card-header" style="background-color:bisque">    
-                <style> h1 { text-align: center; font-family: Georgia, sans-serif; } </style>
-                <h1>-Mi perfil- <br></h1>
-        </div>
-    </div>
         <div class="card mx-auto" style="max-width: 500px;">
-            <!-- <div class="card-header" style="background-color:bisque">Ingrese los datos para el registro</div> -->
-            
-            <div class="card-body">
-            <!--Formulario para cargar los datos, a traves del metodo Post, con style de color-->   
-                <form  action="" method="post" enctype="multipart/form-data" style="background-color:azure">
-                    
-                    <!-- <div class="mb-3"> -->
-                        <!-- <label for="txtID" class="form-label">ID:</label> -->
-                        <!-- En este input se encuentra el readonly es que un atributo de lectura solamente, el usuario no puede modificar el valor -->
-                        <!-- <input type="text" 
-                            value= "  /* echo $txtID; */ ?>" 
-                            class="form-control w-auto" readonly name="txtID" id="txtID" aria-describedby="helpId" placeholder="ID" />    -->
-                    <!-- </div>   -->
-                    <div class="mb-3">
-                        <label for="nombre" class="form-label"><u>Nombre:</u></label>
-                        <input type="text" 
-                            value= "<?php echo $nombre; ?>"
-                            class="form-control w-auto" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Ingrese Nombre"/>
-                    </div>
-                    
-                    <div class="mb-3"> 
-                        <label for="apellido" class="form-label"><u>Apellido:</u></label>
-                        <input type="text" 
-                            value= "<?php echo $apellido; ?>"
-                            class="form-control w-auto" name="apellido" id="apellido" aria-describedby="helpId" placeholder="Ingrese Apellido"/>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="dni" class="form-label"><u>Dni:</u></label>
-                        <input type="number" 
-                            value= "<?php echo $dni; ?>"
-                            class="form-control w-auto" name="dni" id="dni" aria-describedby="helpId" placeholder="Ingrese Dni"/>            
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="fechanacimiento" class="form-label"><u>Fecha/Nacimiento:</u></label>
-                        <input type="date" 
-                            value= "<?php echo $fechanacimiento; ?>"
-                            class="form-control w-auto" name="fechanacimiento" id="fechanacimiento" aria-describedby="helpId" placeholder="Ingrese Dni"/>            
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="email" class="form-label"><u>Email:</u></label>
-                        <input type="email"
-                            value= "<?php echo $email; ?>" 
-                            class="form-control w-auto" name="email" id="email" aria-describedby="emailHelpId" placeholder=" Por ejemplo: abc@mail.com"/> 
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="telefono" class="form-label"><u>Teléfono:</u></label>
-                        <input type="number" 
-                            value= "<?php echo $telefono; ?>"
-                            class="form-control w-auto" name="telefono" id="telefono" aria-describedby="helpId" placeholder="Ingrese Teléfono"/>            
-                                <small id="helpId" class="form-text text-muted"> sin (0) y sin (15)</small>
-                    </div>
-                    <div class="mb-3">
-                            <label for="idrol" class="form-label"><u>Rol:</u></label>
-                            <input type="text" class="form-control w-auto" id="idrol" disabled name="idrol" 
-                                <?php foreach($lista_tbl_rol as $registro){
-                                                if($idrol == $registro['id']) { ?> 
-                                                value="<?php echo $registro['nombredelrol']?>"
-                                                <?php }
-                                }?> 
-                                aria-describedby="helpId" placeholder="" />
-                    </div>
-                    <div class="mb-3"> 
-                        <label for="usuario" class="form-label"><u>usuario:</u></label>
-                        <input type="text" 
-                            value= "<?php echo $usuario; ?>"
-                            class="form-control w-auto" readonly name="usuario" id="usuario" aria-describedby="helpId" />
-                    </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label"><u>Password:</u></label>
-                        <div class="input-group">
-                            <input type="password" 
-                                value= "<?php echo $password; ?>"
-                                class="form-control w-auto" name="password" id="password" aria-describedby="helpId" />
-                            <button type="button" class="btn btn-outline-secondary" onclick="togglePassword()">
-                                <i id="toggleIcon" class="fa fa-eye"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <script>
-                        function togglePassword() {
-                            var passwordInput = document.getElementById("password");
-                            var toggleIcon = document.getElementById("toggleIcon");
-                            if (passwordInput.type === "password") {
-                                passwordInput.type = "text";
-                                toggleIcon.classList.remove("fa-eye");
-                                toggleIcon.classList.add("fa-eye-slash");
-                            } else {
-                                passwordInput.type = "password";
-                                toggleIcon.classList.remove("fa-eye-slash");
-                                toggleIcon.classList.add("fa-eye");
-                            }
-                        }
-                    </script>
-                    <!--Button bs5-button-default y bs5-button-a (sirve para direccionar) -->
-                    <button type="submit" class="btn btn">
-                        <img src="../../../css/imagen_tesis/icons/aceptar.png" style="width: 30px; height: 30px; vertical-align: middle;">
-                    </button>
-                    <a name="" id="" class="btn btn" href="index.php" role="button" >
-                        <img src="../../../css/imagen_tesis/icons/cancelar.png" style="width: 30px; height: 30px; vertical-align: middle;">
-                    </a>
-                </form>
+            <div class="card-header" style="background-color:bisque">    
+                    <style> h1 { text-align: center; font-family: Georgia, sans-serif; } </style>
+                    <h1>-Mi perfil- <br></h1>
             </div>
-        </div> 
+        </div>
+            <div class="card mx-auto" style="max-width: 500px;">
+                <!-- <div class="card-header" style="background-color:bisque">Ingrese los datos para el registro</div> -->
+                
+                <div class="card-body">
+                <!--Formulario para cargar los datos, a traves del metodo Post, con style de color-->   
+                    <form  action="" method="post" enctype="multipart/form-data" style="background-color:azure">
+                        
+                        <!-- <div class="mb-3"> -->
+                            <!-- <label for="txtID" class="form-label">ID:</label> -->
+                            <!-- En este input se encuentra el readonly es que un atributo de lectura solamente, el usuario no puede modificar el valor -->
+                            <!-- <input type="text" 
+                                value= "  /* echo $txtID; */ ?>" 
+                                class="form-control w-auto" readonly name="txtID" id="txtID" aria-describedby="helpId" placeholder="ID" />    -->
+                        <!-- </div>   -->
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label"><u>Nombre:</u></label>
+                            <input type="text" 
+                                value= "<?php echo $nombre; ?>"
+                                class="form-control w-auto" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Ingrese Nombre"/>
+                        </div>
+                        
+                        <div class="mb-3"> 
+                            <label for="apellido" class="form-label"><u>Apellido:</u></label>
+                            <input type="text" 
+                                value= "<?php echo $apellido; ?>"
+                                class="form-control w-auto" name="apellido" id="apellido" aria-describedby="helpId" placeholder="Ingrese Apellido"/>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="dni" class="form-label"><u>Dni:</u></label>
+                            <input type="number" 
+                                value= "<?php echo $dni; ?>"
+                                class="form-control w-auto" name="dni" id="dni" aria-describedby="helpId" placeholder="Ingrese Dni"/>            
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="fechanacimiento" class="form-label"><u>Fecha/Nacimiento:</u></label>
+                            <input type="date" 
+                                value= "<?php echo $fechanacimiento; ?>"
+                                class="form-control w-auto" name="fechanacimiento" id="fechanacimiento" aria-describedby="helpId" placeholder="Ingrese Dni"/>            
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="email" class="form-label"><u>Email:</u></label>
+                            <input type="email"
+                                value= "<?php echo $email; ?>" 
+                                class="form-control w-auto" name="email" id="email" aria-describedby="emailHelpId" placeholder=" Por ejemplo: abc@mail.com"/> 
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label"><u>Teléfono:</u></label>
+                            <input type="number" 
+                                value= "<?php echo $telefono; ?>"
+                                class="form-control w-auto" name="telefono" id="telefono" aria-describedby="helpId" placeholder="Ingrese Teléfono"/>            
+                                    <small id="helpId" class="form-text text-muted"> sin (0) y sin (15)</small>
+                        </div>
+                        <div class="mb-3">
+                                <label for="idrol" class="form-label"><u>Rol:</u></label>
+                                <input type="text" class="form-control w-auto" id="idrol" disabled name="idrol" 
+                                    <?php foreach($lista_tbl_rol as $registro){
+                                                    if($idrol == $registro['id']) { ?> 
+                                                    value="<?php echo $registro['nombredelrol']?>"
+                                                    <?php }
+                                    }?> 
+                                    aria-describedby="helpId" placeholder="" />
+                        </div>
+                        <div class="mb-3"> 
+                            <label for="usuario" class="form-label"><u>usuario:</u></label>
+                            <input type="text" 
+                                value= "<?php echo $usuario; ?>"
+                                class="form-control w-auto" readonly name="usuario" id="usuario" aria-describedby="helpId" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label"><u>Password:</u></label>
+                            <div class="input-group">
+                                <input type="password" 
+                                    value= "<?php echo $password; ?>"
+                                    class="form-control w-auto" name="password" id="password" aria-describedby="helpId" />
+                                <button type="button" class="btn btn-outline-secondary" onclick="togglePassword()">
+                                    <i id="toggleIcon" class="fa fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
 
-    <br> 
-    <div class="text-center"> 
-        <a name="" id="" class="btn btn-info" href="index.php" role="button">
-            <img src="../../../css/imagen_tesis/icons/atras.png" style="width: 30px; height: 30px; vertical-align: middle;">
-        </a>
-    </div>
+                        <script>
+                            function togglePassword() {
+                                var passwordInput = document.getElementById("password");
+                                var toggleIcon = document.getElementById("toggleIcon");
+                                if (passwordInput.type === "password") {
+                                    passwordInput.type = "text";
+                                    toggleIcon.classList.remove("fa-eye");
+                                    toggleIcon.classList.add("fa-eye-slash");
+                                } else {
+                                    passwordInput.type = "password";
+                                    toggleIcon.classList.remove("fa-eye-slash");
+                                    toggleIcon.classList.add("fa-eye");
+                                }
+                            }
+                        </script>
+                        <!--Button bs5-button-default y bs5-button-a (sirve para direccionar) -->
+                        <button type="submit" class="btn btn">
+                            <img src="../../../css/imagen_tesis/icons/aceptar.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                        </button>
+                        <a name="" id="" class="btn btn" href="index.php" role="button" >
+                            <img src="../../../css/imagen_tesis/icons/cancelar.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                        </a>
+                    </form>
+                </div>
+            </div> 
+
+        <br> 
+        <div class="text-center"> 
+            <a name="" id="" class="btn btn-info" href="index.php" role="button">
+                <img src="../../../css/imagen_tesis/icons/atras.png" style="width: 30px; height: 30px; vertical-align: middle;">
+            </a>
+        </div>
 <br>
 <?php include("../templates_doc/footer_doc.php")?>

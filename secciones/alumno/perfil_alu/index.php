@@ -15,7 +15,7 @@
 <!--Estilo para Alumnos header-->
 <?php include("../templates_alu/header_alu.php");?>
 <br>
-<body>
+    <body>
         <div class="card">
         <div class="card-header" style="background-color:bisque">    
             <style> h1 { text-align: center; font-family: Georgia, sans-serif; } </style>

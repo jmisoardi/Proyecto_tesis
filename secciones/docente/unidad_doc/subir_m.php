@@ -31,30 +31,29 @@ if ($_POST) {
 ?>
 <?php include("../templates_doc/header_doc.php"); ?>
 <br><br>
-
-<body>
-    <!-- Formulario para subir material -->
-    <div class="unidad">
-        <h2>Subir nuevo material</h2>
-        <form action="" method="POST" enctype="multipart/form-data">
-            <label for="unidad">Unidad:</label>
-            <input type="text" id="unidad" name="unidad" required><br><br>
-    
-            <label for="titulo">Título del Material:</label>
-            <input type="text" id="titulo" name="titulo" required><br><br>
-    
-            <label for="archivo">Seleccionar archivo PDF:</label>
-            <input type="file" id="archivo" name="archivo" accept=".pdf" required><br><br>
-    
-            <input type="submit" value="Subir Material" class="btn btn-info">
-        </form>
-    </div>
-    <div class="text-center">
-        <a name="" id="" class="btn btn-info" href="material_doc.php" role="button">
-            <img src="../../../css/imagen_tesis/icons/atras.png" style="width: 30px; height: 30px; vertical-align: middle;">
-        </a>
-    </div>
-</body>
+    <body>
+        <!-- Formulario para subir material -->
+        <div class="unidad">
+            <h2>Subir nuevo material</h2>
+            <form action="" method="POST" enctype="multipart/form-data">
+                <label for="unidad">Unidad:</label>
+                <input type="text" id="unidad" name="unidad" required><br><br>
+        
+                <label for="titulo">Título del Material:</label>
+                <input type="text" id="titulo" name="titulo" required><br><br>
+        
+                <label for="archivo">Seleccionar archivo PDF:</label>
+                <input type="file" id="archivo" name="archivo" accept=".pdf" required><br><br>
+        
+                <input type="submit" value="Subir Material" class="btn btn-info">
+            </form>
+        </div>
+        <div class="text-center">
+            <a name="" id="" class="btn btn-info" href="material_a1.php" role="button">
+                <img src="../../../css/imagen_tesis/icons/atras.png" style="width: 30px; height: 30px; vertical-align: middle;">
+            </a>
+        </div>
+    </body>
 </html>
 <br><br>
 <?php include("../templates_doc/footer_doc.php"); ?>

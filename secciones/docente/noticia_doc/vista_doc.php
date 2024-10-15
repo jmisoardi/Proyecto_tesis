@@ -1,7 +1,7 @@
-<?php   
+<?php  
+    session_start();
     /* Incluimos Base de Datos y Templates/header */
     include("../../../bd.php");
-    include("../templates_doc/header_doc.php"); 
     
     //Recepción del envío txtID.
     if(isset($_GET['txtID'])){
@@ -13,7 +13,7 @@
         $sentencia->bindParam( ":id" ,$txtID );
         $sentencia->execute();
         
-         //Utilizamos el FETCH_LAZY para que cargue solo un registro.
+        //Utilizamos el FETCH_LAZY para que cargue solo un registro.
         $registro = $sentencia->fetch(PDO::FETCH_LAZY);
         $fecha = $registro["fecha"]; 
         $titulo = $registro["titulo"]; 
@@ -31,14 +31,14 @@
         $sentencia = $conexion->prepare("
         UPDATE tbl_noticia 
         SET
-            fecha=:fecha,    
+        fecha=:fecha,    
             titulo=:titulo,
             cuerpo=:cuerpo
-        WHERE id=:id ");
-        
-        //Asignando los valores que vienen del  método POST (Los que vienen del formulario).
-        $sentencia->bindParam(":fecha",$fecha);
-        $sentencia->bindParam(":titulo",$titulo);
+            WHERE id=:id ");
+            
+            //Asignando los valores que vienen del  método POST (Los que vienen del formulario).
+            $sentencia->bindParam(":fecha",$fecha);
+            $sentencia->bindParam(":titulo",$titulo);
         $sentencia->bindParam(":cuerpo",$cuerpo);
         $sentencia->bindParam(":id",$txtID);
         $sentencia->execute();
@@ -46,13 +46,14 @@
         $mensaje="Mensaje Editado";
         header("Location:index.php?mensaje=".$mensaje);    
     }            
-?>
-<!DOCTYPE html>
-<html lang="es">
+    ?>
+
+<?php include("../templates_doc/header_doc.php");?>
+
     <head>
         <meta charset="UTF-8">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../../css/styles.css">
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../css/styles.css"> -->
     </head>
     <br>
     <br>

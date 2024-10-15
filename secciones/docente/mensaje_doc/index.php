@@ -29,8 +29,7 @@
     ");
     $sentencia->bindParam(':id_usuario', $id_usuario);
     $sentencia->execute();
-    $mensajes_recibidos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
-    
+    $mensajes_recibidos = $sentencia->fetchAll(PDO::FETCH_ASSOC);    
     
     /* include("../templates_doc/header_doc.php"); */
 ?>
