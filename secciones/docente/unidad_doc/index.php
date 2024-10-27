@@ -100,6 +100,11 @@
                                 <span>B1</span><br><br>Intermediate
                             </dt>
                             <dd> En este nivel, los estudiantes aprenderán cómo presentarse a sí mismos y a otras personas. Además, los estudiantes serán capaces de utilizar expresiones cotidianas y frases para necesidades inmediatas, así como también, preguntas y responder sobre información personal.</dd>
+                            <div class="text-center">
+                                <a name="" id="" class="btn btn-info" href="material_b1.php" role="button">
+                                    <img src="../../../css/imagen_tesis/icons/ver.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                </a>
+                            </div>
                         </div>
                         
                         <div class="term">
@@ -107,6 +112,11 @@
                                 <span>B2</span><br><br>Upper Intermediate
                             </dt>
                             <dd>En este nivel, los estudiantes aprenderán cómo presentarse a sí mismos y a otras personas. Además, los estudiantes serán capaces de utilizar expresiones cotidianas y frases para necesidades inmediatas, así como también, preguntas y responder sobre información personal.</dd>
+                            <div class="text-center">
+                                <a name="" id="" class="btn btn-info" href="material_b2.php" role="button">
+                                    <img src="../../../css/imagen_tesis/icons/ver.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                </a>
+                            </div>
                         </div>
                         
                         <div class="term">
@@ -114,6 +124,11 @@
                                 <span>C1</span><br><br>Advanced
                             </dt>
                             <dd>En este nivel, los estudiantes aprenderán cómo presentarse a sí mismos y a otras personas. Además, los estudiantes serán capaces de utilizar expresiones cotidianas y frases para necesidades inmediatas, así como también, preguntas y responder sobre información personal.</dd>
+                            <div class="text-center">
+                                <a name="" id="" class="btn btn-info" href="material_c1.php" role="button">
+                                    <img src="../../../css/imagen_tesis/icons/ver.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                </a>
+                            </div>
                         </div>
                         
                         <div class="term">
@@ -121,6 +136,11 @@
                                 <span>C2</span><br><br>Proficient
                             </dt>
                             <dd>En este nivel, los estudiantes aprenderán cómo presentarse a sí mismos y a otras personas. Además, los estudiantes serán capaces de utilizar expresiones cotidianas y frases para necesidades inmediatas, así como también, preguntas y responder sobre información personal.</dd>
+                            <div class="text-center">
+                                <a name="" id="" class="btn btn-info" href="material_c2.php" role="button">
+                                    <img src="../../../css/imagen_tesis/icons/ver.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                </a>
+                            </div>
                         </div>
                             
                         <!-- <div class="term">
