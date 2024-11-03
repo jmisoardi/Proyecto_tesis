@@ -5,7 +5,6 @@
         session_start();
     }
     
-
     $url_base = "http://localhost/Proyecto_tesis/";
     
     // Verifica si la sesión de usuario está establecida
@@ -46,11 +45,14 @@
         <!-- Required meta tags -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        
         <!-- Bootstrap CSS v5.2.1 -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        
         <!-- Estilo de Css -->
         <link rel="stylesheet" href="../../css/styles.css">
         <link rel="stylesheet" href="../../../css/styles.css">
+        
         <!--Script para data table-->
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
             <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />

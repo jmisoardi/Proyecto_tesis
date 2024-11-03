@@ -54,6 +54,7 @@
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
+                            
                             <div class="collapse navbar-collapse" id="navbarNav">
                                 <ul class="navbar-nav">
                                     <!-- Direccionamiento en barra de navegación de alumno -->
@@ -62,26 +63,31 @@
                                             <img src="../../../css/imagen_tesis/icons/inicio.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                         </a>
                                     </li>
+                                    <!-- Seccion noticia -->
                                     <li class="nav-link">
                                         <a  href="<?php echo $url_base;?>secciones/alumno/noticia_alu/index.php">
                                             <img src="../../../css/imagen_tesis/icons/noticia.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                         </a>
                                     </li>
+                                    <!-- Seccion mensaje -->
                                     <li class="nav-link">
                                         <a  href="<?php echo $url_base;?>secciones/alumno/mensaje_alu/index.php">
                                             <img src="../../../css/imagen_tesis/icons/mensaje.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                         </a>
                                     </li>
+                                    <!-- Seccion unidad -->
                                     <li class="nav-link">
                                         <a  href="<?php echo $url_base;?>secciones/alumno/unidad_alu/index.php">
                                             <img src="../../../css/imagen_tesis/icons/libro.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                         </a>
                                     </li>
+                                    <!-- Seccion perfil -->
                                     <li class="nav-link">
                                         <a  href="<?php echo $url_base;?>secciones/alumno/perfil_alu/index.php">
                                             <img src="../../../css/imagen_tesis/icons/perfil.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                         </a>
                                     </li>
+                                    <!-- Seccion de cierre de sesion -->
                                     <li >
                                         <a class="nav-link" href="<?php echo $url_base;?>secciones/alumno/cerrar_alu.php">
                                             <img src="../../../css/imagen_tesis/icons/cerrar.png" style="width: 30px; height: 30px; vertical-align: middle;">
@@ -91,10 +97,13 @@
                             </div>
                     </div>     
             </nav>
-        <!--Sweet alert Mensaje de confirmación-->
-        <?php if (isset($_GET['mensaje'])) { ?>
-            <script>
-                Swal.fire({icon:"success", title:"<?php echo $_GET['mensaje']; ?>"});    
-            </script>
-        <?php } ?>
+
+            <main class="container">
+            <!--Sweet alert Mensaje de confirmación-->
+            <?php if (isset($_GET['mensaje'])) { ?>
+                <script>
+                    Swal.fire({icon:"success", title:"<?php echo $_GET['mensaje']; ?>"});    
+                </script>
+            <?php } ?>
+        </body>
     <!-- fin archivo header.php -->

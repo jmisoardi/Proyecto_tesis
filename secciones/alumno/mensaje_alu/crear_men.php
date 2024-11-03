@@ -144,11 +144,8 @@
                     <button type="submit" class="btn btn-success">Enviar</button>
                 </form>
             </div>
-            <br>
-            <br>
         </body>
         <div class="text-center">
-            
             <a name="" id="" class="btn btn-info" href="index.php" role="button">
                 <img src="../../../css/imagen_tesis/icons/atras.png" style="width: 30px; height: 30px; vertical-align: middle;">
             </a>
