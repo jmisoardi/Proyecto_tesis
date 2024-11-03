@@ -1,4 +1,4 @@
-</main>
+<!-- </main> -->
     <footer>
         <!-- place footer here -->
     </footer>

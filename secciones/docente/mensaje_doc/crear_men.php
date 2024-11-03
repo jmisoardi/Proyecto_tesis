@@ -106,51 +106,53 @@
     <link rel="stylesheet" href="../../../css/styles_mensaje.css">
     <title>Enviar Mensaje</title>
 </head>
-<body>
-    <div class="contenedor-mensaje">
-        <div class="card mx-auto" style="max-width: 500px;">
-            <div class="card-header" style="background-color:bisque">    
-                <h1 style="text-align: center; font-family: Georgia, sans-serif;">-Enviar Mensaje-</h1>
+    <body>
+        <div class="contenedor-mensaje">
+            <div class="card mx-auto" style="max-width: 500px;">
+                <div class="card-header" style="background-color:bisque">    
+                    <h1 style="text-align: center; font-family: Georgia, sans-serif;">-Enviar Correo Electronico-</h1>
+                </div>
             </div>
-        </div>
-        <br>
-        <div class="card mx-auto" style="max-width: 800px;">
-            <div class="container-fluid py-5" style="background-color:azure">
-                <?php if ($msg != ''): ?>
-                    <div class="msg <?php echo strpos($msg, 'Error') === false ? 'success' : 'error'; ?>">
-                        <?php echo $msg; ?>
+            <br>
+            <div class="card mx-auto" style="max-width: 900px;">
+                <div class="container-fluid py-5" style="background-color:azure">
+                    <?php if ($msg != ''): ?>
+                        <div class="msg <?php echo strpos($msg, 'Error') === false ? 'success' : 'error'; ?>">
+                            <?php echo $msg; ?>
+                        </div>
+                    <?php endif; ?>
+                    <div class="card-body">
+                        <!-- Formulario para los datos del envío de mensaje -->
+                        <form action="" method="POST">
+                            <div class="form-group">
+                                <label for="email">Destinatario (Correo Electrónico):</label>
+                                <select name="email" id="email" class="form-control" required>
+                                    <option value="" disabled selected>Selecciona un destinatario</option>
+                                    <?php foreach($usuarios as $usuario): ?>
+                                        <option value="<?php echo $usuario['email']; ?>">
+                                            <?php echo $usuario['nombre']; ?> - <?php echo $usuario['email']; ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Asunto:</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje:</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-success">Enviar</button>
+                            
+                            <div class="text-center">    
+                                <a name="" id="" class="btn btn-info" href="index.php" role="button">Cancelar</a>
+                            </div>
+                        </form>
                     </div>
-                <?php endif; ?>
-                <div class="card-body">
-                    <!-- Formulario para los datos del envío de mensaje -->
-                    <form action="" method="POST">
-                        <div class="form-group">
-                            <label for="email">Destinatario (Correo Electrónico):</label>
-                            <select name="email" id="email" class="form-control" required>
-                                <option value="" disabled selected>Selecciona un destinatario</option>
-                                <?php foreach($usuarios as $usuario): ?>
-                                    <option value="<?php echo $usuario['email']; ?>">
-                                        <?php echo $usuario['nombre']; ?> - <?php echo $usuario['email']; ?>
-                                    </option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Asunto:</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Mensaje:</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-success">Enviar</button>
-                        <div class="text-center">    
-                            <a name="" id="" class="btn btn-info" href="index.php" role="button">Cancelar</a>
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>
-    </div>
-    <?php include("../templates_doc/footer_doc.php") ?>
-</body>
+    </body>
+<?php include("../templates_doc/footer_doc.php") ?>

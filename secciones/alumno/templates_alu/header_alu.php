@@ -98,7 +98,7 @@
                     </div>     
             </nav>
 
-            <main class="container">
+            <!-- <main class="container"> -->
             <!--Sweet alert Mensaje de confirmación-->
             <?php if (isset($_GET['mensaje'])) { ?>
                 <script>
