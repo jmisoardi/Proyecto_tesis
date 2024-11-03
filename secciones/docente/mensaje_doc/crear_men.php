@@ -101,24 +101,20 @@
         $usuarios = $sentencia_usuarios->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<?php include("../templates_doc/header_doc.php");?>
-
-    <head>
-        <link rel="stylesheet" href="../../../css/styles_mensaje.css">
-        <title>Enviar Mensaje</title>
-    </head>
-    
-        <body>
-            <br>
+<?php include("../templates_doc/header_doc.php"); ?>
+<head>
+    <link rel="stylesheet" href="../../../css/styles_mensaje.css">
+    <title>Enviar Mensaje</title>
+</head>
+<body>
+    <div class="contenedor-mensaje">
         <div class="card mx-auto" style="max-width: 500px;">
-                <div class="card-header" style="background-color:bisque">    
-                        <style> h1 { text-align: center; font-family: Georgia, sans-serif; } </style>
-                        <h1>-Enviar Mensaje- <br></h1>
-                </div>
+            <div class="card-header" style="background-color:bisque">    
+                <h1 style="text-align: center; font-family: Georgia, sans-serif;">-Enviar Mensaje-</h1>
             </div>
-            <br>
-        
-            <div class="card mx-auto" style="max-width: 800px;">
+        </div>
+        <br>
+        <div class="card mx-auto" style="max-width: 800px;">
             <div class="container-fluid py-5" style="background-color:azure">
                 <?php if ($msg != ''): ?>
                     <div class="msg <?php echo strpos($msg, 'Error') === false ? 'success' : 'error'; ?>">
@@ -126,11 +122,9 @@
                     </div>
                 <?php endif; ?>
                 <div class="card-body">
-                    
                     <!-- Formulario para los datos del envío de mensaje -->
                     <form action="" method="POST">
                         <div class="form-group">
-                            
                             <label for="email">Destinatario (Correo Electrónico):</label>
                             <select name="email" id="email" class="form-control" required>
                                 <option value="" disabled selected>Selecciona un destinatario</option>
@@ -150,17 +144,13 @@
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-success">Enviar</button>
-
                         <div class="text-center">    
                             <a name="" id="" class="btn btn-info" href="index.php" role="button">Cancelar</a>
                         </div>
-                        
                     </form>
                 </div>
-
             </div>
         </div>
-    </body>
-            
-
-<?php include("../templates_doc/footer_doc.php") ?>
+    </div>
+    <?php include("../templates_doc/footer_doc.php") ?>
+</body>

@@ -1,3 +1,6 @@
+.contenedor-mensaje {
+    margin-top: 50px; /* Ajusta el valor para que coincida con el espacio de unidad y perfil */
+}
 
 body {
     font-family: Arial, sans-serif;
