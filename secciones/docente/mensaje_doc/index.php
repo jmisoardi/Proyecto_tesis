@@ -30,9 +30,8 @@
     $sentencia->bindParam(':id_usuario', $id_usuario);
     $sentencia->execute();
     $mensajes_recibidos = $sentencia->fetchAll(PDO::FETCH_ASSOC);    
-    
-    /* include("../templates_doc/header_doc.php"); */
 ?>
+
 <?php include("../templates_doc/header_doc.php");?>
 <br>
     <body>
@@ -45,7 +44,6 @@
                 <a name="" id="" class="btn btn-primary" href="crear_men.php" role="button" >Crear Mensaje</a>
                 
             </div>
-            
             
             <div class="card-body-xl" style="background-color:azure">
                 <div class="table-responsive">
@@ -79,8 +77,7 @@
                                         </a >
                                     </td>
                                 </tr>
-                            <?php } ?>
-                            
+                            <?php } ?>                
                         </tbody>
                     </table>
                 </div>
@@ -92,5 +89,4 @@
     <br>
     <br>
     <?php include("../templates_doc/footer_doc.php") ?>
-</html>
 

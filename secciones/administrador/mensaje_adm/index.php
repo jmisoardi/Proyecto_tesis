@@ -34,9 +34,8 @@
     $sentencia->bindParam(':id_usuario', $id_usuario);
     $sentencia->execute();
     $mensajes_recibidos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
-    
-    
 ?>
+
 <?php include ("../templates/header.php");?>
 <br>
     <body>

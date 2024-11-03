@@ -43,12 +43,6 @@
                 $sentencia->execute();
                 $destinatario = $sentencia->fetch(PDO::FETCH_ASSOC);
                 
-                // Si no se encuentra el destinatario, mostrar un error o manejar el caso
-                /* if (!$destinatario) {
-                    echo "El destinatario no existe.";
-                    exit();
-                } */
-
                 $destinatario_id = $destinatario['id'];
 
                 // Insertar el mensaje en la base de datos
@@ -110,7 +104,7 @@
         <div class="contenedor-mensaje">
             <div class="card mx-auto" style="max-width: 500px;">
                 <div class="card-header" style="background-color:bisque">    
-                    <h1 style="text-align: center; font-family: Georgia, sans-serif;">-Enviar Correo Electronico-</h1>
+                    <h1 style="text-align: center; font-family: Georgia, sans-serif;">-Correo Electronico-</h1>
                 </div>
             </div>
             <br>

@@ -90,21 +90,44 @@
                                 </summary>
                                 
                                 <ul>
-                                        <li><h3>-Possessive adjectives:</h3>
+                                        <li><h3>-Possessive adjectives-</h3>
+                                            <br>
+                                                <h5>Material Predeterminado</h5>
+                                        <!-- <div class="mb-3">
+                                            <label for="" class="form-label">Material Predeterminado</label>
+                                            <input type="text"class="form-control" name="" id="" aria-describedby="helpId" placeholder=""/>
+                                            <small id="helpId" class="form-text text-muted">Help text</small>
+                                        </div> -->
+                                        
                                             <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
                                                 <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                             </a>
-                                                
-                                        </li>
-                                                <li><h3>-verb to be:</h3></li>
+                                            <br>
+                                            <br>   
+                                        </li><li><h3>-verb to be-</h3></li>
+                                                <div class="mb-3">
+                                                    <label for="" class="form-label">Material Predeterminado</label>
+                                                    <!-- <input type="text"class="form-control" name="" id="" aria-describedby="helpId" placeholder=""/> -->
+                                                    <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+                                                </div>
+                                                <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
+                                                    <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                </a>
+                                        <li><h3>-this / that / these / those-</h3></li>
+                                                <div class="mb-3">
+                                                    <label for="" class="form-label">Material Predeterminado</label>
+                                                    <input type="text"class="form-control" name="" id="" aria-describedby="helpId" placeholder=""/>
+                                                    <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+                                                </div>
                                             <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
                                                 <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                             </a>
-                                        <li><h3>-this / that / these / those:</h3></li>
-                                            <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
-                                            </a>
-                                        <li><h3>-singular / plural nouns:</h3></li>
+                                        <li><h3>-singular / plural nouns-</h3></li>
+                                                <div class="mb-3">
+                                                    <label for="" class="form-label">Material Predeterminado</label>
+                                                    <input type="text"class="form-control" name="" id="" aria-describedby="helpId" placeholder=""/>
+                                                    <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+                                                </div>
                                             <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
                                                 <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                             </a>
