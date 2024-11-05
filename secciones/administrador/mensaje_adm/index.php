@@ -22,7 +22,7 @@
     $sentencia->execute();
     $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
     
-    $id_usuario = $resultado['id'];
+    /* $id_usuario = $resultado['id']; */
 
     // Obtenemos los mensajes recibidos junto con la información del remitente
     $sentencia = $conexion->prepare("
