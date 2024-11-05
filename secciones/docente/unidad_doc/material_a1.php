@@ -1,16 +1,18 @@
 <?php 
     session_start();
     include("../../../bd.php");
-
+    
     if (isset($_GET['txtID'])) {
-        // Código para eliminar archivos - mantén el existente como lo tienes
-        $txtID = (isset($_GET['txtID'])) ? $_GET['txtID'] : "";
-        // Obtén el archivo y elimina
+        // Verificamos si está presente en la URL txtID, asignamos el valor en $_GET['txtID']
+        $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
+        
+        // Preparamos la consulta para obtener el nombre del archivo antes de eliminarlo
         $sentencia = $conexion->prepare("SELECT archivo FROM tbl_material WHERE id = :id");
         $sentencia->bindParam(":id", $txtID);
         $sentencia->execute();
         $material = $sentencia->fetch(PDO::FETCH_ASSOC);
         
+        // Si se encontró el archivo, lo eliminamos del sistema de archivos
         if ($material) {
             $archivo = $material['archivo'];
             $rutaArchivo = "../unidad_doc/img_temp/" . $archivo;
@@ -19,20 +21,29 @@
             }
         }
     
+        // Preparamos la conexión de borrado en la base de datos
         $sentencia = $conexion->prepare("DELETE FROM tbl_material WHERE id=:id");
         $sentencia->bindParam(":id", $txtID);
         $sentencia->execute();
+        
+        // Mensaje de Registro Eliminado
         $mensaje = "Registro Eliminado";
         header("Location: index.php?mensaje=" . $mensaje);
         exit();
     }
-
-    // Consulta para obtener los archivos disponibles y subcategorías
+    if (isset($_GET['txtID'])) {
+        //Verificamos si está presente en la URL txtID, asignamos el valor en  $_GET['txtID'] de lo contrario no se asigna ningún valor con :"" .
+        $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
+        //Preparamos la conexion de Borrado.
+        $sentencia = $conexion->prepare ( "DELETE FROM tbl_material WHERE id=:id" );
+        $sentencia->bindParam( ":id" ,$txtID );
+        $sentencia->execute();
+        }
+    // Consulta para obtener los archivos disponibles
     $sentencia = $conexion->prepare("SELECT * FROM `tbl_material`");
     $sentencia->execute();
     $lista_tbl_material = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
 
 <?php include("../templates_doc/header_doc.php");?>
 <br><br>
@@ -61,29 +72,24 @@
                     <table><br>
                     <!-- Seccion Nº-1 -->
                         <details id="section1"><br>
-
-                            <summary><h2>Hello!</h2></summary>
-                                <details id="grammarSection"><br>
-                                    
-                                <summary><h2>Grammar</h2></summary>
+                            <summary><h2>Hello! 
+                                        <label class="switch">
+                                            <input type="checkbox" id="enableSection1" onclick="toggleSection('section1', 'enableSection1')">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </h2>
+                            </summary>
+                            <details id="grammarSection"><br>
+                                <summary>
+                                        <h2>Grammar 
+                                            <label class="switch">
+                                                <input type="checkbox" id="enableGrammar" onclick="toggleSection('grammarSection', 'enableGrammar')" disabled>
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </h2>
+                                </summary>
                                 
                                 <ul>
-                                    <?php foreach ($lista_tbl_material as $material) : ?>
-                                        <li>
-                                            <h3><?= $material['titulo']; ?></h3>
-                                            <!-- Formulario para editar subcategoría -->
-                                            <form action="editar_subcategoria.php" method="POST" style="display:inline;">
-                                                <input type="hidden" name="subcategoria_id" value="<?= $material['id']; ?>">
-                                                <input type="text" name="nombre" value="<?= $material['titulo']; ?>">
-                                                <button type="submit">Editar</button>
-                                            </form>
-                                            
-                                            <!-- Botón para subir material nuevo -->
-                                            <a href="subir_m.php?subcategoria_id=<?= $material['id']; ?>" class="btn btn-info" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
-                                            </a>
-                                        </li>
-                                    <?php endforeach; ?>
                                         <li><h3>-Possessive adjectives-</h3>
                                             <br>
                                                 <h5>Material Predeterminado</h5>
