@@ -62,13 +62,10 @@
                 <!-- <h2>Contenidos</h2> -->
                 <!-- <br> -->
                 <div class="card-header" style="background-color:bisque">   
-                    <!-- </div>  -->
-                        
-                    <!-- </div> -->
-                    
                     <h1>
                         <span></span><br>Contenidos esenciales para cada nivel de Inglés.
                     </h1>
+                    
                     <dl class="dictionary">
                         
                         <div class="term">
