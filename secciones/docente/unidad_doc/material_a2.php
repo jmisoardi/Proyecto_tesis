@@ -48,6 +48,7 @@
 <?php include("../templates_doc/header_doc.php");?>
 <br><br>
     <link rel="stylesheet" href="../../../css/styles_material.css">
+    <link rel="stylesheet" href="../../../css/styles_material_vista.css">
     <link rel="stylesheet" href="../../../css/styles_checkbox.css">
     <!-- <link rel="stylesheet" href="../../../css/styles_index.css"> -->
         <body>
@@ -72,43 +73,56 @@
                     <table><br>
                     <!-- Seccion Nº-1 -->
                         <details id="section1"><br>
-                            <summary><h2>Hello! 
-                                        <label class="switch">
-                                            <input type="checkbox" id="enableSection1" onclick="toggleSection('section1', 'enableSection1')">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </h2>
-                            </summary>
+                            <summary><h2>Hello!</h2></summary>
+                            
                             <details id="grammarSection"><br>
-                                <summary>
-                                        <h2>Grammar 
-                                            <label class="switch">
-                                                <input type="checkbox" id="enableGrammar" onclick="toggleSection('grammarSection', 'enableGrammar')" disabled>
-                                                <span class="slider round"></span>
-                                            </label>
-                                        </h2>
-                                </summary>
-                                
-                                <ul>
-                                        <li><h3>-Possessive adjectives:</h3>
+                                <summary><h2>Grammar</h2></summary>
+                                <dl class="dictionary">
+                                    <div class="term">
+                                        <dt>
+                                            <span>Possessive adjectives</span><br><br>Elementary
+                                            <br>
+                                            <br>
+                                            <!-- Revisar el href "es bajar material" -->
                                             <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                             </a>
-                                                
-                                        </li>
-                                                <li><h3>-verb to be:</h3></li>
+                                        </dt>
+                                    </div>
+                                    <div class="term">
+                                        <dt>
+                                            <span>verb to be</span><br><br>Elementary
+                                            <br>
+                                            <br>
+                                            <!-- Revisar el href "es bajar material" -->
                                             <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                             </a>
-                                        <li><h3>-this / that / these / those:</h3></li>
+                                        </dt>
+                                    </div>
+                                    <div class="term">
+                                        <dt>
+                                            <span>this / that / these / those</span><br><br>Elementary
+                                            <br>
+                                            <br>
+                                            <!-- Revisar el href "es bajar material" -->
                                             <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                             </a>
-                                        <li><h3>-singular / plural nouns:</h3></li>
+                                        </dt>
+                                    </div>
+                                    <div class="term">
+                                        <dt>
+                                            <span>singular / plural nouns</span><br><br>Elementary
+                                            <br>
+                                            <br>
+                                            <!-- Revisar el href "es bajar material" -->
                                             <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                             </a>
-                                    </ul>
+                                        </dt>
+                                    </div>
+                                </dt>
                             </details>
                             <details>
                                 <summary><h2>Vocabulary</h2></summary>

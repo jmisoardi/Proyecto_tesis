@@ -69,7 +69,7 @@
                                 <dl class="dictionary">
                                     <div class="term">
                                         <dt>
-                                            <span>-Possessive adjectives-</span><br><br>Elementary
+                                            <span>Possessive adjectives</span><br><br>Elementary
                                             <br>
                                             <br>
                                             <!-- Revisar el href "es bajar material" -->
@@ -80,7 +80,7 @@
                                     </div>
                                     <div class="term">
                                         <dt>
-                                            <span>-verb to be-</span><br><br>Elementary
+                                            <span>verb to be</span><br><br>Elementary
                                             <br>
                                             <br>
                                             <!-- Revisar el href "es bajar material" -->
@@ -91,7 +91,7 @@
                                     </div>
                                     <div class="term">
                                         <dt>
-                                            <span>-this / that / these / those-</span><br><br>Elementary
+                                            <span>this / that / these / those</span><br><br>Elementary
                                             <br>
                                             <br>
                                             <!-- Revisar el href "es bajar material" -->
@@ -102,7 +102,7 @@
                                     </div>
                                     <div class="term">
                                         <dt>
-                                            <span>-singular / plural nouns-</span><br><br>Elementary
+                                            <span>singular / plural nouns</span><br><br>Elementary
                                             <br>
                                             <br>
                                             <!-- Revisar el href "es bajar material" -->
@@ -118,7 +118,7 @@
                                 <dl class="dictionary">
                                     <div class="term">
                                         <dt>
-                                            <span>-Countries and nationalities</span><br><br>Elementary
+                                            <span>Countries and nationalities</span><br><br>Elementary
                                             <br>
                                             <br>
                                             <!-- Revisar el href "es bajar material" -->
@@ -129,7 +129,7 @@
                                     </div>
                                     <div class="term">
                                         <dt>
-                                            <span>-Favourite things-</span><br><br>Elementary
+                                            <span>Favourite things</span><br><br>Elementary
                                             <br>
                                             <br>
                                             <!-- Revisar el href "es bajar material" -->
@@ -145,7 +145,7 @@
                                 <dl class="dictionary">
                                     <div class="term">
                                         <dt>
-                                            <span>-Greetings</span><br><br>Elementary
+                                            <span>Greetings</span><br><br>Elementary
                                             <br>
                                             <br>
                                             <!-- Revisar el href "es bajar material" -->
@@ -165,7 +165,7 @@
                                 <dl class="dictionary">
                                     <div class="term">
                                         <dt>
-                                            <span>-Possessive 's:</span><br><br>Elementary
+                                            <span>Possessive 's</span><br><br>Elementary
                                             <br>
                                             <br>
                                             <!-- Revisar el href "es bajar material" -->
@@ -176,7 +176,7 @@
                                     </div>
                                     <div class="term">
                                         <dt>
-                                            <span>-Have got:</span><br><br>Elementary
+                                            <span>Have got</span><br><br>Elementary
                                             <br>
                                             <br>
                                             <!-- Revisar el href "es bajar material" -->
@@ -192,7 +192,7 @@
                                     <dl class="dictionary">
                                         <div class="term">
                                             <dt>
-                                                <span>-Objects-</span><br><br>Elementary
+                                                <span>Objects</span><br><br>Elementary
                                                 <br>
                                                 <br>
                                                 <!-- Revisar el href "es bajar material" -->
@@ -203,7 +203,7 @@
                                         </div>
                                         <div class="term">
                                             <dt>
-                                                <span>-Family-</span><br><br>Elementary
+                                                <span>Family</span><br><br>Elementary
                                                 <br>
                                                 <br>
                                                 <!-- Revisar el href "es bajar material" -->
@@ -214,7 +214,7 @@
                                         </div>
                                         <div class="term">
                                             <dt>
-                                                <span>-Appearence adjective-</span><br><br>Elementary
+                                                <span>Appearence adjective</span><br><br>Elementary
                                                 <br>
                                                 <br>
                                                 <!-- Revisar el href "es bajar material" -->
@@ -230,7 +230,7 @@
                                     <dl class="dictionary">
                                         <div class="term">
                                             <dt>
-                                                <span>-Describing people-</span><br><br>Elementary
+                                                <span>Describing people</span><br><br>Elementary
                                                 <br>
                                                 <br>
                                                 <!-- Revisar el href "es bajar material" -->
@@ -246,7 +246,7 @@
                                 <dl class="dictionary">
                                     <div class="term">
                                         <dt>
-                                            <span>-Discover Skills: Cool People:-</span><br><br>Elementary
+                                            <span>Discover Skills: Cool People-</span><br><br>Elementary
                                             <br>
                                             <br>
                                             <!-- Revisar el href "es bajar material" -->
@@ -257,7 +257,7 @@
                                     </div>
                                     <div class="term">
                                         <dt>
-                                            <span>-Describing people-</span><br><br>Elementary
+                                            <span>Describing people</span><br><br>Elementary
                                             <br>
                                             <br>
                                             <!-- Revisar el href "es bajar material" -->
