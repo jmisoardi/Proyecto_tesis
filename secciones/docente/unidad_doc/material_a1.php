@@ -279,56 +279,112 @@
                         <summary><h2>Homes</h2></summary>
                             <details><br>
                                 <summary><h2>Grammar</h2></summary>
-                                    <ul>
-                                        <li><h3>-There is / there are + some / any:</h3></li>  
+                                <dl class="dictionary">
+                                    <div class="term">
+                                        <dt>
+                                            <span>There is / there are + some / any</span><br><br>Elementary
+                                            <br>
+                                            <br>
+                                            <!-- Revisar el href "es bajar material" -->
                                             <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                             </a>
-                                        <li><h3>-Prepositions of place:</h3></li>
+                                        </dt>
+                                    </div>
+                                    <div class="term">
+                                        <dt>
+                                            <span>Prepositions of place</span><br><br>Elementary
+                                            <br>
+                                            <br>
+                                            <!-- Revisar el href "es bajar material" -->
                                             <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                             </a>
-                                        <li><h3>-Imperatives:</h3></li>
+                                        </dt>
+                                    </div>                                   
+                                    <div class="term">
+                                        <dt>
+                                            <span>Imperatives</span><br><br>Elementary
+                                            <br>
+                                            <br>
+                                            <!-- Revisar el href "es bajar material" -->
                                             <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                             </a>
-                                    </ul>
-                                    
+                                        </dt>
+                                    </div>                                   
+                                </dl>
                             </details>
                             <details>
-                                <summary><h2>Vocabulary</h2></summary>
-                                    <ul>
-                                        <li><h3>-Forniture:</h3></li>  
+                                <summary><h2>Vocabulary</h2></summary>                                    
+                                <dl class="dictionary">
+                                    <div class="term">
+                                        <dt>
+                                            <span>Forniture</span><br><br>Elementary
+                                            <br>
+                                            <br>
+                                            <!-- Revisar el href "es bajar material" -->
                                             <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                             </a>
-                                        <li><h3>-Rooms:</h3></li>
-                                            <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
-                                            </a>
-                                    </ul>
+                                        </dt>    
+                                    </div>
+                                        <div class="term">
+                                            <dt>
+                                                <span>Rooms</span><br><br>Elementary
+                                                <br>
+                                                <br>
+                                                <!-- Revisar el href "es bajar material" -->
+                                                <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
+                                                    <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                </a>
+                                            </dt>
+                                        </div>
+                                </dl>
                             </details>        
                             <details>
                                 <summary><h2>Funtions</h2></summary>
-                                    <ul>
-                                        <li><h3>-Giving instructions:</h3></li>
-                                            <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
-                                            </a>
-                                    </ul>
+                                    <dl class="dictionary">
+                                        <div class="term" >
+                                            <dt>
+                                            <span>Giving instructions</span><br><br>Elementary
+                                                <br>
+                                                <br>
+                                                <!-- Revisar el href "es bajar material" -->
+                                                <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
+                                                    <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                </a>
+                                            </dt>
+                                        </div>
+                                    </dl>
                             </details>        
                             <details>
                                 <summary><h2>Skills</h2></summary>
-                                    <ul>
-                                        <li><h3>-Discover Culture: Homes</h3></li>
-                                            <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
-                                            </a>
-                                        <li><h3>-Project: My Home</h3></li>
-                                            <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
-                                            </a>
-                                    </ul>
+                                    <dl class="dictionary">
+                                        <div class="term" >
+                                            <dt>
+                                            <span>Discover Culture: Homes</span><br><br>Elementary
+                                                <br>
+                                                <br>
+                                                <!-- Revisar el href "es bajar material" -->
+                                                <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
+                                                    <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                </a>
+                                            </dt>
+                                        </div>
+                                        <div class="term" >
+                                            <dt>
+                                            <span>Project: My Home</span><br><br>Elementary
+                                                <br>
+                                                <br>
+                                                <!-- Revisar el href "es bajar material" -->
+                                                <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
+                                                    <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                </a>
+                                            </dt>
+                                        </div>
+                                    </dl>
+                                    
                             </details>      
                             <br>
                         </details>
@@ -338,51 +394,100 @@
                         <summary><h2>Animals</h2></summary>
                             <details>
                                 <summary><h2>Grammar</h2></summary>
-                                    <ul>
-                                        <li><h3>-Can /Can't (ability):</h3></li>  
-                                            <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
-                                            </a>
-                                    </ul>
+                                <dl class="dictionary">
+                                        <div class="term" >
+                                            <dt>
+                                            <span>Can /Can't (ability)</span><br><br>Elementary
+                                                <br>
+                                                <br>
+                                                <!-- Revisar el href "es bajar material" -->
+                                                <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
+                                                    <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                </a>
+                                            </dt>
+                                        </div>
+                                </dl>
                             </details>
                             <details>
                                 <summary><h2>Vocabulary</h2></summary>
-                                    <ul>
-                                        <li><h3>-Anilmals:</h3></li>  
-                                            <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
-                                            </a>
-                                        <li><h3>-Body parts:</h3></li>
-                                            <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
-                                            </a>
-                                        <li><h3>-Action verbs:</h3></li>
-                                            <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
-                                            </a>
-                                    </ul>
+                                <dl class="dictionary">
+                                        <div class="term" >
+                                            <dt>
+                                            <span>Anilmals</span><br><br>Elementary
+                                                <br>
+                                                <br>
+                                                <!-- Revisar el href "es bajar material" -->
+                                                <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
+                                                    <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                </a>
+                                            </dt>
+                                        </div>
+                                        <div class="term" >
+                                            <dt>
+                                            <span>Body parts</span><br><br>Elementary
+                                                <br>
+                                                <br>
+                                                <!-- Revisar el href "es bajar material" -->
+                                                <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
+                                                    <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                </a>
+                                            </dt>
+                                        </div>
+                                        <div class="term" >
+                                            <dt>
+                                            <span>Action verbs</span><br><br>Elementary
+                                                <br>
+                                                <br>
+                                                <!-- Revisar el href "es bajar material" -->
+                                                <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
+                                                    <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                </a>
+                                            </dt>
+                                        </div>
+                                </dl>
                             </details>        
                             <details>
                                 <summary><h2>Funtions</h2></summary>
-                                    <ul>
-                                        <li><h3>-Asking for and giving permission:</h3></li>
+                                <dl class="dictionary" >
+                                    <div class="term" >
+                                        <dt>
+                                            <span>Asking for and giving permission</span><br><br>Elementary
+                                            <br>
+                                            <br>
+                                            <!-- Revisar el href "es bajar material" -->
                                             <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                             </a>
-                                    </ul>
+                                        </dt>
+                                    </div>
+                                </dl>
                             </details>        
                             <details>
                                 <summary><h2>Skills</h2></summary>
-                                    <ul>
-                                        <li><h3>-Discover Skill: Water Wonders</h3></li>
+                                <dl class="dictionary" >
+                                    <div class="term" >
+                                        <dt>
+                                            <span>Discover Skill: Water Wonders</span><br><br>Elementary
+                                            <br>
+                                            <br>
+                                            <!-- Revisar el href "es bajar material" -->
                                             <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                             </a>
-                                        <li><h3>-Study Skill: Listening</h3></li>
+                                        </dt>
+                                    </div>
+                                    <div class="term" >
+                                        <dt>
+                                            <span>Study Skill: Listening</span><br><br>Elementary
+                                            <br>
+                                            <br>
+                                            <!-- Revisar el href "es bajar material" -->
                                             <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                             </a>
-                                    </ul>
+                                        </dt>
+                                    </div>
+                                </dl>    
                             </details> 
                         </details>
                             
@@ -391,51 +496,100 @@
                         <summary><h2>My Life</h2></summary>
                             <details>
                                 <summary><h2>Grammar</h2></summary>
-                                    <ul>
-                                        <li><h3>-Present Simple:</h3></li>  
+                                <dl class="dictionary" >
+                                    <div class="term" >
+                                        <dt>
+                                            <span>Present Simple</span><br><br>Elementary
+                                            <br>
+                                            <br>
+                                            <!-- Revisar el href "es bajar material" -->
                                             <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                             </a>
-                                        <li><h3>-Affirmative, Negative, Questions:</h3></li>  
+                                        </dt>
+                                    </div>
+                                    <div class="term" >
+                                        <dt>
+                                            <span>Affirmative, Negative, Questions</span><br><br>Elementary
+                                            <br>
+                                            <br>
+                                            <!-- Revisar el href "es bajar material" -->
                                             <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                             </a>
-                                    </ul>
+                                        </dt>
+                                    </div>
+                                </dl>
                             </details>
                             <details>
                                 <summary><h2>Vocabulary</h2></summary>
-                                    <ul>
-                                        <li><h3>-Routine verbs:</h3></li>  
+                                <dl class="dictionary" >
+                                    <div class="term" >
+                                        <dt>
+                                            <span>Routine verbs</span><br><br>Elementary
+                                            <br>
+                                            <br>
+                                            <!-- Revisar el href "es bajar material" -->
                                             <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                             </a>
-                                        <li><h3>-Transport:</h3></li>
+                                        </dt>
+                                    </div>
+                                    <div class="term" >
+                                        <dt>
+                                            <span>Transport</span><br><br>Elementary
+                                            <br>
+                                            <br>
+                                            <!-- Revisar el href "es bajar material" -->
                                             <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                             </a>
-                                    </ul>
+                                        </dt>
+                                    </div>
+                                </dl>
                             </details>        
                             <details>
                                 <summary><h2>Funtions</h2></summary>
-                                    <ul>
-                                        <li><h3>-Telling the time:</h3></li>
+                                <dl class="dictionary" >
+                                    <div class="term" >
+                                        <dt>
+                                            <span>Telling the time</span><br><br>Elementary
+                                            <br>
+                                            <br>
+                                            <!-- Revisar el href "es bajar material" -->
                                             <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                             </a>
-                                        </ul>
+                                        </dt>
+                                    </div>
+                                </dl>
                             </details>        
                             <details>
                                 <summary><h2>Skills</h2></summary>
-                                    <ul>
-                                        <li><h3>-Discover culture: UK Meals</h3></li>
+                                <dl class="dictionary" >
+                                    <div class="term" >
+                                        <dt>
+                                            <span>Discover culture: UK Meals</span><br><br>Elementary
+                                            <br>
+                                            <br>
+                                            <!-- Revisar el href "es bajar material" -->
                                             <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                             </a>
-                                        <li><h3>-Project: My Meals</h3></li>
+                                        </dt>
+                                    </div>
+                                    <div class="term" >
+                                        <dt>
+                                            <span>Project: My Meals</span><br><br>Elementary
+                                            <br>
+                                            <br>
+                                            <!-- Revisar el href "es bajar material" -->
                                             <a name="" id="" class="btn btn-info" href="subir_m.php" role="button">
-                                                <img src="../../../css/imagen_tesis/icons/pdf_subir.png" style="width: 30px; height: 30px; vertical-align: middle;">
+                                                <img src="../../../css/imagen_tesis/icons/pdf_bajar1.png" style="width: 30px; height: 30px; vertical-align: middle;">
                                             </a>
-                                    </ul>
+                                        </dt>
+                                    </div>
+                                </dl>
                             </details> 
                         </details>
 
