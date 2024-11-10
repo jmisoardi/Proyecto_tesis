@@ -43,6 +43,8 @@
     $sentencia = $conexion->prepare("SELECT * FROM `tbl_material`");
     $sentencia->execute();
     $lista_tbl_material = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    
+    $titulo= "";
 ?>
 
 <?php include("../templates_doc/header_doc.php");?>
@@ -69,7 +71,8 @@
                                 <dl class="dictionary">
                                     <div class="term">
                                         <dt>
-                                            <span>Possessive adjectives</span><br><br>Elementary
+                                        
+                                            <span><label for="titulo" class="form-label"><?php echo $titulo?></label></span><br><br>Elementary
                                             <br>
                                             <br>
                                             <!-- Revisar el href "es bajar material" -->
