@@ -51,24 +51,26 @@
     
 ?>
 
-<?php include("../templates_doc/header_doc.php");?>
-<br>
-<br>
+<?php include("../templates_doc/header_doc.php"); ?>
+<br><br>
+
 <!-- Incluye los estilos CSS -->
 <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="../../../css/styles_styles.css"> 
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="../../../css/styles.css">
 
 <!-- Incluye los scripts de JavaScript en el orden correcto -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
 <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
 
-<!-- Script para inicializar DataTable -->
-<!-- <script>
+<!-- Script para inicializar DataTable y Acordeón -->
+<script>
     $(document).ready(function () {
-        Inicializar DataTable
-        $("#tabla_id").DataTable({
+        // Inicializar DataTable para ambas tablas
+        $("#tabla_id_1").DataTable({
             "pageLength": 10,
             lengthMenu: [[10, 20, 30, 50], [10, 20, 30, 50]],
             "language": {
@@ -76,68 +78,114 @@
             }
         });
 
-        Inicializar el acordeón de Bootstrap
-        $('.accordion-button').on('click', function () {
-            $(this).toggleClass('collapsed');
+        $("#tabla_id_2").DataTable({
+            "pageLength": 10,
+            lengthMenu: [[10, 20, 30, 50], [10, 20, 30, 50]],
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
+            }
+        });
+
+        // Inicializar el acordeón de jQuery UI
+        $("#accordion").accordion({
+            collapsible: true,
+            heightStyle: "content",
+            active: 0
         });
     });
-</script> -->
+</script>
 
 <body>
-    <!-- Acordeón para Materiales Disponibles -->
-    <div class="accordion" id="accordionExample">
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Materiales disponibles
-                </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <!-- Tabla para mostrar archivos subidos -->
-                    <div class="unidad">
-                        <div class="card-header" style="background-color: bisque;">
-                            <div class="card-body-xl" style="background-color: azure;">
-                                <div class="table-responsive">
-                                    <table class="table" id="tabla_id">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Título</th>
-                                                <th>Subtítulo</th>
-                                                <th>Archivo</th>
-                                                <th>Nivel</th>
-                                                <th>Acciones</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php foreach ($lista_tbl_tema as $tema) { ?>
-                                                <tr>
-                                                    <td><?php echo $tema['id']; ?></td>
-                                                    <td><?php echo $tema['titulo']; ?></td>
-                                                    <td><?php echo $tema['subtitulo']; ?></td>
-                                                    <td>
-                                                        <?php if (!empty($tema['archivo'])) { ?>
-                                                            <a href="uploads/<?php echo $tema['archivo']; ?>" target="_blank">Descargar</a>
-                                                        <?php } else { ?>
-                                                            No hay archivo
-                                                        <?php } ?>
-                                                    </td>
-                                                    <td><?php echo $tema['nombre_nivel']; ?></td>
-                                                    <td>
-                                                        <a href="editar_tema.php?id=<?php echo $tema['id']; ?>" class="btn btn-info">
-                                                            <img src="../../../css/imagen_tesis/icons/icon_editar.png" alt="Editar" style="width: 30px; height: 30px;">
-                                                        </a>
-                                                        <a href="javascript:borrarTema(<?php echo $tema['id']; ?>);" class="btn btn-danger">
-                                                            <img src="../../../css/imagen_tesis/icons/icon_eliminar.png" alt="Eliminar" style="width: 30px; height: 30px;">
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            <?php } ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+    <!-- Acordeón para Materiales Disponibles con jQuery UI -->
+    <div id="accordion">
+        <!-- Primera sección del acordeón -->
+        <h3>Materiales disponibles - Sección 1</h3>
+        <div>
+            <!-- Tabla para mostrar archivos subidos (Sección 1) -->
+            <div class="unidad">
+                <div class="card-header" style="background-color: bisque;">
+                    <div class="card-body-xl" style="background-color: azure;">
+                        <div class="table-responsive">
+                            <table class="table" id="tabla_id_1">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Título</th>
+                                        <th>Subtítulo</th>
+                                        <th>Archivo</th>
+                                        <th>Nivel</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($lista_tbl_tema as $tema) { ?>
+                                        <tr>
+                                            <td><?php echo $tema['id']; ?></td>
+                                            <td><?php echo $tema['titulo']; ?></td>
+                                            <td><?php echo $tema['subtitulo']; ?></td>
+                                            <td>
+                                                <?php if (!empty($tema['archivo'])) { ?>
+                                                    <a href="uploads/<?php echo $tema['archivo']; ?>" target="_blank">Descargar</a>
+                                                <?php } else { ?>
+                                                    No hay archivo
+                                                <?php } ?>
+                                            </td>
+                                            <td><?php echo $tema['nombre_nivel']; ?></td>
+                                            <td>
+                                                <a href="editar_tema.php?id=<?php echo $tema['id']; ?>" class="btn btn-info btn-sm">Editar</a>
+                                                <a href="javascript:borrarTema(<?php echo $tema['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Segunda sección del acordeón -->
+        <h3>Materiales disponibles - Sección 2</h3>
+        <div>
+            <!-- Tabla para mostrar archivos subidos (Sección 2) -->
+            <div class="unidad">
+                <div class="card-header" style="background-color: bisque;">
+                    <div class="card-body-xl" style="background-color: azure;">
+                        <div class="table-responsive">
+                            <table class="table" id="tabla_id_2">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Título</th>
+                                        <th>Subtítulo</th>
+                                        <th>Archivo</th>
+                                        <th>Nivel</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($lista_tbl_tema as $tema) { ?>
+                                        <tr>
+                                            <td><?php echo $tema['id']; ?></td>
+                                            <td><?php echo $tema['titulo']; ?></td>
+                                            <td><?php echo $tema['subtitulo']; ?></td>
+                                            <td>
+                                                <?php if (!empty($tema['archivo'])) { ?>
+                                                    <a href="uploads/<?php echo $tema['archivo']; ?>" target="_blank">Descargar</a>
+                                                <?php } else { ?>
+                                                    No hay archivo
+                                                <?php } ?>
+                                            </td>
+                                            <td><?php echo $tema['nombre_nivel']; ?></td>
+                                            <td>
+                                                <a href="editar_tema.php?id=<?php echo $tema['id']; ?>" class="btn btn-info btn-sm">Editar</a>
+                                                <a href="javascript:borrarTema(<?php echo $tema['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -145,23 +193,7 @@
         </div>
     </div>
 </body>
-<script>
-    $(document).ready(function () {
-        // Inicializar DataTable
-        $("#tabla_id").DataTable({
-            "pageLength": 10,
-            lengthMenu: [[10, 20, 30, 50], [10, 20, 30, 50]],
-            "language": {
-                "url": "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
-            }
-        });
 
-        // Inicializar el acordeón de Bootstrap
-        $('.accordion-button').on('click', function () {
-            $(this).toggleClass('collapsed');
-        });
-    });
-</script>
 <br>
 
 <div class="text-center">
@@ -169,5 +201,7 @@
         <img src="../../../css/imagen_tesis/icons/atras.png" style="width: 30px; height: 30px; vertical-align: middle;">
     </a>
 </div>
+
+
 
 <?php include("../templates_doc/footer_doc.php"); ?>

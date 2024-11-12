@@ -17,7 +17,7 @@
         <!--Script para data table (diseño)-->
         <script>
             $(document).ready( function(){
-                $("#tabla_id").DataTable ({"pagelLength":10, lengthMenu:[[10,20,30,50],[10,20,30,50]], "language":{"url":"https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"}});  });
+                $("#tabla_id").DataTable ({"pageLength":10, lengthMenu:[[10,20,30,50],[10,20,30,50]], "language":{"url":"https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"}});  });
         </script>
         
         <!--Sweet alert -->
