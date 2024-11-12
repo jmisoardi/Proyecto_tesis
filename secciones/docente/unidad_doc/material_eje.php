@@ -101,6 +101,11 @@
         <!-- Primera sección del acordeón -->
         <h3>Materiales disponibles - Sección 1</h3>
         <div>
+        <div class="card-header" >   
+                <a name="" id="" href="crear.php" role="button" >
+                    <img src="../../../css/imagen_tesis/icons/icon_agregar.png" style="width: 48px; height: 50px; vertical-align: middle;">
+                </a>
+            </div> 
             <!-- Tabla para mostrar archivos subidos (Sección 1) -->
             <div class="unidad">
                 <div class="card-header" style="background-color: bisque;">
