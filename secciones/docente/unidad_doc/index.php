@@ -7,47 +7,33 @@
         $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
         
         // Preparamos la consulta para obtener el nombre del archivo antes de eliminarlo
-        $sentencia = $conexion->prepare("SELECT archivo FROM tbl_material WHERE id = :id");
+        $sentencia = $conexion->prepare("DELETE FROM tbl_nivel WHERE id = :id");
         $sentencia->bindParam(":id", $txtID);
         $sentencia->execute();
-        $material = $sentencia->fetch(PDO::FETCH_ASSOC);
-        
-        // Si se encontró el archivo, lo eliminamos del sistema de archivos
-        if ($material) {
-            $archivo = $material['archivo'];
-            $rutaArchivo = "../unidad_doc/img_temp/" . $archivo;
-            if (file_exists($rutaArchivo)) {
-                unlink($rutaArchivo); // Elimina el archivo físicamente
-            }
-        }
-    
-        // Preparamos la conexión de borrado en la base de datos
-        $sentencia = $conexion->prepare("DELETE FROM tbl_material WHERE id=:id");
-        $sentencia->bindParam(":id", $txtID);
-        $sentencia->execute();
-        
-        // Mensaje de Registro Eliminado
-        $mensaje = "Registro Eliminado";
-        header("Location: index.php?mensaje=" . $mensaje);
-        exit();
-    }
-    /*  if (isset($_GET['txtID'])) {
-        //Verificamos si está presente en la URL txtID, asignamos el valor en  $_GET['txtID'] de lo contrario no se asigna ningún valor con :"" .
-        $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
-        //Preparamos la conexion de Borrado.
-        $sentencia = $conexion->prepare ( "DELETE FROM tbl_material WHERE id=:id" );
-        $sentencia->bindParam( ":id" ,$txtID );
-        $sentencia->execute();
+
         //Mensaje de Registro Eliminado (Sweet alert).
         $mensaje="Registro Eliminado";
         header("Location:index.php?mensaje=".$mensaje);
-        } */
-    // Consulta para obtener los archivos disponibles
-    $sentencia = $conexion->prepare("SELECT * FROM `tbl_nivel`");
+        
+    }
+    //Preparamos la sentencia de $conexion y ejecutamos, seguido creamos una consulta seguido de una subconsulta para obtener tbl_rol.id =tbl_persona.idrol. Nombre del Rol, con obtención de un dato (as idrol) acto seguido las filas devuelvan un array asociativo.
+    /* $sentencia = $conexion->prepare("SELECT * ,
+    (SELECT nombredelrol 
+    FROM tbl_rol 
+    WHERE tbl_rol.id =tbl_persona.idrol limit 1) as idrol 
+    FROM `tbl_persona`");
     $sentencia->execute();
-    $lista_tbl_material = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    $lista_tbl_persona = $sentencia->fetchAll(PDO::FETCH_ASSOC);  */
+        
+
+    // Consulta para obtener los archivos disponibles
+    /* $sentencia = $conexion->prepare("SELECT * FROM `tbl_nivel`");
+    $sentencia->execute();
+    $lista_tbl_material = $sentencia->fetchAll(PDO::FETCH_ASSOC); */
 ?>
+
 <?php include("../templates_doc/header_doc.php");?>
+
 <link rel="stylesheet" href="../../../css/styles_index.css">
     <!-- <link rel="stylesheet" href="../../../css/styles_material.css"> -->
         <body>
