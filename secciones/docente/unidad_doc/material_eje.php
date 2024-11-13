@@ -2,16 +2,16 @@
     session_start();
     include("../../../bd.php");
     
-   /*  if (isset($_GET['txtID'])) { */
+    if (isset($_GET['txtID'])) {
         // Verificamos si está presente en la URL txtID, asignamos el valor en $_GET['txtID']
-        /* $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
-         */
-        // Preparamos la consulta para obtener el nombre del archivo antes de eliminarlo
-       /*  $sentencia = $conexion->prepare("SELECT archivo FROM tbl_material WHERE id = :id");
+        $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
+        
+       /*  // Preparamos la consulta para obtener el nombre del archivo antes de eliminarlo
+        $sentencia = $conexion->prepare("SELECT archivo FROM tbl_material WHERE id = :id");
         $sentencia->bindParam(":id", $txtID);
         $sentencia->execute();
-        $material = $sentencia->fetch(PDO::FETCH_ASSOC); */
-        
+        $material = $sentencia->fetch(PDO::FETCH_ASSOC);
+         */
         // Si se encontró el archivo, lo eliminamos del sistema de archivos
         /* if ($material) {
             $archivo = $material['archivo'];
@@ -22,15 +22,15 @@
         } */
     
         // Preparamos la conexión de borrado en la base de datos
-        /* $sentencia = $conexion->prepare("DELETE FROM tbl_material WHERE id=:id");
+        $sentencia = $conexion->prepare("DELETE FROM tbl_tema WHERE id=:id");
         $sentencia->bindParam(":id", $txtID);
-        $sentencia->execute(); */
+        $sentencia->execute();
         
         // Mensaje de Registro Eliminado
-        /*  $mensaje = "Registro Eliminado";
-        header("Location: index.php?mensaje=" . $mensaje);
-        exit(); */
-   /*  } */
+        $mensaje = "Registro Eliminado";
+        header("Location:material_eje.php?mensaje=" . $mensaje);
+        /* exit(); */
+    }
     /* if (isset($_GET['txtID'])) { */
         //Verificamos si está presente en la URL txtID, asignamos el valor en  $_GET['txtID'] de lo contrario no se asigna ningún valor con :"" .
         /* $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :""; */
@@ -41,9 +41,9 @@
         } */
 
         // Asumimos que ya tienes la conexión establecida en $conexion
-        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.subtitulo, tbl_tema.archivo, tbl_nivel.nombre_nivel 
-                                        FROM tbl_tema
-                                        LEFT JOIN tbl_nivel ON tbl_tema.nivel_id = tbl_nivel.id");
+        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.subtitulo, tbl_tema.archivo, tbl_nivel.nombre_nivel  
+                                        FROM tbl_tema 
+                                        LEFT JOIN tbl_nivel ON tbl_tema.nivel_id = tbl_nivel.id WHERE tbl_nivel.id = 3");
         $sentencia->execute();
         $lista_tbl_tema = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
@@ -79,7 +79,7 @@
                 }
             });
 
-            /* $("#tabla_id_2").DataTable({
+           /*  $("#tabla_id_2").DataTable({
                 "pageLength": 10,
                 lengthMenu: [[10, 20, 30, 50], [10, 20, 30, 50]],
                 "language": {
@@ -146,8 +146,8 @@
                                                     </td>
                                                     <td><?php echo $tema['nombre_nivel']; ?></td>
                                                     <td>
-                                                        <a href="editar_tema.php?id=<?php echo $tema['id']; ?>" class="btn btn-info btn-sm">Editar</a>
-                                                        <a href="javascript:borrarTema(<?php echo $tema['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
+                                                        <a href="editar_tema.php?txtID=<?php echo $tema['id']; ?>" class="btn btn-info btn-sm">Editar</a>
+                                                        <a href="javascript:borrar(<?php echo $tema['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
                                                     </td>
                                                 </tr>
                                             <?php } ?>

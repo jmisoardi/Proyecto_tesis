@@ -62,7 +62,7 @@
         $sentencia->execute();
         //Mensaje de Registro Actualizado (Sweet alert).
         $mensaje="Registro Actualizado";
-        header("Location:index.php?mensaje=".$mensaje);
+        header("Location:material_eje.php?mensaje=".$mensaje);
     }
 ?>
 <?php include("../templates_doc/header_doc.php");?>
@@ -100,7 +100,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="archivo" class="form-label"><u>archivo:</u></label>
-                        <input type="number" 
+                        <input type="text" 
                             value= "<?php echo $archivo; ?>"
                             class="form-control w-auto" name="archivo" id="archivo" aria-describedby="helpId" placeholder="Ingrese archivo"/>            
                     </div>
@@ -118,7 +118,7 @@
 
                     <!--Button bs5-button-default y bs5-button-a (sirve para direccionar) -->
                     <button type="submit" class="btn btn-success">Actualizar</button>
-                    <a name="" id="" class="btn btn-primary" href="index.php" role="button" >Cancelar</a>
+                    <a name="" id="" class="btn btn-primary" href="material_eje.php" role="button" >Cancelar</a>
                 </form>
             </div>
         </div>
