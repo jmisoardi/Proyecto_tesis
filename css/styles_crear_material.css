@@ -1,0 +1,69 @@
+.contenedor-mensaje {
+    margin-top: 40px; /* Ajusta el valor para que coincida con el espacio de unidad y perfil */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 0px;
+}
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* .msg {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.msg.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+.msg.error {
+    background-color: #f8d7da;
+    color: #721c24;
+} */
+.msg {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 1.5em; /* Aumenta el tamaño del texto */
+    font-weight: bold; /* Hace que el texto sea más pesado */
+    width: 100%; /* Define un ancho mayor para destacarlo */
+    max-width: 800px; /* Limita el ancho máximo */
+    text-align: center; /* Centra el texto para mayor énfasis */
+}
+
+/* Estilo para mensajes de éxito */
+.msg.success {
+    background-color: #d4edda; /* Color de fondo existente */
+    color: #155724; /* Color de texto existente */
+    border: 2px solid #155724; /* Añade un borde con el mismo color del texto */
+}
+
+/* Estilo para mensajes de error */
+.msg.error {
+    background-color: #f8d7da; /* Color de fondo existente */
+    color: #721c24; /* Color de texto existente */
+    border: 2px solid #721c24; /* Añade un borde con el mismo color del texto */
+}

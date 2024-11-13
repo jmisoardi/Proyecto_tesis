@@ -16,7 +16,7 @@
         //Utilizamos el FETCH_LAZY para que cargue solo un registro.
         $registro = $sentencia->fetch(PDO::FETCH_LAZY);
             $titulo = $registro["titulo"]; 
-            $subtitulo = $registro["subtitulo"]; 
+            $descripcion = $registro["descripcion"]; 
             $archivo = $registro["archivo"]; 
             
             $nivel_id = $registro["nivel_id"];
@@ -35,7 +35,7 @@
         $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : "";
         
         $titulo = (isset($_POST["titulo"])) ? $_POST["titulo"]: "";
-        $subtitulo = (isset($_POST["subtitulo"])) ? $_POST["subtitulo"]: "";
+        $descripcion = (isset($_POST["descripcion"])) ? $_POST["descripcion"]: "";
         $archivo = (isset($_POST["archivo"])) ? $_POST["archivo"]: "";
         
         $nivel_id = (isset($_POST["nivel_id"])) ? $_POST["nivel_id"]: "";
@@ -45,21 +45,19 @@
         UPDATE tbl_tema
         SET
             titulo=:titulo,
-            subtitulo=:subtitulo,
+            descripcion=:descripcion,
             archivo=:archivo,
             nivel_id=:nivel_id
         WHERE id=:id ");
         
         //Asignando los valores que vienen del  método POST (Los que vienen del formulario).
         $sentencia->bindParam(":titulo",$titulo);
-        $sentencia->bindParam(":subtitulo",$subtitulo);
+        $sentencia->bindParam(":descripcion",$descripcion);
         $sentencia->bindParam(":archivo",$archivo);
-        
-        
         $sentencia->bindParam(":nivel_id",$nivel_id);
-        
         $sentencia->bindParam(":id",$txtID);
         $sentencia->execute();
+        
         //Mensaje de Registro Actualizado (Sweet alert).
         $mensaje="Registro Actualizado";
         header("Location:index.php?mensaje=".$mensaje);
@@ -67,60 +65,75 @@
 ?>
 
 <?php include("../templates_doc/header_doc.php");?>
-<!--Estilo para Datos Personales-->
-    <style> 
-        h1 {
-            text-align: center; font-family: Georgia, sans-serif;
-        }
-    </style>
-        <h1>Materiales</h1> 
-        <div class="card mx-auto" style="max-width: 900px;">
-            <div class="card-header" style="background-color:bisque">Ingrese los datos para Actualizar</div>
-            <div class="card-body">
-                
-            <!--Formulario para cargar los datos, con style de color-->   
-                <form  action="" method="post" enctype="multipart/form-data" style="background-color:azure">
-                    <div class="mb-3">
-                        <label for="txtID" class="form-label">ID:</label>
-                        <!--En este input se encuentra el readonly es que un atributo de lectura solamente, el usuario no puede modificar el valor-->
-                        <input type="text" 
-                            value= "<?php echo $txtID; ?>"
-                            class="form-control w-auto" readonly name="txtID" id="txtID" aria-describedby="helpId" placeholder="ID" />    
-                    </div>        
-                    <div class="mb-3">
-                        <label for="titulo" class="form-label"><u>titulo:</u></label>
-                        <input type="text" 
-                            value= "<?php echo $titulo; ?>"
-                            class="form-control" name="titulo" id="titulo" aria-describedby="helpId" placeholder="Ingrese titulo"/>
-                    </div>
-                    <div class="mb-3"> 
-                        <label for="subtitulo" class="form-label"><u>subtitulo:</u></label>
-                        <input type="text" 
-                            value= "<?php echo $subtitulo; ?>"
-                            class="form-control" name="subtitulo" id="subtitulo" aria-describedby="helpId" placeholder="Ingrese subtitulo"/>
-                    </div>
-                    <div class="mb-3">
-                        <label for="archivo" class="form-label"><u>archivo:</u></label>
-                        <input type="text" 
-                            value= "<?php echo $archivo; ?>"
-                            class="form-control w-auto" name="archivo" id="archivo" aria-describedby="helpId" placeholder="Ingrese archivo"/>            
-                    </div>
-                    <div class="mb-3">
-                        <label for="nivel_id" class="form-label"><u>Nivel:</u></label>
-                            <select
-                                class="form-select w-auto form-select-ms" name="nivel_id" id="nivel_id">
-                                <?php foreach ($lista_tbl_nivel as $registro) {?>      
-                                    <option <?php echo ($nivel_id== $registro['id'])? "selected" : ""; ?> value ="<?php echo $registro['id']?>">
-                                                                                                                <?php echo $registro['nombre_nivel']?>
-                                    </option>
-                                <?php }?>
-                            </select>
-                    </div>
+<link rel="stylesheet" href="../../../css/styles_crear_material.css">
+    <!--Estilo para Materiales-->
+    <body>      
+        <style> 
+            h1 {
+                text-align: center; font-family: Georgia, sans-serif;
+            }
+        </style>
 
-                    <!--Button bs5-button-default y bs5-button-a (sirve para direccionar) -->
-                    <button type="submit" class="btn btn-success">Actualizar</button>
-                    <a name="" id="" class="btn btn-primary" href="index.php" role="button" >Cancelar</a>
-                </form>
+        <div class="contenedor-material">
+            <br>
+            <div class="card mx-auto" style="max-width: 500px;">
+                <div class="card-header" style="background-color:bisque">    
+                    <h1 style="text-align: center; font-family: Georgia, sans-serif;">-Actualizar Contenido-</h1>
+                </div>
+            </div>
+            <br>
+            <div class="card mx-auto" style="max-width: 800px;">
+                <div class="container-fluid py-5" style="background-color:azure">
+        
+                    <div class="card-body">
+                        <!-- Formulario para los datos del envío de mensaje -->
+                        <form action="" method="post" enctype="multipart/form-data" style="background-color:azure">
+                            <div class="mb-3">
+                                <label for="txtID" class="form-label">ID:</label>
+                                <!--En este input se encuentra el readonly es que un atributo de lectura solamente, el usuario no puede modificar el valor-->
+                                <input type="text" 
+                                    value= "<?php echo $txtID; ?>"
+                                    class="form-control w-auto" readonly name="txtID" id="txtID" aria-describedby="helpId" placeholder="ID" />    
+                            </div>        
+                            <div class="form-group">
+                                <label for="titulo"><h5><u>Titulo</u></h5></label>
+                                <input type="text"  
+                                    value= "<?php echo $titulo; ?>" id="titulo" name="titulo" >
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="descripcion"><h5><u>Descripción</u></h5></label>
+                                <textarea id="descripcion" name="descripcion" rows="5"><?php echo $descripcion; ?></textarea>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="archivo"><h5><u>Archivo</u></h5></label>
+                                <input type="textarea" 
+                                    value= "<?php echo $archivo; ?>"  id="archivo" name="archivo" required>
+                            </div>
+                            <br>
+                            <div class="mb-3">
+                                <label for="nivel_id" class="form-label"><h5><u>Nivel:</u></h5></label>
+                                    <select
+                                        class="form-select w-auto form-select-ms" name="nivel_id" id="nivel_id">
+                                        <?php foreach ($lista_tbl_nivel as $registro) {?>      
+                                            <option <?php echo ($nivel_id== $registro['id'])? "selected" : ""; ?> value ="<?php echo $registro['id']?>">
+                                                                                                                        <?php echo $registro['nombre_nivel']?>
+                                            </option>
+                                        <?php }?>
+                                    </select>
+                            </div>
+                            <br>
+                            <br>
+                            <!--Button bs5-button-default y bs5-button-a (sirve para direccionar) -->
+                            <button type="submit" class="btn btn-success">Actualizar</button>
+                            <a name="" id="" class="btn btn-primary" href="index.php" role="button" >Cancelar</a>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-        <?php include("../templates_doc/footer_doc.php"); ?>
+    </body>
+    <br>
+    <br>
+<?php include("../templates_doc/footer_doc.php"); ?>

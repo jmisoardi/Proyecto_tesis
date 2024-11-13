@@ -25,9 +25,9 @@
         $sentencia->bindParam(":id", $txtID);
         $sentencia->execute();
         
-        // Mensaje de Registro Eliminado
+        /* // Mensaje de Registro Eliminado
         $mensaje = "Registro Eliminado";
-        header("Location:index.php?mensaje=" . $mensaje);
+        header("Location:index.php?mensaje=" . $mensaje); */
         
     }
     /* if (isset($_GET['txtID'])) { */
@@ -40,42 +40,42 @@
         } */
 
         // Sentencia, datos de tabla
-        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.subtitulo, tbl_tema.archivo, tbl_nivel.nombre_nivel  
+        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.descripcion, tbl_tema.archivo, tbl_nivel.nombre_nivel  
                                         FROM tbl_tema 
                                         LEFT JOIN tbl_nivel ON tbl_tema.nivel_id = tbl_nivel.id WHERE tbl_nivel.id = 1");
         $sentencia->execute();
         $lista_tbl_tema_a1 = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
         // Sentencia, datos de tabla
-        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.subtitulo, tbl_tema.archivo, tbl_nivel.nombre_nivel  
+        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.descripcion, tbl_tema.archivo, tbl_nivel.nombre_nivel  
                                         FROM tbl_tema 
                                         LEFT JOIN tbl_nivel ON tbl_tema.nivel_id = tbl_nivel.id WHERE tbl_nivel.id = 3");
         $sentencia->execute();
         $lista_tbl_tema_a2 = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
         // Sentencia, datos de tabla
-        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.subtitulo, tbl_tema.archivo, tbl_nivel.nombre_nivel  
+        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.descripcion, tbl_tema.archivo, tbl_nivel.nombre_nivel  
                                         FROM tbl_tema 
                                         LEFT JOIN tbl_nivel ON tbl_tema.nivel_id = tbl_nivel.id WHERE tbl_nivel.id = 7");
         $sentencia->execute();
         $lista_tbl_tema_b1 = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
         // Sentencia, datos de tabla
-        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.subtitulo, tbl_tema.archivo, tbl_nivel.nombre_nivel  
+        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.descripcion, tbl_tema.archivo, tbl_nivel.nombre_nivel  
                                         FROM tbl_tema 
                                         LEFT JOIN tbl_nivel ON tbl_tema.nivel_id = tbl_nivel.id WHERE tbl_nivel.id = 9");
         $sentencia->execute();
         $lista_tbl_tema_b2 = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
         // Sentencia, datos de tabla
-        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.subtitulo, tbl_tema.archivo, tbl_nivel.nombre_nivel  
+        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.descripcion, tbl_tema.archivo, tbl_nivel.nombre_nivel  
                                         FROM tbl_tema 
                                         LEFT JOIN tbl_nivel ON tbl_tema.nivel_id = tbl_nivel.id WHERE tbl_nivel.id = 11");
         $sentencia->execute();
         $lista_tbl_tema_c1 = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
         // Sentencia, datos de tabla
-        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.subtitulo, tbl_tema.archivo, tbl_nivel.nombre_nivel  
+        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.descripcion, tbl_tema.archivo, tbl_nivel.nombre_nivel  
                                         FROM tbl_tema 
                                         LEFT JOIN tbl_nivel ON tbl_tema.nivel_id = tbl_nivel.id WHERE tbl_nivel.id = 12");
         $sentencia->execute();
@@ -93,12 +93,12 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="../../../css/styles.css">
-<link rel="stylesheet" href="../../../css/styles_material-eje.css">
+<link rel="stylesheet" href="../../../css/styles_unidad_index.css">
 
 <!-- Incluye los scripts de JavaScript en el orden correcto -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
+<!-- <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script> -->
 <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
 
 <!-- Script para inicializar DataTable y Acordeón -->
@@ -182,7 +182,7 @@
                                                 <tr>
                                                     <th>ID</th>
                                                     <th>Título</th>
-                                                    <th>Subtítulo</th>
+                                                    <th>Descripción</th>
                                                     <th>Archivo</th>
                                                     <th>Nivel</th>
                                                     <th>Acciones</th>
@@ -193,7 +193,7 @@
                                                     <tr>
                                                         <td><?php echo $tema_a1['id']; ?></td>
                                                         <td><?php echo $tema_a1['titulo']; ?></td>
-                                                        <td><?php echo $tema_a1['subtitulo']; ?></td>
+                                                        <td><?php echo $tema_a1['descripcion']; ?></td>
                                                         <td>
                                                             <?php if (!empty($tema_a1['archivo'])) { ?>
                                                                 <a href="uploads/<?php echo $tema_a1['archivo']; ?>" target="_blank">Descargar</a>
@@ -227,7 +227,7 @@
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Título</th>
-                                                <th>Subtítulo</th>
+                                                <th>Descripción</th>
                                                 <th>Archivo</th>
                                                 <th>Nivel</th>
                                                 <th>Acciones</th>
@@ -238,7 +238,7 @@
                                                 <tr>
                                                     <td><?php echo $tema_a2['id']; ?></td>
                                                     <td><?php echo $tema_a2['titulo']; ?></td>
-                                                    <td><?php echo $tema_a2['subtitulo']; ?></td>
+                                                    <td><?php echo $tema_a2['descripcion']; ?></td>
                                                     <td>
                                                         <?php if (!empty($tema_a2['archivo'])) { ?>
                                                             <a href="uploads/<?php echo $tema_a2['archivo']; ?>" target="_blank">Descargar</a>
@@ -272,7 +272,7 @@
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Título</th>
-                                                <th>Subtítulo</th>
+                                                <th>Descripción</th>
                                                 <th>Archivo</th>
                                                 <th>Nivel</th>
                                                 <th>Acciones</th>
@@ -283,7 +283,7 @@
                                                 <tr>
                                                     <td><?php echo $tema_b1['id']; ?></td>
                                                     <td><?php echo $tema_b1['titulo']; ?></td>
-                                                    <td><?php echo $tema_b1['subtitulo']; ?></td>
+                                                    <td><?php echo $tema_b1['descripcion']; ?></td>
                                                     <td>
                                                         <?php if (!empty($tema_b1['archivo'])) { ?>
                                                             <a href="uploads/<?php echo $tema_b1['archivo']; ?>" target="_blank">Descargar</a>
@@ -317,7 +317,7 @@
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Título</th>
-                                                <th>Subtítulo</th>
+                                                <th>Descripción</th>
                                                 <th>Archivo</th>
                                                 <th>Nivel</th>
                                                 <th>Acciones</th>
@@ -328,7 +328,7 @@
                                                 <tr>
                                                     <td><?php echo $tema_b2['id']; ?></td>
                                                     <td><?php echo $tema_b2['titulo']; ?></td>
-                                                    <td><?php echo $tema_b2['subtitulo']; ?></td>
+                                                    <td><?php echo $tema_b2['descripcion']; ?></td>
                                                     <td>
                                                         <?php if (!empty($tema_b2['archivo'])) { ?>
                                                             <a href="uploads/<?php echo $tema_b2['archivo']; ?>" target="_blank">Descargar</a>
@@ -362,7 +362,7 @@
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Título</th>
-                                                <th>Subtítulo</th>
+                                                <th>Descripción</th>
                                                 <th>Archivo</th>
                                                 <th>Nivel</th>
                                                 <th>Acciones</th>
@@ -373,7 +373,7 @@
                                                 <tr>
                                                     <td><?php echo $tema_c1['id']; ?></td>
                                                     <td><?php echo $tema_c1['titulo']; ?></td>
-                                                    <td><?php echo $tema_c1['subtitulo']; ?></td>
+                                                    <td><?php echo $tema_c1['descripcion']; ?></td>
                                                     <td>
                                                         <?php if (!empty($tema_c1['archivo'])) { ?>
                                                             <a href="uploads/<?php echo $tema_c1['archivo']; ?>" target="_blank">Descargar</a>
@@ -407,7 +407,7 @@
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Título</th>
-                                                <th>Subtítulo</th>
+                                                <th>Descripción</th>
                                                 <th>Archivo</th>
                                                 <th>Nivel</th>
                                                 <th>Acciones</th>
@@ -418,7 +418,7 @@
                                                 <tr>
                                                     <td><?php echo $tema_c2['id']; ?></td>
                                                     <td><?php echo $tema_c2['titulo']; ?></td>
-                                                    <td><?php echo $tema_c2['subtitulo']; ?></td>
+                                                    <td><?php echo $tema_c2['descripcion']; ?></td>
                                                     <td>
                                                         <?php if (!empty($tema_c2['archivo'])) { ?>
                                                             <a href="uploads/<?php echo $tema_c2['archivo']; ?>" target="_blank">Descargar</a>
