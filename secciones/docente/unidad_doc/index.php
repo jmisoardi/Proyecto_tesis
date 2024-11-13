@@ -93,7 +93,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="../../../css/styles.css">
-<link rel="stylesheet" href="../../../css/styles_unidad_index.css">
+<!-- <link rel="stylesheet" href="../../../css/styles_unidad_index.css"> -->
 
 <!-- Incluye los scripts de JavaScript en el orden correcto -->
 <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
