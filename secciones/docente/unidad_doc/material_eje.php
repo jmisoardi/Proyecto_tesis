@@ -18,7 +18,6 @@
             $rutaArchivo = "../unidad_doc/img_temp/" . $archivo;
             if (file_exists($rutaArchivo)) {
                 unlink($rutaArchivo); // Elimina el archivo físicamente
-            }
         } */
     
         // Preparamos la conexión de borrado en la base de datos
@@ -147,7 +146,7 @@
                                                     <td><?php echo $tema['nombre_nivel']; ?></td>
                                                     <td>
                                                         <a href="editar_tema.php?txtID=<?php echo $tema['id']; ?>" class="btn btn-info btn-sm">Editar</a>
-                                                        <a href="javascript:borrar(<?php echo $tema['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
+                                                        <!-- <a href="javascript:borrar(<?php echo $tema['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a> -->
                                                     </td>
                                                 </tr>
                                             <?php } ?>
