@@ -156,71 +156,70 @@
     </script>
 
     <body>
-        <!-- Acordeón para Materiales Disponibles con jQuery UI -->
-        <!-- <div id="accordion"> -->
-            <!-- Primera sección del acordeón -->
             <!--Estilo para el titulo Personal-->
         <style> 
             h1 {
                 text-align: center; font-family: Georgia, sans-serif;
             }
         </style>
-
-            <div class="card-header" style="background-color:bisque">
-                <a name="" id="" href="crear_tema.php" role="button" >
-                    <img src="../../../css/imagen_tesis/icons/icon_agregar.png" style="width: 48px; height: 48px; vertical-align: middle;">
-                </a>
+            
+            <!-- Tabla para mostrar (Sección 1) -->
+            <div class="card-header" style="background-color:bisque;">
                 <br>
-                <!-- Tabla para mostrar archivos subidos (Sección 1) -->
-                        <div class="unidad">
-                            <h1>Materiales disponibles - Sección A0-A1</h1>
-                            <div class="card-header" style="background-color: bisque;">
-                                <div class="card-body-xl" style="background-color: azure;">
-                                    <div class="table-responsive">
-                                        <table class="table" id="tabla_id_1">
-                                            <thead>
-                                                <tr>
-                                                    <th>ID</th>
-                                                    <th>Título</th>
-                                                    <th>Descripción</th>
-                                                    <th>Archivo</th>
-                                                    <th>Nivel</th>
-                                                    <th>Acciones</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php foreach ($lista_tbl_tema_a1 as $tema_a1) { ?>
-                                                    <tr>
-                                                        <td><?php echo $tema_a1['id']; ?></td>
-                                                        <td><?php echo $tema_a1['titulo']; ?></td>
-                                                        <td><?php echo $tema_a1['descripcion']; ?></td>
-                                                        <td>
-                                                            <?php if (!empty($tema_a1['archivo'])) { ?>
-                                                                <a href="uploads/<?php echo $tema_a1['archivo']; ?>" target="_blank">Descargar</a>
-                                                            <?php } else { ?>
-                                                                No hay archivo
-                                                            <?php } ?>
-                                                        </td>
-                                                        <td><?php echo $tema_a1['nombre_nivel']; ?></td>
-                                                        <td>
-                                                            <a href="editar_tema.php?txtID=<?php echo $tema_a1['id']; ?>" class="btn btn-info btn-sm">Editar</a>
-                                                            <a href="javascript:borrar(<?php echo $tema_a1['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
-                                                        </td>
-                                                    </tr>
+                <h1>Materiales disponibles - Sección A0-A1</h1>
+                <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
+                <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
+                    <h2>-Sección A0-A1-</h2>
+                    <div class="card-body-sm" style="background-color: azure;">
+                        <div class="table-responsive">
+                            <table class="table" id="tabla_id_1">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Título</th>
+                                        <th>Descripción</th>
+                                        <th>Archivo</th>
+                                        <th>Nivel</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($lista_tbl_tema_a1 as $tema_a1) { ?>
+                                        <tr>
+                                            <td><?php echo $tema_a1['id']; ?></td>
+                                            <td><?php echo $tema_a1['titulo']; ?></td>
+                                            <td><?php echo $tema_a1['descripcion']; ?></td>
+                                            <td>
+                                                <?php if (!empty($tema_a1['archivo'])) { ?>
+                                                    <a href="uploads/<?php echo $tema_a1['archivo']; ?>" target="_blank">Descargar</a>
+                                                <?php } else { ?>
+                                                    No hay archivo
                                                 <?php } ?>
-                                            </tbody>
-                                        </table>
-                                        
-                                    </div>
-                                </div>
-                            </div>
+                                            </td>
+                                            <td><?php echo $tema_a1['nombre_nivel']; ?></td>
+                                            <td>
+                                                <a href="editar_tema.php?txtID=<?php echo $tema_a1['id']; ?>" class="btn btn-info btn-sm">Editar</a>
+                                                <a href="javascript:borrar(<?php echo $tema_a1['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                            
                         </div>
+                    </div>
+                </div>
+                <br>
+            </div>
                     <br>
-                    <!-- Tabla para mostrar archivos subidos (Sección 2) -->
-                    <div class="unidad">
-                        <h1>Materiales disponibles - Sección A2</h1>
+                    <!-- Tabla para mostrar (Sección 2) -->
+            <div class="card-header" style="background-color:bisque;">
+                <br>
+                    <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
+                    <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;" >
+                        <h2>-Sección A2-</h2>
                         <div class="card-header" style="background-color: bisque;">
-                            <div class="card-body-xl" style="background-color: azure;">
+                            <div class="card-body-md" style="background-color: azure;">
                                 <div class="table-responsive">
                                     <table class="table" id="tabla_id_2">
                                         <thead>
@@ -260,12 +259,17 @@
                             </div>
                         </div>
                     </div>
-                    <br>
-                    <!-- Tabla para mostrar archivos subidos (Sección 3) -->
-                    <div class="unidad">
-                        <h1>Materiales disponibles - Sección B1</h1>
+                <br>
+            </div>
+            <br>
+            <!-- Tabla para mostrar (Sección 3) -->
+            <div class="card-header" style="background-color:bisque;">
+                <br>
+                    <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
+                    <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
+                        <h2>-Sección B1-</h2>
                         <div class="card-header" style="background-color: bisque;">
-                            <div class="card-body-xl" style="background-color: azure;">
+                            <div class="card-body-md" style="background-color: azure;">
                                 <div class="table-responsive">
                                     <table class="table" id="tabla_id_3">
                                         <thead>
@@ -305,12 +309,17 @@
                             </div>
                         </div>
                     </div>
-                    <br>
-                    <!-- Tabla para mostrar archivos subidos (Sección 4) -->
-                    <div class="unidad">
-                        <h1>Materiales disponibles - Sección B2</h1>
+                <br>
+            </div>
+            <br>
+            <!-- Tabla para mostrar (Sección 4) -->
+            <div class="card-header" style="background-color:bisque;">
+                <br>
+                    <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
+                    <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
+                        <h2>-Sección B2-</h2>
                         <div class="card-header" style="background-color: bisque;">
-                            <div class="card-body-xl" style="background-color: azure;">
+                            <div class="card-body-md" style="background-color: azure;">
                                 <div class="table-responsive">
                                     <table class="table" id="tabla_id_4">
                                         <thead>
@@ -350,12 +359,17 @@
                             </div>
                         </div>
                     </div>
-                    <br>
-                    <!-- Tabla para mostrar archivos subidos (Sección 5) -->
-                    <div class="unidad">
-                        <h1>Materiales disponibles - Sección C1</h1>
+                <br>
+            </div>
+            <br>
+            <!-- Tabla para mostrar (Sección 5) -->
+            <div class="card-header" style="background-color:bisque;">
+                <br>
+                    <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
+                    <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
+                        <h2>-Sección C1-</h2>
                         <div class="card-header" style="background-color: bisque;">
-                            <div class="card-body-xl" style="background-color: azure;">
+                            <div class="card-body-md" style="background-color: azure;">
                                 <div class="table-responsive">
                                     <table class="table" id="tabla_id_5">
                                         <thead>
@@ -395,12 +409,17 @@
                             </div>
                         </div>
                     </div>
-                    <br>
-                    <!-- Tabla para mostrar archivos subidos (Sección 6) -->
-                    <div class="unidad">
-                        <h1>Materiales disponibles - Sección C2</h1>
+                <br>
+            </div>
+            <br>
+            <!-- Tabla para mostrar (Sección 6) -->
+            <div class="card-header" style="background-color:bisque;">
+                <br>
+                    <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
+                    <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
+                        <h2>-Sección C2-</h2>                        
                         <div class="card-header" style="background-color: bisque;">
-                            <div class="card-body-xl" style="background-color: azure;">
+                            <div class="card-body-md" style="background-color: azure;">
                                 <div class="table-responsive">
                                     <table class="table" id="tabla_id_6">
                                         <thead>
@@ -440,12 +459,12 @@
                             </div>
                         </div>
                     </div>
-                    <br>
+                <br>
             </div>    
             <br>
             <br>
             </div>
-        </body>
+    </body>
     <br>
     <br>
     <!-- <div class="text-center">

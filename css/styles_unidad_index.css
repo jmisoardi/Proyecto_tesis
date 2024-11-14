@@ -1,25 +1,25 @@
 /* Títulos (h3) */
 h1 {
-    font-weight: 900;
+    font-weight: 500;
     font-size: 3rem;
     text-align: center;
-    color: #15b95f;
+    color: #64baad;
     line-height: 1.2;
 }
 
 /* Tabla */
-table {
-    width: 100%;
+/* table {
+    width: 90%;
     border-collapse: collapse;
     font-size: 0.9rem;
     max-width: 100%;
     margin: 20px auto;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+} */
 
 /* Encabezados de la Tabla */
-thead th {
+/* thead th {
     font-weight: 600;
     padding: 1rem;
     text-align: center;
@@ -27,18 +27,18 @@ thead th {
     background-color: #f4f0fa;
     border-bottom: 2px solid #d8c8e5;
 }
-
+ */
 /* Celdas de la Tabla */
-th,
+/* th,
 td {
     padding: 0.8rem;
     text-align: center;
     vertical-align: middle;
     border-top: 1px solid #e0d0f0;
-}
+} */
 
 /* Estilo para los enlaces */
-a {
+/* a {
     color: #524ffa;
     font-weight: 600;
     text-decoration: none;
@@ -46,10 +46,10 @@ a {
 }
 a {
     margin-left: auto;
-}
-a:hover {
+} */
+/* a:hover {
     border-color: #a083bc;
-}
+} */
 
 /* Botones de Acciones */
 .btn-info {
@@ -58,7 +58,7 @@ a:hover {
     color: #fff;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.10s ease-in-out;
 }
 
 /* .btn-info:hover {
@@ -71,7 +71,7 @@ a:hover {
     color: #fff;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.10s ease-in-out;
 }
 
 .btn-danger:hover {
@@ -79,9 +79,9 @@ a:hover {
 }
 
 /* Diseño Responsivo para la Tabla */
-.table-responsive {
+/* .table-responsive {
     overflow-x: auto;
-}
+} */
 
 /* Efecto Hover para las Filas de la Tabla */
 tbody tr:hover {
