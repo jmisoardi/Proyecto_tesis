@@ -6,6 +6,24 @@
         // Verificamos si está presente en la URL txtID, asignamos el valor en $_GET['txtID']
         $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
         
+         // 1. Obtener el nombre del archivo antes de eliminar el registro
+        $sentencia = $conexion->prepare("SELECT archivo FROM tbl_tema WHERE id = :id");
+        $sentencia->bindParam(":id", $txtID);
+        $sentencia->execute();
+        $registro = $sentencia->fetch(PDO::FETCH_ASSOC);
+        $archivo = $registro['archivo'];
+
+        // 2. Eliminar el archivo físico si existe
+        $rutaArchivo = $_SERVER['DOCUMENT_ROOT'] . "/Proyecto_tesis/uploads/" . $archivo;
+        if (file_exists($rutaArchivo)) {
+            unlink($rutaArchivo);
+        }
+
+        // 3. Eliminar el registro de la base de datos
+        $sentencia = $conexion->prepare("DELETE FROM tbl_tema WHERE id = :id");
+        $sentencia->bindParam(":id", $txtID);
+        $sentencia->execute();
+
        /*  // Preparamos la consulta para obtener el nombre del archivo antes de eliminarlo
         $sentencia = $conexion->prepare("SELECT archivo FROM tbl_material WHERE id = :id");
         $sentencia->bindParam(":id", $txtID);
@@ -191,11 +209,12 @@
                                             <td><?php echo $tema_a1['descripcion']; ?></td>
                                             <td>
                                                 <?php if (!empty($tema_a1['archivo'])) { ?>
-                                                    <a href="../uploads/<?php echo $tema_a1['archivo']; ?>" target="_blank"><?php echo $tema_a1['archivo'];?></a>
+                                                    <a href="/Proyecto_tesis/uploads/<?php echo $tema_a1['archivo']; ?>" target="_blank"><?php echo $tema_a1['archivo']; ?></a>
                                                 <?php } else { ?>
                                                     No hay archivo
                                                 <?php } ?>
                                             </td>
+
 
                                             <td><?php echo $tema_a1['nombre_nivel']; ?></td>
                                             <td>
@@ -241,7 +260,7 @@
                                                     <td><?php echo $tema_a2['descripcion']; ?></td>
                                                     <td>
                                                         <?php if (!empty($tema_a2['archivo'])) { ?>
-                                                            <a href="../unidad_doc/uploads/?php echo $tema_a2['archivo']; ?>" target="_blank"><?php echo $tema_a1['archivo'];?></a>
+                                                            <a href="/Proyecto_tesis/uploads/<?php echo $tema_a2['archivo']; ?>" target="_blank"><?php echo $tema_a2['archivo']; ?></a>
                                                         <?php } else { ?>
                                                             No hay archivo
                                                         <?php } ?>
@@ -291,7 +310,7 @@
                                                     <td><?php echo $tema_b1['descripcion']; ?></td>
                                                     <td>
                                                         <?php if (!empty($tema_b1['archivo'])) { ?>
-                                                            <a href="uploads/<?php echo $tema_b1['archivo']; ?>" target="_blank">Descargar</a>
+                                                            <a href="/Proyecto_tesis/uploads/<?php echo $tema_b1['archivo']; ?>" target="_blank"><?php echo $tema_b1['archivo']; ?></a>
                                                         <?php } else { ?>
                                                             No hay archivo
                                                         <?php } ?>
@@ -341,7 +360,7 @@
                                                     <td><?php echo $tema_b2['descripcion']; ?></td>
                                                     <td>
                                                         <?php if (!empty($tema_b2['archivo'])) { ?>
-                                                            <a href="uploads/<?php echo $tema_b2['archivo']; ?>" target="_blank">Descargar</a>
+                                                            <a href="/Proyecto_tesis/uploads/<?php echo $tema_b2['archivo']; ?>" target="_blank"><?php echo $tema_b2['archivo']; ?></a>
                                                         <?php } else { ?>
                                                             No hay archivo
                                                         <?php } ?>
@@ -391,7 +410,7 @@
                                                     <td><?php echo $tema_c1['descripcion']; ?></td>
                                                     <td>
                                                         <?php if (!empty($tema_c1['archivo'])) { ?>
-                                                            <a href="uploads/<?php echo $tema_c1['archivo']; ?>" target="_blank">Descargar</a>
+                                                            <a href="/Proyecto_tesis/uploads/<?php echo $tema_c1['archivo']; ?>" target="_blank"><?php echo $tema_c1['archivo']; ?></a>
                                                         <?php } else { ?>
                                                             No hay archivo
                                                         <?php } ?>
@@ -441,7 +460,7 @@
                                                     <td><?php echo $tema_c2['descripcion']; ?></td>
                                                     <td>
                                                         <?php if (!empty($tema_c2['archivo'])) { ?>
-                                                            <a href="uploads/<?php echo $tema_c2['archivo']; ?>" target="_blank">Descargar</a>
+                                                            <a href="/Proyecto_tesis/uploads/<?php echo $tema_c2['archivo']; ?>" target="_blank"><?php echo $tema_c2['archivo']; ?></a>
                                                         <?php } else { ?>
                                                             No hay archivo
                                                         <?php } ?>

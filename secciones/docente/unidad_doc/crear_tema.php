@@ -1,38 +1,48 @@
-<?php 
-    /* session_start(); */
-    include("../../../bd.php");
-    
-    if ($_POST) {
-        $titulo = $_POST["titulo"];
-        $descripcion = $_POST["descripcion"];
-        $nivel_id = $_POST["nivel_id"];
-        $archivo = $_FILES['archivo']['name'];
-        $rutaArchivo = '';
-    
-        // Verificar si se subió un archivo
-        if ($archivo) {
-            // Generar una ruta única para el archivo para evitar sobrescribir
-            $nombreArchivo = time() . '_' . basename($archivo);
-            $rutaArchivo = "../uploads/" . $nombreArchivo;
-    
-            // Mover el archivo a la carpeta 'uploads'
-            if (move_uploaded_file($_FILES['archivo']['tmp_name'], $rutaArchivo)) {
-                // Insertar los datos en la base de datos
-                $sentencia = $conexion->prepare("INSERT INTO tbl_tema (titulo, descripcion, archivo, nivel_id)
-                                                VALUES (:titulo, :descripcion, :archivo, :nivel_id)");
-                $sentencia->bindParam(":titulo", $titulo);
-                $sentencia->bindParam(":descripcion", $descripcion);
-                $sentencia->bindParam(":archivo", $nombreArchivo);
-                $sentencia->bindParam(":nivel_id", $nivel_id);
-                $sentencia->execute();
-    
-                $mensaje = "Registro Agregado";
-                header("Location:index.php?mensaje=" . $mensaje);
-            } else {
-                echo "Error al subir el archivo.";
-            }
+<?php
+session_start();
+include("../../../bd.php");
+
+if ($_POST) {
+    // Recibir los datos del formulario
+    $titulo = $_POST["titulo"];
+    $descripcion = $_POST["descripcion"];
+    $nivel_id = $_POST["nivel_id"];
+    $archivo = $_FILES['archivo']['name']; // Nombre del archivo subido
+
+    // Verificar si se subió un archivo
+    if ($archivo) {
+        // Generar un nombre único para el archivo para evitar duplicados
+        $nombreArchivo = time() . '_' . basename($archivo);
+        
+        // Usar ruta absoluta para guardar el archivo en la carpeta 'uploads'
+        $rutaArchivo = $_SERVER['DOCUMENT_ROOT'] . "/Proyecto_tesis/uploads/" . $nombreArchivo;
+
+        // Mover el archivo subido a la carpeta 'uploads'
+        if (move_uploaded_file($_FILES['archivo']['tmp_name'], $rutaArchivo)) {
+            // Insertar los datos en la base de datos si el archivo se subió con éxito
+            $sentencia = $conexion->prepare("INSERT INTO tbl_tema (titulo, descripcion, archivo, nivel_id)
+                                            VALUES (:titulo, :descripcion, :archivo, :nivel_id)");
+            $sentencia->bindParam(":titulo", $titulo);
+            $sentencia->bindParam(":descripcion", $descripcion);
+            $sentencia->bindParam(":archivo", $nombreArchivo);
+            $sentencia->bindParam(":nivel_id", $nivel_id);
+            $sentencia->execute();
+
+            // Redirigir con un mensaje de éxito
+            $mensaje = "Registro Agregado";
+            header("Location:index.php?mensaje=" . $mensaje);
+            exit;
+        } else {
+            // Mostrar error si el archivo no se pudo mover
+            echo "Error al subir el archivo. Verifica los permisos de la carpeta 'uploads'.";
         }
+    } else {
+        // Mensaje de error si no se subió ningún archivo
+        echo "No se seleccionó ningún archivo para subir.";
     }
+}
+
+
     /* if ($_POST){
         print_r($_POST);
         

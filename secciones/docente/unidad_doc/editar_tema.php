@@ -1,86 +1,75 @@
-<?php 
-    session_start();
-    // Incluimos la base de datos.
-    include("../../../bd.php");
-    //Recepción del envío txtID.    
-    
-    if (isset($_GET['txtID'])) {
-        //Verificamos si está presente en la URL txtID, asignamos el valor en  $_GET['txtID'] de lo contrario no se asigna ningún valor con :"" .
-        $txtID = (isset($_GET['txtID'])) ? $_GET['txtID'] : "";
-        
-        //Preparamos la conexion de Editar.
-        $sentencia = $conexion->prepare ( "SELECT * FROM tbl_tema WHERE id=:id" );
-        $sentencia->bindParam( ":id" ,$txtID );
-        $sentencia->execute();
-        
-        //Utilizamos el FETCH_LAZY para que cargue solo un registro.
-        $registro = $sentencia->fetch(PDO::FETCH_LAZY);
-            $titulo = $registro["titulo"]; 
-            $descripcion = $registro["descripcion"]; 
-            $archivo = $registro["archivo"]; 
-            
-            $nivel_id = $registro["nivel_id"];
-            
-        
-        //Preparamos la sentencia de $conexion y ejecutamos, seguido creamos una lista_tbl_rol, que las filas se devuelvan como un array asociativo.
-        $sentencia = $conexion->prepare("SELECT * FROM `tbl_nivel`");
-        $sentencia->execute();
-        $lista_tbl_nivel = $sentencia->fetchAll(PDO::FETCH_ASSOC);
-    }
-    if ($_POST){
-        print_r($_POST);
-        $txtID = $_POST['txtID'];
-        $titulo = $_POST["titulo"];
-        $descripcion = $_POST["descripcion"];
-        $nivel_id = $_POST["nivel_id"];
-        $archivo = $_FILES['archivo']['name'];
+<?php
+session_start();
+include("../../../bd.php");
 
-    // Si se subió un nuevo archivo
-    if ($archivo) {
-        $nombreArchivo = time() . '_' . basename($archivo);
-        $rutaArchivo = "../uploads/" . $nombreArchivo;
+// Recepción del envío `txtID` para cargar los datos
+if (isset($_GET['txtID'])) {
+    $txtID = $_GET['txtID'];
 
+    // Obtener los datos actuales del tema
+    $sentencia = $conexion->prepare("SELECT * FROM tbl_tema WHERE id=:id");
+    $sentencia->bindParam(":id", $txtID);
+    $sentencia->execute();
+    $registro = $sentencia->fetch(PDO::FETCH_LAZY);
+
+    $titulo = $registro["titulo"];
+    $descripcion = $registro["descripcion"];
+    $archivo = $registro["archivo"];
+    $nivel_id = $registro["nivel_id"];
+
+    // Obtener la lista de niveles
+    $sentencia = $conexion->prepare("SELECT * FROM `tbl_nivel`");
+    $sentencia->execute();
+    $lista_tbl_nivel = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+}
+
+// Procesar el formulario cuando se envía
+if ($_POST) {
+    $txtID = $_POST['txtID'];
+    $titulo = $_POST["titulo"];
+    $descripcion = $_POST["descripcion"];
+    $nivel_id = $_POST["nivel_id"];
+    $archivoNuevo = $_FILES['archivo']['name'];
+
+    // Verificar si se subió un nuevo archivo
+    if ($archivoNuevo) {
+        // Generar un nombre único para el archivo nuevo
+        $nombreArchivo = time() . '_' . basename($archivoNuevo);
+        $rutaArchivo = $_SERVER['DOCUMENT_ROOT'] . "/Proyecto_tesis/uploads/" . $nombreArchivo;
+        
+        // Eliminar el archivo anterior si existe
+        if ($archivo && file_exists($_SERVER['DOCUMENT_ROOT'] . "/Proyecto_tesis/uploads/" . $archivo)) {
+            unlink($_SERVER['DOCUMENT_ROOT'] . "/Proyecto_tesis/uploads/" . $archivo);
+        }
+        // Mover el archivo subido a la carpeta 'uploads'
         if (move_uploaded_file($_FILES['archivo']['tmp_name'], $rutaArchivo)) {
-            // Actualizar el archivo en la base de datos
+            // Actualizar el nombre del archivo en la base de datos
             $sentencia = $conexion->prepare("UPDATE tbl_tema SET archivo=:archivo WHERE id=:id");
             $sentencia->bindParam(":archivo", $nombreArchivo);
             $sentencia->bindParam(":id", $txtID);
             $sentencia->execute();
+        } else {
+            echo "Error al subir el nuevo archivo. Verifica los permisos de la carpeta 'uploads'.";
         }
     }
-        //Verificamos si existe una peticion $_POST, validamos si ese if isset sucedio, lo vamos igualar a ese valor, de lo contrario no sucedio
-        //Lo verificamos a este valor $_POST["usuario"] lo comparamos con la llave de pregunta (?) $_POST["usuario"] si sucedio, de lo contrario va a quedar vacío.
-        /* $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : "";
-        
-        $titulo = (isset($_POST["titulo"])) ? $_POST["titulo"]: "";
-        $descripcion = (isset($_POST["descripcion"])) ? $_POST["descripcion"]: "";
-        $archivo = (isset($_POST["archivo"])) ? $_POST["archivo"]: "";
-        
-        $nivel_id = (isset($_POST["nivel_id"])) ? $_POST["nivel_id"]: ""; */
-            
-        //Preparamos la insercción de los datos.
-        $sentencia = $conexion->prepare("
-        UPDATE tbl_tema
-        SET
-            titulo=:titulo,
-            descripcion=:descripcion,
-            archivo=:archivo,
-            nivel_id=:nivel_id
-        WHERE id=:id ");
-        
-        //Asignando los valores que vienen del  método POST (Los que vienen del formulario).
-        $sentencia->bindParam(":titulo",$titulo);
-        $sentencia->bindParam(":descripcion",$descripcion);
-        $sentencia->bindParam(":archivo",$archivo);
-        $sentencia->bindParam(":nivel_id",$nivel_id);
-        $sentencia->bindParam(":id",$txtID);
-        $sentencia->execute();
-        
-        //Mensaje de Registro Actualizado (Sweet alert).
-        $mensaje="Registro Actualizado";
-        header("Location:index.php?mensaje=".$mensaje);
-    }
+
+    // Actualizar los demás datos del tema
+    $sentencia = $conexion->prepare("UPDATE tbl_tema
+                                    SET titulo=:titulo, descripcion=:descripcion, nivel_id=:nivel_id
+                                    WHERE id=:id");
+    $sentencia->bindParam(":titulo", $titulo);
+    $sentencia->bindParam(":descripcion", $descripcion);
+    $sentencia->bindParam(":nivel_id", $nivel_id);
+    $sentencia->bindParam(":id", $txtID);
+    $sentencia->execute();
+
+    // Redirigir con un mensaje de éxito
+    $mensaje = "Registro Actualizado";
+    header("Location:index.php?mensaje=" . $mensaje);
+    exit;
+}
 ?>
+
 
 <?php include("../templates_doc/header_doc.php");?>
 <link rel="stylesheet" href="../../../css/styles_crear_material.css">
