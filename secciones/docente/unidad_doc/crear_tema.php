@@ -1,7 +1,7 @@
 <?php 
     /* session_start(); */
     include("../../../bd.php");
-
+    
     if ($_POST){
         print_r($_POST);
         
@@ -63,7 +63,7 @@
         
                     <div class="card-body">
                         <!-- Formulario para los datos del envío de mensaje -->
-                        <form action="" method="POST">
+                        <form action="" method="POST" enctype="multipart/form-data">
 
                             <div class="form-group">
                                 <label for="titulo"><h5><u>Titulo</u></h5></label>
@@ -77,7 +77,7 @@
                             <br>
                             <div class="form-group">
                                 <label for="archivo"><h5><u>Archivo</u></h5></label>
-                                <input type="text" id="archivo" name="archivo" required>
+                                <input type="file" id="archivo" name="archivo" required>
                             </div>
                             <br>
                             <div class="mb-3">
