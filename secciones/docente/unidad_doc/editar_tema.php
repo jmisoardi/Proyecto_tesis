@@ -38,7 +38,7 @@
     // Si se subió un nuevo archivo
     if ($archivo) {
         $nombreArchivo = time() . '_' . basename($archivo);
-        $rutaArchivo = "../unidad_doc/uploads/" . $nombreArchivo;
+        $rutaArchivo = "../uploads/" . $nombreArchivo;
 
         if (move_uploaded_file($_FILES['archivo']['tmp_name'], $rutaArchivo)) {
             // Actualizar el archivo en la base de datos
@@ -129,14 +129,14 @@
                                 <input type="file" id="archivo" name="archivo">
                                 <br>
                                 <?php if (!empty($archivo)) { ?>
-                                    <p>Archivo actual: <a href="../unidad_doc/uploads/ echo $archivo; ?>" target="_blank"><?php echo $archivo; ?></a></p>
+                                    <p>Archivo actual: <a href="../uploads/ echo $archivo; ?>" target="_blank"><?php echo $archivo; ?></a></p>
                                 <?php } ?>
                             </div>
 
                             <!-- <div class="form-group">
                                 <label for="archivo"><h5><u>Archivo</u></h5></label>
                                 <input type="file" 
-                                    value= "<?php echo $archivo; ?>"  id="archivo" name="archivo" required>
+                                    value= ""  id="archivo" name="archivo" required>
                             </div> -->
                             <br>
                             <div class="mb-3">
