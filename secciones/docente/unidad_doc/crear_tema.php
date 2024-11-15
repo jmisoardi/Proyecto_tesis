@@ -2,7 +2,38 @@
     /* session_start(); */
     include("../../../bd.php");
     
-    if ($_POST){
+    if ($_POST) {
+        $titulo = $_POST["titulo"];
+        $descripcion = $_POST["descripcion"];
+        $nivel_id = $_POST["nivel_id"];
+        $archivo = $_FILES['archivo']['name'];
+        $rutaArchivo = '';
+    
+        // Verificar si se subió un archivo
+        if ($archivo) {
+            // Generar una ruta única para el archivo para evitar sobrescribir
+            $nombreArchivo = time() . '_' . basename($archivo);
+            $rutaArchivo = "../uploads/" . $nombreArchivo;
+    
+            // Mover el archivo a la carpeta 'uploads'
+            if (move_uploaded_file($_FILES['archivo']['tmp_name'], $rutaArchivo)) {
+                // Insertar los datos en la base de datos
+                $sentencia = $conexion->prepare("INSERT INTO tbl_tema (titulo, descripcion, archivo, nivel_id)
+                                                VALUES (:titulo, :descripcion, :archivo, :nivel_id)");
+                $sentencia->bindParam(":titulo", $titulo);
+                $sentencia->bindParam(":descripcion", $descripcion);
+                $sentencia->bindParam(":archivo", $nombreArchivo);
+                $sentencia->bindParam(":nivel_id", $nivel_id);
+                $sentencia->execute();
+    
+                $mensaje = "Registro Agregado";
+                header("Location:index.php?mensaje=" . $mensaje);
+            } else {
+                echo "Error al subir el archivo.";
+            }
+        }
+    }
+    /* if ($_POST){
         print_r($_POST);
         
         //Verificamos si existe una peticion $_POST, validamos si ese if isset sucedio, lo vamos igualar a ese valor, de lo contrario no sucedio
@@ -33,7 +64,7 @@
         //Mensaje de Registro Actualizado (Sweet alert).
         $mensaje="Registro Agregado";
         header("Location:index.php?mensaje=".$mensaje);
-    }
+    } */
     $sentencia = $conexion->prepare("SELECT * FROM `tbl_nivel`");
     $sentencia->execute();
     $lista_tbl_nivel = $sentencia->fetchAll(PDO::FETCH_ASSOC);

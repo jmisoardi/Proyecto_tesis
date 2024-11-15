@@ -29,16 +29,34 @@
     }
     if ($_POST){
         print_r($_POST);
-        
+        $txtID = $_POST['txtID'];
+        $titulo = $_POST["titulo"];
+        $descripcion = $_POST["descripcion"];
+        $nivel_id = $_POST["nivel_id"];
+        $archivo = $_FILES['archivo']['name'];
+
+    // Si se subió un nuevo archivo
+    if ($archivo) {
+        $nombreArchivo = time() . '_' . basename($archivo);
+        $rutaArchivo = "../../uploads/" . $nombreArchivo;
+
+        if (move_uploaded_file($_FILES['archivo']['tmp_name'], $rutaArchivo)) {
+            // Actualizar el archivo en la base de datos
+            $sentencia = $conexion->prepare("UPDATE tbl_tema SET archivo=:archivo WHERE id=:id");
+            $sentencia->bindParam(":archivo", $nombreArchivo);
+            $sentencia->bindParam(":id", $txtID);
+            $sentencia->execute();
+        }
+    }
         //Verificamos si existe una peticion $_POST, validamos si ese if isset sucedio, lo vamos igualar a ese valor, de lo contrario no sucedio
         //Lo verificamos a este valor $_POST["usuario"] lo comparamos con la llave de pregunta (?) $_POST["usuario"] si sucedio, de lo contrario va a quedar vacío.
-        $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : "";
+        /* $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : "";
         
         $titulo = (isset($_POST["titulo"])) ? $_POST["titulo"]: "";
         $descripcion = (isset($_POST["descripcion"])) ? $_POST["descripcion"]: "";
         $archivo = (isset($_POST["archivo"])) ? $_POST["archivo"]: "";
         
-        $nivel_id = (isset($_POST["nivel_id"])) ? $_POST["nivel_id"]: "";
+        $nivel_id = (isset($_POST["nivel_id"])) ? $_POST["nivel_id"]: ""; */
             
         //Preparamos la insercción de los datos.
         $sentencia = $conexion->prepare("
@@ -108,9 +126,18 @@
                             <br>
                             <div class="form-group">
                                 <label for="archivo"><h5><u>Archivo</u></h5></label>
-                                <input type="textarea" 
-                                    value= "<?php echo $archivo; ?>"  id="archivo" name="archivo" required>
+                                <input type="file" id="archivo" name="archivo">
+                                <br>
+                                <?php if (!empty($archivo)) { ?>
+                                    <p>Archivo actual: <a href="../../uploads/<?php echo $archivo; ?>" target="_blank"><?php echo $archivo; ?></a></p>
+                                <?php } ?>
                             </div>
+
+                            <!-- <div class="form-group">
+                                <label for="archivo"><h5><u>Archivo</u></h5></label>
+                                <input type="file" 
+                                    value= "<?php echo $archivo; ?>"  id="archivo" name="archivo" required>
+                            </div> -->
                             <br>
                             <div class="mb-3">
                                 <label for="nivel_id" class="form-label"><h5><u>Nivel:</u></h5></label>
