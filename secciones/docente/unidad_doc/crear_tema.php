@@ -13,7 +13,7 @@
         if ($archivo) {
             // Generar una ruta única para el archivo para evitar sobrescribir
             $nombreArchivo = time() . '_' . basename($archivo);
-            $rutaArchivo = "../uploads/" . $nombreArchivo;
+            $rutaArchivo = "uploads" . $nombreArchivo;
     
             // Mover el archivo a la carpeta 'uploads'
             if (move_uploaded_file($_FILES['archivo']['tmp_name'], $rutaArchivo)) {
