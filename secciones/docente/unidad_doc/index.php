@@ -191,7 +191,7 @@
                                             <td><?php echo $tema_a1['descripcion']; ?></td>
                                             <td>
                                                 <?php if (!empty($tema_a1['archivo'])) { ?>
-                                                    <a href="../uploads/echo $tema_a1['archivo']; ?>" target="_blank"><?php echo $tema_a1['archivo'];?></a>
+                                                    <a href="../uploads/<?php echo $tema_a1['archivo']; ?>" target="_blank"><?php echo $tema_a1['archivo'];?></a>
                                                 <?php } else { ?>
                                                     No hay archivo
                                                 <?php } ?>

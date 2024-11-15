@@ -129,7 +129,7 @@
                                 <input type="file" id="archivo" name="archivo">
                                 <br>
                                 <?php if (!empty($archivo)) { ?>
-                                    <p>Archivo actual: <a href="../uploads/ echo $archivo; ?>" target="_blank"><?php echo $archivo; ?></a></p>
+                                    <p>Archivo actual: <a href="../uploads/<?php echo $archivo; ?>" target="_blank"><?php echo $archivo; ?></a></p>
                                 <?php } ?>
                             </div>
 
