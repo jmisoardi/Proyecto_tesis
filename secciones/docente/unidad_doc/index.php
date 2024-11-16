@@ -184,7 +184,7 @@
             <!-- Tabla para mostrar (Sección 1) -->
             <div class="card-header" style="background-color:bisque;">
                 <br>
-                <h1>Materiales disponibles - Sección A0-A1</h1>
+                <h1>-Materiales disponibles-</h1>
                 <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
                 <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
                     <h2>-Sección A0-A1-</h2>
