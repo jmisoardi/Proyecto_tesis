@@ -104,7 +104,7 @@
         <div class="contenedor-mensaje">
             <div class="card mx-auto" style="max-width: 500px;">
                 <div class="card-header" style="background-color:bisque">    
-                    <h1 style="text-align: center; font-family: Georgia, sans-serif;">-Correo Electronico-</h1>
+                    <h1 style="text-align: center; font-family: Georgia, sans-serif;">-Correo Electrónico-</h1>
                 </div>
             </div>
             <br>
