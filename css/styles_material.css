@@ -36,8 +36,6 @@ details[open] > summary:before {
     transform: rotate(90deg);
 }
 
-
-
 details summary::-webkit-details-marker {
     display:none;
 }
@@ -46,15 +44,3 @@ details > ul {
     padding-bottom: 1rem;
     margin-bottom: 0;
 }
-
-/* ///////////////////////////////////////// */
-
-/* body {
-    background: #f3f1f1;
-    height: 100vh;
-    font-family: sans-serif;
-    color: white;
-    line-height: 1.5;
-    letter-spacing: 1px;
-    margin-top: 2rem;
-} */

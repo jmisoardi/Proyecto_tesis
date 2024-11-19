@@ -67,7 +67,6 @@
             <!--Button bs5-button-default y bs5-button-a (sirve para direccionar) -->
             <button type="submit" class="btn btn-success">Actualizar</button>
             <a name="" id="" class="btn btn-primary" href="index.php" role="button" >Cancelar</a>
-            <!-- <input type="submit" value="Enviar Noticia"> -->
         </form>    
 </div>
 <?php include("../templates/footer.php");?>

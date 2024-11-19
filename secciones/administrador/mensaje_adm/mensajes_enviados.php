@@ -1,7 +1,4 @@
 <?php 
-   /*  include("../../../bd.php");
-    include("../templates/header.php");  */
-    
     $usuario = $_SESSION['usuario'];
      //Verificamos si se envío txtID por el metodo GET (enviar).    
     if (isset($_GET['txtID'])) {

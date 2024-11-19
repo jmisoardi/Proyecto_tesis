@@ -23,40 +23,17 @@
         $sentencia = $conexion->prepare("DELETE FROM tbl_tema WHERE id = :id");
         $sentencia->bindParam(":id", $txtID);
         $sentencia->execute();
-
-       /*  // Preparamos la consulta para obtener el nombre del archivo antes de eliminarlo
-        $sentencia = $conexion->prepare("SELECT archivo FROM tbl_material WHERE id = :id");
-        $sentencia->bindParam(":id", $txtID);
-        $sentencia->execute();
-        $material = $sentencia->fetch(PDO::FETCH_ASSOC);
-         */
-        // Si se encontró el archivo, lo eliminamos del sistema de archivos
-        /* if ($material) {
-            $archivo = $material['archivo'];
-            $rutaArchivo = "../unidad_doc/img_temp/" . $archivo;
-            if (file_exists($rutaArchivo)) {
-                unlink($rutaArchivo); // Elimina el archivo físicamente
-        } */
     
         // Preparamos la conexión de borrado en la base de datos
         $sentencia = $conexion->prepare("DELETE FROM tbl_tema WHERE id=:id");
         $sentencia->bindParam(":id", $txtID);
         $sentencia->execute();
         
-        /* // Mensaje de Registro Eliminado
+        // Mensaje de Registro Eliminado
         $mensaje = "Registro Eliminado";
-        header("Location:index.php?mensaje=" . $mensaje); */
+        header("Location:index.php?mensaje=" . $mensaje);
         
     }
-    /* if (isset($_GET['txtID'])) { */
-        //Verificamos si está presente en la URL txtID, asignamos el valor en  $_GET['txtID'] de lo contrario no se asigna ningún valor con :"" .
-        /* $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :""; */
-        //Preparamos la conexion de Borrado.
-        /* $sentencia = $conexion->prepare ( "DELETE FROM tbl_material WHERE id=:id" );
-        $sentencia->bindParam( ":id" ,$txtID );
-        $sentencia->execute();
-        } */
-
         // Sentencia, datos de tabla
         $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.descripcion, tbl_tema.archivo, tbl_nivel.nombre_nivel  
                                         FROM tbl_tema 
@@ -214,8 +191,6 @@
                                                     No hay archivo
                                                 <?php } ?>
                                             </td>
-
-
                                             <td><?php echo $tema_a1['nombre_nivel']; ?></td>
                                             <td>
                                                 <a href="editar_tema.php?txtID=<?php echo $tema_a1['id']; ?>" class="btn btn-info btn-sm">Editar</a>

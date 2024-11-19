@@ -18,29 +18,26 @@
         $usuario = (isset($_POST["usuario"])) ? $_POST["usuario"]: "";
         $password = (isset($_POST["password"])) ? $_POST["password"]: "";
 
-        //Verificamos si el campo usuario esta vacio.
-
-
-            //Preparamos la insercción de los datos.
-            $sentencia = $conexion->prepare("INSERT INTO 
-            `tbl_persona`(`id`, `nombre`, `apellido`, `dni`, `fechanacimiento`, `email`, `telefono`, `idrol`, `fechaingreso`, `usuario`, `password` ) 
-            VALUES (null, :nombre, :apellido, :dni, :fechanacimiento, :email, :telefono, :idrol, :fechaingreso, :usuario, :password)");
-            
-            //Asignando los valores que vienen del  método POST (Los que vienen del formulario).
-            $sentencia->bindParam(":nombre",$nombre);
-            $sentencia->bindParam(":apellido",$apellido);
-            $sentencia->bindParam(":dni",$dni);
-            $sentencia->bindParam(":fechanacimiento",$fechanacimiento);
-            $sentencia->bindParam(":email",$email);
-            $sentencia->bindParam(":telefono",$telefono);
-            $sentencia->bindParam(":idrol",$idrol);
-            $sentencia->bindParam(":fechaingreso",$fechaingreso);
-            $sentencia->bindParam(":usuario",$usuario);
-            $sentencia->bindParam(":password",$password);
-            $sentencia->execute();
-            //Mensaje de Registro Agregado (Sweet alert).
-            $mensaje="Registro Agregado";
-            header("Location:index.php?mensaje=".$mensaje);
+        //Preparamos la insercción de los datos.
+        $sentencia = $conexion->prepare("INSERT INTO 
+        `tbl_persona`(`id`, `nombre`, `apellido`, `dni`, `fechanacimiento`, `email`, `telefono`, `idrol`, `fechaingreso`, `usuario`, `password` ) 
+        VALUES (null, :nombre, :apellido, :dni, :fechanacimiento, :email, :telefono, :idrol, :fechaingreso, :usuario, :password)");
+        
+        //Asignando los valores que vienen del  método POST (Los que vienen del formulario).
+        $sentencia->bindParam(":nombre",$nombre);
+        $sentencia->bindParam(":apellido",$apellido);
+        $sentencia->bindParam(":dni",$dni);
+        $sentencia->bindParam(":fechanacimiento",$fechanacimiento);
+        $sentencia->bindParam(":email",$email);
+        $sentencia->bindParam(":telefono",$telefono);
+        $sentencia->bindParam(":idrol",$idrol);
+        $sentencia->bindParam(":fechaingreso",$fechaingreso);
+        $sentencia->bindParam(":usuario",$usuario);
+        $sentencia->bindParam(":password",$password);
+        $sentencia->execute();
+        //Mensaje de Registro Agregado (Sweet alert).
+        $mensaje="Registro Agregado";
+        header("Location:index.php?mensaje=".$mensaje);
         
     }
     //Preparamos la sentencia de $conexion y ejecutamos, seguido creamos una lista_tbl_rol, que las filas se devuelvan como un array asociativo.

@@ -1,4 +1,5 @@
 <?php 
+    
     include ("../../../bd.php");
     date_default_timezone_set('America/Argentina/Buenos_Aires');
     
@@ -8,8 +9,6 @@
         $titulo = (isset($_POST["titulo"])) ? $_POST["titulo"]: "";
         $cuerpo = (isset($_POST["cuerpo"])) ? $_POST["cuerpo"]: "";
         $fecha = date('Y-m-d H:i:s'); 
-        /* $fecha_db = "2024-08-07 14:30:00"; */ // Ejemplo de fecha obtenida de la base de datos
-        
         
         //Preparamos la insercción de los datos.
         $sentencia = $conexion->prepare("INSERT INTO tbl_noticia (`id`, `fecha`,`titulo`, `cuerpo`) VALUES (null, :fecha, :titulo, :cuerpo)");
@@ -20,8 +19,7 @@
         $sentencia->execute();
         
         $fecha_formateada = date('d/m/Y H:i:s', strtotime($fecha));
-        /* echo $fecha_formateada; */ // Mostrará la fecha en el formato deseado
-        
+    
         //Mensaje de Registro Agregado (Sweet alert).
         $mensaje="Mensaje Creado";
         header("Location:index.php?mensaje=".$mensaje);

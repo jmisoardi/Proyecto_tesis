@@ -21,6 +21,7 @@
     //Utilizamos el print_r para saber que estamos consultando los registros de la base de datos de la tabla de rol.
     //print_r($lista_tbl_rol);
 ?>
+
 <?php include("../templates/header.php");?>
 <br>
     <style> 

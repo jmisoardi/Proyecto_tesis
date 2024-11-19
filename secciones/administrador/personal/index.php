@@ -24,6 +24,7 @@
     $sentencia->execute();
     $lista_tbl_persona = $sentencia->fetchAll(PDO::FETCH_ASSOC); 
 ?>
+
 <?php include("../templates/header.php");?>
 <br/>
     <!--Estilo para el titulo Personal-->

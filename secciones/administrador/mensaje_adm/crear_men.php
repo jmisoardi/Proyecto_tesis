@@ -43,12 +43,6 @@
                 $sentencia->execute();
                 $destinatario = $sentencia->fetch(PDO::FETCH_ASSOC);
                 
-                // Si no se encuentra el destinatario, mostrar un error o manejar el caso
-                /* if (!$destinatario) {
-                    echo "El destinatario no existe.";
-                    exit();
-                } */
-
                 $destinatario_id = $destinatario['id'];
 
                 // Insertar el mensaje en la base de datos
