@@ -1,7 +1,7 @@
 <?php
     // Incluimos la base de datos. 
     include("../../../bd.php");
-    
+    date_default_timezone_set('America/Argentina/Buenos_Aires');
     //Recepción del envío txtID.
     if(isset($_GET['txtID'])){
         //Verificamos si está presente en la URL txtID, asignamos el valor en  $_GET['txtID'] de lo contrario no se asigna ningún valor con :"" .
@@ -21,7 +21,8 @@
     if ($_POST) { 
         print_r($_POST);
         $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : "";
-        $fecha= (isset($_POST['fecha'])) ? $_POST['fecha'] : "";
+        $fecha = date('Y-m-d H:i:s'); 
+        /* $fecha= (isset($_POST['fecha'])) ? $_POST['fecha'] : ""; */
         $titulo = (isset($_POST['titulo'])) ? $_POST['titulo'] : "" ;
         $cuerpo= (isset($_POST['cuerpo'])) ? $_POST['cuerpo'] : "";
     
