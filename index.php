@@ -34,7 +34,7 @@
                     break; 
                 }
             }
-            /* Recorremos el switch  para dar acceso a los ususario */
+            /* Recorremos el switch  para dar acceso a los usuario */
             switch ($_SESSION['rolpersona']) {
                 case 'administrador':
                     header("Location:secciones/administrador/home_adm/index.php");

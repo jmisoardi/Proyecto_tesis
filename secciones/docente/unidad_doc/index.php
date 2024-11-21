@@ -23,17 +23,32 @@
         $sentencia = $conexion->prepare("DELETE FROM tbl_tema WHERE id = :id");
         $sentencia->bindParam(":id", $txtID);
         $sentencia->execute();
-    
-        // Preparamos la conexión de borrado en la base de datos
-        $sentencia = $conexion->prepare("DELETE FROM tbl_tema WHERE id=:id");
-        $sentencia->bindParam(":id", $txtID);
-        $sentencia->execute();
+
         
         // Mensaje de Registro Eliminado
         $mensaje = "Registro Eliminado";
         header("Location:index.php?mensaje=" . $mensaje);
         
     }
+        // Obtener el nivel asignado al docente desde la tabla tbl_persona
+        
+        $usuario_sesion = $_SESSION['usuario'];
+
+        // Consulta para obtener el ID del usuario
+        $sentencia = $conexion->prepare("SELECT id FROM tbl_persona WHERE usuario = :usuario");
+        $sentencia->execute([':usuario' => $usuario_sesion]);
+        $docente_id = $sentencia->fetchColumn(); // Aquí tienes el ID del usuario
+        
+        $sentencia = $conexion->prepare("SELECT nivel_asignado FROM tbl_persona WHERE id = :docente_id");
+        $sentencia->execute([':docente_id' => $docente_id]);
+        $nivel_asignado = $sentencia->fetchColumn();
+        /* print_r($nivel_asignado); */
+
+        /* $sentencia = $conexion->prepare("SELECT id FROM tbl_nivel WHERE id = :nivelusuario");
+        $sentencia->execute([':nivelusuario' => $nivel_asignado]);
+        $nivel_accion = $sentencia->fetchColumn(); */
+
+
         // Sentencia, datos de tabla
         $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.descripcion, tbl_tema.archivo, tbl_nivel.nombre_nivel  
                                         FROM tbl_tema 
@@ -164,7 +179,7 @@
                 <h1>-Materiales disponibles-</h1>
                 <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
                 <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
-                    <h2>-Sección A0-A1-</h2>
+                    <h2>-Sección A0-A1 Starters</h2>
                     <div class="card-body-sm" style="background-color: azure;">
                         <div class="table-responsive">
                             <table class="table" id="tabla_id_1">
@@ -193,8 +208,15 @@
                                             </td>
                                             <td><?php echo $tema_a1['nombre_nivel']; ?></td>
                                             <td>
-                                                <a href="editar_tema.php?txtID=<?php echo $tema_a1['id']; ?>" class="btn btn-info btn-sm">Editar</a>
-                                                <a href="javascript:borrar(<?php echo $tema_a1['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
+                                                <?php if ($nivel_asignado == 1 ) { ?>
+                                                    <!-- Permitir editar y eliminar solo si el nivel coincide -->
+                                                    <a href="editar_tema.php?txtID=<?php echo $tema_a1['id']; ?>" class="btn btn-info btn-sm">Editar</a>
+                                                    <a href="javascript:borrar(<?php echo $tema_a1['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
+                                            
+                                                    <?php } else { print_r($tema_a1['id']);?>
+                                                    <!-- Mostrar mensaje si no tiene permisos -->
+                                                    <span>Sin acceso</span>
+                                                <?php } ?>
                                             </td>
                                         </tr>
                                     <?php } ?>
@@ -212,7 +234,7 @@
                 <br>
                     <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
                     <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;" >
-                        <h2>-Sección A2-</h2>
+                        <h2>-Sección A2 (Flyers)</h2>
                         <div class="card-header" style="background-color: bisque;">
                             <div class="card-body-md" style="background-color: azure;">
                                 <div class="table-responsive">
@@ -242,9 +264,16 @@
                                                     </td>
                                                     <td><?php echo $tema_a2['nombre_nivel']; ?></td>
                                                     <td>
-                                                        <a href="editar_tema.php?txtID=<?php echo $tema_a2['id']; ?>" class="btn btn-info btn-sm">Editar</a>
-                                                        <a href="javascript:borrar(<?php echo $tema_a2['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
-                                                    </td>
+                                                <?php if ($nivel_asignado == 3 ) { ?>
+                                                    <!-- Permitir editar y eliminar solo si el nivel coincide -->
+                                                    <a href="editar_tema.php?txtID=<?php echo $tema_a1['id']; ?>" class="btn btn-info btn-sm">Editar</a>
+                                                    <a href="javascript:borrar(<?php echo $tema_a1['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
+                                            
+                                                    <?php } else {?>
+                                                    <!-- Mostrar mensaje si no tiene permisos -->
+                                                    <span>Sin acceso</span>
+                                                <?php } ?>
+                                            </td>
                                                 </tr>
                                             <?php } ?>
                                         </tbody>
@@ -262,7 +291,7 @@
                 <br>
                     <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
                     <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
-                        <h2>-Sección B1-</h2>
+                        <h2>-Sección B1 (Preliminary)</h2>
                         <div class="card-header" style="background-color: bisque;">
                             <div class="card-body-md" style="background-color: azure;">
                                 <div class="table-responsive">
@@ -312,7 +341,7 @@
                 <br>
                     <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
                     <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
-                        <h2>-Sección B2-</h2>
+                        <h2>-Sección B2 (First for Schools)</h2>
                         <div class="card-header" style="background-color: bisque;">
                             <div class="card-body-md" style="background-color: azure;">
                                 <div class="table-responsive">
@@ -362,7 +391,7 @@
                 <br>
                     <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
                     <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
-                        <h2>-Sección C1-</h2>
+                        <h2>-Sección C1 (Advanced)</h2>
                         <div class="card-header" style="background-color: bisque;">
                             <div class="card-body-md" style="background-color: azure;">
                                 <div class="table-responsive">
@@ -412,7 +441,7 @@
                 <br>
                     <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
                     <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
-                        <h2>-Sección C2-</h2>                        
+                        <h2>-Sección C2 (Proficiency)</h2>                    
                         <div class="card-header" style="background-color: bisque;">
                             <div class="card-body-md" style="background-color: azure;">
                                 <div class="table-responsive">
