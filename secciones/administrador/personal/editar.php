@@ -20,6 +20,7 @@
             $email = $registro["email"]; 
             $telefono = $registro["telefono"]; 
             $idrol = $registro["idrol"];
+            $nivel_asignado = $registro["nivel_asignado"];
             $fechaingreso = $registro["fechaingreso"];
             $usuario = $registro["usuario"];
             $password = $registro["password"];
@@ -28,7 +29,12 @@
         $sentencia = $conexion->prepare("SELECT * FROM `tbl_rol`");
         $sentencia->execute();
         $lista_tbl_rol = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+        $sentencia = $conexion->prepare("SELECT * FROM tbl_nivel");
+        $sentencia->execute();
+        $lista_tbl_nivel = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     }
+
     if ($_POST){
         print_r($_POST);
         
@@ -42,6 +48,7 @@
         $email = (isset($_POST["email"])) ? $_POST["email"]: "";        
         $telefono = (isset($_POST["telefono"])) ? $_POST["telefono"]: "";
         $idrol = (isset($_POST["idrol"])) ? $_POST["idrol"]: "";
+        $nivel_asignado = (isset($_POST["nivel_asignado"])) ? $_POST["nivel_asignado"]: "";
         $fechaingreso = (isset($_POST["fechaingreso"])) ? $_POST["fechaingreso"]: "";
         $usuario = (isset($_POST["usuario"])) ? $_POST["usuario"]: "";
         $password = (isset($_POST["password"])) ? $_POST["password"]: "";
@@ -57,6 +64,7 @@
             email=:email,
             telefono=:telefono,
             idrol=:idrol,
+            nivel_asignado=:nivel_asignado,
             fechaingreso=:fechaingreso,
             usuario=:usuario,
             password=:password
@@ -70,6 +78,7 @@
         $sentencia->bindParam(":email",$email);
         $sentencia->bindParam(":telefono",$telefono);
         $sentencia->bindParam(":idrol",$idrol);
+        $sentencia->bindParam(":nivel_asignado",$nivel_asignado);
         $sentencia->bindParam(":fechaingreso",$fechaingreso);
         $sentencia->bindParam(":usuario" ,$usuario);
         $sentencia->bindParam(":password" ,$password);
@@ -145,6 +154,17 @@
                                 <?php foreach ($lista_tbl_rol as $registro) {?>      
                                     <option <?php echo ($idrol== $registro['id'])? "selected" : ""; ?> value ="<?php echo $registro['id']?>">
                                                     <?php echo $registro['nombredelrol']?>
+                                    </option>
+                                <?php }?>
+                            </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nivel_asignado" class="form-label"><u>Nivel:</u></label>
+                            <select
+                                class="form-select w-auto form-select-ms" name="nivel_asignado" id="nivel_asignado">
+                                <?php foreach ($lista_tbl_nivel as $registro) {?>      
+                                    <option <?php echo ($nivel_asignado== $registro['id'])? "selected" : ""; ?> value ="<?php echo $registro['id']?>">
+                                                    <?php echo $registro['nombre_nivel']?>
                                     </option>
                                 <?php }?>
                             </select>
