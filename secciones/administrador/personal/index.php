@@ -15,15 +15,6 @@
         header("Location:index.php?mensaje=".$mensaje);
     }
 
-    //Preparamos la sentencia de $conexion y ejecutamos, seguido creamos una consulta seguido de una subconsulta para obtener tbl_rol.id =tbl_persona.idrol. Nombre del Rol, con obtención de un dato (as idrol) acto seguido las filas devuelvan un array asociativo.
-    /* $sentencia = $conexion->prepare("SELECT * ,
-    (SELECT nombredelrol 
-    FROM tbl_rol 
-    WHERE tbl_rol.id =tbl_persona.idrol limit 1) as idrol 
-    FROM `tbl_persona`");
-    $sentencia->execute();
-    $lista_tbl_persona = $sentencia->fetchAll(PDO::FETCH_ASSOC); 
-     */
     $sentencia = $conexion->prepare("
     SELECT 
         p.*, 
