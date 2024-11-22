@@ -30,6 +30,7 @@
         header("Location:index.php?mensaje=" . $mensaje);
         
     }
+        
         // Obtener el nivel asignado al docente desde la tabla tbl_persona
         
         $usuario_sesion = $_SESSION['usuario'];
@@ -44,42 +45,42 @@
         $nivel_asignado = $sentencia->fetchColumn();
         
         // Sentencia, datos de tabla
-        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.descripcion, tbl_tema.archivo, tbl_nivel.nombre_nivel  
+        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.descripcion, tbl_tema.archivo, tbl_tema.habilitado, tbl_nivel.nombre_nivel  
                                         FROM tbl_tema 
                                         LEFT JOIN tbl_nivel ON tbl_tema.nivel_id = tbl_nivel.id WHERE tbl_nivel.id = 1");
         $sentencia->execute();
         $lista_tbl_tema_a1 = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
         // Sentencia, datos de tabla
-        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.descripcion, tbl_tema.archivo, tbl_nivel.nombre_nivel  
+        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.descripcion, tbl_tema.archivo, tbl_tema.habilitado, tbl_nivel.nombre_nivel  
                                         FROM tbl_tema 
                                         LEFT JOIN tbl_nivel ON tbl_tema.nivel_id = tbl_nivel.id WHERE tbl_nivel.id = 3");
         $sentencia->execute();
         $lista_tbl_tema_a2 = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
         // Sentencia, datos de tabla
-        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.descripcion, tbl_tema.archivo, tbl_nivel.nombre_nivel  
+        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.descripcion, tbl_tema.archivo, tbl_tema.habilitado, tbl_nivel.nombre_nivel  
                                         FROM tbl_tema 
                                         LEFT JOIN tbl_nivel ON tbl_tema.nivel_id = tbl_nivel.id WHERE tbl_nivel.id = 7");
         $sentencia->execute();
         $lista_tbl_tema_b1 = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
         // Sentencia, datos de tabla
-        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.descripcion, tbl_tema.archivo, tbl_nivel.nombre_nivel  
+        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.descripcion, tbl_tema.archivo, tbl_tema.habilitado, tbl_nivel.nombre_nivel  
                                         FROM tbl_tema 
                                         LEFT JOIN tbl_nivel ON tbl_tema.nivel_id = tbl_nivel.id WHERE tbl_nivel.id = 9");
         $sentencia->execute();
         $lista_tbl_tema_b2 = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
         // Sentencia, datos de tabla
-        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.descripcion, tbl_tema.archivo, tbl_nivel.nombre_nivel  
+        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.descripcion, tbl_tema.archivo, tbl_tema.habilitado, tbl_nivel.nombre_nivel  
                                         FROM tbl_tema 
                                         LEFT JOIN tbl_nivel ON tbl_tema.nivel_id = tbl_nivel.id WHERE tbl_nivel.id = 11");
         $sentencia->execute();
         $lista_tbl_tema_c1 = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
         // Sentencia, datos de tabla
-        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.descripcion, tbl_tema.archivo, tbl_nivel.nombre_nivel  
+        $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.descripcion, tbl_tema.archivo, tbl_tema.habilitado, tbl_nivel.nombre_nivel  
                                         FROM tbl_tema 
                                         LEFT JOIN tbl_nivel ON tbl_tema.nivel_id = tbl_nivel.id WHERE tbl_nivel.id = 12");
         $sentencia->execute();
@@ -184,6 +185,7 @@
                                         <th>Descripción</th>
                                         <th>Archivo</th>
                                         <th>Nivel</th>
+                                        <!-- <th>Habilitado</th> -->
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
@@ -202,7 +204,13 @@
                                             </td>
                                             <td><?php echo $tema_a1['nombre_nivel']; ?></td>
                                             <td>
+                                                
                                                 <?php if ($nivel_asignado == 1 ) { ?>
+                                                    <?php if ($tema_a1['habilitado']) { ?>
+                                                        <button class="btn btn-success btn-sm" onclick="cambiarEstado(<?php echo $tema_a1['id']; ?>, 0)">Habilitado</button>
+                                                    <?php } else { ?>
+                                                        <button class="btn btn-secondary btn-sm" onclick="cambiarEstado(<?php echo $tema_a1['id']; ?>, 1)">Deshabilitado</button>
+                                                    <?php } ?>
                                                     <!-- Permitir editar y eliminar solo si el nivel coincide -->
                                                     <a href="editar_tema.php?txtID=<?php echo $tema_a1['id']; ?>" class="btn btn-info btn-sm">Editar</a>
                                                     <a href="javascript:borrar(<?php echo $tema_a1['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
@@ -513,6 +521,30 @@
     </body>
     <br>
     <br>
+    <script>
+        function cambiarEstado(id, estado) {
+            if (confirm("¿Estás seguro de cambiar el estado de este material?")) {
+                fetch("cambiar_estado.php", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ id: id, habilitado: estado })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        location.reload(); // Recargar la página para reflejar el cambio
+                    } else {
+                        alert(data.message || "Error al cambiar el estado");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error en la solicitud:", error);
+                });
+            }
+        }
+
+    </script>
+
     <!-- <div class="text-center">
         <a class="btn btn-info" href="index.php" role="button">
             <img src="../../../css/imagen_tesis/icons/atras.png" style="width: 30px; height: 30px; vertical-align: middle;">
