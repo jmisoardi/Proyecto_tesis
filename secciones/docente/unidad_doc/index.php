@@ -42,13 +42,7 @@
         $sentencia = $conexion->prepare("SELECT nivel_asignado FROM tbl_persona WHERE id = :docente_id");
         $sentencia->execute([':docente_id' => $docente_id]);
         $nivel_asignado = $sentencia->fetchColumn();
-        /* print_r($nivel_asignado); */
-
-        /* $sentencia = $conexion->prepare("SELECT id FROM tbl_nivel WHERE id = :nivelusuario");
-        $sentencia->execute([':nivelusuario' => $nivel_asignado]);
-        $nivel_accion = $sentencia->fetchColumn(); */
-
-
+        
         // Sentencia, datos de tabla
         $sentencia = $conexion->prepare("SELECT tbl_tema.id, tbl_tema.titulo, tbl_tema.descripcion, tbl_tema.archivo, tbl_nivel.nombre_nivel  
                                         FROM tbl_tema 
@@ -213,7 +207,7 @@
                                                     <a href="editar_tema.php?txtID=<?php echo $tema_a1['id']; ?>" class="btn btn-info btn-sm">Editar</a>
                                                     <a href="javascript:borrar(<?php echo $tema_a1['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
                                             
-                                                    <?php } else { print_r($tema_a1['id']);?>
+                                                    <?php } else { ?>
                                                     <!-- Mostrar mensaje si no tiene permisos -->
                                                     <span>Sin acceso</span>
                                                 <?php } ?>
@@ -321,8 +315,15 @@
                                                     </td>
                                                     <td><?php echo $tema_b1['nombre_nivel']; ?></td>
                                                     <td>
-                                                        <a href="editar_tema.php?txtID=<?php echo $tema_b1['id']; ?>" class="btn btn-info btn-sm">Editar</a>
-                                                        <a href="javascript:borrar(<?php echo $tema_b1['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
+                                                        <?php if ($nivel_asignado == 7 ) { ?>
+                                                            <!-- Permitir editar y eliminar solo si el nivel coincide -->
+                                                            <a href="editar_tema.php?txtID=<?php echo $tema_b1['id']; ?>" class="btn btn-info btn-sm">Editar</a>
+                                                            <a href="javascript:borrar(<?php echo $tema_b1['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
+                                                    
+                                                            <?php } else { ?>
+                                                            <!-- Mostrar mensaje si no tiene permisos -->
+                                                            <span>Sin acceso</span>
+                                                        <?php } ?>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
@@ -371,8 +372,15 @@
                                                     </td>
                                                     <td><?php echo $tema_b2['nombre_nivel']; ?></td>
                                                     <td>
-                                                        <a href="editar_tema.php?txtID=<?php echo $tema_b2['id']; ?>" class="btn btn-info btn-sm">Editar</a>
-                                                        <a href="javascript:borrar(<?php echo $tema_b2['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
+                                                        <?php if ($nivel_asignado == 9 ) { ?>
+                                                            <!-- Permitir editar y eliminar solo si el nivel coincide -->
+                                                            <a href="editar_tema.php?txtID=<?php echo $tema_b2['id']; ?>" class="btn btn-info btn-sm">Editar</a>
+                                                            <a href="javascript:borrar(<?php echo $tema_b2['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
+                                                    
+                                                            <?php } else { ?>
+                                                            <!-- Mostrar mensaje si no tiene permisos -->
+                                                            <span>Sin acceso</span>
+                                                        <?php } ?>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
@@ -421,8 +429,15 @@
                                                     </td>
                                                     <td><?php echo $tema_c1['nombre_nivel']; ?></td>
                                                     <td>
-                                                        <a href="editar_tema.php?txtID=<?php echo $tema_c1['id']; ?>" class="btn btn-info btn-sm">Editar</a>
-                                                        <a href="javascript:borrar(<?php echo $tema_c1['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
+                                                        <?php if ($nivel_asignado == 11 ) { ?>
+                                                            <!-- Permitir editar y eliminar solo si el nivel coincide -->
+                                                            <a href="editar_tema.php?txtID=<?php echo $tema_c1['id']; ?>" class="btn btn-info btn-sm">Editar</a>
+                                                            <a href="javascript:borrar(<?php echo $tema_c1['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
+                                                    
+                                                            <?php } else { ?>
+                                                            <!-- Mostrar mensaje si no tiene permisos -->
+                                                            <span>Sin acceso</span>
+                                                        <?php } ?>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
@@ -471,8 +486,15 @@
                                                     </td>
                                                     <td><?php echo $tema_c2['nombre_nivel']; ?></td>
                                                     <td>
-                                                        <a href="editar_tema.php?txtID=<?php echo $tema_c2['id']; ?>" class="btn btn-info btn-sm">Editar</a>
-                                                        <a href="javascript:borrar(<?php echo $tema_c2['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
+                                                        <?php if ($nivel_asignado == 12 ) { ?>
+                                                            <!-- Permitir editar y eliminar solo si el nivel coincide -->
+                                                            <a href="editar_tema.php?txtID=<?php echo $tema_c2['id']; ?>" class="btn btn-info btn-sm">Editar</a>
+                                                            <a href="javascript:borrar(<?php echo $tema_c2['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
+                                                    
+                                                            <?php } else { ?>
+                                                            <!-- Mostrar mensaje si no tiene permisos -->
+                                                            <span>Sin acceso</span>
+                                                        <?php } ?>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
