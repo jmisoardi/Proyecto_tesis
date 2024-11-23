@@ -2,6 +2,8 @@
     session_start();
     include("../../../bd.php");
     
+        $descripcion_material = "Unidades de Estudio";
+
     if (isset($_GET['txtID'])) {
         // Verificamos si está presente en la URL txtID, asignamos el valor en $_GET['txtID']
         $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
@@ -174,7 +176,7 @@
                 <h1>-Materiales disponibles-</h1>
                 <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
                 <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
-                    <h2>-Sección A0-A1 Starters</h2>
+                    <h2>-Sección A0-A1 Starters- <?php echo "$descripcion_material"?></h2>
                     <div class="card-body-sm" style="background-color: azure;">
                         <div class="table-responsive">
                             <table class="table" id="tabla_id_1">
@@ -236,11 +238,11 @@
                 <br>
                     <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
                     <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;" >
-                        <h2>-Sección A2 (Flyers)</h2>
                         <div class="card-header" style="background-color: bisque;">
                             <div class="card-body-md" style="background-color: azure;">
                                 <div class="table-responsive">
                                     <table class="table" id="tabla_id_2">
+                                        <h2>-Sección A2 (Flyers)-  <?php echo "$descripcion_material"?></h2>
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
@@ -299,7 +301,7 @@
                 <br>
                     <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
                     <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
-                        <h2>-Sección B1 (Preliminary)</h2>
+                        <h2>-Sección B1 (Preliminary)-  <?php echo "$descripcion_material"?></h2>
                         <div class="card-header" style="background-color: bisque;">
                             <div class="card-body-md" style="background-color: azure;">
                                 <div class="table-responsive">
@@ -361,7 +363,7 @@
                 <br>
                     <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
                     <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
-                        <h2>-Sección B2 (First for Schools)</h2>
+                        <h2>-Sección B2 (First for Schools)-  <?php echo "$descripcion_material"?></h2>
                         <div class="card-header" style="background-color: bisque;">
                             <div class="card-body-md" style="background-color: azure;">
                                 <div class="table-responsive">
@@ -423,7 +425,7 @@
                 <br>
                     <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
                     <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
-                        <h2>-Sección C1 (Advanced)</h2>
+                        <h2>-Sección C1 (Advanced)-  <?php echo "$descripcion_material"?></h2>
                         <div class="card-header" style="background-color: bisque;">
                             <div class="card-body-md" style="background-color: azure;">
                                 <div class="table-responsive">
@@ -485,7 +487,7 @@
                 <br>
                     <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
                     <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
-                        <h2>-Sección C2 (Proficiency)</h2>                    
+                        <h2>-Sección C2 (Proficiency)-  <?php echo "$descripcion_material"?></h2>                    
                         <div class="card-header" style="background-color: bisque;">
                             <div class="card-body-md" style="background-color: azure;">
                                 <div class="table-responsive">
