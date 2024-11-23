@@ -185,7 +185,7 @@
                                         <th>Descripción</th>
                                         <th>Archivo</th>
                                         <th>Nivel</th>
-                                        <!-- <th>Habilitado</th> -->
+                                        
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
@@ -203,8 +203,8 @@
                                                 <?php } ?>
                                             </td>
                                             <td><?php echo $tema_a1['nombre_nivel']; ?></td>
+                                            
                                             <td>
-                                                
                                                 <?php if ($nivel_asignado == 1 ) { ?>
                                                     <?php if ($tema_a1['habilitado']) { ?>
                                                         <button class="btn btn-success btn-sm" onclick="cambiarEstado(<?php echo $tema_a1['id']; ?>, 0)">Habilitado</button>
@@ -266,16 +266,22 @@
                                                     </td>
                                                     <td><?php echo $tema_a2['nombre_nivel']; ?></td>
                                                     <td>
-                                                <?php if ($nivel_asignado == 3 ) { ?>
-                                                    <!-- Permitir editar y eliminar solo si el nivel coincide -->
-                                                    <a href="editar_tema.php?txtID=<?php echo $tema_a1['id']; ?>" class="btn btn-info btn-sm">Editar</a>
-                                                    <a href="javascript:borrar(<?php echo $tema_a1['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
-                                            
-                                                    <?php } else {?>
-                                                    <!-- Mostrar mensaje si no tiene permisos -->
-                                                    <span>Sin acceso</span>
-                                                <?php } ?>
-                                            </td>
+                                                            <?php if ($nivel_asignado == 3 ) { ?>
+                                                                
+                                                                <?php if ($tema_a2['habilitado']) { ?>
+                                                                        <button class="btn btn-success btn-sm" onclick="cambiarEstado(<?php echo $tema_a2['id']; ?>, 0)">Habilitado</button>
+                                                                        <?php } else { ?>
+                                                                            <button class="btn btn-secondary btn-sm" onclick="cambiarEstado(<?php echo $tema_a2['id']; ?>, 1)">Deshabilitado</button>
+                                                                        <?php } ?>
+                                                            <!-- Permitir editar y eliminar solo si el nivel coincide -->
+                                                            <a href="editar_tema.php?txtID=<?php echo $tema_a2['id']; ?>" class="btn btn-info btn-sm">Editar</a>
+                                                            <a href="javascript:borrar(<?php echo $tema_a2['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
+                                                    
+                                                            <?php } else {?>
+                                                            <!-- Mostrar mensaje si no tiene permisos -->
+                                                            <span>Sin acceso</span>
+                                                        <?php } ?>
+                                                    </td>
                                                 </tr>
                                             <?php } ?>
                                         </tbody>
@@ -324,6 +330,11 @@
                                                     <td><?php echo $tema_b1['nombre_nivel']; ?></td>
                                                     <td>
                                                         <?php if ($nivel_asignado == 7 ) { ?>
+                                                            <?php if ($tema_b1['habilitado']) { ?>
+                                                                        <button class="btn btn-success btn-sm" onclick="cambiarEstado(<?php echo $tema_b1['id']; ?>, 0)">Habilitado</button>
+                                                                        <?php } else { ?>
+                                                                            <button class="btn btn-secondary btn-sm" onclick="cambiarEstado(<?php echo $tema_b1['id']; ?>, 1)">Deshabilitado</button>
+                                                                        <?php } ?>
                                                             <!-- Permitir editar y eliminar solo si el nivel coincide -->
                                                             <a href="editar_tema.php?txtID=<?php echo $tema_b1['id']; ?>" class="btn btn-info btn-sm">Editar</a>
                                                             <a href="javascript:borrar(<?php echo $tema_b1['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
@@ -381,6 +392,11 @@
                                                     <td><?php echo $tema_b2['nombre_nivel']; ?></td>
                                                     <td>
                                                         <?php if ($nivel_asignado == 9 ) { ?>
+                                                            <?php if ($tema_b2['habilitado']) { ?>
+                                                                        <button class="btn btn-success btn-sm" onclick="cambiarEstado(<?php echo $tema_b2['id']; ?>, 0)">Habilitado</button>
+                                                                        <?php } else { ?>
+                                                                            <button class="btn btn-secondary btn-sm" onclick="cambiarEstado(<?php echo $tema_b2['id']; ?>, 1)">Deshabilitado</button>
+                                                                        <?php } ?>
                                                             <!-- Permitir editar y eliminar solo si el nivel coincide -->
                                                             <a href="editar_tema.php?txtID=<?php echo $tema_b2['id']; ?>" class="btn btn-info btn-sm">Editar</a>
                                                             <a href="javascript:borrar(<?php echo $tema_b2['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
@@ -438,6 +454,11 @@
                                                     <td><?php echo $tema_c1['nombre_nivel']; ?></td>
                                                     <td>
                                                         <?php if ($nivel_asignado == 11 ) { ?>
+                                                            <?php if ($tema_c1['habilitado']) { ?>
+                                                                        <button class="btn btn-success btn-sm" onclick="cambiarEstado(<?php echo $tema_c1['id']; ?>, 0)">Habilitado</button>
+                                                                        <?php } else { ?>
+                                                                            <button class="btn btn-secondary btn-sm" onclick="cambiarEstado(<?php echo $tema_c1['id']; ?>, 1)">Deshabilitado</button>
+                                                                        <?php } ?>
                                                             <!-- Permitir editar y eliminar solo si el nivel coincide -->
                                                             <a href="editar_tema.php?txtID=<?php echo $tema_c1['id']; ?>" class="btn btn-info btn-sm">Editar</a>
                                                             <a href="javascript:borrar(<?php echo $tema_c1['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
@@ -495,6 +516,11 @@
                                                     <td><?php echo $tema_c2['nombre_nivel']; ?></td>
                                                     <td>
                                                         <?php if ($nivel_asignado == 12 ) { ?>
+                                                            <?php if ($tema_c2['habilitado']) { ?>
+                                                                        <button class="btn btn-success btn-sm" onclick="cambiarEstado(<?php echo $tema_c2['id']; ?>, 0)">Habilitado</button>
+                                                                        <?php } else { ?>
+                                                                            <button class="btn btn-secondary btn-sm" onclick="cambiarEstado(<?php echo $tema_c2['id']; ?>, 1)">Deshabilitado</button>
+                                                                        <?php } ?>
                                                             <!-- Permitir editar y eliminar solo si el nivel coincide -->
                                                             <a href="editar_tema.php?txtID=<?php echo $tema_c2['id']; ?>" class="btn btn-info btn-sm">Editar</a>
                                                             <a href="javascript:borrar(<?php echo $tema_c2['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
