@@ -39,9 +39,7 @@
                                     <th scope="col" style="background-color:azure"><u>Telefono</u></th>
                                     <th scope="col" style="background-color:azure"><u>Idrol</u></th>
                                     <th scope="col" style="background-color:azure"><u>Usuario</u></th>
-                                    <th scope="col" style="background-color:azure"><u>Password</u></th>
-                                    <!-- <th scope="col" style="background-color:azure"><u></u></th>
-                                    <th scope="col" style="background-color:azure"><u></u></th> -->
+                                    
                                     <th scope="col" style="background-color:azure"><u>Acciones</u></th>
                             </tr>
                         <tbody>
@@ -56,9 +54,9 @@
                                     <td><?php echo $usuario_alu['email']; ?></td>
                                     <td><?php echo $usuario_alu['telefono']; ?></td>
                                     <td><?php  echo $usuario_alu['idrol'];?></td>
-                                    <!-- <td> echo $usuario_alu['fechaingreso']; </td> -->
+                                    
                                     <td><?php  echo $usuario_alu['usuario'];?> </td>
-                                    <td><?php echo str_repeat('*', strlen($usuario_alu['password'])); ?> </td>
+                                    
                                     
                                     <td>
                                         <a class="btn btn-info" href="editar_alu.php?txtID=<?php echo $usuario_alu['id']; ?>" role="button">

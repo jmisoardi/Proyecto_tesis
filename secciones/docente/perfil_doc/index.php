@@ -40,9 +40,7 @@
                                     <th scope="col" style="background-color:azure"><u>Telefono</u></th>
                                     <th scope="col" style="background-color:azure"><u>Idrol</u></th>
                                     <th scope="col" style="background-color:azure"><u>Usuario</u></th>
-                                    <th scope="col" style="background-color:azure"><u>Password</u></th>
-                                    <!-- <th scope="col" style="background-color:azure"><u></u></th>
-                                    <th scope="col" style="background-color:azure"><u></u></th> -->
+                                    
                                     <th scope="col" style="background-color:azure"><u>Acciones</u></th>
                             </tr>
                         <tbody>
@@ -56,10 +54,10 @@
                                     <td><?php echo $usuario_doc['fechanacimiento']; ?></td>
                                     <td><?php echo $usuario_doc['email']; ?></td>
                                     <td><?php echo $usuario_doc['telefono']; ?></td>
-                                    <td><?php  echo $usuario_doc['idrol'];?></td>
-                                    <!-- <td> echo $usuario_doc['fechaingreso']; </td> -->
+                                    <td><?php echo $usuario_doc['idrol'];?></td>
+                                    
                                     <td><?php  echo $usuario_doc['usuario'];?> </td>
-                                    <td><?php echo str_repeat('*', strlen($usuario_doc['password'])); ?> </td>
+                                    
                                     
                                     <td>
                                         <a class="btn btn-info" href="editar_doc.php?txtID=<?php echo $usuario_doc['id']; ?>" role="button">

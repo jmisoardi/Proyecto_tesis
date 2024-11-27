@@ -67,7 +67,6 @@ $lista_tbl_persona = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                     <th scope="col" style="background-color:azure"><u>Nivel</u></th>
                                     <th scope="col" style="background-color:azure"><u>F/Ingreso</u></th>
                                     <th scope="col" style="background-color:azure"><u>Usuario</u></th>
-                                    <th scope="col" style="background-color:azure"><u>Password</u></th>
 
                                     <th scope="col" style="background-color:azure"><u>Acciones</u></th>
                             </tr>
@@ -96,7 +95,7 @@ $lista_tbl_persona = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                                 <td> <?php echo $registro['nombre_nivel']; ?></td>
                                                 <td> <?php echo $registro['fechaingreso']; ?></td>
                                                 <td> <?php echo $registro['usuario']; ?></td>
-                                                <td> <?php echo $registro['password']; ?></td>
+                                                
                                                 <!--Etiqueta de botones Editar y Eliminar-->
                                                 <td>
                                                     <!--Utilizamos bs5-button-a seguido de la línea de código para editar el ID de la fila. -->
