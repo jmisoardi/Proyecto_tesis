@@ -116,18 +116,21 @@
                         </div>
                     <?php endif; ?>
                     <div class="card-body">
+                        
                         <!-- Formulario para los datos del envío de mensaje -->
                         <form action="" method="POST">
                             <div class="form-group">
                                 <label for="email">Destinatario (Correo Electrónico):</label>
+                                
                                 <select name="email" id="email" class="form-control" required>
                                     <option value="" disabled selected>Selecciona un destinatario</option>
-                                    <?php foreach($usuarios as $usuario): ?>
-                                        <option value="<?php echo $usuario['email']; ?>">
-                                            <?php echo $usuario['nombre']; ?> - <?php echo $usuario['email']; ?>
-                                        </option>
-                                    <?php endforeach; ?>
+                                        <?php foreach($usuarios as $usuario): ?>
+                                            <option value="<?php echo $usuario['email']; ?>">
+                                                <?php echo $usuario['nombre']; ?> - <?php echo $usuario['email']; ?>
+                                            </option>
+                                        <?php endforeach; ?>
                                 </select>
+                                
                             </div>
                             <div class="form-group">
                                 <label for="subject">Asunto:</label>

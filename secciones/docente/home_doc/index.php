@@ -20,10 +20,8 @@
                         <p>Si necesitas asistencia o tienes alguna pregunta, no dudes en contactarnos. Estamos aquí para ayudarte.</p>
                         <p>¡Te deseamos un exitoso semestre y mucho éxito en tus labores docentes!</p>
                     </p>
-                    <!-- <button class="btn btn-primary btn-lg" type="button">
-                        Example button
-                    </button> -->
-                </div>
+                    
+            </div>
         </div>    
     </body>    
 <br>

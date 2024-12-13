@@ -4,7 +4,7 @@
     // Incluimos la base de datos. 
     include("../../../bd.php");
 
-    $usuario = $_SESSION['usuario'];
+    $usuario_ad = $_SESSION['usuario'];
 
     //Verificamos si se envío txtID por el metodo GET (enviar).    
     if (isset($_GET['txtID'])) {
@@ -20,10 +20,12 @@
     
     // Obtenemos el id del usuario en sesión;
     $sentencia = $conexion->prepare("SELECT id FROM tbl_persona WHERE usuario = :usuario limit 1");
-    $sentencia->bindParam(':usuario', $usuario);
+    $sentencia->bindParam(':usuario', $usuario_ad);
     $sentencia->execute();
     $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
     
+    $id_usuario = $resultado['id'];
+
     // Obtenemos los mensajes recibidos junto con la información del remitente
     $sentencia = $conexion->prepare("
     SELECT p.nombre, p.apellido, m.id, m.email, m.subject, m.message, m.fecha_envio

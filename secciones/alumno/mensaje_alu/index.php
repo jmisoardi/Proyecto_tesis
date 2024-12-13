@@ -35,6 +35,10 @@
 <?php include("../templates_alu/header_alu.php");?>
 <br>
     <body>
+        <div class="card-header" style="background-color:bisque">    
+            <h1 style="text-align: center; font-family: Georgia, sans-serif;">-Correos Enviados-</h1>
+        </div>
+        <br>
         <div class="card">
             <div class="card-header" style="background-color:bisque">
                 <a name="" id="" class="btn btn-primary" href="crear_men.php" role="button" >Crear Mensaje</a>
