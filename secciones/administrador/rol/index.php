@@ -18,8 +18,7 @@
     $sentencia = $conexion->prepare("SELECT * FROM `tbl_rol`");
     $sentencia->execute();
     $lista_tbl_rol = $sentencia->fetchAll(PDO::FETCH_ASSOC);
-    //Utilizamos el print_r para saber que estamos consultando los registros de la base de datos de la tabla de rol.
-    //print_r($lista_tbl_rol);
+    
 ?>
 
 <?php include("../templates/header.php");?>
@@ -70,8 +69,6 @@
                                         <td>
                                             <!--Utilizamos bs5-button-a seguido de la línea de código para editar el ID de la fila. -->
                                             <a class="btn btn-info" href="editar.php?txtID=<?php echo $registro['id']; ?>" role="button" >Editar</a >
-                                            <!--Utilizamos bs5-button-a seguido de la línea de código para obtener el ID y que nos elimine la fila. -->
-                                            <!--El signo sirve para pasar parametros por URL.-->
                                             <a class="btn btn-danger" href="javascript:borrar(<?php echo $registro['id']; ?>);" role="button" >Eliminar</a >
                                         </td>
                                         
@@ -82,4 +79,5 @@
                 </div>
             </div>
         <div class="card-footer text-muted" style="background-color:bisque"></div>
+        
 <?php include("../templates/footer.php");?>

@@ -103,7 +103,6 @@
                 <form  action="" method="post" enctype="multipart/form-data" style="background-color:azure">
                     <div class="mb-3">
                         <label for="txtID" class="form-label">ID:</label>
-                        <!--En este input se encuentra el readonly es que un atributo de lectura solamente, el usuario no puede modificar el valor-->
                         <input type="text" 
                             value= "<?php echo $txtID; ?>"
                             class="form-control w-auto" readonly name="txtID" id="txtID" aria-describedby="helpId" placeholder="ID" />    

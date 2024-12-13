@@ -1,78 +1,79 @@
 <?php
-session_start();
-include("../../../bd.php");
+    session_start();
+    include("../../../bd.php");
 
-// Recepción del envío `txtID` para cargar los datos
-if (isset($_GET['txtID'])) {
-    $txtID = $_GET['txtID'];
+    // Recepción del envío `txtID` para cargar los datos
+    if (isset($_GET['txtID'])) {
+        $txtID = $_GET['txtID'];
 
-    // Obtener los datos actuales del tema
-    $sentencia = $conexion->prepare("SELECT * FROM tbl_tema WHERE id=:id");
-    $sentencia->bindParam(":id", $txtID);
-    $sentencia->execute();
-    $registro = $sentencia->fetch(PDO::FETCH_LAZY);
+        // Obtener los datos actuales del tema
+        $sentencia = $conexion->prepare("SELECT * FROM tbl_tema WHERE id=:id");
+        $sentencia->bindParam(":id", $txtID);
+        $sentencia->execute();
+        $registro = $sentencia->fetch(PDO::FETCH_LAZY);
 
-    $titulo = $registro["titulo"];
-    $descripcion = $registro["descripcion"];
-    $archivo = $registro["archivo"];
-    $nivel_id = $registro["nivel_id"];
+        $titulo = $registro["titulo"];
+        $descripcion = $registro["descripcion"];
+        $archivo = $registro["archivo"];
+        $nivel_id = $registro["nivel_id"];
 
-    // Obtener la lista de niveles
-    $sentencia = $conexion->prepare("SELECT * FROM `tbl_nivel`");
-    $sentencia->execute();
-    $lista_tbl_nivel = $sentencia->fetchAll(PDO::FETCH_ASSOC);
-}
-
-// Procesar el formulario cuando se envía
-if ($_POST) {
-    $txtID = $_POST['txtID'];
-    $titulo = $_POST["titulo"];
-    $descripcion = $_POST["descripcion"];
-    $nivel_id = $_POST["nivel_id"];
-    $archivoNuevo = $_FILES['archivo']['name'];
-
-    // Verificar si se subió un nuevo archivo
-    if ($archivoNuevo) {
-        // Generar un nombre único para el archivo nuevo
-        $nombreArchivo = time() . '_' . basename($archivoNuevo);
-        $rutaArchivo = $_SERVER['DOCUMENT_ROOT'] . "/Proyecto_tesis/uploads/" . $nombreArchivo;
-        
-        // Eliminar el archivo anterior si existe
-        if ($archivo && file_exists($_SERVER['DOCUMENT_ROOT'] . "/Proyecto_tesis/uploads/" . $archivo)) {
-            unlink($_SERVER['DOCUMENT_ROOT'] . "/Proyecto_tesis/uploads/" . $archivo);
-        }
-        // Mover el archivo subido a la carpeta 'uploads'
-        if (move_uploaded_file($_FILES['archivo']['tmp_name'], $rutaArchivo)) {
-            // Actualizar el nombre del archivo en la base de datos
-            $sentencia = $conexion->prepare("UPDATE tbl_tema SET archivo=:archivo WHERE id=:id");
-            $sentencia->bindParam(":archivo", $nombreArchivo);
-            $sentencia->bindParam(":id", $txtID);
-            $sentencia->execute();
-        } else {
-            echo "Error al subir el nuevo archivo. Verifica los permisos de la carpeta 'uploads'.";
-        }
+        // Obtener la lista de niveles
+        $sentencia = $conexion->prepare("SELECT * FROM `tbl_nivel`");
+        $sentencia->execute();
+        $lista_tbl_nivel = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    // Actualizar los demás datos del tema
-    $sentencia = $conexion->prepare("UPDATE tbl_tema
-                                    SET titulo=:titulo, descripcion=:descripcion, nivel_id=:nivel_id
-                                    WHERE id=:id");
-    $sentencia->bindParam(":titulo", $titulo);
-    $sentencia->bindParam(":descripcion", $descripcion);
-    $sentencia->bindParam(":nivel_id", $nivel_id);
-    $sentencia->bindParam(":id", $txtID);
-    $sentencia->execute();
+    // Procesar el formulario cuando se envía
+    if ($_POST) {
+        $txtID = $_POST['txtID'];
+        $titulo = $_POST["titulo"];
+        $descripcion = $_POST["descripcion"];
+        $nivel_id = $_POST["nivel_id"];
+        $archivoNuevo = $_FILES['archivo']['name'];
 
-    // Redirigir con un mensaje de éxito
-    $mensaje = "Registro Actualizado";
-    header("Location:index.php?mensaje=" . $mensaje);
-    exit;
-}
+        // Verificar si se subió un nuevo archivo
+        if ($archivoNuevo) {
+            // Generar un nombre único para el archivo nuevo
+            $nombreArchivo = time() . '_' . basename($archivoNuevo);
+            $rutaArchivo = $_SERVER['DOCUMENT_ROOT'] . "/Proyecto_tesis/uploads/" . $nombreArchivo;
+            
+            // Eliminar el archivo anterior si existe
+            if ($archivo && file_exists($_SERVER['DOCUMENT_ROOT'] . "/Proyecto_tesis/uploads/" . $archivo)) {
+                unlink($_SERVER['DOCUMENT_ROOT'] . "/Proyecto_tesis/uploads/" . $archivo);
+            }
+            // Mover el archivo subido a la carpeta 'uploads'
+            if (move_uploaded_file($_FILES['archivo']['tmp_name'], $rutaArchivo)) {
+                // Actualizar el nombre del archivo en la base de datos
+                $sentencia = $conexion->prepare("UPDATE tbl_tema SET archivo=:archivo WHERE id=:id");
+                $sentencia->bindParam(":archivo", $nombreArchivo);
+                $sentencia->bindParam(":id", $txtID);
+                $sentencia->execute();
+            } else {
+                echo "Error al subir el nuevo archivo. Verifica los permisos de la carpeta 'uploads'.";
+            }
+        }
+
+        // Actualizar los demás datos del tema
+        $sentencia = $conexion->prepare("UPDATE tbl_tema
+                                        SET titulo=:titulo, descripcion=:descripcion, nivel_id=:nivel_id
+                                        WHERE id=:id");
+        $sentencia->bindParam(":titulo", $titulo);
+        $sentencia->bindParam(":descripcion", $descripcion);
+        $sentencia->bindParam(":nivel_id", $nivel_id);
+        $sentencia->bindParam(":id", $txtID);
+        $sentencia->execute();
+
+        // Redirigir con un mensaje de éxito
+        $mensaje = "Registro Actualizado";
+        header("Location:index.php?mensaje=" . $mensaje);
+        exit;
+    }
 ?>
 
-
 <?php include("../templates/header.php");?>
+
 <link rel="stylesheet" href="../../../css/styles_crear_material.css">
+    
     <!--Estilo para Materiales-->
     <body>      
         <style> 
@@ -93,6 +94,7 @@ if ($_POST) {
                 <div class="container-fluid py-5" style="background-color:azure">
         
                     <div class="card-body">
+                        
                         <!-- Formulario para los datos del envío de mensaje -->
                         <form action="" method="post" enctype="multipart/form-data" style="background-color:azure">
                             <div class="mb-3">
@@ -117,16 +119,11 @@ if ($_POST) {
                                 <label for="archivo"><h5><u>Archivo</u></h5></label>
                                 <input type="file" id="archivo" name="archivo">
                                 <br>
+                                <!-- target="_blank" Hace que el archivo se abra en una nueva pestaña del navegador. -->
                                 <?php if (!empty($archivo)) { ?>
                                     <p>Archivo actual: <a href="../uploads/<?php echo $archivo; ?>" target="_blank"><?php echo $archivo; ?></a></p>
                                 <?php } ?>
                             </div>
-
-                            <!-- <div class="form-group">
-                                <label for="archivo"><h5><u>Archivo</u></h5></label>
-                                <input type="file" 
-                                    value= ""  id="archivo" name="archivo" required>
-                            </div> -->
                             <br>
                             <div class="mb-3">
                                 <label for="nivel_id" class="form-label"><h5><u>Nivel:</u></h5></label>
@@ -152,4 +149,4 @@ if ($_POST) {
     </body>
     <br>
     <br>
-    <?php include("../templates/footer.php");?>
+<?php include("../templates/footer.php");?>
