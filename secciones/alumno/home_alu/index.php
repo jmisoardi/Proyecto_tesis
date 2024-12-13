@@ -18,9 +18,6 @@
                     Es por ello que hemos creado esta página web, un espacio diseñado para conectar a docentes y alumnos en un entorno virtual dinámico y enriquecedor.
                     <br>
                 </p>
-                <!-- <button class="btn btn-primary btn-lg" type="button">
-                    Example button
-                </button> -->
             </div>
         </div>
     </body>

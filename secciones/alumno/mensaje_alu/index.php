@@ -3,7 +3,7 @@
     include("../../../bd.php");
 
     $usuario_alu = $_SESSION['usuario'];
-    /* $_SESSION['usuario'] = $usuario_doc; */
+    
     //Verificamos si se envío txtID por el metodo GET (enviar).    
     if (isset($_GET['txtID'])) {
         $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
@@ -64,8 +64,6 @@
                                     <td><?php echo $mensaje['message']; ?></td>
                                     <td><?php echo date('d/m/Y H:i:s', strtotime($mensaje['fecha_envio'])); ?></td>
                                     <td>
-                                        <!--Utilizamos bs5-button-a seguido de la línea de código para obtener el ID y que nos elimine la fila. -->
-                                        <!--El signo sirve para pasar parametros por URL.-->
                                         <a  href="javascript:borrar(<?php echo $mensaje['id']; ?>);" role="button" >
                                             <img src="../../../css/imagen_tesis/icons/eliminar.png" alt="Eliminar" style="width: 48px; height: 48px; vertical-align: middle;">                                            
                                         </a >

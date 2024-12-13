@@ -94,6 +94,8 @@
     </div>
     <br>
     <br>
+    
     <?php include("../templates_alu/footer_alu.php") ?>
+
 </html>
 

@@ -22,7 +22,7 @@
         </div>
                 <!--Usamos el id "tabla_id" para que tengan los estilos de busquedas, el script se encuentra en el footer-->
                 <div class="table-responsive"> 
-                    <!-- <br>    -->
+                    
                     <table class="table" id="tabla_id">
                         
                             <tr>
@@ -54,10 +54,8 @@
                                     <td><?php echo $usuario_alu['email']; ?></td>
                                     <td><?php echo $usuario_alu['telefono']; ?></td>
                                     <td><?php  echo $usuario_alu['idrol'];?></td>
-                                    
                                     <td><?php  echo $usuario_alu['usuario'];?> </td>
-                                    
-                                    
+                                                                        
                                     <td>
                                         <a class="btn btn-info" href="editar_alu.php?txtID=<?php echo $usuario_alu['id']; ?>" role="button">
                                             <img src="../../../css/imagen_tesis/icons/icon_editar.png" style="width: 32px; height: 32px; vertical-align: middle;">

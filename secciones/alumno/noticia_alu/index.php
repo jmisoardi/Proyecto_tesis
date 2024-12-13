@@ -1,7 +1,7 @@
 <?php 
     include("../../../bd.php");
     include("../templates_alu/header_alu.php");
-    /* include("../noticia/index.php"); */
+    
     
     if (isset($_GET['txtID'])) {
         $txtID = (isset($_GET['txtID'])) ? $_GET['txtID'] :"";
@@ -42,7 +42,7 @@
                 <div class="card-header" style="background-color:silver"></div>
                 <br>
                 <div class="card-body-lg" style="background-color:azure">
-            
+
                     <div class="table-responsive">
                     <!--Usamos el id "tabla_id" para que tengan los estilos de busquedas, el script se encuentra en el footer-->
                         <table class="table" id="tabla_id">
@@ -63,13 +63,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                        <!--Usamos el foreach para recorrer el arreglo de la lista de persona y asignarlo a la variable $registro-->  
+                                <!--Usamos el foreach para recorrer el arreglo de la lista de persona y asignarlo a la variable $registro-->  
                                 <?php foreach ($lista_tbl_noticia as $registro) {?>  
                                     <tr class="">
                                         <td scope="row"><?php echo $fecha_formateada = date('d/m/Y H:i:s', strtotime($registro['fecha'])); ?></td>
                                         <!--La etiqueta <td> podemos agrupar datos en una sola casilla-->
                                                     <td> <?php echo $registro['titulo']; ?> </td>
                                                     <td> <?php echo $registro['cuerpo']; ?></td> 
+                                                    
                                                     <!--Etiqueta de botones Editar y Eliminar-->
                                                     <td>
                                                         <!--Utilizamos bs5-button-a seguido de la línea de código para editar el ID de la fila. -->

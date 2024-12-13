@@ -43,43 +43,43 @@
                 <br>
                 <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
                     <div class="card-header" style="background-color:bisque;">
-                    <h2><?php echo "$descripcion"."$nombre_nivel_ALUMNO "."-"." $descripcion_material"?></h2>
-                    <div class="card-body-sm" style="background-color: azure;">
-                        <div class="table-responsive">
-                            <table class="table" id="tabla_id_1">
-                                <thead>
-                                    <tr>
-                                        <!-- <th>ID</th> -->
-                                        <th>Título</th>
-                                        <th>Descripción</th>
-                                        <th>Archivo</th>
-                                        <th>Nivel</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($materiales as $tema_a1) { ?>
+                        <h2><?php echo "$descripcion"."$nombre_nivel_ALUMNO "."-"." $descripcion_material"?></h2>
+                        <div class="card-body-sm" style="background-color: azure;">
+                            <div class="table-responsive">
+                                
+                                <table class="table" id="tabla_id_1">
+                                    <thead>
                                         <tr>
-                                            <td><?php echo $tema_a1['titulo']; ?></td>
-                                            <td><?php echo $tema_a1['descripcion']; ?></td>
-                                            <td>
-                                                <?php if (!empty($tema_a1['archivo'])) { ?>
-                                                    <a href="/Proyecto_tesis/uploads/<?php echo $tema_a1['archivo']; ?>" target="_blank"><?php echo $tema_a1['archivo']; ?></a>
-                                                <?php } else { ?>
-                                                    No hay archivo
-                                                <?php } ?>
-                                            </td>
-                                            <td><?php echo $tema_a1['nombre_nivel']; ?></td>
+                                            <!-- <th>ID</th> -->
+                                            <th>Título</th>
+                                            <th>Descripción</th>
+                                            <th>Archivo</th>
+                                            <th>Nivel</th>
                                         </tr>
-                                    <?php } ?>
-                                </tbody>
-                            </table>
-                            
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($materiales as $tema_a1) { ?>
+                                            <tr>
+                                                <td><?php echo $tema_a1['titulo']; ?></td>
+                                                <td><?php echo $tema_a1['descripcion']; ?></td>
+                                                <td>
+                                                    <?php if (!empty($tema_a1['archivo'])) { ?>
+                                                        <a href="/Proyecto_tesis/uploads/<?php echo $tema_a1['archivo']; ?>" target="_blank"><?php echo $tema_a1['archivo']; ?></a>
+                                                    <?php } else { ?>
+                                                        No hay archivo
+                                                    <?php } ?>
+                                                </td>
+                                                <td><?php echo $tema_a1['nombre_nivel']; ?></td>
+                                            </tr>
+                                        <?php } ?>
+                                    </tbody>
+                                </table>
+                                
+                            </div>
                         </div>
                     </div>
+                    <br>
                 </div>
-                <br>
-            </div>
-
 
 <br><br>
 <?php include("../templates_alu/footer_alu.php");?>

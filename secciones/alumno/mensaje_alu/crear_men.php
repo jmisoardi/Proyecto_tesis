@@ -43,12 +43,6 @@
                 $sentencia->execute();
                 $destinatario = $sentencia->fetch(PDO::FETCH_ASSOC);
                 
-                // Si no se encuentra el destinatario, mostrar un error o manejar el caso
-                /* if (!$destinatario) {
-                    echo "El destinatario no existe.";
-                    exit();
-                } */
-
                 $destinatario_id = $destinatario['id'];
 
                 // Insertar el mensaje en la base de datos
@@ -154,10 +148,5 @@
             </div>
         </div>
     </body>    
-        <!-- <div class="text-center">
-            <a name="" id="" class="btn btn-info" href="index.php" role="button">
-                <img src="../../../css/imagen_tesis/icons/atras.png" style="width: 30px; height: 30px; vertical-align: middle;">
-            </a>
-        </div> -->
 
 <?php include("../templates_alu/footer_alu.php") ?>
