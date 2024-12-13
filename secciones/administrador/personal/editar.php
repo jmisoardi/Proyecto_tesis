@@ -50,7 +50,21 @@
         $fechaingreso = (isset($_POST["fechaingreso"])) ? $_POST["fechaingreso"]: "";
         $usuario = (isset($_POST["usuario"])) ? $_POST["usuario"]: "";
         $password = (isset($_POST["password"])) ? $_POST["password"]: "";
-            
+        
+        // Verificamos si el usuario ya existe para otro registro
+        $consultaUsuario = $conexion->prepare("SELECT COUNT(*) AS total FROM tbl_persona WHERE usuario = :usuario AND id != :id");
+        $consultaUsuario->bindParam(":usuario", $usuario);
+        $consultaUsuario->bindParam(":id", $txtID);
+        $consultaUsuario->execute();
+        $resultado = $consultaUsuario->fetch(PDO::FETCH_ASSOC);
+
+        if ($resultado['total'] > 0) {
+            // Si el usuario ya existe, mostramos un mensaje y no realizamos la actualización
+            $mensaje = "Error: El usuario '$usuario' ya está en uso. Por favor, elija otro.";
+            header("Location:index.php?mensaje=".urlencode($mensaje));
+            exit;
+        }
+
         //Preparamos la insercción de los datos.
         $sentencia = $conexion->prepare("
         UPDATE tbl_persona 

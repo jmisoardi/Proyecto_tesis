@@ -16,6 +16,19 @@
         $usuario = (isset($_POST["usuario"])) ? $_POST["usuario"]: "";
         $password = (isset($_POST["password"])) ? $_POST["password"]: "";
 
+
+        // Verificar si el usuario ya existe en la base de datos
+        $consultaUsuario = $conexion->prepare("SELECT COUNT(*) AS total FROM tbl_persona WHERE usuario = :usuario");
+        $consultaUsuario->bindParam(":usuario", $usuario);
+        $consultaUsuario->execute();
+        $resultado = $consultaUsuario->fetch(PDO::FETCH_ASSOC);
+
+        if ($resultado['total'] > 0) {
+            // Si el usuario ya existe, mostramos un mensaje y no realizamos la inserción
+            $mensaje = "Error: El usuario '$usuario' ya existe. Por favor, elige otro.";
+            header("Location:index.php?mensaje=".urlencode($mensaje));
+            exit;
+        }
         //Preparamos la insercción de los datos.
         $sentencia = $conexion->prepare("INSERT INTO 
         `tbl_persona`(`id`, `nombre`, `apellido`, `dni`, `fechanacimiento`, `email`, `telefono`, `idrol`, `nivel_asignado`,`fechaingreso`, `usuario`, `password` ) 
