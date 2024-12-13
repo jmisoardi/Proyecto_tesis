@@ -4,8 +4,7 @@
     date_default_timezone_set('America/Argentina/Buenos_Aires');
     
     if($_POST){
-        /* print_r($_POST); */
-
+        
         $titulo = (isset($_POST["titulo"])) ? $_POST["titulo"]: "";
         $cuerpo = (isset($_POST["cuerpo"])) ? $_POST["cuerpo"]: "";
         $fecha = date('Y-m-d H:i:s'); 
@@ -41,10 +40,9 @@
                     <textarea 
                     class="form-control" name="cuerpo" id="cuerpo" rows="10" cols="50"></textarea><br>
 
-                <!--Button bs5-button-default y bs5-button-a (sirve para direccionar) -->
                 <button type="submit" class="btn btn-success">Agregar</button>
                 <a name="" id="" class="btn btn-primary" href="index.php" role="button" >Cancelar</a>
-                <!-- <input type="submit" value="Enviar Noticia"> -->
+                
             </form>    
     </div>
 <?php  include("../templates/footer.php") ?>

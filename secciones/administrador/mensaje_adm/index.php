@@ -1,5 +1,7 @@
 <?php 
     session_start();
+    
+    // Incluimos la base de datos. 
     include("../../../bd.php");
 
     $usuario = $_SESSION['usuario'];
@@ -22,8 +24,6 @@
     $sentencia->execute();
     $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
     
-    /* $id_usuario = $resultado['id']; */
-
     // Obtenemos los mensajes recibidos junto con la información del remitente
     $sentencia = $conexion->prepare("
     SELECT p.nombre, p.apellido, m.id, m.email, m.subject, m.message, m.fecha_envio

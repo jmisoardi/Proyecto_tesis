@@ -1,6 +1,7 @@
 <?php 
     $usuario = $_SESSION['usuario'];
-     //Verificamos si se envío txtID por el metodo GET (enviar).    
+    
+    //Verificamos si se envío txtID por el metodo GET (enviar).    
     if (isset($_GET['txtID'])) {
         $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
         $sentencia = $conexion->prepare ( "DELETE FROM `tbl_mensaje` WHERE id=:id" );
@@ -30,6 +31,7 @@
     $sentencia->execute();
     $mensajes_recibidos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -66,12 +68,10 @@
                                     <td><?php echo date('d/m/Y H:i:s', strtotime($mensaje['fecha_envio'])); ?></td>
                                     <td>
                                         <!--Utilizamos bs5-button-a seguido de la línea de código para obtener el ID y que nos elimine la fila. -->
-                                        <!--El signo sirve para pasar parametros por URL.-->
                                         <a class="btn btn-danger" href="javascript:borrar(<?php echo $mensaje['id']; ?>);" role="button" >Eliminar</a >   
                                     </td>
                                 </tr>
                             <?php } ?>
-                            
                         </tbody>
                     </table>
                 </div>

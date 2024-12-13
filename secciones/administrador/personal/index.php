@@ -4,12 +4,13 @@
 
     //Verificamos si se envío txtID por el metodo GET (enviar).    
     if (isset($_GET['txtID'])) {
-        //Verificamos si está presente en la URL txtID, asignamos el valor en  $_GET['txtID'] de lo contrario no se asigna ningún valor con :"" .
         $txtID = (isset ($_GET['txtID'])) ? $_GET['txtID'] :"";
+        
         //Preparamos la conexion de Borrado.
         $sentencia = $conexion->prepare ( "DELETE FROM tbl_persona WHERE id=:id" );
         $sentencia->bindParam( ":id" ,$txtID );
         $sentencia->execute();
+        
         //Mensaje de Registro Eliminado (Sweet alert).
         $mensaje="Registro Eliminado";
         header("Location:index.php?mensaje=".$mensaje);
@@ -22,10 +23,9 @@
         n.nombre_nivel
     FROM tbl_persona p
     LEFT JOIN tbl_nivel n ON p.nivel_asignado = n.id
-");
-$sentencia->execute();
-$lista_tbl_persona = $sentencia->fetchAll(PDO::FETCH_ASSOC);
-
+    ");
+    $sentencia->execute();
+    $lista_tbl_persona = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <?php include("../templates/header.php");?>
@@ -98,12 +98,10 @@ $lista_tbl_persona = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                                 
                                                 <!--Etiqueta de botones Editar y Eliminar-->
                                                 <td>
-                                                    <!--Utilizamos bs5-button-a seguido de la línea de código para editar el ID de la fila. -->
                                                     <a  href="editar.php?txtID=<?php echo $registro['id']; ?>" role="button" >
                                                         <img src="../../../css/imagen_tesis/icons/icon_editar.png" alt="Editar" style="width: 48px; height: 48px; vertical-align: middle;">                                            
                                                     </a >
-                                                    <!--Utilizamos bs5-button-a seguido de la línea de código para obtener el ID y que nos elimine la fila. -->
-                                                    <!--El signo sirve para pasar parametros por URL.-->
+                                                    
                                                     <a  href="javascript:borrar(<?php echo $registro['id']; ?>);" role="button" >
                                                         <img src="../../../css/imagen_tesis/icons/icon_eliminar.png" alt="Eliminar" style="width: 48px; height: 48px; vertical-align: middle;">                                            
                                                     </a >

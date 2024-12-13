@@ -1,9 +1,9 @@
 <?php 
     // Incluimos la base de datos.
     include("../../../bd.php");
+    
     //Recepción del envío txtID.    
     if (isset($_GET['txtID'])) {
-        //Verificamos si está presente en la URL txtID, asignamos el valor en  $_GET['txtID'] de lo contrario no se asigna ningún valor con :"" .
         $txtID = (isset($_GET['txtID'])) ? $_GET['txtID'] : "";
         
         //Preparamos la conexion de Editar.
@@ -35,11 +35,9 @@
         $lista_tbl_nivel = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    //Verificamos si existe una peticion $_POST, validamos si ese if isset sucedio, lo vamos igualar a ese valor, de lo contrario no sucedio
     if ($_POST){
-        print_r($_POST);
-        
-        //Verificamos si existe una peticion $_POST, validamos si ese if isset sucedio, lo vamos igualar a ese valor, de lo contrario no sucedio
-        //Lo verificamos a este valor $_POST["usuario"] lo comparamos con la llave de pregunta (?) $_POST["usuario"] si sucedio, de lo contrario va a quedar vacío.
+        /* print_r($_POST);     */
         $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : "";
         $nombre = (isset($_POST["nombre"])) ? $_POST["nombre"]: "";
         $apellido = (isset($_POST["apellido"])) ? $_POST["apellido"]: "";

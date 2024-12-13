@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    // Incluir base de datos
+    // Incluir la base de datos
     include("../../../bd.php");
 
     // Incluir el autoload de Composer
@@ -115,6 +115,7 @@
                         </div>
                     <?php endif; ?>
                     <div class="card-body">
+
                         <!-- Formulario para los datos del envío de mensaje -->
                         <form action="" method="POST">
                             <div class="form-group">
@@ -143,6 +144,7 @@
                                 <a name="" id="" class="btn btn-info" href="index.php" role="button">Cancelar</a>
                             </div>
                         </form>
+                        
                     </div>
                 </div>
             </div>

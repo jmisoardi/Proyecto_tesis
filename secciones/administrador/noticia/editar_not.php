@@ -1,7 +1,9 @@
 <?php
     // Incluimos la base de datos. 
     include("../../../bd.php");
+
     date_default_timezone_set('America/Argentina/Buenos_Aires');
+    
     //Recepción del envío txtID.
     if(isset($_GET['txtID'])){
         //Verificamos si está presente en la URL txtID, asignamos el valor en  $_GET['txtID'] de lo contrario no se asigna ningún valor con :"" .
