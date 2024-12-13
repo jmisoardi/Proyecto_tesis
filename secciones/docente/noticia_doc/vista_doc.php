@@ -52,8 +52,6 @@
 
     <head>
         <meta charset="UTF-8">
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../../css/styles.css"> -->
     </head>
     <br>
     <br>
@@ -69,6 +67,7 @@
                 }
             </style>
             <div class="card mx-auto" style="max-width: 900px;">
+                
                 <!--Header y button primary-->
                 <label class="card" style="background-color:gold"><h1>Noticias</h1></label>
                 <div class="card-header" style="background-color:silver"></div>

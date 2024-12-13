@@ -1,6 +1,5 @@
 <?php 
     session_start();
-   /*  print_r($_SESSION); */ 
     include("../../../bd.php");
 
     $usuario_doc = $_SESSION['usuario'];
@@ -20,7 +19,7 @@
             <style> h1 { text-align: center; font-family: Georgia, sans-serif; } </style>
             <h1>-Mi perfil- <br></h1>
         </div>
-            <!-- <div class="card-body-xl" style="background-color:azure"> -->
+            
                 <!--Usamos el id "tabla_id" para que tengan los estilos de busquedas, el script se encuentra en el footer-->
                 <div class="table-responsive"> 
                     <!-- <br>    -->

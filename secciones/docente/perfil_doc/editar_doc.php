@@ -21,7 +21,6 @@
         $email = $registro["email"]; 
         $telefono = $registro["telefono"]; 
         $idrol = $registro["idrol"];
-        /* $fechaingreso = $registro["fechaingreso"]; */
         $usuario = $registro["usuario"];
         $password = $registro["password"];
 
@@ -31,18 +30,12 @@
         $lista_tbl_rol = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     }
     if ($_POST){
-        
-        //Verificamos si existe una peticion $_POST, validamos si ese if isset sucedio, lo vamos igualar a ese valor, de lo contrario no sucedio
-        //Lo verificamos a este valor $_POST["usuario"] lo comparamos con la llave de pregunta (?) $_POST["usuario"] si sucedio, de lo contrario va a quedar vacío.
-        /* $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : ""; */
         $nombre = (isset($_POST["nombre"])) ? $_POST["nombre"]: "";
         $apellido = (isset($_POST["apellido"])) ? $_POST["apellido"]: "";
         $dni = (isset($_POST["dni"])) ? $_POST["dni"]: "";
         $fechanacimiento = (isset($_POST["fechanacimiento"])) ? $_POST["fechanacimiento"]: "";
         $email = (isset($_POST["email"])) ? $_POST["email"]: "";        
         $telefono = (isset($_POST["telefono"])) ? $_POST["telefono"]: "";
-        /* $idrol = (isset($_POST["idrol"])) ? $_POST["idrol"]: ""; */
-        /* $fechaingreso = (isset($_POST["fechaingreso"])) ? $_POST["fechaingreso"]: ""; */
         $usuario = (isset($_POST["usuario"])) ? $_POST["usuario"]: "";
         $password = (isset($_POST["password"])) ? $_POST["password"]: "";
 
@@ -67,12 +60,12 @@
         $sentencia->bindParam(":fechanacimiento",$fechanacimiento);
         $sentencia->bindParam(":email",$email);
         $sentencia->bindParam(":telefono",$telefono);
-        /* $sentencia->bindParam(":idrol",$idrol);
-        $sentencia->bindParam(":fechaingreso",$fechaingreso); */
+        
         $sentencia->bindParam(":usuario",$usuario);
         $sentencia->bindParam(":password",$password);
         $sentencia->bindParam(":id",$txtID);
         $sentencia->execute();
+        
         //Mensaje de Registro Actualizado (Sweet alert).
         $mensaje="Registro Actualizado";
         header("Location:index.php?mensaje=".$mensaje);
@@ -95,16 +88,10 @@
                 <!-- <div class="card-header" style="background-color:bisque">Ingrese los datos para el registro</div> -->
                 
                 <div class="card-body">
+                
                 <!--Formulario para cargar los datos, a traves del metodo Post, con style de color-->   
                     <form  action="" method="post" enctype="multipart/form-data" style="background-color:azure">
                         
-                        <!-- <div class="mb-3"> -->
-                            <!-- <label for="txtID" class="form-label">ID:</label> -->
-                            <!-- En este input se encuentra el readonly es que un atributo de lectura solamente, el usuario no puede modificar el valor -->
-                            <!-- <input type="text" 
-                                value= "  /* echo $txtID; */ ?>" 
-                                class="form-control w-auto" readonly name="txtID" id="txtID" aria-describedby="helpId" placeholder="ID" />    -->
-                        <!-- </div>   -->
                         <div class="mb-3">
                             <label for="nombre" class="form-label"><u>Nombre:</u></label>
                             <input type="text" 
@@ -190,6 +177,7 @@
                                 }
                             }
                         </script>
+                        
                         <!--Button bs5-button-default y bs5-button-a (sirve para direccionar) -->
                         <button type="submit" class="btn btn">
                             <img src="../../../css/imagen_tesis/icons/aceptar.png" style="width: 30px; height: 30px; vertical-align: middle;">

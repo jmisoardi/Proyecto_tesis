@@ -95,488 +95,478 @@
 <?php include("../templates_doc/header_doc.php"); ?>
 <br><br>
 
-<!-- Incluye los estilos CSS -->
-<link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="../../../css/styles.css">
-<!-- <link rel="stylesheet" href="../../../css/styles_unidad_index.css"> -->
+    <!-- Incluye los estilos CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="../../../css/styles.css">
+    <!-- <link rel="stylesheet" href="../../../css/styles_unidad_index.css"> -->
 
-<!-- Incluye los scripts de JavaScript en el orden correcto -->
-<!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
-<!-- <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script> -->
-<script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+    <!-- Incluye los scripts de JavaScript en el orden correcto -->
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
 
-<!-- Script para inicializar DataTable y Acordeón -->
-    <script>
-        $(document).ready(function () {
-            // Inicializar DataTable tabla_id_1
-            $("#tabla_id_1").DataTable({
-                "pageLength": 10,
-                lengthMenu: [[10, 20, 30, 50], [10, 20, 30, 50]],
-                "language": {
-                    "url": "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
-                }
+    <!-- Script para inicializar DataTable y Acordeón -->
+        <script>
+            $(document).ready(function () {
+                // Inicializar DataTable tabla_id_1
+                $("#tabla_id_1").DataTable({
+                    "pageLength": 10,
+                    lengthMenu: [[10, 20, 30, 50], [10, 20, 30, 50]],
+                    "language": {
+                        "url": "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
+                    }
+                });
+                // Inicializar DataTable tabla_id_2
+                $("#tabla_id_2").DataTable({
+                    "pageLength": 10,
+                    lengthMenu: [[10, 20, 30, 50], [10, 20, 30, 50]],
+                    "language": {
+                        "url": "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
+                    }
+                });
+                // Inicializar DataTable tabla_id_3
+                $("#tabla_id_3").DataTable({
+                    "pageLength": 10,
+                    lengthMenu: [[10, 20, 30, 50], [10, 20, 30, 50]],
+                    "language": {
+                        "url": "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
+                    }
+                });
+                // Inicializar DataTable tabla_id_4
+                $("#tabla_id_4").DataTable({
+                    "pageLength": 10,
+                    lengthMenu: [[10, 20, 30, 50], [10, 20, 30, 50]],
+                    "language": {
+                        "url": "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
+                    }
+                });
+                // Inicializar DataTable tabla_id_5
+                $("#tabla_id_5").DataTable({
+                    "pageLength": 10,
+                    lengthMenu: [[10, 20, 30, 50], [10, 20, 30, 50]],
+                    "language": {
+                        "url": "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
+                    }
+                });
+                // Inicializar DataTable tabla_id_6
+                $("#tabla_id_6").DataTable({
+                    "pageLength": 10,
+                    lengthMenu: [[10, 20, 30, 50], [10, 20, 30, 50]],
+                    "language": {
+                        "url": "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
+                    }
+                });
             });
-            // Inicializar DataTable tabla_id_2
-            $("#tabla_id_2").DataTable({
-                "pageLength": 10,
-                lengthMenu: [[10, 20, 30, 50], [10, 20, 30, 50]],
-                "language": {
-                    "url": "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
-                }
-            });
-            // Inicializar DataTable tabla_id_3
-            $("#tabla_id_3").DataTable({
-                "pageLength": 10,
-                lengthMenu: [[10, 20, 30, 50], [10, 20, 30, 50]],
-                "language": {
-                    "url": "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
-                }
-            });
-            // Inicializar DataTable tabla_id_4
-            $("#tabla_id_4").DataTable({
-                "pageLength": 10,
-                lengthMenu: [[10, 20, 30, 50], [10, 20, 30, 50]],
-                "language": {
-                    "url": "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
-                }
-            });
-            // Inicializar DataTable tabla_id_5
-            $("#tabla_id_5").DataTable({
-                "pageLength": 10,
-                lengthMenu: [[10, 20, 30, 50], [10, 20, 30, 50]],
-                "language": {
-                    "url": "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
-                }
-            });
-            // Inicializar DataTable tabla_id_6
-            $("#tabla_id_6").DataTable({
-                "pageLength": 10,
-                lengthMenu: [[10, 20, 30, 50], [10, 20, 30, 50]],
-                "language": {
-                    "url": "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
-                }
-            });
-        });
-    </script>
+        </script>
 
-    <body>
-            <!--Estilo para el titulo Personal-->
-        <style> 
-            h1 {
-                text-align: center; font-family: Georgia, sans-serif;
-            }
-        </style>
-            
-            <!-- Tabla para mostrar (Sección 1) -->
-            <div class="card-header" style="background-color:bisque;">
-                <br>
-                <h1>-Materiales disponibles-</h1>
-                <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
-                <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
-                    <h2>-Sección A0-A1 Starters- <?php echo "$descripcion_material"?></h2>
-                    <div class="card-body-sm" style="background-color: azure;">
-                        <div class="table-responsive">
-                            <table class="table" id="tabla_id_1">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Título</th>
-                                        <th>Descripción</th>
-                                        <th>Archivo</th>
-                                        <th>Nivel</th>
-                                        
-                                        <th>Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($lista_tbl_tema_a1 as $tema_a1) { ?>
+        <body>
+                <!--Estilo para el titulo Personal-->
+            <style> 
+                h1 {
+                    text-align: center; font-family: Georgia, sans-serif;
+                }
+            </style>
+                
+                <!-- Tabla para mostrar (Sección 1) -->
+                <div class="card-header" style="background-color:bisque;">
+                    <br>
+                    <h1>-Materiales disponibles-</h1>
+                    <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
+                    <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
+                        <h2>-Sección A0-A1 Starters- <?php echo "$descripcion_material"?></h2>
+                        <div class="card-body-sm" style="background-color: azure;">
+                            <div class="table-responsive">
+                                <table class="table" id="tabla_id_1">
+                                    <thead>
                                         <tr>
-                                            <td><?php echo $tema_a1['id']; ?></td>
-                                            <td><?php echo $tema_a1['titulo']; ?></td>
-                                            <td><?php echo $tema_a1['descripcion']; ?></td>
-                                            <td>
-                                                <?php if (!empty($tema_a1['archivo'])) { ?>
-                                                    <a href="/Proyecto_tesis/uploads/<?php echo $tema_a1['archivo']; ?>" target="_blank"><?php echo $tema_a1['archivo']; ?></a>
-                                                <?php } else { ?>
-                                                    No hay archivo
-                                                <?php } ?>
-                                            </td>
-                                            <td><?php echo $tema_a1['nombre_nivel']; ?></td>
+                                            <th>ID</th>
+                                            <th>Título</th>
+                                            <th>Descripción</th>
+                                            <th>Archivo</th>
+                                            <th>Nivel</th>
                                             
-                                            <td>
-                                                <?php if ($nivel_asignado == 1 ) { ?>
-                                                    <?php if ($tema_a1['habilitado']) { ?>
-                                                        <button class="btn btn-success btn-sm" onclick="cambiarEstado(<?php echo $tema_a1['id']; ?>, 0)">Habilitado</button>
-                                                    <?php } else { ?>
-                                                        <button class="btn btn-secondary btn-sm" onclick="cambiarEstado(<?php echo $tema_a1['id']; ?>, 1)">Deshabilitado</button>
-                                                    <?php } ?>
-                                                    <!-- Permitir editar y eliminar solo si el nivel coincide -->
-                                                    <a href="editar_tema.php?txtID=<?php echo $tema_a1['id']; ?>" class="btn btn-info btn-sm">Editar</a>
-                                                    <a href="javascript:borrar(<?php echo $tema_a1['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
-                                            
-                                                    <?php } else { ?>
-                                                    <!-- Mostrar mensaje si no tiene permisos -->
-                                                    <span>Sin acceso</span>
-                                                <?php } ?>
-                                            </td>
+                                            <th>Acciones</th>
                                         </tr>
-                                    <?php } ?>
-                                </tbody>
-                            </table>
-                            
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($lista_tbl_tema_a1 as $tema_a1) { ?>
+                                            <tr>
+                                                <td><?php echo $tema_a1['id']; ?></td>
+                                                <td><?php echo $tema_a1['titulo']; ?></td>
+                                                <td><?php echo $tema_a1['descripcion']; ?></td>
+                                                <td>
+                                                    <?php if (!empty($tema_a1['archivo'])) { ?>
+                                                        <a href="/Proyecto_tesis/uploads/<?php echo $tema_a1['archivo']; ?>" target="_blank"><?php echo $tema_a1['archivo']; ?></a>
+                                                    <?php } else { ?>
+                                                        No hay archivo
+                                                    <?php } ?>
+                                                </td>
+                                                <td><?php echo $tema_a1['nombre_nivel']; ?></td>
+                                                
+                                                <td>
+                                                    <?php if ($nivel_asignado == 1 ) { ?>
+                                                        <?php if ($tema_a1['habilitado']) { ?>
+                                                            <button class="btn btn-success btn-sm" onclick="cambiarEstado(<?php echo $tema_a1['id']; ?>, 0)">Habilitado</button>
+                                                        <?php } else { ?>
+                                                            <button class="btn btn-secondary btn-sm" onclick="cambiarEstado(<?php echo $tema_a1['id']; ?>, 1)">Deshabilitado</button>
+                                                        <?php } ?>
+                                                        <!-- Permitir editar y eliminar solo si el nivel coincide -->
+                                                        <a href="editar_tema.php?txtID=<?php echo $tema_a1['id']; ?>" class="btn btn-info btn-sm">Editar</a>
+                                                        <a href="javascript:borrar(<?php echo $tema_a1['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
+                                                
+                                                        <?php } else { ?>
+                                                        <!-- Mostrar mensaje si no tiene permisos -->
+                                                        <span>Sin acceso</span>
+                                                    <?php } ?>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
+                                    </tbody>
+                                </table>
+                                
+                            </div>
                         </div>
                     </div>
+                    <br>
+                </div>
+                        <br>
+                        <!-- Tabla para mostrar (Sección 2) -->
+                <div class="card-header" style="background-color:bisque;">
+                    <br>
+                        <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
+                        <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;" >
+                            <div class="card-header" style="background-color: bisque;">
+                                <div class="card-body-md" style="background-color: azure;">
+                                    <div class="table-responsive">
+                                        <table class="table" id="tabla_id_2">
+                                            <h2>-Sección A2 (Flyers)-  <?php echo "$descripcion_material"?></h2>
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Título</th>
+                                                    <th>Descripción</th>
+                                                    <th>Archivo</th>
+                                                    <th>Nivel</th>
+                                                    <th>Acciones</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php foreach ($lista_tbl_tema_a2 as $tema_a2) { ?>
+                                                    <tr>
+                                                        <td><?php echo $tema_a2['id']; ?></td>
+                                                        <td><?php echo $tema_a2['titulo']; ?></td>
+                                                        <td><?php echo $tema_a2['descripcion']; ?></td>
+                                                        <td>
+                                                            <?php if (!empty($tema_a2['archivo'])) { ?>
+                                                                <a href="/Proyecto_tesis/uploads/<?php echo $tema_a2['archivo']; ?>" target="_blank"><?php echo $tema_a2['archivo']; ?></a>
+                                                            <?php } else { ?>
+                                                                No hay archivo
+                                                            <?php } ?>
+                                                        </td>
+                                                        <td><?php echo $tema_a2['nombre_nivel']; ?></td>
+                                                        <td>
+                                                                <?php if ($nivel_asignado == 3 ) { ?>
+                                                                    
+                                                                    <?php if ($tema_a2['habilitado']) { ?>
+                                                                            <button class="btn btn-success btn-sm" onclick="cambiarEstado(<?php echo $tema_a2['id']; ?>, 0)">Habilitado</button>
+                                                                            <?php } else { ?>
+                                                                                <button class="btn btn-secondary btn-sm" onclick="cambiarEstado(<?php echo $tema_a2['id']; ?>, 1)">Deshabilitado</button>
+                                                                            <?php } ?>
+                                                                <!-- Permitir editar y eliminar solo si el nivel coincide -->
+                                                                <a href="editar_tema.php?txtID=<?php echo $tema_a2['id']; ?>" class="btn btn-info btn-sm">Editar</a>
+                                                                <a href="javascript:borrar(<?php echo $tema_a2['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
+                                                        
+                                                                <?php } else {?>
+                                                                <!-- Mostrar mensaje si no tiene permisos -->
+                                                                <span>Sin acceso</span>
+                                                            <?php } ?>
+                                                        </td>
+                                                    </tr>
+                                                <?php } ?>
+                                            </tbody>
+                                        </table>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <br>
                 </div>
                 <br>
-            </div>
+                <!-- Tabla para mostrar (Sección 3) -->
+                <div class="card-header" style="background-color:bisque;">
                     <br>
-                    <!-- Tabla para mostrar (Sección 2) -->
-            <div class="card-header" style="background-color:bisque;">
-                <br>
-                    <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
-                    <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;" >
-                        <div class="card-header" style="background-color: bisque;">
-                            <div class="card-body-md" style="background-color: azure;">
-                                <div class="table-responsive">
-                                    <table class="table" id="tabla_id_2">
-                                        <h2>-Sección A2 (Flyers)-  <?php echo "$descripcion_material"?></h2>
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Título</th>
-                                                <th>Descripción</th>
-                                                <th>Archivo</th>
-                                                <th>Nivel</th>
-                                                <th>Acciones</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php foreach ($lista_tbl_tema_a2 as $tema_a2) { ?>
+                        <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
+                        <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
+                            <h2>-Sección B1 (Preliminary)-  <?php echo "$descripcion_material"?></h2>
+                            <div class="card-header" style="background-color: bisque;">
+                                <div class="card-body-md" style="background-color: azure;">
+                                    <div class="table-responsive">
+                                        <table class="table" id="tabla_id_3">
+                                            <thead>
                                                 <tr>
-                                                    <td><?php echo $tema_a2['id']; ?></td>
-                                                    <td><?php echo $tema_a2['titulo']; ?></td>
-                                                    <td><?php echo $tema_a2['descripcion']; ?></td>
-                                                    <td>
-                                                        <?php if (!empty($tema_a2['archivo'])) { ?>
-                                                            <a href="/Proyecto_tesis/uploads/<?php echo $tema_a2['archivo']; ?>" target="_blank"><?php echo $tema_a2['archivo']; ?></a>
-                                                        <?php } else { ?>
-                                                            No hay archivo
-                                                        <?php } ?>
-                                                    </td>
-                                                    <td><?php echo $tema_a2['nombre_nivel']; ?></td>
-                                                    <td>
-                                                            <?php if ($nivel_asignado == 3 ) { ?>
-                                                                
-                                                                <?php if ($tema_a2['habilitado']) { ?>
-                                                                        <button class="btn btn-success btn-sm" onclick="cambiarEstado(<?php echo $tema_a2['id']; ?>, 0)">Habilitado</button>
-                                                                        <?php } else { ?>
-                                                                            <button class="btn btn-secondary btn-sm" onclick="cambiarEstado(<?php echo $tema_a2['id']; ?>, 1)">Deshabilitado</button>
-                                                                        <?php } ?>
-                                                            <!-- Permitir editar y eliminar solo si el nivel coincide -->
-                                                            <a href="editar_tema.php?txtID=<?php echo $tema_a2['id']; ?>" class="btn btn-info btn-sm">Editar</a>
-                                                            <a href="javascript:borrar(<?php echo $tema_a2['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
-                                                    
-                                                            <?php } else {?>
-                                                            <!-- Mostrar mensaje si no tiene permisos -->
-                                                            <span>Sin acceso</span>
-                                                        <?php } ?>
-                                                    </td>
+                                                    <th>ID</th>
+                                                    <th>Título</th>
+                                                    <th>Descripción</th>
+                                                    <th>Archivo</th>
+                                                    <th>Nivel</th>
+                                                    <th>Acciones</th>
                                                 </tr>
-                                            <?php } ?>
-                                        </tbody>
-                                    </table>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <br>
-            </div>
-            <br>
-            <!-- Tabla para mostrar (Sección 3) -->
-            <div class="card-header" style="background-color:bisque;">
-                <br>
-                    <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
-                    <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
-                        <h2>-Sección B1 (Preliminary)-  <?php echo "$descripcion_material"?></h2>
-                        <div class="card-header" style="background-color: bisque;">
-                            <div class="card-body-md" style="background-color: azure;">
-                                <div class="table-responsive">
-                                    <table class="table" id="tabla_id_3">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Título</th>
-                                                <th>Descripción</th>
-                                                <th>Archivo</th>
-                                                <th>Nivel</th>
-                                                <th>Acciones</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php foreach ($lista_tbl_tema_b1 as $tema_b1) { ?>
-                                                <tr>
-                                                    <td><?php echo $tema_b1['id']; ?></td>
-                                                    <td><?php echo $tema_b1['titulo']; ?></td>
-                                                    <td><?php echo $tema_b1['descripcion']; ?></td>
-                                                    <td>
-                                                        <?php if (!empty($tema_b1['archivo'])) { ?>
-                                                            <a href="/Proyecto_tesis/uploads/<?php echo $tema_b1['archivo']; ?>" target="_blank"><?php echo $tema_b1['archivo']; ?></a>
-                                                        <?php } else { ?>
-                                                            No hay archivo
-                                                        <?php } ?>
-                                                    </td>
-                                                    <td><?php echo $tema_b1['nombre_nivel']; ?></td>
-                                                    <td>
-                                                        <?php if ($nivel_asignado == 7 ) { ?>
-                                                            <?php if ($tema_b1['habilitado']) { ?>
-                                                                        <button class="btn btn-success btn-sm" onclick="cambiarEstado(<?php echo $tema_b1['id']; ?>, 0)">Habilitado</button>
-                                                                        <?php } else { ?>
-                                                                            <button class="btn btn-secondary btn-sm" onclick="cambiarEstado(<?php echo $tema_b1['id']; ?>, 1)">Deshabilitado</button>
-                                                                        <?php } ?>
-                                                            <!-- Permitir editar y eliminar solo si el nivel coincide -->
-                                                            <a href="editar_tema.php?txtID=<?php echo $tema_b1['id']; ?>" class="btn btn-info btn-sm">Editar</a>
-                                                            <a href="javascript:borrar(<?php echo $tema_b1['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
-                                                    
+                                            </thead>
+                                            <tbody>
+                                                <?php foreach ($lista_tbl_tema_b1 as $tema_b1) { ?>
+                                                    <tr>
+                                                        <td><?php echo $tema_b1['id']; ?></td>
+                                                        <td><?php echo $tema_b1['titulo']; ?></td>
+                                                        <td><?php echo $tema_b1['descripcion']; ?></td>
+                                                        <td>
+                                                            <?php if (!empty($tema_b1['archivo'])) { ?>
+                                                                <a href="/Proyecto_tesis/uploads/<?php echo $tema_b1['archivo']; ?>" target="_blank"><?php echo $tema_b1['archivo']; ?></a>
                                                             <?php } else { ?>
-                                                            <!-- Mostrar mensaje si no tiene permisos -->
-                                                            <span>Sin acceso</span>
-                                                        <?php } ?>
-                                                    </td>
-                                                </tr>
-                                            <?php } ?>
-                                        </tbody>
-                                    </table>
-                                    
+                                                                No hay archivo
+                                                            <?php } ?>
+                                                        </td>
+                                                        <td><?php echo $tema_b1['nombre_nivel']; ?></td>
+                                                        <td>
+                                                            <?php if ($nivel_asignado == 7 ) { ?>
+                                                                <?php if ($tema_b1['habilitado']) { ?>
+                                                                            <button class="btn btn-success btn-sm" onclick="cambiarEstado(<?php echo $tema_b1['id']; ?>, 0)">Habilitado</button>
+                                                                            <?php } else { ?>
+                                                                                <button class="btn btn-secondary btn-sm" onclick="cambiarEstado(<?php echo $tema_b1['id']; ?>, 1)">Deshabilitado</button>
+                                                                            <?php } ?>
+                                                                <!-- Permitir editar y eliminar solo si el nivel coincide -->
+                                                                <a href="editar_tema.php?txtID=<?php echo $tema_b1['id']; ?>" class="btn btn-info btn-sm">Editar</a>
+                                                                <a href="javascript:borrar(<?php echo $tema_b1['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
+                                                        
+                                                                <?php } else { ?>
+                                                                <!-- Mostrar mensaje si no tiene permisos -->
+                                                                <span>Sin acceso</span>
+                                                            <?php } ?>
+                                                        </td>
+                                                    </tr>
+                                                <?php } ?>
+                                            </tbody>
+                                        </table>
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <br>
+                </div>
                 <br>
-            </div>
-            <br>
-            <!-- Tabla para mostrar (Sección 4) -->
-            <div class="card-header" style="background-color:bisque;">
-                <br>
-                    <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
-                    <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
-                        <h2>-Sección B2 (First for Schools)-  <?php echo "$descripcion_material"?></h2>
-                        <div class="card-header" style="background-color: bisque;">
-                            <div class="card-body-md" style="background-color: azure;">
-                                <div class="table-responsive">
-                                    <table class="table" id="tabla_id_4">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Título</th>
-                                                <th>Descripción</th>
-                                                <th>Archivo</th>
-                                                <th>Nivel</th>
-                                                <th>Acciones</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php foreach ($lista_tbl_tema_b2 as $tema_b2) { ?>
+                <!-- Tabla para mostrar (Sección 4) -->
+                <div class="card-header" style="background-color:bisque;">
+                    <br>
+                        <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
+                        <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
+                            <h2>-Sección B2 (First for Schools)-  <?php echo "$descripcion_material"?></h2>
+                            <div class="card-header" style="background-color: bisque;">
+                                <div class="card-body-md" style="background-color: azure;">
+                                    <div class="table-responsive">
+                                        <table class="table" id="tabla_id_4">
+                                            <thead>
                                                 <tr>
-                                                    <td><?php echo $tema_b2['id']; ?></td>
-                                                    <td><?php echo $tema_b2['titulo']; ?></td>
-                                                    <td><?php echo $tema_b2['descripcion']; ?></td>
-                                                    <td>
-                                                        <?php if (!empty($tema_b2['archivo'])) { ?>
-                                                            <a href="/Proyecto_tesis/uploads/<?php echo $tema_b2['archivo']; ?>" target="_blank"><?php echo $tema_b2['archivo']; ?></a>
-                                                        <?php } else { ?>
-                                                            No hay archivo
-                                                        <?php } ?>
-                                                    </td>
-                                                    <td><?php echo $tema_b2['nombre_nivel']; ?></td>
-                                                    <td>
-                                                        <?php if ($nivel_asignado == 9 ) { ?>
-                                                            <?php if ($tema_b2['habilitado']) { ?>
-                                                                        <button class="btn btn-success btn-sm" onclick="cambiarEstado(<?php echo $tema_b2['id']; ?>, 0)">Habilitado</button>
-                                                                        <?php } else { ?>
-                                                                            <button class="btn btn-secondary btn-sm" onclick="cambiarEstado(<?php echo $tema_b2['id']; ?>, 1)">Deshabilitado</button>
-                                                                        <?php } ?>
-                                                            <!-- Permitir editar y eliminar solo si el nivel coincide -->
-                                                            <a href="editar_tema.php?txtID=<?php echo $tema_b2['id']; ?>" class="btn btn-info btn-sm">Editar</a>
-                                                            <a href="javascript:borrar(<?php echo $tema_b2['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
-                                                    
-                                                            <?php } else { ?>
-                                                            <!-- Mostrar mensaje si no tiene permisos -->
-                                                            <span>Sin acceso</span>
-                                                        <?php } ?>
-                                                    </td>
+                                                    <th>ID</th>
+                                                    <th>Título</th>
+                                                    <th>Descripción</th>
+                                                    <th>Archivo</th>
+                                                    <th>Nivel</th>
+                                                    <th>Acciones</th>
                                                 </tr>
-                                            <?php } ?>
-                                        </tbody>
-                                    </table>
-                                    
+                                            </thead>
+                                            <tbody>
+                                                <?php foreach ($lista_tbl_tema_b2 as $tema_b2) { ?>
+                                                    <tr>
+                                                        <td><?php echo $tema_b2['id']; ?></td>
+                                                        <td><?php echo $tema_b2['titulo']; ?></td>
+                                                        <td><?php echo $tema_b2['descripcion']; ?></td>
+                                                        <td>
+                                                            <?php if (!empty($tema_b2['archivo'])) { ?>
+                                                                <a href="/Proyecto_tesis/uploads/<?php echo $tema_b2['archivo']; ?>" target="_blank"><?php echo $tema_b2['archivo']; ?></a>
+                                                            <?php } else { ?>
+                                                                No hay archivo
+                                                            <?php } ?>
+                                                        </td>
+                                                        <td><?php echo $tema_b2['nombre_nivel']; ?></td>
+                                                        <td>
+                                                            <?php if ($nivel_asignado == 9 ) { ?>
+                                                                <?php if ($tema_b2['habilitado']) { ?>
+                                                                            <button class="btn btn-success btn-sm" onclick="cambiarEstado(<?php echo $tema_b2['id']; ?>, 0)">Habilitado</button>
+                                                                            <?php } else { ?>
+                                                                                <button class="btn btn-secondary btn-sm" onclick="cambiarEstado(<?php echo $tema_b2['id']; ?>, 1)">Deshabilitado</button>
+                                                                            <?php } ?>
+                                                                <!-- Permitir editar y eliminar solo si el nivel coincide -->
+                                                                <a href="editar_tema.php?txtID=<?php echo $tema_b2['id']; ?>" class="btn btn-info btn-sm">Editar</a>
+                                                                <a href="javascript:borrar(<?php echo $tema_b2['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
+                                                        
+                                                                <?php } else { ?>
+                                                                <!-- Mostrar mensaje si no tiene permisos -->
+                                                                <span>Sin acceso</span>
+                                                            <?php } ?>
+                                                        </td>
+                                                    </tr>
+                                                <?php } ?>
+                                            </tbody>
+                                        </table>
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <br>
+                </div>
                 <br>
-            </div>
-            <br>
-            <!-- Tabla para mostrar (Sección 5) -->
-            <div class="card-header" style="background-color:bisque;">
-                <br>
-                    <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
-                    <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
-                        <h2>-Sección C1 (Advanced)-  <?php echo "$descripcion_material"?></h2>
-                        <div class="card-header" style="background-color: bisque;">
-                            <div class="card-body-md" style="background-color: azure;">
-                                <div class="table-responsive">
-                                    <table class="table" id="tabla_id_5">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Título</th>
-                                                <th>Descripción</th>
-                                                <th>Archivo</th>
-                                                <th>Nivel</th>
-                                                <th>Acciones</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php foreach ($lista_tbl_tema_c1 as $tema_c1) { ?>
+                <!-- Tabla para mostrar (Sección 5) -->
+                <div class="card-header" style="background-color:bisque;">
+                    <br>
+                        <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
+                        <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
+                            <h2>-Sección C1 (Advanced)-  <?php echo "$descripcion_material"?></h2>
+                            <div class="card-header" style="background-color: bisque;">
+                                <div class="card-body-md" style="background-color: azure;">
+                                    <div class="table-responsive">
+                                        <table class="table" id="tabla_id_5">
+                                            <thead>
                                                 <tr>
-                                                    <td><?php echo $tema_c1['id']; ?></td>
-                                                    <td><?php echo $tema_c1['titulo']; ?></td>
-                                                    <td><?php echo $tema_c1['descripcion']; ?></td>
-                                                    <td>
-                                                        <?php if (!empty($tema_c1['archivo'])) { ?>
-                                                            <a href="/Proyecto_tesis/uploads/<?php echo $tema_c1['archivo']; ?>" target="_blank"><?php echo $tema_c1['archivo']; ?></a>
-                                                        <?php } else { ?>
-                                                            No hay archivo
-                                                        <?php } ?>
-                                                    </td>
-                                                    <td><?php echo $tema_c1['nombre_nivel']; ?></td>
-                                                    <td>
-                                                        <?php if ($nivel_asignado == 11 ) { ?>
-                                                            <?php if ($tema_c1['habilitado']) { ?>
-                                                                        <button class="btn btn-success btn-sm" onclick="cambiarEstado(<?php echo $tema_c1['id']; ?>, 0)">Habilitado</button>
-                                                                        <?php } else { ?>
-                                                                            <button class="btn btn-secondary btn-sm" onclick="cambiarEstado(<?php echo $tema_c1['id']; ?>, 1)">Deshabilitado</button>
-                                                                        <?php } ?>
-                                                            <!-- Permitir editar y eliminar solo si el nivel coincide -->
-                                                            <a href="editar_tema.php?txtID=<?php echo $tema_c1['id']; ?>" class="btn btn-info btn-sm">Editar</a>
-                                                            <a href="javascript:borrar(<?php echo $tema_c1['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
-                                                    
-                                                            <?php } else { ?>
-                                                            <!-- Mostrar mensaje si no tiene permisos -->
-                                                            <span>Sin acceso</span>
-                                                        <?php } ?>
-                                                    </td>
+                                                    <th>ID</th>
+                                                    <th>Título</th>
+                                                    <th>Descripción</th>
+                                                    <th>Archivo</th>
+                                                    <th>Nivel</th>
+                                                    <th>Acciones</th>
                                                 </tr>
-                                            <?php } ?>
-                                        </tbody>
-                                    </table>
-                                    
+                                            </thead>
+                                            <tbody>
+                                                <?php foreach ($lista_tbl_tema_c1 as $tema_c1) { ?>
+                                                    <tr>
+                                                        <td><?php echo $tema_c1['id']; ?></td>
+                                                        <td><?php echo $tema_c1['titulo']; ?></td>
+                                                        <td><?php echo $tema_c1['descripcion']; ?></td>
+                                                        <td>
+                                                            <?php if (!empty($tema_c1['archivo'])) { ?>
+                                                                <a href="/Proyecto_tesis/uploads/<?php echo $tema_c1['archivo']; ?>" target="_blank"><?php echo $tema_c1['archivo']; ?></a>
+                                                            <?php } else { ?>
+                                                                No hay archivo
+                                                            <?php } ?>
+                                                        </td>
+                                                        <td><?php echo $tema_c1['nombre_nivel']; ?></td>
+                                                        <td>
+                                                            <?php if ($nivel_asignado == 11 ) { ?>
+                                                                <?php if ($tema_c1['habilitado']) { ?>
+                                                                            <button class="btn btn-success btn-sm" onclick="cambiarEstado(<?php echo $tema_c1['id']; ?>, 0)">Habilitado</button>
+                                                                            <?php } else { ?>
+                                                                                <button class="btn btn-secondary btn-sm" onclick="cambiarEstado(<?php echo $tema_c1['id']; ?>, 1)">Deshabilitado</button>
+                                                                            <?php } ?>
+                                                                <!-- Permitir editar y eliminar solo si el nivel coincide -->
+                                                                <a href="editar_tema.php?txtID=<?php echo $tema_c1['id']; ?>" class="btn btn-info btn-sm">Editar</a>
+                                                                <a href="javascript:borrar(<?php echo $tema_c1['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
+                                                        
+                                                                <?php } else { ?>
+                                                                <!-- Mostrar mensaje si no tiene permisos -->
+                                                                <span>Sin acceso</span>
+                                                            <?php } ?>
+                                                        </td>
+                                                    </tr>
+                                                <?php } ?>
+                                            </tbody>
+                                        </table>
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <br>
+                </div>
                 <br>
-            </div>
-            <br>
-            <!-- Tabla para mostrar (Sección 6) -->
-            <div class="card-header" style="background-color:bisque;">
-                <br>
-                    <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
-                    <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
-                        <h2>-Sección C2 (Proficiency)-  <?php echo "$descripcion_material"?></h2>                    
-                        <div class="card-header" style="background-color: bisque;">
-                            <div class="card-body-md" style="background-color: azure;">
-                                <div class="table-responsive">
-                                    <table class="table" id="tabla_id_6">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Título</th>
-                                                <th>Descripción</th>
-                                                <th>Archivo</th>
-                                                <th>Nivel</th>
-                                                <th>Acciones</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php foreach ($lista_tbl_tema_c2 as $tema_c2) { ?>
+                <!-- Tabla para mostrar (Sección 6) -->
+                <div class="card-header" style="background-color:bisque;">
+                    <br>
+                        <a name="" id="" class="btn btn-primary btn-mover-derecha" href="crear_tema.php" role="button" >Ingresar Contenido</a>
+                        <div class="unidad" style="width: auto; height: auto; border: 1px solid #000;">
+                            <h2>-Sección C2 (Proficiency)-  <?php echo "$descripcion_material"?></h2>                    
+                            <div class="card-header" style="background-color: bisque;">
+                                <div class="card-body-md" style="background-color: azure;">
+                                    <div class="table-responsive">
+                                        <table class="table" id="tabla_id_6">
+                                            <thead>
                                                 <tr>
-                                                    <td><?php echo $tema_c2['id']; ?></td>
-                                                    <td><?php echo $tema_c2['titulo']; ?></td>
-                                                    <td><?php echo $tema_c2['descripcion']; ?></td>
-                                                    <td>
-                                                        <?php if (!empty($tema_c2['archivo'])) { ?>
-                                                            <a href="/Proyecto_tesis/uploads/<?php echo $tema_c2['archivo']; ?>" target="_blank"><?php echo $tema_c2['archivo']; ?></a>
-                                                        <?php } else { ?>
-                                                            No hay archivo
-                                                        <?php } ?>
-                                                    </td>
-                                                    <td><?php echo $tema_c2['nombre_nivel']; ?></td>
-                                                    <td>
-                                                        <?php if ($nivel_asignado == 12 ) { ?>
-                                                            <?php if ($tema_c2['habilitado']) { ?>
-                                                                        <button class="btn btn-success btn-sm" onclick="cambiarEstado(<?php echo $tema_c2['id']; ?>, 0)">Habilitado</button>
-                                                                        <?php } else { ?>
-                                                                            <button class="btn btn-secondary btn-sm" onclick="cambiarEstado(<?php echo $tema_c2['id']; ?>, 1)">Deshabilitado</button>
-                                                                        <?php } ?>
-                                                            <!-- Permitir editar y eliminar solo si el nivel coincide -->
-                                                            <a href="editar_tema.php?txtID=<?php echo $tema_c2['id']; ?>" class="btn btn-info btn-sm">Editar</a>
-                                                            <a href="javascript:borrar(<?php echo $tema_c2['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
-                                                    
-                                                            <?php } else { ?>
-                                                            <!-- Mostrar mensaje si no tiene permisos -->
-                                                            <span>Sin acceso</span>
-                                                        <?php } ?>
-                                                    </td>
+                                                    <th>ID</th>
+                                                    <th>Título</th>
+                                                    <th>Descripción</th>
+                                                    <th>Archivo</th>
+                                                    <th>Nivel</th>
+                                                    <th>Acciones</th>
                                                 </tr>
-                                            <?php } ?>
-                                        </tbody>
-                                    </table>
-                                    
+                                            </thead>
+                                            <tbody>
+                                                <?php foreach ($lista_tbl_tema_c2 as $tema_c2) { ?>
+                                                    <tr>
+                                                        <td><?php echo $tema_c2['id']; ?></td>
+                                                        <td><?php echo $tema_c2['titulo']; ?></td>
+                                                        <td><?php echo $tema_c2['descripcion']; ?></td>
+                                                        <td>
+                                                            <?php if (!empty($tema_c2['archivo'])) { ?>
+                                                                <a href="/Proyecto_tesis/uploads/<?php echo $tema_c2['archivo']; ?>" target="_blank"><?php echo $tema_c2['archivo']; ?></a>
+                                                            <?php } else { ?>
+                                                                No hay archivo
+                                                            <?php } ?>
+                                                        </td>
+                                                        <td><?php echo $tema_c2['nombre_nivel']; ?></td>
+                                                        <td>
+                                                            <?php if ($nivel_asignado == 12 ) { ?>
+                                                                <?php if ($tema_c2['habilitado']) { ?>
+                                                                            <button class="btn btn-success btn-sm" onclick="cambiarEstado(<?php echo $tema_c2['id']; ?>, 0)">Habilitado</button>
+                                                                            <?php } else { ?>
+                                                                                <button class="btn btn-secondary btn-sm" onclick="cambiarEstado(<?php echo $tema_c2['id']; ?>, 1)">Deshabilitado</button>
+                                                                            <?php } ?>
+                                                                <!-- Permitir editar y eliminar solo si el nivel coincide -->
+                                                                <a href="editar_tema.php?txtID=<?php echo $tema_c2['id']; ?>" class="btn btn-info btn-sm">Editar</a>
+                                                                <a href="javascript:borrar(<?php echo $tema_c2['id']; ?>);" class="btn btn-danger btn-sm">Eliminar</a>
+                                                        
+                                                                <?php } else { ?>
+                                                                <!-- Mostrar mensaje si no tiene permisos -->
+                                                                <span>Sin acceso</span>
+                                                            <?php } ?>
+                                                        </td>
+                                                    </tr>
+                                                <?php } ?>
+                                            </tbody>
+                                        </table>
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        <br>
+                </div>    
                 <br>
-            </div>    
-            <br>
-            <br>
+                <br>
             </div>
-    </body>
-    <br>
-    <br>
-    <script>
-        function cambiarEstado(id, estado) {
-            if (confirm("¿Estás seguro de cambiar el estado de este material?")) {
-                fetch("cambiar_estado.php", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ id: id, habilitado: estado })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        location.reload(); // Recargar la página para reflejar el cambio
-                    } else {
-                        alert(data.message || "Error al cambiar el estado");
-                    }
-                })
-                .catch(error => {
-                    console.error("Error en la solicitud:", error);
-                });
+        </body>
+        <br>
+        <br>
+        <script>
+            function cambiarEstado(id, estado) {
+                if (confirm("¿Estás seguro de cambiar el estado de este material?")) {
+                    fetch("cambiar_estado.php", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ id: id, habilitado: estado })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            location.reload(); // Recargar la página para reflejar el cambio
+                        } else {
+                            alert(data.message || "Error al cambiar el estado");
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error en la solicitud:", error);
+                    });
+                }
             }
-        }
-
-    </script>
-
-    <!-- <div class="text-center">
-        <a class="btn btn-info" href="index.php" role="button">
-            <img src="../../../css/imagen_tesis/icons/atras.png" style="width: 30px; height: 30px; vertical-align: middle;">
-        </a>
-    </div> -->
+        </script>
 
 <?php include("../templates_doc/footer_doc.php"); ?>

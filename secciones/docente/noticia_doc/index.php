@@ -1,7 +1,7 @@
 <?php 
     session_start();
     include("../../../bd.php");
-    /* include("../noticia/index.php"); */
+    
     
     if (isset($_GET['txtID'])) {
         $txtID = (isset($_GET['txtID'])) ? $_GET['txtID'] :"";
@@ -36,6 +36,7 @@
                 
                 <div class="card-body-xl" style="background-color:azure">
                     <div class="table-responsive">
+                    
                     <!--Usamos el id "tabla_id" para que tengan los estilos de busquedas, el script se encuentra en el footer-->
                         <table class="table" id="tabla_id">
                             <thead>

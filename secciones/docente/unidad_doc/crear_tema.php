@@ -3,7 +3,6 @@
     include("../../../bd.php");
     
     // Obtener el nivel asignado al docente desde la tabla tbl_persona
-        
     $usuario_sesion = $_SESSION['usuario'];
 
     // Consulta para obtener el ID del usuario
@@ -55,39 +54,6 @@
         }
     }
 
-
-    /* if ($_POST){
-        print_r($_POST);
-        
-        //Verificamos si existe una peticion $_POST, validamos si ese if isset sucedio, lo vamos igualar a ese valor, de lo contrario no sucedio
-        //Lo verificamos a este valor $_POST["usuario"] lo comparamos con la llave de pregunta (?) $_POST["usuario"] si sucedio, de lo contrario va a quedar vacío.
-        $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : "";
-        
-        $titulo = (isset($_POST["titulo"])) ? $_POST["titulo"]: "";
-        $descripcion = (isset($_POST["descripcion"])) ? $_POST["descripcion"]: "";
-        $archivo = (isset($_POST["archivo"])) ? $_POST["archivo"]: "";
-        
-        $nivel_id = (isset($_POST["nivel_id"])) ? $_POST["nivel_id"]: "";
-            
-        //Preparamos la insercción de los datos.
-        //Preparamos la insercción de los datos.
-        $sentencia = $conexion->prepare("INSERT INTO 
-        `tbl_tema`(`id`, `titulo`, `descripcion`, `archivo`, `nivel_id`) 
-        VALUES (null, :titulo, :descripcion, :archivo, :nivel_id)");
-        
-        //Asignando los valores que vienen del  método POST (Los que vienen del formulario).
-        $sentencia->bindParam(":titulo",$titulo);
-        $sentencia->bindParam(":descripcion",$descripcion);
-        $sentencia->bindParam(":archivo",$archivo);
-        
-        
-        $sentencia->bindParam(":nivel_id",$nivel_id);
-        
-        $sentencia->execute();
-        //Mensaje de Registro Actualizado (Sweet alert).
-        $mensaje="Registro Agregado";
-        header("Location:index.php?mensaje=".$mensaje);
-    } */
     $sentencia = $conexion->prepare("SELECT * FROM `tbl_nivel`");
     $sentencia->execute();
     $lista_tbl_nivel = $sentencia->fetchAll(PDO::FETCH_ASSOC);
@@ -116,6 +82,7 @@
                 <div class="container-fluid py-5" style="background-color:azure">
         
                     <div class="card-body">
+                        
                         <!-- Formulario para los datos del envío de mensaje -->
                         <form action="" method="POST" enctype="multipart/form-data">
 
@@ -141,6 +108,7 @@
                             <button type="submit" class="btn btn-success">Agregar</button>
                             <a name="" id="" class="btn btn-primary" href="index.php" role="button" >Cancelar</a>
                         </form>
+                        
                     </div>
                 </div>
             </div>
