@@ -34,6 +34,24 @@
 ?>
 <?php include("../templates_alu/header_alu.php");?>
 <br>
+    <!--Script para data table-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+    
+    <!--Script diseño data table-->
+    <script>
+        $(document).ready(function () {
+            // Inicializar DataTable tabla_id_1
+            $("#tabla_id").DataTable({
+                "pageLength": 10,
+                lengthMenu: [[10, 20, 30, 50], [10, 20, 30, 50]],
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
+                }
+            });            
+        });
+    </script>
     <body>
         <div class="card-header" style="background-color:bisque">    
             <h1 style="text-align: center; font-family: Georgia, sans-serif;">-Correos Enviados-</h1>

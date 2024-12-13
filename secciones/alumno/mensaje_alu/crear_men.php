@@ -142,7 +142,7 @@
                             <button type="submit" class="btn btn-success">Enviar</button>
                             
                             <div class="text-center">    
-                                <a name="" id="" class="btn btn-info" href="index.php" role="button">Cancelar</a>
+                                <a name="" id="" class="btn btn-info" href="index.php" role="button">Regresar</a>
                             </div>
                         </form>
                     </div>
