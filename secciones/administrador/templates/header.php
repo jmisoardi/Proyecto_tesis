@@ -72,9 +72,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo $url_base;?>secciones/administrador/unidad_ad/">Unidad</a>
                                 </li>
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a class="nav-link" href="<?php echo $url_base;?>secciones/administrador/usuario/">Usuarios</a>
-                                </li>
+                                </li> -->
                                 <!--Se agrego para usarlo en el navegador simplemente comodidad, ver si va en la linea con Personal, rol, usuario, -->
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo $url_base;?>secciones/alumno/home_alu/index.php">Alumno</a>
