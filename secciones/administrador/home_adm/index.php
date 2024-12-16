@@ -8,15 +8,19 @@
     <!-- Datos de bienvenida para el Usuario -->
     <div class="p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5" style="background-color:azure">
-            <h1 class="display-5 fw-bold">Introducción</h1>
+            <h1 class="display-5 fw-bold">Introducción para el Administrador</h1>
                     <p class="col-md-8 fs-4">
                         <h1>Bienvenid@ <?php  $_SESSION['usuario'];?> a "BridgeClass"</h1>
-                        Nos enorgullece presentarles un proyecto que surge del compromiso con la excelencia educativa y la innovación constante. 
-                        Desde su concepción, nuestra plataforma se ha distinguido por su carácter original y vanguardista, 
-                        con un enfoque inclusivo y participativo que busca atender las diversas necesidades y expectativas de docentes y alumnos por igual.
-                        <br>
-                        En un mundo donde la educación es clave para el desarrollo personal y social, creemos firmemente en la importancia de brindar herramientas que faciliten el proceso de enseñanza y aprendizaje. 
-                        Es por ello que hemos creado esta página web, un espacio diseñado para conectar a docentes y alumnos en un entorno virtual dinámico y enriquecedor.
+                            <br>
+                            Esta plataforma ha sido diseñada pensando en la excelencia educativa y en facilitar la gestión académica en un entorno virtual. 
+                            <br>
+                        </p>
+                        <p>
+                            -Como administrador, desempeñas un papel fundamental en el buen funcionamiento del sistema, asegurándote de que docentes y alumnos cuenten con un entorno ordenado, accesible y funcional para sus actividades educativas.
+                            En tu rol, tendrás acceso a herramientas avanzadas que te permitirán gestionar usuarios, supervisar contenidos, configurar roles, y mantener un control eficiente sobre los recursos y actividades del aula virtual.
+                            Nuestra misión es empoderarte con las funciones necesarias para que la administración de "BridgeClass" sea intuitiva y eficaz, permitiéndote centrarte en apoyar a los docentes y alumnos en su desarrollo educativo.
+                        </p>        
+                            -Agradecemos tu compromiso y confianza en esta plataforma. Juntos, hacemos posible una educación más conectada, organizada y enriquecedora.
                         <br>
                     </p>
                     <!-- <button class="btn btn-primary btn-lg" type="button">
