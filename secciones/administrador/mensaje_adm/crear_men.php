@@ -141,7 +141,7 @@
                             <button type="submit" class="btn btn-success">Enviar</button>
                             
                             <div class="text-center">    
-                                <a name="" id="" class="btn btn-info" href="index.php" role="button">Regresar</a>
+                                <a name="" id="" class="btn btn-info" href="index.php" role="button">Cancelar</a>
                             </div>
                         </form>
                         
