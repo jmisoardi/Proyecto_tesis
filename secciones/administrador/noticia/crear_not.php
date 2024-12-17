@@ -20,7 +20,7 @@
         $fecha_formateada = date('d/m/Y H:i:s', strtotime($fecha));
     
         //Mensaje de Registro Agregado (Sweet alert).
-        $mensaje="Mensaje Creado";
+        $mensaje="¡Notificación enviada con éxito!";
         header("Location:index.php?mensaje=".$mensaje);
     }
 ?>
