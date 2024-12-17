@@ -37,12 +37,14 @@
                 <label for="titulo" class="form-label"><h4>Titulo:</h4></label>
                     <input type="text" class="form-control" name="titulo" id="titulo"><br>
                 <label for="cuerpo" class="form-label"><h3>Mensaje:</h3></label>
-                    <textarea 
-                    class="form-control" name="cuerpo" id="cuerpo" rows="10" cols="50"></textarea><br>
-
+                <textarea 
+                    class="form-control" name="cuerpo" id="cuerpo" rows="10" cols="50">
+                </textarea>
+                <br>
                 <button type="submit" class="btn btn-success">Agregar</button>
                 <a name="" id="" class="btn btn-primary" href="index.php" role="button" >Cancelar</a>
-                
+                <br>
+                <br>
             </form>    
     </div>
 <?php  include("../templates/footer.php") ?>
