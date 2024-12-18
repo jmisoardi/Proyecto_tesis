@@ -39,7 +39,10 @@
         </script>
         <br>
         <br>
-        
+        <br>
+        <br>
+        <br>
+        <br>
         <!-- Footer de templates de Administrador -->
         <footer class="bg-info text-white text-center py-3 mt-auto">
             <p>&copy; 2024 Portal del Administrador</p>
