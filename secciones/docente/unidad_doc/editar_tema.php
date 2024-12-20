@@ -28,7 +28,7 @@
         $txtID = $_POST['txtID'];
         $titulo = $_POST["titulo"];
         $descripcion = $_POST["descripcion"];
-        $nivel_id = $_POST["nivel_id"];
+        /* $nivel_id = $_POST["nivel_id"]; */
         $archivoNuevo = $_FILES['archivo']['name'];
 
         // Verificar si se subió un nuevo archivo
@@ -55,11 +55,11 @@
 
         // Actualizar los demás datos del tema
         $sentencia = $conexion->prepare("UPDATE tbl_tema
-                                        SET titulo=:titulo, descripcion=:descripcion, nivel_id=:nivel_id
+                                        SET titulo=:titulo, descripcion=:descripcion
                                         WHERE id=:id");
         $sentencia->bindParam(":titulo", $titulo);
         $sentencia->bindParam(":descripcion", $descripcion);
-        $sentencia->bindParam(":nivel_id", $nivel_id);
+        /* $sentencia->bindParam(":nivel_id", $nivel_id); */
         $sentencia->bindParam(":id", $txtID);
         $sentencia->execute();
 
@@ -123,17 +123,6 @@
                                 <?php } ?>
                             </div>
                             <br>
-                            <div class="mb-3">
-                                <label for="nivel_id" class="form-label"><h5><u>Nivel:</u></h5></label>
-                                    <select
-                                        class="form-select w-auto form-select-ms" name="nivel_id" id="nivel_id">
-                                        <?php foreach ($lista_tbl_nivel as $registro) {?>      
-                                            <option <?php echo ($nivel_id== $registro['id'])? "selected" : ""; ?> value ="<?php echo $registro['id']?>">
-                                                                                                                        <?php echo $registro['nombre_nivel']?>
-                                            </option>
-                                        <?php }?>
-                                    </select>
-                            </div>
                             <br>
                             <br>
                             <!--Button bs5-button-default y bs5-button-a (sirve para direccionar) -->
